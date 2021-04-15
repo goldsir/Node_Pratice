@@ -1,0 +1,73 @@
+body {
+    font-family: "微軟正黑體", Arial, Helvetica, sans-serif;
+}
+
+.mb-3 {
+    text-align: center;
+    width: 50%;
+    margin: 20px auto;
+    padding: 15px 0;
+    border: 1px solid #666;
+}
+
+#upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-label {
+    font-size: 2em;
+    font-weight: 700;
+    color: rgb(27, 29, 161);
+}
+
+.form-control {
+    width: 30%;
+    margin: 15px;
+
+}
+
+.btn {
+    width: 15%;
+    letter-spacing: 3px;
+    padding: 10px 0;
+}
+
+#table {
+    table-layout: fixed;
+    /*newly added*/
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+}
+
+.url_ {
+    word-break: break-all;
+    /* max-width: 200px; */
+    /* display:-webkit-inline-box; 
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical; */
+}
+.loading{
+    text-align: center;
+    height: 150px;
+    line-height: 150px;
+    font-size: 1.5em;
+    display: block;
+}
+li{
+    margin: 0px 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+li:hover{
+    color: rgb(108, 164, 247);
+    border: 1px solid rgb(108, 164, 247);
+}
+
+li.selected{
+    background-color: rgb(203, 222, 250);
+}

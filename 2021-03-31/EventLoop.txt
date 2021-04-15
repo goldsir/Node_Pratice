@@ -1,0 +1,10 @@
+The Event Loop is one of the most important aspects to understand about Node.js
+
+Node.js can be asynchronous and have non-blocking I/O.
+
+The Node.js JavaScript code runs on a single thread. There is just one thing happening at a time.
+
+This is a limitation that's actually very helpful, 
+as it simplifies a lot how you program without worrying about concurrency issues.
+
+The call stack is a LIFO (Last In, First Out) stack.

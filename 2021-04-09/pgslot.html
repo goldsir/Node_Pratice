@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PG接帳</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+            }
+
+            table,
+            td {
+                text-align: center;
+                font-weight: bolder;
+                border: 1px solid #000;
+            }
+        </style>
+    </head>
+
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <td>請輸入日期(YYYY-MM-DD)</td>
+                    <td><input type="text" placeholder="preess enter to go" id="inputDate" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">API URL</td>
+                </tr>
+            </thead>
+
+            <tbody id="apiData"></tbody>
+        </table>
+    </body>
+
+    <script type="application/javascript">
+        let apiData = document.getElementById("apiData");
+        let inputDate = document.getElementById("inputDate");
+        inputDate.value = getDateStr_FromDate(new Date().getTime()).split(" ")[0];
+		loadDateList();
+
+        inputDate.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+                loadDateList();
+            }
+        });
+
+        async function loadDateList() {
+            let dateList = dateSplitByMin(inputDate.value, 60);
+            let apiDataStr = "";
+            for (let a = 0; a < dateList.length; a++) {
+                apiDataStr += `
+					<tr>
+						<td colspan="2">
+							<a href = 'http://127.0.01:3000/PGAPI?start=${dateList[a].start}&end=${dateList[a].end}' target="_blank">
+								${dateList[a].start} ~ ${dateList[a].end}
+							</a>
+						</td>
+					</tr>
+				`;
+            }
+            apiData.innerHTML = apiDataStr;
+        }
+
+        function dateSplitByMin(date, min) {
+            // date 是一個 yyyy-MM-dd 的字串
+            let y = date.slice(0, 4); //不含end
+            let m = date.slice(5, 7);
+            let d = date.slice(8, 10);
+
+            let count = (24 * 60) / min; // 算出一天全部有多少分鐘，再除掉min，得到迴圈計數器(以秒為單位)
+
+            let list = [];
+            for (let i = 0; i < count; i++) {
+                // new Date(year, month, day, hour, minutes, seconds, milliseconds);
+                let year = parseInt(y, 10);
+                let month = parseInt(m, 10);
+                let day = parseInt(d, 10);
+
+                let start = new Date(year, month - 1, day, 0, 0, 0, 0);
+                let end = new Date(year, month - 1, day, 0, 0, 0, 0);
+
+                start.setSeconds(start.getSeconds() + i * min * 60); // setSeconds 沒傳回新的實例哦
+                end.setSeconds(end.getSeconds() + (i + 1) * min * 60 - 1); // setSeconds 沒傳回新的實例哦
+
+                list.push({
+                    start: getDateStr_FromDate(start),
+                    end: getDateStr_FromDate(end),
+                });
+            }
+
+            return list;
+        }
+
+        function getDateStr_FromDate(timestamp) {
+            let time = new Date(timestamp);
+            let year = time.getFullYear();
+            let month = String(time.getMonth() + 1); // month value: 0(一月) ~ 11(十二月)
+            let date = String(time.getDate());
+            let hour = String(time.getHours());
+            let min = String(time.getMinutes());
+            let second = String(time.getSeconds());
+
+            if (Number.parseInt(month) < 10) {
+                month = `0${month}`;
+            }
+
+            if (Number.parseInt(date) < 10) {
+                date = `0${date}`;
+            }
+
+            if (Number.parseInt(hour) < 10) {
+                hour = `0${hour}`;
+            }
+
+            if (Number.parseInt(min) < 10) {
+                min = `0${min}`;
+            }
+
+            if (Number.parseInt(second) < 10) {
+                second = `0${second}`;
+            }
+
+            return `${year}-${month}-${date} ${hour}:${min}:${second}`;
+        }
+    </script>
+</html>

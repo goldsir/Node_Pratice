@@ -1,0 +1,8 @@
+1. 把參數設定獨立成一個JSON檔案(pgAPIConfig.json) (JSON中嚴格求使用雙引號)
+    |- 寫一個 readJSON 函式來讀取設定檔
+
+2. 寫一個 async createPOSTBodyString 函式， 按照api要求，組合出符合要求的`字串`。
+
+3. 把抓對方api資料的程式碼封裝成函式 async getAPIData 函式，
+
+4. 對收到的資料做最後處理 processData()
