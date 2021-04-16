@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="content-language" content="zh-cn" />
+	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="../css/reset.css?111" rel="stylesheet" type="text/css">
+    <link href="../css/help.css?111" rel="stylesheet" type="text/css">
+    <title>赢家客服中心</title>
+</head>
+
+<body>
+<div class="popup_help">
+	<div class="help_header">
+		<div class="bg_subtop">
+			<div class="help_logo"></div>
+			<div class="title">客服中心</div>
+		</div>
+	</div>
+
+	<!--客服中心-->
+	<div class="service_submain">
+		<div class="service_center">
+			<div class="service_box1">
+				<div class="service_title">24小时线上客服</div>
+				<dl class="girls">
+					<dd class="service_grounp">
+						<a class="pic_ptzt1" href="#"></a>
+						<div>线上客服 1</div>
+					</dd>
+					<dd class="service_grounp">
+						<a class="pic_ptzt2" href="#"></a>
+						<div>线上客服 2</div>
+					</dd>
+					<dd class="service_grounp">
+						<a class="pic_ptzt3" href="#"></a>
+						<div>线上客服 3</div>
+					</dd>
+				</dl>
+			</div>
+
+			<div class="service_box2">
+				<div class="service_title">微信客服</div>
+				<div class="service_pic">
+					<div class="not_open" style="display: none;">(敬请期待...)</div>
+					<a class="wechat_qrcode" href="#"></a>
+				</div>
+			</div>
+			<!--<div class="service_box3">
+				<div class="service_title">QQ客服</div>
+				<div class="service_pic">
+					<div class="not_open" style="display: none;">(敬请期待...)</div>
+					<a class="qq_qrcode" href="#"></a>
+				</div>
+			</div>-->
+
+			<div class="service_box4">
+				<div class="service_title">回电服务</div>
+				<div class="reply">
+					<div class="title">本公司提供24小时全天候的高素质客户服务热线，及多种语言选择，包括华语及台语，如有任何疑问请与我们联系。</div>
+					<div class="item_box">
+						<select id="Language" class="select_set">
+							<option value="0">请选择语言</option>
+							<option value="1">华语</option>
+							<option value="2">台语</option>
+							<option value="3">English</option>
+						</select>
+
+						<select id="ProblemType" class="select_set">
+							<option value="0">请选择问题类型</option>
+							<option value="1">会员注册问题</option>
+							<option value="2">点数问题</option>
+							<option value="3">球赛问题</option>
+							<option value="4">彩票问题</option>
+							<option value="5">现场游戏问题</option>
+							<option value="6">电子游戏问题</option>
+						</select>
+
+						<input type="text" class="input_set" name="phone" id="phone" value="" maxlength="14" onblur="this.value=this.value.replace(/[^0-9|+]/g,'');" oninput="this.value=this.value.replace(/[^0-9|+]/g,'');" onkeydown="this.value=this.value.replace(/[^0-9|+]/g,'');" onkeyup="this.value=this.value.replace(/[^0-9|+]/g,'');" placeholder="请加上区域码，如中国+86，台湾+886">
+
+						<a href="#" id="ReplySubmit" onclick="" class="submit_send">确认送出</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

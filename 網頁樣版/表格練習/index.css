@@ -1,0 +1,103 @@
+.Table1,
+.Table2,
+.Table3,
+.Table4 {
+    background-color: #fff;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.Table1 td,
+.Table1 th,
+.Table2 td,
+.Table2 th,
+.Table3 td,
+.Table3 th,
+.Table4 th {
+    border: 6px solid #FFF;
+    padding: 3px 2px;
+}
+
+.Table1 td,
+.Table2 td {
+    font-size: 15px;
+    color: #8B8A8B;
+}
+
+.Table1 th,
+.Table2 th,
+.Table3 th,
+.Table4 th {
+    font-size: 15px;
+    font-weight: normal;
+    color: #FFF;
+    background: #BBA69A;
+}
+
+.Table1 .title1,
+.Table2 .title1 {
+    background: #EEE;
+    text-align: right;
+}
+
+.Table1 .account {
+    color: #00a0ec;
+}
+
+.Table1 .forget {
+    background: #ff8d00;
+    color: #FFF;
+    padding: 5px;
+    margin: 0 5px;
+    border-radius: 5px;
+    border-style: none;
+}
+
+.Table1 .other {
+    background: #34b3c7;
+    color: #FFF;
+    padding: 5px;
+    margin: 0 5px;
+    border-radius: 5px;
+    border-style: none;
+}
+
+.Table2 .text_red {
+    color: #f20707;
+}
+
+.Table3 td {
+    font-size: 15px;
+    background: #006092;
+    color: #FFF;
+    text-align: center;
+    border: 1px solid #57839e;
+}
+
+.Table3 .text_none {
+    background: #FFF;
+    border: 1px solid #ccc;
+    color: #666;
+    margin: 0 0 20px 0;
+}
+
+textarea {
+    resize: none;
+    margin: 5px 20px;
+    color: #666;
+}
+
+.btn {
+    text-align: center;
+}
+
+.confirm {
+    background: #ff8d00;
+    color: #FFF;
+    padding: 5px 50px;
+    margin: 20px 5px;
+    font-size: 1em;
+    border-style: none;
+    border-radius: 5px;
+}

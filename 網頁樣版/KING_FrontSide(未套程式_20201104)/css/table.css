@@ -1,0 +1,93 @@
+/*下面資訊可以不用copy，從凍結表格在開始copy*/
+body {
+    height: 100%;
+    line-height: 1;
+    font-family: Arial, "微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU", Georgia, "Times New Roman", Times, serif;
+}
+.fixed_table .text_center {
+    text-align: center;
+}
+.fixed_table .text_right {
+    text-align: right;
+}
+.fixed_table .text_left {
+    text-align: left;
+}
+/*凍結表格(外表格)*/
+.tbbox {
+	height: 515px;
+    overflow: auto;
+}
+.tbbox, .free_tbbox {
+    width: 100%;
+    margin: 0 auto 20px;
+    overflow: auto;
+}
+/*凍結表格(頁首頁尾設定)*/
+.fht-table-wrapper, 
+.fht-table-wrapper .fht-thead, 
+.fht-table-wrapper .fht-tfoot, 
+.fht-table-wrapper .fht-fixed-column .fht-tbody, 
+.fht-table-wrapper .fht-fixed-body .fht-tbody, 
+.fht-table-wrapper .fht-tbody {
+    overflow: hidden;
+    position: relative;
+}
+.fht-table-wrapper .fht-fixed-body .fht-tbody, 
+.fht-table-wrapper .fht-tbody {
+    overflow: auto;
+}
+/*凍結表格(內表格)*/
+.fixed_table {
+    table-layout: fixed;
+    min-width: 900px;
+    text-align: left;
+    color: #555;
+    font-weight: normal;
+    background: #fff;
+}
+.fixed_table thead th, 
+.fixed_table tfoot td {
+	height: 22px;
+    padding: 5px;
+	font-size: 1.1em;
+	font-weight: normal;
+	word-break: break-word;
+    vertical-align: middle;
+}
+.fixed_table thead th {
+    color: #fff;
+    background: #988036;
+}
+.fixed_table td {
+    line-height: 18px;
+    padding: 5px;
+    font-size: 1em;
+    word-break: break-word;
+    border-bottom: 1px solid #ccc;
+    vertical-align: top;
+}
+.fixed_table thead th:nth-of-type(2n) {
+    background: #b39c57;
+}
+.fixed_table tr.odd td {
+	background: #fbfcf1;
+}
+.fixed_table tbody tr:hover, 
+.fixed_table tbody tr:active, 
+.fixed_table tbody tr:focus,
+.fixed_table tbody tr:nth-of-type(2n+1):hover {
+	background: #e4e1d7;
+}
+.fixed_table tfoot tr {
+    background: #e4e3b8;
+}
+.fixed_table tfoot td {
+    color: #e00000;
+}
+.fixed_table .tb_foot.subtotal {
+    background: #f0f1df;
+}
+.fixed_table .tb_foot.subtotal td {
+    color: #5d4600;
+}

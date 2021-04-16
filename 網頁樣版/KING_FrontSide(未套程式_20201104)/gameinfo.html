@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta name="mobile-web-app-capable" content="yes">
+	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<!--CSS-->
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/jquery1.12.1-ui.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<!--動畫效果-->
+	<link href="css/animate.css" rel="stylesheet">
+	<!--JQ UI+日曆-->
+	<script src="js/jquery-3.5.1.min.js" type="text/javascript"></script>
+	<script src="js/jquery-ui-1.12.1.min.js" type="text/javascript"></script>
+	<!-- 左側滑入選單JQ -->
+	<script src="js/jquery-jside-menu.js"></script>
+	<!--回到頂端JQ-->
+	<script src="js/goTop.js"></script>
+	<!--表格首尾列凍結-->
+    <script src="js/jquery.fixedheadertable.min.js"></script>
+    <title>遊戲介紹</title>
+</head>
+<body class="other_body">
+	<!--回到頂端按鈕-->
+	<div id="btn_goTop" class="go_top"></div>
+
+	<!--上方導覽列-->
+    <div class="header_box">
+		<div class="header_top">
+			<!-- Logo -->
+			<div class="header_l logo">
+				<img src="images/index/logo.png" alt="" onclick="window.open('index.html','_self');" class="top_logo">
+			</div>
+
+			<!-- 登入前 -->
+			<div class="header_r login" style="display: none;">
+				<input type="button" id="Login" value="登入" tabindex="" class="nav_btn btn_yellow nav_login">
+				<input type="button" id="Register" value="註冊" tabindex="" class="nav_btn btn_green nav_register">
+				<div class="clear"></div>
+			</div>
+			<!-- 登入後 -->
+			<div class="header_r logout">
+                <div class="header_r">
+                    <input type="button" id="Deposit" value="充值" tabindex="" class="nav_btn btn_yellow">
+                    <input type="button" id="Withdrawal" value="轉出" tabindex="" class="nav_btn btn_yellow">
+                    <input type="button" id="Logout" value="登出" onclick="window.open('index.html','_self');" tabindex="" class="nav_btn btn_pink nav_logout">
+                    <!-- 漢堡選單 -->
+                    <div class="menu-trigger" tabindex="2">
+                        <img src="images/icon/menu_icon.png" alt="">
+                    </div>
+                </div>
+                <div class="header_r">
+                    <div class="nav_text">帳號&nbsp;<span>1234567890123456</span></div>
+                    <div class="nav_text">金幣&nbsp;<span>12345678.00</span></div>
+                </div>
+            </div>
+			<div class="clear"></div>
+		</div>
+    </div>
+
+    <!-- 選單(電腦版-登入後才會出現) -->
+	<div class="header_nav">
+		<ul class="nav_menu">
+			<!-- 首選單 -->
+			<li>
+				<a href="index.html" target="_self">
+					<span>首頁</span>
+				</a>
+			</li>
+			<li>
+				<a href="game.html" target="_self">
+					<span>遊戲</span>
+				</a>
+			</li>
+			<li>
+				<a href="https://www.youtube.com/watch?v=LdnJIwDq2wg" target="_blank">
+					<span>Live</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" target="_self">
+					<span>歷史紀錄</span><span class="icon_arrow"></span>
+				</a>
+				<!-- 次選單 -->
+				<div class="nav_menu2">
+					<a href="totalbonus.html" target="_self">
+						<i class="fas fa-coins-w"></i><span>總獎金金額</span>
+					</a>
+					<a href="payout.html" target="_self">
+						<i class="fas fa-gift-w"></i><span>派彩紀錄</span>
+					</a>
+					<a href="bet_all.html" target="_self">
+						<i class="fas fa-clipboard-check-w"></i><span>下注紀錄</span>
+					</a>
+					<a href="deposit.html" target="_self">
+						<i class="fas fa-dollar-sign-w"></i><span>充值/轉出紀錄</span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<a href="#" target="_self" class="selected">
+					<span>個人中心</span><span class="icon_arrow"></span>
+				</a>
+				<!-- 次選單 -->
+				<div class="nav_menu2">
+					<a href="setup.html" target="_self">
+						<i class="fas fa-cog-w"></i><span>帳號設置</span>
+					</a>
+					<a href="invite.html" target="_self">
+						<i class="fas fa-qrcode-w"></i><span>邀請碼</span>
+					</a>
+					<a href="gameinfo.html" target="_self" class="selected">
+						<i class="fas fa-info-circle-w"></i><span>玩法與介紹</span>
+					</a>
+				</div>
+			</li>
+			<div class="clean"></div>
+		</ul>
+		<div class="clean"></div>
+	</div>
+	<div class="clean"></div>
+
+	<!-- 左側滑入選單(手機版-登入後才會出現) -->
+	<div class="menu-container">
+		<ul class="menu-items">
+			<li onclick="window.open('index.html','_self');">
+				<span class="item-icon"><i class="fas fa-home-w"></i></span>
+				<span>首頁</span>
+			</li>
+			<li onclick="window.open('game.html','_self');">
+				<span class="item-icon"><i class="fas fa-crown-w"></i></span>
+				<span>遊戲</span>
+			</li>
+			<li onclick="window.open('https://www.youtube.com/watch?v=LdnJIwDq2wg','_blank');">
+				<span class="item-icon"><i class="fas fa-video-w"></i></span>
+				<span>Live</span>
+			</li>
+			<li class="has-sub">
+				<span class="item-icon"><i class="fas fa-file-text-o-w"></i></span>
+				<span class="dropdown-heading">歷史紀錄</span>
+				<ul>
+					<li onclick="window.open('totalbonus.html','_self');">
+						<i class="fas fa-coins-w"></i><span>總獎金金額</span>
+					</li>
+					<li onclick="window.open('payout.html','_self');">
+						<i class="fas fa-gift-w"></i><span>派彩紀錄</span>
+					</li>
+					<li onclick="window.open('bet_all.html','_self');">
+						<i class="fas fa-clipboard-check-w"></i><span>下注紀錄</span>
+					</li>
+					<li onclick="window.open('deposit.html','_self');">
+						<i class="fas fa-dollar-sign-w"></i><span>充值/轉出紀錄</span>
+					</li>
+				</ul>
+			</li>
+			<li class="has-sub selected">
+				<span class="item-icon"><i class="fas fa-user-w"></i></span>
+				<span class="dropdown-heading">個人中心</span>
+				<ul>
+					<li onclick="window.open('setup.html','_self');">
+						<i class="fas fa-cog-w"></i><span>帳號設置</span>
+					</li>
+					<li onclick="window.open('invite.html','_self');">
+						<i class="fas fa-qrcode-w"></i><span>邀請碼</span>
+					</li>
+					<li onclick="window.open('gameinfo.html','_self');" class="selected">
+						<i class="fas fa-info-circle-w"></i><span>玩法與介紹</span>
+					</li>
+				</ul>
+			</li>
+			<li onclick="window.open('index.html','_self');">
+				<span class="item-icon"><i class="fas fa-share-square-w"></i></span>
+				<span>登出</span>
+			</li>
+		</ul>
+	</div>
+	<div class="dim-overlay"></div>
+	<!-- 左側滑入選單JS-->
+	<script>
+	$(document).ready(function(){
+		$(".menu-container").jSideMenu({
+			// 滑出位置靠左 position-left 或靠右 position-right
+			jSidePosition: "position-left",
+			// 選單固定在頂部，false則設置為靜態
+			jSideSticky: true,
+		});
+	});
+	</script>
+
+    <!-- 內容 -->
+    <div class="content gameinfo">
+		<div class="total_set">
+			<span class="text_orange">遊戲說明</span>
+		</div>
+		<div class="info_box">
+			<div class="info_text">
+				<div class="info_title">★今彩539★</div>
+				<ul>
+					<li>開獎時間：每周一至六。晚間20:35</li>
+					<li>開盤時間：晚上24:00後可立即下注</li>
+					<li>封盤時間：開獎當日晚間20:20</li>
+					<li>封盤時間：開獎當日晚間20:20</li>
+				</ul>
+			</div>
+			<div class="info_text">
+				<div class="info_title">★玩法★</div>
+				<ul>
+					<li>官方39個號碼開出5個正碼</li>
+					<li>選擇任5個號碼為一個組合投注，為一注</li>
+					<li>以投注的號碼核對當期官方5個正碼</li>
+					<li>所有投注注單號碼中最多者獲得彩金</li>
+				</ul>
+			</div>
+			<div class="info_text">
+				<div class="info_title">★注意事項★</div>
+				<ul>
+					<li>如當期全部中獎一顆，彩池金額則累計到下期。</li>
+					<li>所有玩家依照每注同樣金額作為投注，所投注金額會累積為一個彩金池。</li>
+					<li>每注皆為$200元，下注皆提撥80%至彩金池內。</li>
+					<li>各官方開獎時間若有變更，則以官方為主，並提前公告封盤時間。</li>
+					<li>中同樣多個號碼的注單可能多筆，則彩金比照中獎注單數平分。</li>
+					<li>如遇不可抗拒之因素，平台有最終解釋權。</li>
+				</ul>
+			</div>
+		</div>
+		<div class="info_pic">
+			<img src="images/other/ball3.png">
+		</div>
+    </div>
+
+	<!--跳框_充值-->
+	<div id="popup_deposit" class="popup_windows" style="display: none;">
+		<div class="popup_container">
+			<div class="popup">
+				<div class="btn_close" onclick="document.getElementById('popup_deposit').style.display='none'"></div>
+				<form name="form" action="" method="post" class="popup_In">
+					<div class="popup_title">
+						<span class="fa fa-donate-w"></span>
+						<span>充值</span>
+					</div>
+					<!--頁籤-->
+					<div class="popup_in page_box">
+						<input type="radio" id="deposittab1" name="deposittab" class="dp_radio1" checked="">
+						<input type="radio" id="deposittab2" name="deposittab" class="dp_radio2">
+						<div class="popup_tabbox">
+							<label for="deposittab1">公司入款</label>
+							<label for="deposittab2">線上儲值</label>
+						</div>
+						<!--分頁內容-->
+						<div class="page_wrap">
+							<!--分頁1(公司入款)-->
+							<div class="wam_text">因應政府洗錢危害管制條例，提領必須流水達到儲值金額的一半才可提領！如有不便敬請見諒</div>
+							<div class="allpage dp_con1">
+								<div class="popup_account">
+									<div class="col_1">
+										<div class="input_title">帳號</div>
+										<input type="text" placeholder="" value="a123456789012345" class="input100" disabled="">
+									</div>
+									<div class="col_1">
+										<div class="input_title">充值金額</div>
+										<input type="text" placeholder="請輸入金額" value="" class="input100">
+									</div>
+									<div class="col_1">
+										<div class="input_title">交易密碼</div>
+										<input type="text" placeholder="請輸入交易密碼" value="" class="input100">
+									</div>
+									<div class="col_1">
+										<div class="input_title">公司帳戶</div>
+										<select id="" class="select100">
+											<option value="" selected="">請選擇</option>
+											<option value="">中國信託黃小白</option>
+										</select>
+									</div>
+									<div class="col_1">
+										<div class="input_title">銀行</div>
+										<select id="" class="select100">
+											<option value="" selected="">請選擇</option>
+											<option value="">中國信託</option>
+											<option value="">合作金庫</option>
+										</select>
+									</div>
+									<div class="account_set">
+										<div class="col_1">
+											<div class="input_title">銀行名稱</div>
+											<input type="text" value="中國信託" class="input100" disabled="">
+										</div>
+										<div class="col_1">
+											<div class="input_title">收款人</div>
+											<input type="text" value="黃小白" class="input100" disabled="">
+										</div>
+										<div class="col_1">
+											<div class="input_title">帳號</div>
+											<input type="text" value="204540130760" class="input100" disabled="">
+										</div>
+										<div class="col_1">
+											<div class="input_title">最低額度</div>
+											<input type="text" value="200.00" class="input100" disabled="">
+										</div>
+										<div class="col_1">
+											<div class="input_title">最高額度</div>
+											<input type="text" value="10,000,000.00" class="input100" disabled="">
+										</div>
+									</div>
+								</div>
+								<div class="btnbox">
+									<input type="button" value="關閉" onclick="document.getElementById('popup_deposit').style.display='none'" class="btn_50 btn_gray">
+									<input type="button" value="確定" class="btn_50 btn_yellow">
+								</div>
+							</div>
+							<!--分頁2(線上儲值)-->
+							<div class="allpage dp_con2">
+								<div class="popup_account">
+									<div class="col_1">
+										<div class="input_title">帳號</div>
+										<input type="text" placeholder="" value="a123456789012345" class="input100" disabled="">
+									</div>
+									<div class="col_1">
+										<div class="input_title">充值金額</div>
+										<input type="text" placeholder="請輸入金額" value="" class="input100">
+									</div>
+									<div class="col_1">
+										<div class="input_title">充值平台</div>
+										<select id="" class="select100">
+											<option value="" selected="">請選擇</option>
+											<option value="">超商</option>
+										</select>
+									</div>
+									<div class="col_1">
+										<div class="input_title">充值方式</div>
+										<select id="" class="select100">
+											<option value="" selected="">請選擇</option>
+											<option value="">超商代碼</option>
+											<option value="">虛擬ATM</option>
+										</select>
+									</div>
+									<div class="account_set">
+										<div class="col_1">
+											<div class="input_title">最低額度</div>
+											<input type="text" placeholder="" value="200.00" class="input100" disabled="">
+										</div>
+										<div class="col_1">
+											<div class="input_title">最高額度</div>
+											<input type="text" placeholder="" value="10,000,000.00" class="input100" disabled="">
+										</div>
+									</div>
+								</div>
+								<div class="btnbox">
+									<input type="button" value="關閉" onclick="document.getElementById('popup_deposit').style.display='none'" class="btn_50 btn_gray">
+									<input type="button" value="確定" class="btn_50 btn_yellow">
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!--跳框_轉出-->
+	<div id="popup_withdrawal" class="popup_windows" style="display: none;">
+		<div class="popup_container">
+			<div class="popup">
+				<div class="btn_close" onclick="document.getElementById('popup_withdrawal').style.display='none'"></div>
+				<form name="form" action="" method="post" class="popup_In">
+					<div class="popup_title">
+						<span class="fa fa-hand-holding-usd-w"></span>
+						<span>轉出</span>
+					</div>
+					<!--頁籤-->
+					<div class="popup_in page_box">
+						<input type="radio" id="withdrawaltab1" name="deposittab" class="wd_radio1" checked="">
+						<input type="radio" id="withdrawaltab2" name="deposittab" class="wd_radio2">
+						<div class="popup_tabbox">
+							<label for="withdrawaltab1">轉至銀行</label>
+							<label for="withdrawaltab2">轉至其他帳號</label>
+						</div>
+						<!--分頁內容-->
+						<div class="page_wrap">
+							<!--分頁1(公司入款)-->
+							<div class="allpage wd_con1">
+								<div class="popup_account">
+									<div class="col_1">
+										<div class="input_title">帳號</div>
+										<input type="text" placeholder="" value="a123456789012345" class="input100" disabled="">
+									</div>
+									<div class="col_1">
+										<div class="input_title">金幣</div>
+										<input type="text" placeholder="" value="58733.00" class="input100" disabled="">
+									</div>
+									<div class="col_1">
+										<div class="input_title">轉出金額</div>
+										<input type="text" placeholder="請輸入金額" value="" class="input100">
+									</div>
+									<div class="col_1">
+										<div class="input_title">銀行</div>
+										<select id="" class="select100">
+											<option value="" selected="">請選擇</option>
+											<option value="">中國信託黃小白</option>
+										</select>
+										<div class="listset">
+											<i class="fa fa-credit-card" aria-hidden="true"></i>
+											<div id="AddBank" class="add_card">新增銀行</div>
+										</div>
+									</div>
+									<div class="col_1">
+										<div class="input_title">交易密碼</div>
+										<input type="text" placeholder="請輸入交易密碼" value="" class="input100">
+									</div>
+								</div>
+								<div class="btnbox">
+									<input type="button" value="關閉" onclick="document.getElementById('popup_withdrawal').style.display='none'" class="btn_50 btn_gray">
+									<input type="button" value="確定" class="btn_50 btn_yellow">
+								</div>
+							</div>
+							<!--分頁2(線上儲值)-->
+							<div class="allpage wd_con2">
+								<div class="popup_account">
+									<div class="col_1">
+										<div class="input_title">帳號</div>
+										<input type="text" placeholder="" value="a123456789012345" class="input100" disabled="">
+									</div>
+									<div class="col_1">
+										<div class="input_title">金幣</div>
+										<input type="text" placeholder="" value="58733.00" class="input100" disabled="">
+									</div>
+									<div class="col_1">
+										<div class="input_title">轉出金額</div>
+										<input type="text" placeholder="請輸入金額" value="" class="input100">
+									</div>
+									<div class="col_1">
+										<div class="input_title">轉入至帳號</div>
+										<input type="text" placeholder="請輸入轉入至帳號" value="" class="input100">
+									</div>
+									<div class="col_1">
+										<div class="input_title">交易密碼</div>
+										<input type="text" placeholder="請輸入交易密碼" value="" class="input100">
+									</div>
+								</div>
+								<div class="btnbox">
+									<input type="button" value="關閉" onclick="document.getElementById('popup_withdrawal').style.display='none'" class="btn_50 btn_gray">
+									<input type="button" value="確定" class="btn_50 btn_yellow">
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!--跳框_新增銀行-->
+	<div id="popup_addbank" class="popup_windows" style="display: none;">
+		<div class="popup_container">
+			<div class="popup">
+				<div class="btn_close" onclick="document.getElementById('popup_addbank').style.display='none'"></div>
+				<form name="form" action="" method="post" class="popup_In">
+					<div class="popup_title">
+						<span class="fa fa-landmark-w"></span>
+						<span>新增銀行</span>
+					</div>
+					<!--頁籤-->
+					<div class="popup_in">
+						<div class="popup_account">
+							<div class="col_1">
+								<div class="input_title">銀行名稱</div>
+								<input type="text" placeholder="" value="" class="input100">
+							</div>
+							<div class="col_1">
+								<div class="input_title">分行名稱</div>
+								<input type="text" placeholder="" value="" class="input100">
+							</div>
+							<div class="col_1">
+								<div class="input_title">銀行戶名</div>
+								<input type="text" placeholder="" value="" class="input100">
+							</div>
+							<div class="col_1">
+								<div class="input_title">銀行帳號</div>
+								<input type="text" placeholder="" value="" class="input100">
+							</div>
+						</div>
+						<div class="btnbox">
+							<input type="button" value="關閉" onclick="document.getElementById('popup_addbank').style.display='none'" class="btn_50 btn_gray">
+							<input type="button" value="確定" class="btn_50 btn_yellow">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		//跳框_充值
+		let modal_Deposit = document.getElementById('Deposit');
+		modal_Deposit.addEventListener('click', function (e) {
+			e.preventDefault();
+			document.getElementById('popup_deposit').style.display = 'block';
+		});
+		//跳框_轉出
+		let modal_Withdrawal = document.getElementById('Withdrawal');
+		modal_Withdrawal.addEventListener('click', function (e) {
+			e.preventDefault();
+			document.getElementById('popup_withdrawal').style.display = 'block';
+		});
+        //跳框_新增銀行
+		let modal_AddBank = document.getElementById('AddBank');
+		modal_AddBank.addEventListener('click', function (e) {
+			e.preventDefault();
+			document.getElementById('popup_addbank').style.display = 'block';
+		});
+	</script>
+</body>
+</html>

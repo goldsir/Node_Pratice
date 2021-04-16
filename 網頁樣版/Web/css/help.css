@@ -1,0 +1,826 @@
+/*********  共用樣式  *********/
+.popup_help{
+    width: 983px;
+    height: 700px;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+    overflow: hidden;
+}
+.help_submain {
+    width: 90%;
+    height: 493px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.bg_subtop {
+    width: 100%;
+    height: 90px;
+    line-height: 90px;
+    text-align: left;
+    border-bottom: 1px solid #0f1a21;
+    background: #003b65;
+    background: -moz-linear-gradient(top, #0083ce 0%, #003b65 100%);
+    background: -webkit-linear-gradient(top, #0083ce 0%, #003b65 100%);
+    background: linear-gradient(to bottom, #0083ce 0%, #003b65 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0083ce', endColorstr='#003b65', GradientType=0 );
+}
+.help_logo {
+    display: inline-block;
+    *display: inline;
+    width: 249px;
+    height: 85px;
+    margin: 5px 10px 0 10px;
+    background: url(../images/index_icon/index_logo.png) top center no-repeat;
+    background-size: 100% auto;
+    vertical-align: middle;
+}
+.popup_logo {
+    display: inline-block;
+    *display: inline;
+    width: 78px;
+    height: 80px;
+    margin: 5px 10px 0 10px;
+    background: url(../images/index_icon/popup_logo.png) top center no-repeat;
+    background-size: 100% auto;
+    vertical-align: middle;
+}
+.bg_subtop .title {
+    display: inline-block;
+    *display: inline;
+    height: 78px;
+    color: #b6edff;
+    text-shadow: 1px 1px 3px #000;
+    font-size: 2.2em;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.bg_submenu {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    font-size: 15px;
+    background: #1b3856;
+    border-top: 1px solid #2c6e9a;
+}
+.btn_submenu {
+    float: left;
+    width: 104px;
+    height: 28px;
+    line-height: 28px;
+    margin: 5px 0 0 7px;
+    text-align: center;
+    font-weight: bold;
+    color: #000;
+    background: #f1f1f1;
+    background: -moz-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f1f1f1), color-stop(50%, #bfbfbf), color-stop(51%, #afafaf), color-stop(100%, #fefefe));
+    background: -webkit-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: -o-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: -ms-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: linear-gradient(to bottom, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f1', endColorstr='#afafaf', GradientType=0 );
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+.bg_submenu .selected, .btn_submenu:hover {
+    color: #fff;
+    font-weight: bold;
+    background: #ff003a;
+    background: -moz-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff003a), color-stop(53%, #cd0c38), color-stop(100%, #cd0b37));
+    background: -webkit-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: -o-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: -ms-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: linear-gradient(to bottom, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff003a', endColorstr='#cd0b37', GradientType=0 );
+}
+.btn_service {
+    float: right;
+    width: 90px;
+    height: 28px;
+    line-height: 28px;
+    margin: 5px 0 0 7px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px 3px #000;
+    background: #385000;
+    background: -moz-linear-gradient(top, #a8dc09 0%, #385000 50%, #486b00 51%, #7ea717 100%);
+    background: -webkit-linear-gradient(top, #a8dc09 0%, #385000 50%, #486b00 51%, #7ea717 100%);
+    background: linear-gradient(to bottom, #a8dc09 0%, #385000 50%, #486b00 51%, #7ea717 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8dc09', endColorstr='#385000', GradientType=0 );
+    border: 1px solid #b8ff94;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+.btn_service:hover {
+    background: #819014;
+    background: -moz-linear-gradient(top, #e6f0a3 0%, #819014 50%, #9bad16 51%, #dbf043 100%);
+    background: -webkit-linear-gradient(top, #e6f0a3 0%, #819014 50%, #9bad16 51%, #dbf043 100%);
+    background: linear-gradient(to bottom, #e6f0a3 0%, #819014 50%, #9bad16 51%, #dbf043 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f0a3', endColorstr='#819014', GradientType=0 );
+}
+.help_dd dt{
+    font-size: 16px;
+    color: #005fab;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+.text_type{
+    font-size: 14px;
+    padding-left: 0;
+    line-height: 1.4;
+    margin-bottom: 16px;
+    color: #555;
+}
+.help_dd ol, .help_dd ol .li, .help_dd ul, .help_dd ul li, 
+.sports_set ol, .sports_set ol li, .sports_set ul, .sports_set ul li {
+    list-style-type: decimal;
+    margin-left: 10px;
+}
+.only_one{
+    line-height: 20px;
+}
+/*********  手機投注  *********/
+.app_left, .app_right {
+    display: inline-block;
+    *display: inline;
+    text-align: center;
+    vertical-align: top;
+}
+.app_left {
+    width: 45%;
+    margin: 35px auto;
+    text-align: center;
+}
+.app_left img {
+    width: 50%;
+}
+.app_right {
+    width: 50%;
+    margin: 20px auto;
+    text-align: center;
+}
+.app_right .up_set img {
+    max-width: 100%;
+    width: 40%;
+    margin: 10px auto 0;
+}
+.app_right .up_set .text {
+    margin: 0px auto 5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #00f;
+}
+.appteach_btn {
+    display: block;
+    width: 170px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto 30px;
+    color: #fff;
+    text-align: center;
+    background-color: #057ee6;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.appteach_btn:hover {
+    background-color: #48a8fa;
+}
+.app_right .down_set {
+    width: 80%;
+    height: 150px;
+    line-height: 22px;
+    margin: 30px auto 0;
+    font-size: 17px;
+    color: #666;
+    text-align: justify;　/*　Firefox到此即可對齊　*/
+    text-justify: auto;　/*　IE需再加上此行　*/
+
+}
+.app_right .line {
+    border-bottom: 1px solid #ccc;
+}
+/*********  常見問題  *********/
+.type_list {
+    width: 110%;
+    height: 40px;
+    line-height: 37px;
+    color: #fff;
+    background-color: #05659e;
+    border-top: 1px solid #cecece;
+    border-bottom: 1px solid #cecece;
+    margin: -21px 0 15px -20px;
+}
+.btn_sentout {
+    display: inline-block;
+    *display: inline;
+    width: 80px;
+    height: 25px;
+    margin: 0 0 0 10px;
+    color: #000;
+    background: #f1f1f1;
+    background: -moz-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f1f1f1), color-stop(50%, #bfbfbf), color-stop(51%, #afafaf), color-stop(100%, #fefefe));
+    background: -webkit-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: -o-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: -ms-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: linear-gradient(to bottom, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f1', endColorstr='#afafaf', GradientType=0 );
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    border: 0;
+    cursor: pointer;
+}
+.type_list .selected, .btn_sentout:hover {
+    color: #fff;
+    font-weight: bold;
+    background: #ff003a;
+    background: -moz-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff003a), color-stop(53%, #cd0c38), color-stop(100%, #cd0b37));
+    background: -webkit-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: -o-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: -ms-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: linear-gradient(to bottom, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff003a', endColorstr='#cd0b37', GradientType=0 );
+}
+/*********  遠端協助  *********/
+.tv_icon1 {
+    display: inline-block;
+    *display: inline;
+    background: url(../images/help_icon/teamviewer_icon.JPG) top center no-repeat;
+    width: 50px;
+    height: 45px;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+.tv_icon2 {
+    background: url(../images/help_icon/teamviewer.JPG) top center no-repeat;
+    width: 249px;
+    height: 337px;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+/*********  隱私政策  *********/
+.specially_li{
+	margin-bottom: 20px;
+}
+/*********  客服中心  *********/
+.service_submain {
+    width: 90%;
+    height: 525px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.service_center {
+    margin: 0 auto;
+    text-align: center;
+}
+.service_title {
+    line-height: 1.9;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background: #fff;
+    background: -moz-linear-gradient(top, #fff 0%, #c1c1c1 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #c1c1c1));
+    background: -webkit-linear-gradient(top, #fff 0%, #c1c1c1 100%);
+    background: -o-linear-gradient(top, #fff 0%, #c1c1c1 100%);
+    background: -ms-linear-gradient(top, #fff 0%, #c1c1c1 100%);
+    background: linear-gradient(to bottom, #fff 0%, #c1c1c1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#c1c1c1', GradientType=0 );
+    background-repeat: repeat-x;
+    border-bottom: 1px solid #D4D4D4;
+    overflow: hidden;
+}
+.service_box1, .service_box2, .service_box3 {
+    display: inline-block;
+    *display: inline;
+    height: 225px;
+    background: #fff;
+    border: 1px solid #d4d4d4;
+    -webkit-border-radius: 0 0 0.5em 0.5em;
+    -moz-border-radius: 0 0 0.5em 0.5em;
+    -ms-border-radius: 0 0 0.5em 0.5em;
+    -o-border-radius: 0 0 0.5em 0.5em;
+    border-radius: 0 0 0.5em 0.5em;
+    vertical-align: top;
+}
+.service_box1 {
+    width: 46%;
+    margin: 0 1% 1% 0;
+}
+.service_box2 {
+    width: 25%;
+    margin: 0 1% 1% 0;
+}
+.service_box3 {
+    width: 25%;
+}
+.girls {
+	margin-top: 30px;
+	text-align: center;
+}
+.service_grounp {
+    display: inline-block;
+    *display: inline;
+	margin: 0 5px;
+    font-size: 13px;
+    color: #666;
+}
+.pic_ptzt1, .pic_ptzt2, .pic_ptzt3 {
+    display: inline-block;
+    *display: inline;
+    width: 100px;
+    height: 115px;
+    margin-bottom: 5px;
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.pic_ptzt1 {
+    background: url(../images/help_icon/pic_ptzt1.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.pic_ptzt2 {
+    background: url(../images/help_icon/pic_ptzt2.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.pic_ptzt3 {
+    background: url(../images/help_icon/pic_ptzt3.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.service_pic {
+    margin: 30px auto 0;
+    text-align: center;
+}
+.service_pic .not_open {
+    margin-top: 85px;
+    color: #da6969;
+    font-size: 20px;
+}
+.wechat_qrcode, .qq_qrcode {
+    display: inline-block;
+    *display: inline;
+    width: 120px;
+    height: 120px;
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.wechat_qrcode {
+    background: url(../images/help_icon/wechat_QRcode.jpg?05191) no-repeat;
+    background-size: 100% auto;
+}
+.qq_qrcode {
+    background: url(../images/help_icon/qq_QRcode.jpg?05191) no-repeat;
+    background-size: 100% auto;
+}
+/*客服_回電服務*/
+.service_box4, .service_box5 {
+    display: inline-block;
+    *display: inline;
+    width: 48%;
+    height: 275px;
+    background: #fff;
+    border: 1px solid #d4d4d4;
+    -webkit-border-radius: 0 0 0.5em 0.5em;
+    -moz-border-radius: 0 0 0.5em 0.5em;
+    -ms-border-radius: 0 0 0.5em 0.5em;
+    -o-border-radius: 0 0 0.5em 0.5em;
+    border-radius: 0 0 0.5em 0.5em;
+    vertical-align: top;
+}
+.service_box4 {
+    margin: 0 1% 0 0;
+}
+.reply {
+    padding: 10px 20px;
+}
+.reply .title {
+    line-height: 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: justify;
+}
+.item_box {
+    margin: 0 auto;
+}
+.item_box .select_set, .item_box input[type="text"] {
+    display: block;
+    height: 34px;
+    line-height: 34px;
+    margin: 8px 0;
+    padding-left: 10px;
+    color: #777;
+    font-size: 15px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.item_box .select_set {
+    width: 100%;
+}
+.item_box input[type="text"] {
+    width: 97%;
+}
+.item_box input[type="text"]:focus {
+    color: #000;
+}
+.submit_send {
+    display: block;
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    background: #3791c3;
+    background: -moz-linear-gradient(top, #3791c3 0%, #1c4880 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3791c3), color-stop(100%, #1c4880));
+    background: -webkit-linear-gradient(top, #3791c3 0%, #1c4880 100%);
+    background: -o-linear-gradient(top, #3791c3 0%, #1c4880 100%);
+    background: -ms-linear-gradient(top, #3791c3 0%, #1c4880 100%);
+    background: linear-gradient(to bottom, #3791c3 0%, #1c4880 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3791c3', endColorstr='#1c4880', GradientType=0 );
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.submit_send:hover {
+    background: #2264a7;
+    background: -moz-linear-gradient(top, #2264a7 0%, #07264c 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2264a7), color-stop(100%, #07264c));
+    background: -webkit-linear-gradient(top, #2264a7 0%, #07264c 100%);
+    background: -o-linear-gradient(top, #2264a7 0%, #07264c 100%);
+    background: -ms-linear-gradient(top, #2264a7 0%, #07264c 100%);
+    background: linear-gradient(to bottom, #2264a7 0%, #07264c 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2264a7', endColorstr='#07264c', GradientType=0 );
+}
+/*********  各館遊戲介紹  *********/
+/*體彩*/
+.sports_box {
+	width: 100%;
+	border: 1px solid #d4d4d4;
+	background: #fff;
+	margin-bottom: 20px;
+}
+.sports_group {
+    width: 98%;
+    padding: 25px 0 5px 25px;
+}
+.sports_set {
+    display: inline-block;
+    *display: inline;
+    width: 47%;
+    margin: 0 2% 2% 0;
+}
+.sports_set2 {
+    display: inline-block;
+    *display: inline;
+    width: 98%;
+    margin: 0 2% 2% 0;
+}
+.sports_set3 {
+    display: inline-block;
+    *display: inline;
+    width: 100%;
+    margin: 0 auto;
+}
+.sports_nba, .sports_cba, .sports_bj, .sports_kbl, .sports_sbl, 
+.sports_el, .sports_cpbl, .sports_kbo, .sports_npb, .sports_mlb, 
+.sports_nhl, .sports_nfl {
+    display: inline-block;
+    *display: inline;
+    width: 87px;
+    height: 87px;
+}
+.sports_football, .sports_tennis{
+	display: inline-block;
+    *display: inline;
+    width: 750px;
+    height: 120px;
+    margin-left: 32px;
+    padding-bottom: 10px;
+}
+.sports_nba {
+    background: url(../images/help_icon/sports_nba.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.sports_cba {
+    background: url(../images/help_icon/sports_cba.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.sports_bj {
+    background: url(../images/help_icon/sports_bj.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.sports_kbl {
+    background: url(../images/help_icon/sports_kbl.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.sports_sbl {
+    background: url(../images/help_icon/sports_sbl.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.sports_el {
+    background: url(../images/help_icon/sports_el.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.sports_mlb {
+    background: url(../images/help_icon/sports_mlb.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.sports_npb {
+    background: url(../images/help_icon/sports_npb.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.sports_kbo {
+    background: url(../images/help_icon/sports_kbo.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.sports_cpbl {
+    background: url(../images/help_icon/sports_cpbl.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.sports_nhl {
+    background: url(../images/help_icon/sports_nhl.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.sports_nfl {
+    background: url(../images/help_icon/sports_nfl.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.sports_football {
+    background: url(../images/help_icon/sports_football.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.sports_tennis {
+    background: url(../images/help_icon/sports_tennis.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.sports_set dd, .sports_set2 dd, .sports_set3 dd, .lottery_set dd {
+    display: inline-block;
+    *display: inline;
+    line-height: 1.3;
+    margin-left: 8px;
+    font-size: 14px;
+    text-align: justify;
+    color: #555;
+}
+.sports_set dd {
+    width: 75%;
+    vertical-align: top;
+}
+.sports_set2 dd {
+    width: 85%;
+    vertical-align: top;
+}
+.sports_set3 dd {
+    width: 94%;
+    margin-bottom: 20px;
+}
+/*彩球*/
+.lottery_wn01, .lottery_wn02, .lottery_wn03, .lottery_wn04 {
+    display: inline-block;
+    *display: inline;
+    width: 410px;
+    height: 275px;
+    margin: 10px;
+}
+.lottery_hs01, .lottery_hs02, .lottery_hs03, .lottery_hs04 {
+    display: inline-block;
+    *display: inline;
+    width: 410px;
+    height: 207px;
+    margin: 10px;
+}
+.lottery_wn01{
+    background: url(../images/help_icon/lotteryWIN01.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.lottery_wn02{
+    background: url(../images/help_icon/lotteryWIN02.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.lottery_wn03{
+    background: url(../images/help_icon/lotteryWIN03.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.lottery_wn04{
+    background: url(../images/help_icon/lotteryWIN04.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.lottery_hs01{
+    background: url(../images/help_icon/lotteryHS01.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.lottery_hs02{
+    background: url(../images/help_icon/lotteryHS02.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.lottery_hs03{
+    background: url(../images/help_icon/lotteryHS03.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.lottery_hs04{
+    background: url(../images/help_icon/lotteryHS04.jpg) no-repeat;
+    background-size: 100% auto;
+}
+/*真人視訊*/
+.live_box {
+	width: 100%;
+	border: 1px solid #d4d4d4;
+	background: #fff;
+}
+.top_title {
+	width: 100%;
+    line-height: 34px;
+	background: #004a7b;
+	border-top: 1px solid #2c6e9a;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+}
+.live_title{
+	width: 100%;
+	line-height: 1.9;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background: #fff;
+    background: -moz-linear-gradient(top, #fff 0%, #c1c1c1 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #c1c1c1));
+    background: -webkit-linear-gradient(top, #fff 0%, #c1c1c1 100%);
+    background: -o-linear-gradient(top, #fff 0%, #c1c1c1 100%);
+    background: -ms-linear-gradient(top, #fff 0%, #c1c1c1 100%);
+    background: linear-gradient(to bottom, #fff 0%, #c1c1c1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#c1c1c1', GradientType=0 );
+    border-bottom: 1px solid #D4D4D4;
+    border-top: 1px solid #ccc;
+}
+.p_live_title{
+    display: inline-block;
+    *display: inline;
+    width: 49%;
+}
+.live_group{
+	width: 100%;
+    text-align: center;
+    margin: 5px auto;
+}
+.live_AllBet01, .live_AllBet02, .live_sa01, .live_sa02, 
+.live_ebet01, .live_ebet02, .live_AG01, .live_AG02, 
+.live_BBIN01, .live_BBIN02, .live_DG01, .live_DG02, 
+.live_IM01, .live_IM02, .live_East01, .live_East02 {
+    display: inline-block;
+    *display: inline;
+    width: 410px;
+    height: 220px;
+    margin: 10px;
+}
+.live_AllBet01{
+    background: url(../images/help_icon/liveAllbet01.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.live_AllBet02{
+    background: url(../images/help_icon/liveAllbet02.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.live_sa01{
+    background: url(../images/help_icon/livesa01.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.live_sa02{
+    background: url(../images/help_icon/livesa02.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.live_ebet01{
+    background: url(../images/help_icon/liveebet01.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.live_ebet02{
+    background: url(../images/help_icon/liveebet02.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.live_AG01{
+    background: url(../images/help_icon/liveAG01.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.live_AG02{
+    background: url(../images/help_icon/liveAG02.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.live_BBIN01{
+    background: url(../images/help_icon/liveBBIN01.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.live_BBIN02{
+    background: url(../images/help_icon/liveBBIN02.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.live_DG01{
+    background: url(../images/help_icon/liveDG01.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.live_DG02{
+    background: url(../images/help_icon/liveDG02.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.live_IM01{
+    background: url(../images/help_icon/liveIM01.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.live_IM02{
+    background: url(../images/help_icon/liveIM02.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.live_East01{
+    background: url(../images/help_icon/liveEast01.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.live_East02{
+    background: url(../images/help_icon/liveEast02.jpg) no-repeat;
+    background-size: 100% auto;
+}
+/*電子遊藝*/
+.game_sa01, .game_sa02, .game_ag01, .game_ag02, .game_bb01, .game_bb02, 
+.game_hb01, .game_hb02, .game_im01, .game_im02 {
+    display: inline-block;
+    *display: inline;
+    width: 410px;
+    height: 220px;
+    margin: 10px;
+}
+.game_sa01{
+    background: url(../images/help_icon/gameSA01.JPG) no-repeat;
+    background-size: 100% auto;
+}
+.game_sa02{
+    background: url(../images/help_icon/gameSA02.JPG) no-repeat;
+    background-size: 100% auto;
+}
+.game_ag01{
+    background: url(../images/help_icon/gameAG01.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.game_ag02{
+    background: url(../images/help_icon/gameAG02.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.game_bb01{
+    background: url(../images/help_icon/gameBBIN01.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.game_bb02{
+    background: url(../images/help_icon/gameBBIN02.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.game_hb01{
+    background: url(../images/help_icon/gameHB01.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.game_hb02{
+    background: url(../images/help_icon/gameHB02.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.game_im01{
+    background: url(../images/help_icon/gameIM01.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.game_im02{
+    background: url(../images/help_icon/gameIM02.jpg) no-repeat;
+    background-size: 100% auto;
+}

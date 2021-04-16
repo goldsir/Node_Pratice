@@ -1,0 +1,250 @@
+/*上方head背景設定*/
+.header_login {
+    height: 120px;
+    margin: 0 auto 15px;
+}
+.top_set {
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    z-index: 100;
+}
+.head_title {/*遊戲標題*/
+    color: #fff;
+    font-size: 2.4em;
+    font-weight: bold;
+    text-shadow: 1px 2px #131E2F;
+    padding: 50px 0 0 30px;
+    float: left;
+}
+.lobbybox {
+    margin: 50px 10px 0 0;
+}
+/*上方head右邊已登入資訊欄*/
+.lobby_box {
+    float: right;
+    width: 360px;
+    height: 55px;
+    line-height: 30px;
+    padding: 8px 0 12px 18px;
+    margin: 30px 30px 0 0;
+    text-align: left;
+    font-size: 15px;
+    background: #1d3a52;
+    border: 1px solid #122a3e;
+    border-right: 1px solid #4b99cc;
+    border-bottom: 1px solid #81bde4;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.text_green {
+    color: #00e000;
+}
+.members_itemlist .itemlink2 {/*刷新*/
+    width: 50px;
+    line-height: 15px;
+    padding-left: 24px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+.reload {/*刷新列*/
+    color: #fff;
+    vertical-align: middle;
+    cursor: pointer;
+    display: inline-block;
+    *display: inline;
+}
+.reloadicon {/*刷新圖示*/
+    background: url(../images/game_icon/reload_icon.png) no-repeat;
+    width: 15px;
+    height: 15px;
+}
+.reloadicon:hover {/*刷新圖示*/
+    background: url(../images/game_icon/reload_icon_H.png) no-repeat;
+    width: 15px;
+    height: 15px;
+}
+.members_itemlist .itemlink:hover, .reload:hover {
+    color: #ffca00;
+}
+
+/*menu按鈕列*/
+.menu_bar {
+    width: 1000px;
+    height: 60px;
+    margin: 0 auto;
+    background-color: #1d3951;
+    text-align: center;
+}
+.btn_box {
+    padding: 7px 0;
+    vertical-align: top;
+}
+.game_btn {
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    color: #fff;
+    padding: 4px 20px;
+    margin: 0 6px;
+    border: 1px solid #298cc5;
+    background-color: #0068ab;
+    position: relative;
+    display: inline-block;
+    *display: inline;
+}
+.game_btn:hover, .btn_box .selected {
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    color: #ffd800;
+    padding: 4px 20px;
+    margin: 0 6px;
+    border: 1px solid #df2157;
+    background-color: #c30683;
+    position: relative;
+    display: inline-block;
+    *display: inline;
+}
+.game_icon_1 {
+    background: url(../images/game_icon/icon_title_01.png) no-repeat;
+}
+.game_icon_2 {
+    background: url(../images/game_icon/icon_title_02.png) no-repeat;
+}
+.game_icon_3 {
+    background: url(../images/game_icon/icon_title_03.png) no-repeat;
+}
+.game_icon_1, .game_icon_2, .game_icon_3 {
+    width: 36px;
+    height: 36px;
+    background-size: 100% auto;
+    vertical-align: middle;
+    position: relative;
+    display: inline-block;
+    *display: inline;
+}
+/*下方內容*/
+.game_content {
+    width: 1000px;
+    padding: 20px 0;
+    margin: 0 auto;
+    background-color: #e5e5e5;
+    text-align: center;
+}
+.gameicon_bg {
+    width: 196px;
+    padding: 0 6px 4px;
+    text-align: center;
+    background-color: #1e3951;
+    border-top: 1px solid #1294e8;
+    border-left: 1px solid #0068ab;
+    border-right: 2px solid #07293e;
+    border-bottom: 2px solid #09161e;
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.8);
+    margin: 0 12px 24px;
+    display: inline-block;
+    *display: inline;
+}
+.gameicon_bg_M {
+    width: 360px;
+    padding: 0 6px 4px;
+    text-align: center;
+    background-color: #1e3951;
+    border-top: 1px solid #1294e8;
+    border-left: 1px solid #0068ab;
+    border-right: 2px solid #07293e;
+    border-bottom: 2px solid #09161e;
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.8);
+    margin: 0 12px 24px;
+    display: inline-block;
+    *display: inline;
+}
+.gameicon_bg_L {
+    width: 360px;
+    padding: 0 6px 4px;
+    text-align: center;
+    background-color: #1e3951;
+    border-top: 1px solid #1294e8;
+    border-left: 1px solid #0068ab;
+    border-right: 2px solid #07293e;
+    border-bottom: 2px solid #09161e;
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.8);
+    margin: 0 12px 24px;
+    display: inline-block;
+    *display: inline;
+}
+.gameicon_title {
+    width: 94%;
+    font-size: 1em;
+    font-weight: bold;
+    color: #1e3951;
+    padding: 6px 0;
+    margin: 7px auto;
+    background-color: #f0ca21;
+    border-radius: 6px;
+    border: 1px solid #ffd800;
+}
+.gamebtn_L {
+    width: 60%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.gamebtn_R {
+    width: 30%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.gamebtn_L, .gamebtn_R {
+    font-size: 1em;
+    line-height: 2em;
+    color: #fff;
+    background: #009bff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#009bff), to(#035387));
+    background: -moz-linear-gradient(top,  #009bff,  #035387);
+    filter:  progid:DXImaGETransform.Microsoft.gradient(startColorstr='#009bff', endColorstr='#035387');
+    border: none;
+    border: 1px solid #298cc5;
+    margin: 2px 0;
+    cursor: pointer;
+    display: inline-block;
+    *display: inline;
+}
+.gamebtn_L:hover, .gamebtn_R:hover {
+    font-size: 1em;
+    line-height: 2em;
+    color: #ffd800;
+    background: #c30683;
+    background: -webkit-gradient(linear, left top, left bottom, from(#c30683), to(#830327));
+    background: -moz-linear-gradient(top,  #c30683,  #830327);
+    filter:  progid:DXImaGETransform.Microsoft.gradient(startColorstr='#c30683', endColorstr='#830327');
+    border: none;
+    border: 1px solid #df2157;
+    margin: 2px 0;
+    display: inline-block;
+    *display: inline;
+}
+
+/*********  以下為 各不同寬度螢幕_設定  *********/
+/* 寬度大於 1901px (電腦) */
+@media screen and (min-width: 1901px) {
+}
+/* 寬度介於 1600px - 1900px (電腦) */
+@media screen and (min-width: 1600px) and (max-width: 1900px) {
+}
+/* 寬度介於 1281px - 1599px (電腦) */
+@media screen and (min-width: 1281px) and (max-width: 1599px) {
+}
+/* 寬度介於 1025px - 1280px (電腦) */
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+}
+/* 寬度小於 1023px (電腦) */
+@media screen and (max-width: 1024px) {
+    body {
+        min-width: 1024px;
+    }
+}

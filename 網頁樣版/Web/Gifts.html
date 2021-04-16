@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="content-language" content="zh-cn" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="css/reset.css?111" rel="stylesheet" type="text/css">
+	<link href="css/popup.css?111" rel="stylesheet" type="text/css">
+    <link href="css/members.css?111" rel="stylesheet" type="text/css">
+    <link href="css/calendar.css" rel="stylesheet" type="text/css"><!--JS日历效果-->
+    <script src="js/calendar.js" type="text/javascript" language="javascript"></script><!--jS日历效果-->
+    <title>活动点数</title>
+</head>
+
+<body>
+<div class="popup_members">
+	<div class="popup_bigtop">
+		<div class="bg_subtop">
+			<div class="popup_logo"></div>
+			<div class="title">活动点数</div>
+		</div>
+		<div class="bg_submenu">
+			<a href="Deposit.html" class="btn_submenu">存款</a>
+			<a href="Withdrawal.html" class="btn_submenu">提款</a>
+			<a href="MemberChange.html" class="btn_submenu">会员互转</a>
+			<a href="MoneyChange.html" class="btn_submenu">交易记录</a>
+			<a href="Gifts.html" class="btn_submenu selected">活动点数</a>
+			<a href="ChangeInfoPassword.html" class="btn_submenu">变更资料</a>
+			<a href="http://www41.53kf.com/webCompany.php?arg=10126075&style=1" target="_blank" class="btn_service">线上客服</a>
+		</div>
+	</div>
+
+    <!--活动点数-->
+    <div class="gift_submain">
+		<form class="type_list" id="" action="" method="post">
+			<div class="type_set">
+				<span>类型：</span>
+				<select name="Bao">
+					<option value="0" selected="selected">全部</option>
+					<option value="1">主账户</option>
+					<option value="14">赢家体育</option>
+					<option value="3">彩票游戏</option>
+					<option value="2">电子游艺</option>
+					<option value="4">皇家娱乐</option>
+					<option value="6">东方会娱乐</option>
+					<option value="7">欧博娱乐</option>
+					<option value="13">eBet娱乐</option>
+					<option value="9">SA电子</option>
+					<option value="12">哈巴电子</option>
+					<option value="15">kuma电子</option>
+				</select>
+			</div>
+			<input type="button" class="btn_search btn_sentout" onclick="" value="搜寻">
+			<div class="date_select">
+				<input type="button" id="thisWeek_Data" class="btn_sentout selected" onclick="" value="上周">
+				<input type="button" id="lastWeek_Data" class="btn_sentout" onclick="" value="本周">
+			</div>
+		</form>
+
+		<div class="gift_set">
+			<table class="gift_list">
+				<tbody>
+					<tr class="gift_item">
+						<th class="cell1">交易时间</th>
+						<th class="cell2">单号</th>
+						<th class="cell3">交易类别</th>
+						<th class="cell4">交易内容</th>
+						<th class="cell5">交易点数</th>
+						<th class="cell6">交易状态</th>
+						<th class="cell7">馀额</th>
+					</tr>
+					<tr id="GP_NoData" class="no_data" style="display: none;">
+						<td colspan="9">尚无任何记录</td>
+					</tr>
+					<tr class="data_item">
+						<td id="GP_Date" class="gift_date">
+							<span>2017-06-14</span>&nbsp;<span class="text_gray">18:48:41</span>
+						</td>
+						<td id="GP_Number">3723227</td>
+						<td id="GP_Type">存款存款</td>
+						<td id="GP_Info">优惠活动-首存，会员每月回馈</td>
+						<td id="GP_Money" class="moneychange">-350,000.00</td>
+						<td id="GP_Mode" class="text_deepgreen">成功成功</td>
+						<td id="GP_Balance" class="moneychange">-245,146,752.91</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

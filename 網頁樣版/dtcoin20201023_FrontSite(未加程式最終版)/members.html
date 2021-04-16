@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="favicon.ico?2018101901" rel="shortcut icon" type="image/x-icon">
+        <link href="css/lightbox.css" rel="stylesheet" type="text/css" media="all">
+        <link href="css/owl.carousel.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="css/style.css?2018101901" rel="stylesheet" type="text/css">
+        <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/move-top.js" type="text/javascript"></script>
+        <script src="js/easing.js" type="text/javascript"></script>
+        <script src="js/no_fold.js" type="text/javascript"></script><!--左_下拉折疊區-->
+        <title>易匯【註冊/登入】</title>
+    </head>
+
+    <body>
+        <!--上面-->
+        <div class="header" id="home">
+            <!--LOGO-->
+            <nav class="navbar navbar-default nav-dflt-setin">
+                <div class="container">
+                    <div class="navbar-header nav-min-wid">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">易匯</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="index.html"><img src="images/index/index_logo.png" alt="" class="index_logo"></a>
+                    </div>
+
+                    <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav nav-max-wid cl-effect-5" id="cl-effect-5">
+                            <li><a href="services.html"><span data-hover="服務項目">服務項目</span></a></li>
+                            <li><a href="member_center.html"><span data-hover="會員中心">會員中心</span></a></li>
+                            <li><a href="contact.html"><span data-hover="聯繫客服">聯繫客服</span></a></li>
+                            <li><a href="members.html"><span data-hover="註冊 / 登入" class="active">註冊 / 登入</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!--跑馬燈-->
+            <a href="#" class="marquee_set">
+                <marquee class="running" direction="left" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="6">
+                    <span id="Notice">親愛的會員您好：本公司將在PM12:00至PM15:00進行系統升級優化。維護期間本公司將暫停所有相關各項服務。造成不便敬請見諒，若還有任何疑慮，可聯繫線上客服諮詢，謝謝！</span>
+                </marquee>
+            </a>
+        </div>
+
+        <!--中間-->
+        <div class="print_pt container">
+            <!--物件列表-->
+            <div class="member_set">
+                <div class="slogan">
+                    <span class="glyphicon glyphicon glyphicon-user" aria-hidden="true"></span>註冊 / 登入
+                </div>
+                <div class="register_set col-sm-6 col-xs-12">
+                    <h4><span class="glyphicon glyphicon-registration-mark" aria-hidden="true"></span>免費註冊 REGISTER</h4>
+                    <form id="register" class="mb_from">
+                        <ul>
+                            <li>
+                                <label class="title"><span class="text_red">* </span>會員帳號</label>
+                                <input type="text" id="" placeholder="輸入6-20英數字碼組合" value="" minlength="6" maxlength="20" onkeyup="this.value=this.value.replace(/[^\w_]/g,'');" class="text">
+                                <!--錯誤訊息-->
+                                <div class="err_tip" style="display: none;">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                    <span>請勿空白</span>
+                                </div>
+                                <div class="err_tip" style="display: none;">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                    <span>格式錯誤</span>
+                                </div>
+                            </li>
+                            <li>
+                                <label class="title"><span class="text_red">* </span>會員密碼</label>
+                                <input type="password" id="" placeholder="輸入6-20英數字碼組合" value="" minlength="6" maxlength="20" onkeyup="this.value=this.value.replace(/[^\w_]/g,'');" class="text">
+                                <!--錯誤訊息-->
+                                <div class="err_tip" style="display: none;">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                    <span>請勿空白</span>
+                                </div>
+                                <div class="err_tip" style="display: none;">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                    <span>格式錯誤</span>
+                                </div>
+                            </li>
+                            <li>
+                                <label class="title"><span class="text_red">* </span>確認密碼</label>
+                                <input type="password" id="PWConfirm" placeholder="再次輸入密碼" value="" minlength="6" maxlength="20" onkeyup="this.value=this.value.replace(/[^\w_]/g,'');" class="text">
+                                <!--錯誤訊息-->
+                                <div class="err_tip" style="display: none;">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                    <span>請勿空白</span>
+                                </div>
+                                <div class="err_tip" style="display: none;">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                    <span>密碼輸入錯誤</span>
+                                </div>
+                            </li>
+                            <li>
+                                <label class="title"><span class="text_red">* </span>真實姓名</label>
+                                <input type="text" id="" placeholder="" value="" class="text">
+                                <!--錯誤訊息-->
+                                <div class="err_tip" style="display: none;">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                    <span>請勿空白</span>
+                                </div>
+                            </li>
+                            <li>
+                                <label class="title"><span class="text_red">* </span>性別</label>
+                                <input type="radio" name="sextype" value="male" class="input_chk">
+                                <span>男</span>
+                                <input type="radio" name="sextype" value="female" class="input_chk mg_l">
+                                <span>女</span>
+                            </li>
+                            <li>
+                                <label class="title"><span class="text_red">* </span>手機號碼</label>
+                                <input type="text" id="" placeholder="輸入手機號碼" value="" maxlength="10" onkeyup="this.value=this.value.replace(/\D/g,'')" class="text">
+                                <!--錯誤訊息-->
+                                <div class="err_tip" style="display: none;">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                    <span>請勿空白</span>
+                                </div>
+                                <div class="err_tip" style="display: none;">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                    <span>請輸入手機號碼(不含符號)</span>
+                                </div>
+                            </li>
+                            <li class="check_code">
+                                <label class="title"><span class="text_red">* </span>取得手機簡訊碼</label>
+                                <input type="text" id="" placeholder="" value="" maxlength="4" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" class="verify_code">
+                                <img class="RegNumber" src="/img.png/">
+                                <input type="button" id="VerifyCode" value="送出" onclick="sendPhoneCheck()" class="btn_verify">
+                                <!--錯誤訊息-->
+                                <div class="err_tip" style="display: none;">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                    <span>手機簡訊碼錯誤</span>
+                                </div>
+                                <div class="fa-sync-alt"></div>
+                            </li>
+                            <li>
+                                <label class="title"><span class="text_red">* </span>輸入手機簡訊碼</label>
+                                <input type="text" id="" placeholder="輸入手機簡訊內認證碼" value="" maxlength="" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" class="text">
+                                <!--錯誤訊息-->
+                                <div class="err_tip" style="display: none;">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                    <span>請輸入手機簡訊內的認證碼</span>
+                                </div>
+                            </li>
+                            <li class="other">
+                                (注：<span class="text_red"> * </span>為必填資料)
+                            </li>
+                            <div class="regchk_set">
+                                <input type="checkbox" name="Reg18Chk" id="Reg18Chk" class="input_check">
+                                <span>我已閱讀並同意</span>
+                                <a href="#" target="_blank" class="text_red">【易匯會員條款】</a>
+                            </div>
+                        </ul>
+                        <input type="button" onclick="" id="" placeholder="" value="確認註冊" class="btn_login">
+                    </form>
+                </div>
+
+                <div class="login_set col-sm-6 col-xs-12">
+                    <h4><span class="glyphicon glyphicon-user" aria-hidden="true"></span>登入帳號 SIGN IN</h4>
+                    <form id="login" class="mb_from">
+                        <ul>
+                            <li>
+                                <label class="title">會員帳號</label>
+                                <input type="text" id="" placeholder="輸入6-20英數字碼" value="" minlength="6" maxlength="20"  onkeyup="this.value=this.value.replace(/[^\w_]/g,'');" class="text">
+                                <!--錯誤訊息-->
+                                <div class="err_tip" style="display: none;">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                    <span>請勿空白</span>
+                                </div>
+                                <div class="err_tip" style="display: none;">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                    <span>輸入錯誤</span>
+                                </div>
+                            </li>
+                            <li>
+                                <label class="title">會員密碼</label>
+                                <input type="password" id="" placeholder="輸入6-20英數字碼" value="" minlength="6" maxlength="20" onkeyup="this.value=this.value.replace(/[^\w_]/g,'');" class="text">
+                                <!--錯誤訊息-->
+                                <div class="err_tip" style="display: none;">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                    <span>請勿空白</span>
+                                </div>
+                                <div class="err_tip" style="display: none;">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                    <span>輸入錯誤</span>
+                                </div>
+                            </li>
+                            <li class="check_code">
+                                <label class="title">驗證碼</label>
+                                <input type="text" id="CheckCode" name="CheckCode" maxlength="4" placeholder="輸入後方驗證碼" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" class="code">
+                                <img class="RegNumber" src="/img.png/">
+                                <div class="fa-sync-alt"></div>
+                            </li>
+                            <li class="other">
+                                <input type="checkbox" id="">
+                                <label>記住帳號</label>
+                                <a href="forgot_pw.html" class="forgot_pw">忘記密碼？</a>
+                            </li>
+                        </ul>
+                        <input type="button" id="" placeholder="" value="登入" class="btn_login">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--下面-->
+        <div class="footer">
+            <div class="ft-bottom">
+                <div class="container">
+                    <p>Copyright &copy; 2018.易匯 E-DT All rights reserved.</p>
+                </div>
+            </div>
+
+            <!--回到最上方(按鈕)-->
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $().UItoTop({ easingType: 'easeOutQuart' });
+                });
+            </script>
+
+            <a href="#home" id="toTop" class="scroll" style="display: block;">
+                 <span id="toTopHover" style="opacity: 1;"> </span>
+            </a>
+        </div>
+
+        <!--使用條款與免責聲明_跳框-->
+        <div id="popup_tip" class="popup_tipset RegPage" style="/*display: none;*/">
+            <div class="popup_container">
+                <div class="popup">
+                    <div class="btn_close" onclick="document.getElementById('popup_tip').style.display='none'"></div>
+                    <div class="popup_title">
+                        <span>會員條款</span>
+                    </div>
+                    <div class="popup_In">
+                        <div class="text_set">
+                            <div class="rule_words">
+                                <div class="title">會員服務同意書</div>
+                                <div class="text">以下為《E-DT會員服務同意書》。 歡迎加入易匯會員(以下簡稱本公司)。 本同意書載明您在使用E-DT網站會員帳號的服務 ( 以下簡稱本服務 )時，應有的權利、應盡的義務及所適用的條件與條款等資料，同時記載本公司應負之責任與義務，請您務必詳細閱讀，以保障您的權益。雙方同意以電子文件作為表示方法，並具書面表示的效果，一旦您按下同意鍵後，即表示您使用本服務時，同意並願意遵守本同意書以下所有內容及規定；本公司有權於任何時間新增、修改或刪除本同意書之內容，您同意本公司得不另行個別通知。您於任何新增、修改或刪除後繼續使用本服務，視為您同意並願意接受本同意書該等新增、修改或刪除，敬請定期查詢本服務網站) 。</div>
+
+                                <div class="title">第一條：註冊注意事項</div>
+                                <div class="text">
+                                    易匯係依據《E-DT會員服務同意書》提供本服務。您於註冊成為會員後，即可使用本服務。當您使用本公司的服務時，即表示您同意並願意遵守本公司之會員規範（含《E-DT會員服務同意書》及為執行《E-DT會員服務同意書》而於本服務網站所公布之所有服務與管理等公告，以下合稱本規範）、及中華民國法律之規定。
+                                    <br><br>
+                                    而且如果您未滿二十歲，尚須於您的法定代理人（或法院選任之特別代理人）詳閱、瞭解並同意本規範之所有內容及其後修改變更後，方可使用或繼續使用本服務。當您使用或繼續使用本服務時，即視為您的法定代理人（或法院選任之特別代理人）已詳閱、瞭解並同意接受本規範之所有內容及其後之修改變更。
+                                </div>
+
+                                <div class="title">第二條：個人身分資料之提供</div>
+                                <div class="text">本公司將提供您『E-DT會員服務』，向您要求提供下列資料：</div>
+                                <ul class="list">
+                                    <li>真實姓名</li>
+                                    <li>身分證字號</li>
+                                    <li>出生年月日</li>
+                                    <li>E-mail</li>
+                                    <li>手機門號</li>
+                                    <li>住址</li>
+                                </ul>
+                                <div class="text">
+                                    如您上列的資料有變動時應隨時更新。若您提供的資料不實，本公司得隨時暫停或終止您的會員資格及使用各項服務之權利。
+                                    <br><br>
+                                    此外，若您以不正當之方式取得數位代幣進行租幣或交易，本公司也將保留隨時終止您會員資格及使用各項服務之權利（例如停止或刪除您於本服務網站之帳號）。
+                                </div>
+
+                                <div class="title">第三條：隱私權政策</div>
+                                <div class="text">對於您使用本服務而留存之個人資料，悉依本公司「個人資料暨隱私權保護政策」，受到保護與規範，請您詳細閱讀並瞭解該政策之內容。</div>
+
+                                <div class="title">第四條：帳號及密碼</div>
+                                <div class="text">
+                                    您在註冊成為會員時，需設定一組帳號、密碼。您瞭解帳號一旦設定，就不可再變更；而密碼則可以在本服務上進行變更。
+                                    <br><br>
+                                    本公司（含客服人員）絕不會主動詢問你的密碼，您就您的帳號及密碼的保管負全責；您同意您不會將帳號、密碼轉讓或出借予他人使用。
+                                    <br><br>
+                                    若您發現您的帳號遭人非法使用或有任何異常破壞使用安全的情形時，您應立即通知本公司；但若是因為您的保管疏忽，而導致帳號、密碼遭他人非法使用時，本公司將不負責處理。 使用者對於其個人資料、付款資料（包含信用卡資料）及會員密碼等，應妥善保管並避免外洩。 上述您所提供之資訊及密碼，為消費者在使用『E-DT會員服務』進行交易時之重要認證依據。
+                                    <br><br>
+                                    本公司將依照您所提供之資訊進行包括公司之認證、消費交易紀錄之保存及認證訊息之發送、會員訊息或相關活動之告知、或未來收取使用費用之依據，您有義務妥善保管您的身分資料之機密及安全，不得洩漏給任何第三人知悉。
+                                </div>
+
+                                <div class="title">第五條：服務與限制</div>
+                                <ul class="list">
+                                    <li>所有本服務網站內之電磁記錄等，皆屬本公司所有；但您明瞭且知悉所有資訊、數據、原件、軟體、音樂、聲響、照片、圖片、錄影帶、訊息或其他素材(以下統稱為內容)，無論是公開貼文或是私下透過本服務傳遞者，皆由原發表人自負一切責任。若伺服器超載以致有電磁記錄無法寫入之情形發生時，您同意本公司重開伺服器，將資料回復至未超載前之狀態。為了提供更好的服務品質，需硬體設備變更或調整時，您同意本公司可以將您使用的帳號及相關記錄轉移至其他位置，您也承諾願意配合進行相關設定以因應此類調整。您必須使用正當的方式上線，如您使用違法的方式上線，本公司對您的帳號將保留限制的權利；若您攻擊本公司伺服器，本公司即有權關閉您的 IP 地址，並刪除您的相關電磁紀錄。 您若對於本服務處理您帳號的相關記錄有疑問，您必須提出與您帳號相符的證明資料並請提供您的真實姓名、身分證字號、連絡電話及Email等訊息向本公司申請查核；此外，您瞭解並同意本公司僅保存最近六個月內的交易紀錄。又若您的帳號連續六個月以上未使用且未存有數位代幣，您瞭解並同意本公司有不經告知直接停止您帳號的權利。</li>
+                                    <li>國際使用之特殊警示：您理解互聯網具有全球性，而同意遵守所有您原籍國或行為地國家關於線上行為和可接受內容所適用的法律，法規和規章。</li>
+                                </ul>
+
+                                <div class="title">第六條：個人身分資料之保護</div>
+                                <div class="text">本公司除因配合司法機關要求而提供上列之個人資訊外，將依照現行個人資料保護法之規定，在未經您本人同意的狀況下，本公司所獲得關於您的各項個人資料都將保密。</div>
+
+                                <div class="title">第七條：責任限制</div>
+                                <ul class="list">
+                                    <li>終止契約
+                                        <div class="text">如您欲終止本會員契約，應以書面或電子郵件通知本公司。若您會員帳號內有未使用之E-DT租幣數位代幣，本公司在扣除必要之成本後，將剩餘款項退還予您。</div>
+                                    </li>
+                                    <li>帳號鎖定
+                                        <div class="text">
+                                            當本公司合理懷疑使用者有不法情事發生時（包括但不限於本帳號所租幣之數位代幣經他人向警方報案涉及詐騙或其他刑事案件，或您的虛擬數位代幣卡(以下簡稱虛擬卡)遭竊取、遺失、誤儲、損失或功能故障），您應立即通知本公司並提供虛擬卡面額及序號之購買收據或其他證明，您同意本公司先行鎖定您開啟的服務帳號，並且主動或配合相關單位，移送您的相關資料供檢警調等司法機關調查處理。並靜待及依據司法終局判決之結果，處置本帳號內之租幣數位代幣。
+                                            <br><br>
+                                            當本公司合理懷疑本帳號所租幣之數位代幣是以不正當方式取得時，您同意本公司先行鎖定您開啟的服務帳號及進行身分驗證，如本公司認定您有違反本服務條款規定者，視情節輕重，本公司得逕行停止或刪除您於本服務網站之帳號，或於移除該不當數位代幣後始解除帳號鎖定。
+                                        </div>
+                                    </li>
+                                    <li>損害賠償
+                                        <div class="text">本服務之虛擬卡交易僅提供會員於本服務平台上使用，任何會員不得於他途上私自販售，如私做實體數位代幣卡，否則將有侵權行為，本公司得要求所有相關之損失及費用，其包括但不限於違約金、訴訟費、律師費、及和解金等相關費用。任何第三人因您使用、連接本服務或違反本服務條款或侵害任何第三人之權利或違反法令而所提交、張貼、傳遞或使其有效之內容所提出之任何主張或要求所導致之損害，您同意賠償本公司以及本公司之承包商、關係企業、管理人員、代理人，聯名廠商或其他合作夥伴及員工，包括合理的律師費用。</div>
+                                    </li>
+                                    <li>款項費用及權責
+                                        <div class="text">若本公司與金流業者所規範的期限內無法收到您經由線上刷卡、小額付費或其他非使用現金方式購買商品或使用服務之費用時，本公司有權停止您在智冠科技申請之一切帳號及服務，並得將提供相關資料給遊戲或服務平台廠商評估進行帳號鎖定的程序。當您的款項繳交後，請透過E-DT客服中心 進行帳號解開通的相關流程申請。</div>
+                                    </li>
+                                </ul>
+
+                                <div class="title">第八條：其他行為及與其他網站之連結</div>
+                                <div class="text">
+                                    本服務網站可能會提供與其他網站之連結，該等網站均由各該業者獨立經營、控制、及完全負責，會員須自行決定連結與否，本公司不擔保連結之過程及其所衍生之任何結果。若您連結到一些令您感到厭惡或不需要的網站，建議您不要瀏覽或儘速離開該等網站。 會員或廠商可能透過本服務網站或經由連結之其他網站提供商品買賣、服務或其他交易行為，您若因此與該會員或廠商進行交易，此等交易之權利義務均僅存在於您與該會員或廠商兩造之間，本公司絕不涉入您與會員或廠商間的任何買賣、服務或其他交易行為以及其所衍生之任何爭執。
+                                    <br><br>
+                                    會員或廠商可能透過本服務網站或經由連結之其他網站提供軟體或資料的下載、資訊與建議、以及新聞、訊息、電子報等各項內容，本公司不做實質之審查，亦不負任何擔保責任。您應自負風險且自行斟酌、判斷接受、下載或使用與否、並為接受、下載或使用之後果負完全責任，其包括但不限於侵害第三人智慧財產權、及因任何資料之下載所導致您電腦系統之任何毀損或資料流失等。此外，若您透過本服務網站提供軟體或資料的下載、資訊與建議、以及新聞、訊息、電子報等各項內容予 其他會員，您無異議同意本公司得無條件重製、複製、轉載、使用、引用、修改、改作、衍生、公開播放、散布、發行、展示發表、及轉授權該等內容及資料。同 時，您保證本公司對該等內容及資料之重製、複製、轉載、使用、引用、修改、改作、衍生、公開播放、散布、發行、展示發表、及轉授權，不致侵害第三人之智慧 財產權，否則您對本公司應負損害賠償責任（包括但不限於律師費及訴訟費用等）。
+                                    <br><br>
+                                    會員或廠商可能透過本服務網站或經由連結之其他網站提供廣告圖文、樣品、銷售資訊等各項內容，您應自負風險且自行斟酌、判斷接受或使用與否，並為接受或使用之後果負完全責任，本公司純屬接受委託刊登，不做任何實質之審查，亦不負任何擔保責任。
+                                </div>
+
+                                <div class="title">第九條：您的責任與義務</div>
+                                <div class="text">
+                                    您承諾基於合法的目的並以合法的方式使用本服務及本服務網站，您對於您公佈於本服務及本服務網站或透過本服務及本服務網站傳輸的一切內容負全責。
+                                    <br><br>
+                                    您承諾遵守中華民國相關法規及一切國際網際網路之規定與慣例。您同意並保證不公佈或傳送任何誹謗、不實、威脅、不雅、猥褻、不法、侵害他人智慧財產權、或違反公序良俗的資訊或內容於本服務及本服務網站上。您同意並保證不利用本服務及本服務網站從事本公司有正當理由認為不適當之行為，如濫發廣告郵件等。
+                                    <br><br>
+                                    您同意遵守本服務網站客服中心之公告。您的行為若違反本規範或任何法令，您同意本公司得隨時停止您使用本公司服務之權利，且本公司不需對任何第三人承擔責任，本公司並得立即拒絕或移除您公佈於本服務及本服務網站或透過本服務及本服務網站傳輸的一切內容。
+                                </div>
+
+                                <div class="title">第十條：本公司得不為通知並保留隨時修改或暫時提供本服務(或其中一部)之權利。您同意本公司對於任何修改或暫停本服務之情形對於您或第三人不負任何責任。本公司或使用者有下列情事發生時，本線上服務自動終止：</div>
+                                <ul class="list">
+                                    <li>定期檢查或施工、軟硬體之更新等，即暫停服務，本公司將盡快完成維修維護動作。</li>
+                                    <li>如伺服器遭到任何形式之破壞，無法正常運作時。</li>
+                                    <li>ISP 網路線路傳輸品質不良，或其他透過網際網路連結至本公司伺服器之動作發生滯礙等情形。</li>
+                                    <li>天災、地變如水災、火災、地震等人力不可抗拒之因素。</li>
+                                </ul>
+
+                                <div class="title">第十一條： 風險</div>
+                                <div class="text">請本諸謹慎、合於常理判斷、交易安全性 ( 包括但不限於對方交易者行為能力、身份真實性、與法定年齡以下之人交易、國際貿易等風險 ) 等的考量使用本服務。</div>
+
+                                <div class="title">第十二條：系統中斷或故障等其他限制</div>
+                                <div class="text">本服務有時會因受干擾、或外部線路、或天災等不可抗力、及各種軟、硬體等問題，可能會出現服務中斷或故障等狀況，並將造成您使用上的不便、資料喪失、錯誤 或遭人為篡改或其他經濟損失等情形。您於使用本服務時宜採取自我防護措施。本公司對於您因此使用或因此無法使用本服務而造成的損害，不負任何賠償責任。</div>
+
+                                <div class="title">第十三條：一般規定</div>
+                                <ul class="list">
+                                    <li>本服務之詳細內容等相關規定，請查詢本服務網</li>
+                                    <li>本會員公約及相關規範並不構成與本公司間具有任何合資、代理、特許權授與、聘僱等關係。</li>
+                                    <li>本規範若有任何一部無效，不影響其他部分之效力。</li>
+                                    <li>本規範若有任何爭議，以中華民國法律為準據法，並以臺灣臺北地方法院為第一審管轄法院。</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="popup_btn">
+                            <input type="button" onclick="document.getElementById('popup_tip').style.display='none'" class="popupbtn_yes" value="關閉">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

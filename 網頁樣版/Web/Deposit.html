@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="content-language" content="zh-cn" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="css/reset.css?111" rel="stylesheet" type="text/css">
+    <link href="css/popup.css?111" rel="stylesheet" type="text/css">
+    <link href="css/members.css?111" rel="stylesheet" type="text/css">
+    <title>存款</title>
+</head>
+
+<body>
+<div class="popup_members">
+	<div class="popup_bigtop">
+		<div class="bg_subtop">
+			<div class="popup_logo"></div>
+			<div class="title">存款</div>
+		</div>
+		<div class="bg_submenu">
+			<a href="Deposit.html" class="btn_submenu selected">存款</a>
+			<a href="Withdrawal.html" class="btn_submenu">提款</a>
+			<a href="MemberChange.html" class="btn_submenu">会员互转</a>
+			<a href="MoneyChange.html" class="btn_submenu">交易记录</a>
+			<a href="Gifts.html" class="btn_submenu">活动点数</a>
+			<a href="ChangeInfoPassword.html" class="btn_submenu">变更资料</a>
+			<a href="http://www41.53kf.com/webCompany.php?arg=10126075&style=1" target="_blank" class="btn_service">线上客服</a>
+		</div>
+	</div>
+
+	<!--存款-->
+	<div class="deposit_submain">
+		<!--<div class="deposit_msg">
+			<div class="bankinfo_box">
+				<h5>存款方式维护通知</h5>
+				<div class="notice_box"><span class="text_yellow">4</span>&nbsp;则</div>
+			</div>
+		</div>-->
+		<div class="dp_list">
+			<!--微信支付-->
+			<div class="btn_dplink">
+				<!--維護中-->
+				<div class="maintenance_bg" style="display: none;">
+					<div class="maintain_text">维护中</div>
+				</div>
+				<!--正常營運-->
+				<div class="btn_dpicon" onclick="window.location='DepositWechat.html'">
+					<div class="icon_wechat"></div>
+				</div>
+				<div class="btn_dpset">
+					<div class="text">微信支付</div>
+					<a href="Example/payfor_Wechat.html" target="_blank" class="example">范例</a>
+				</div>
+			</div>
+
+			<!--支付宝-->
+			<div class="btn_dplink">
+				<!--維護中-->
+				<div class="maintenance_bg" style="display: none;">
+					<div class="maintain_text">维护中</div>
+				</div>
+				<!--正常營運-->
+				<div class="btn_dpicon" onclick="window.location='DepositAlipay.html'">
+					<div class="icon_alipay"></div>
+				</div>
+				<div class="btn_dpset">
+					<div class="text">支付宝</div>
+					<a href="Example/payfor_Alipay.html" target="_blank" class="example">范例</a>
+				</div>
+			</div>
+
+			<!--在线支付-->
+			<div class="btn_dplink">
+				<!--維護中-->
+				<div class="maintenance_bg" style="display: none;">
+					<div class="maintain_text">维护中</div>
+				</div>
+				<!--正常營運-->
+				<div class="btn_dpicon" onclick="window.location='DepositWeb.html'">
+					<div class="icon_unionpay"></div>
+				</div>
+				<div class="btn_dpset">
+					<div class="text">在线支付</div>
+					<a href="Example/payfor_Web.html" target="_blank" class="example">范例</a>
+				</div>
+			</div>
+
+			<!--网路银行-->
+			<div class="btn_dplink" onclick="window.location='DepositRealBank.html'">
+				<!--維護中-->
+				<div class="maintenance_bg" style="display: none;">
+					<div class="maintain_text">维护中</div>
+				</div>
+				<!--正常營運-->
+				<div class="btn_dpicon">
+					<div class="icon_realbank"></div>
+				</div>
+				<div class="btn_dpset">
+					<div class="text">网路银行</div>
+					<a href="Example/payfor_RealBank.html" target="_blank" class="example">范例</a>
+				</div>
+			</div>
+
+			<!--在线网银-->
+			<div class="btn_dplink" onclick="window.location='DepositWebBank.html'">
+				<!--維護中-->
+				<div class="maintenance_bg" style="display: none;">
+					<div class="maintain_text">维护中</div>
+				</div>
+				<!--正常營運-->
+				<div class="btn_dpicon">
+					<div class="icon_onlinepay"></div>
+				</div>
+				<div class="btn_dpset">
+					<div class="text">在线网银</div>
+					<a href="Example/payfor_Web.html" target="_blank" class="example">范例</a>
+				</div>
+			</div>
+
+			<!--快捷支付-->
+			<div class="btn_dplink" onclick="window.location='DepositUnionFast.html'">
+				<!--維護中-->
+				<div class="maintenance_bg" style="display: none;">
+					<div class="maintain_text">维护中</div>
+				</div>
+				<!--正常營運-->
+				<div class="btn_dpicon">
+					<div class="icon_fast_pay"></div>
+				</div>
+				<div class="btn_dpset">
+					<div class="text">快捷支付</div>
+					<a href="Example/payfor_FastPay.html" target="_blank" class="example">范例</a>
+				</div>
+			</div>
+
+			<!--QQ充值-->
+			<div class="btn_dplink" onclick="window.location='DepositQQ.html'">
+				<!--維護中-->
+				<div class="maintenance_bg" style="display: none;">
+					<div class="maintain_text">维护中</div>
+				</div>
+				<!--正常營運-->
+				<div class="btn_dpicon">
+					<div class="icon_qqpay"></div>
+				</div>
+				<div class="btn_dpset">
+					<div class="text">QQ充值</div>
+					<a href="Example/payfor_QQ.html" target="_blank" class="example">范例</a>
+				</div>
+			</div>
+
+			<!--京东支付-->
+			<div class="btn_dplink" onclick="window.location='DepositJD.html'">
+				<!--維護中-->
+				<div class="maintenance_bg" style="display: none;">
+					<div class="maintain_text">维护中</div>
+				</div>
+				<!--正常營運-->
+				<div class="btn_dpicon">
+					<div class="icon_jdpay"></div>
+				</div>
+				<div class="btn_dpset">
+					<div class="text">京东支付</div>
+					<a href="Example/payfor_JD.html" target="_blank" class="example">范例</a>
+				</div>
+			</div>
+
+			<!--臨櫃存款-->
+			<!--<div class="btn_dplink" onclick="window.location='DepositBank.html'">
+				<div class="maintenance_bg" style="display: none;">
+					<div class="maintain_text">维护中</div>
+				</div>
+				<div class="btn_dpicon">
+					<div class="icon_bankpay"></div>
+				</div>
+				<div class="btn_dpset">
+					<div class="text">临柜存款</div>
+					<a href="Example/payfor_Bank.html" target="_blank" class="example">范例</a>
+				</div>
+			</div>-->
+
+			<!--敬请期待-->
+			<div class="btn_dplink">
+				<div class="btn_dpicon">
+					<div class="icon_comingsoon"></div>
+				</div>
+				<div class="btn_dpset">
+					<div class="text_center">敬请期待</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--跳框_警告視窗-->
+<div id="WarningPopup" class="popup_blackbg" style="/*display: none;*/">
+    <div class="popup_container">
+        <div id="no_deposit" class="popup_warning">
+            <div class="reg_title">
+                <div class="reg_logo"></div>
+                <input type="button" class="btn_close" onclick="document.getElementById('WarningPopup').style.display='none'">
+            </div>
+            <div class="reg_info">
+                <div class="reg_text_b">提款功能尚未开启，请洽询线上客服。<p>谢谢！</p></div>
+            </div>
+            <div class="closebtn_set">
+                <span class="regbtn_text">确认关闭</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--跳框_存款维护公告-->
+<div id="BankMsg" class="popup_bankmsg" style="/*display: none;*/">
+    <div class="bankmsg_title">
+        <div class="title">存款维护公告</div>
+        <input type="button" class="btn_close" onclick="document.getElementById('BankMsg').style.display='none'">
+    </div>
+	<div class="bankmsg_info">
+		<div class="data_list">
+			<a class="bankmsg_link" href="service_news.html">
+				<span class="blue_ball"></span>
+				<span class="text">在线微信维护公告在线微信维护公告在线微信维护公告</span>
+			</a>
+			<a class="bankmsg_link" href="service_news.html">
+				<span class="blue_ball"></span>
+				<span class="text">存款实名制公告</span>
+			</a>
+			<a class="bankmsg_link" href="service_news.html">
+				<span class="blue_ball"></span>
+				<span class="text">在线支付宝维护公告</span>
+			</a>
+			<a class="bankmsg_link" href="service_news.html">
+				<span class="blue_ball"></span>
+				<span class="text">暂停柜员机存款公告</span>
+			</a>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

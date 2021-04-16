@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="content-language" content="zh-cn" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="css/reset.css?111" rel="stylesheet" type="text/css">
+	<link href="css/popup.css?111" rel="stylesheet" type="text/css">
+    <link href="css/style.css?111" rel="stylesheet" type="text/css">
+    <script src="js/jssor.slider-23.1.0.min.js" type="text/javascript"></script><!--廣告輪播-->
+    <script src="js/ad.js" type="text/javascript"></script><!--廣告輪播-->
+	<title>赢家娱乐城</title>
+</head>
+
+<body class="body_index">
+<!--上層-->
+<div id="indexHeader" class="index_header">
+	<div id="HeaderLogin" class="header_login">
+		<div class="top_set">
+			<a href="index.html" class="header_logo"></a>
+			<!--未登入-->
+			<div id="NotLogin" class="notlogin_box" style="display: none;">
+				<div class="account_set">
+					<input type="text" id="Account" class="login_input magin_b" tabindex="1" maxlength="15" value="帐号｜手机号" placeholder="帐号｜手机号" data-placeholder="" onkeyup="value=value.replace(/[\W]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
+					<input type="password" id="Password" name="Password" class="login_input" tabindex="2" maxlength="15" placeholder="密码" data-placeholder="" onkeyup="value=value.replace(/[\W]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
+				</div>
+				<div class="verification_set">
+					<img class="RegNumber" src="/img.png">
+					<input type="text" id="Verification_Code" class="login_input" name="CheckCode" tabindex="3" maxlength="4" placeholder="验证码">
+				</div>
+				<a href="javascript:void(0);" id="LoginBtn" class="btn_login" tabindex="5"></a>
+				<a href="javascript:void(0);" onclick="showRegister();" class="btn_register"></a>
+				<div class="tip_set">
+					<a class="forgot_link" href="ForgotAccount.html" onclick="window.open(this.href, 'Forgot', 'width=602, height=412, toolbar=no, location=no, direction=no, menubar=no, scrollars=no, resizable=no, left=300px, top=150px'); return false;">忘記帳號？</a>
+					<a class="forgot_link" href="ForgotPassword.html" onclick="window.open(this.href, 'Forgot', 'width=602, height=412, toolbar=no, location=no, direction=no, menubar=no, scrollars=no, resizable=no, left=300px, top=150px'); return false;">忘記密碼？</a>
+					<input id="TermsOfUse" name="TermsOfUse" tabindex="4" type="checkbox" checked="">我已详细阅读且同意
+					<a href="/help/terms_of_use.html" target="_blank" class="terms_of_use">使用条款</a>
+				</div>
+			</div>
+			<!--已登入-->
+			<div id="Logined" class="login_box" style="display: block;">
+				<div class="members_id">
+					<span>赢家会员：</span>
+					<span class="text_yellow">WA60344</span>
+				</div>
+				<div class="main_account">
+					<span>主账户：</span>
+					<span id="AccountMoney" class="text_green">79,016.70</span>
+				</div>
+				<div class="line"></div>
+				<div class="members_itemlist">
+					<a class="itemlink" href="MyPurse.html" target="Member" onclick="window.open(this.href, 'MyPurse', 'width=1000, height=800, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;">平台转帐</a>
+					<a class="itemlink" href="MoneyChange.html" target="Member" onclick="window.open(this.href, 'MemberCenter', 'width=1000, height=800, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;">会员中心</a>
+					<a class="itemlink" href="Deposit.html" target="Member" onclick="window.open(this.href, 'MemberCenter', 'width=1000, height=800, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;">存&nbsp;款</a>
+					<a class="itemlink" href="Withdrawal.html" target="Member" onclick="window.open(this.href, 'MemberCenter', 'width=1000, height=800, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;">提&nbsp;款</a>
+					<a class="itemlogout" href="index.html">登&nbsp;出</a>
+					<a class="icon_message" href="UserMsg.html" onclick="window.open(this.href, 'Message', 'width=1000, height=800, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;">
+						<span id="MsgCnt" class="msg_list" style="display: block;">0</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--列表選單-->
+	<div id="HeaderBar" class="header_bar">
+		<ol class="gamelist_set">
+			<li class="submenu">
+				<a href="../" class="title">首页</a>
+			</li>
+			<li class="submenu">
+				<a href="#" class="title">体育赛事</a>
+				<ul>
+					<li>
+						<div class="tips_up" id="tips_live_allbet" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">赢家体育</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<a href="" class="width_set sports_winner">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</a>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_sports_saba" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">沙巴体育</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<a href="" class="width_set sports_saba">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</a>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_sports_bbin" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">BBIN体育</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<a href="" class="width_set sports_bbin">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</a>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_sports_im" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">IM体育</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<a href="" class="width_set sports_im">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#" class="title">真人娱乐</a>
+				<ul>
+					<li>
+						<div class="tips_up" id="tips_live_allbet" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">欧博娱乐</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<a href="" class="width_set live_allbet">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</a>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_live_sa" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">沙龙娱乐</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<a href="" class="width_set live_sa">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</a>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_live_ebet" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">eBet娱乐</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<a href="" class="width_set live_ebet">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</a>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_live_ag" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">AG娱乐</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<a href="" class="width_set live_ag">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</a>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_live_bbin" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">BBIN娱乐</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<a href="" class="width_set live_bbin">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</a>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_live_dg" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">DG娱乐</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<a href="" class="width_set live_dg">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</a>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_live_im" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">IM娱乐</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<a href="" class="width_set live_im">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</a>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_live_og" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">东方娱乐</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<a href="" class="width_set live_og">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</a>
+					</li>
+				</ul>
+			</li>        
+			<li class="submenu">
+				<a href="#" class="title">电子游艺</a>
+				<ul>
+					<li>
+						<div class="tips_up" id="tips_slot_winner" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">赢家电子</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<div onclick="window.open('lobby_Winner.html','SlotWinner')" id="" class="width_set slot_winner">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</div>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_slot_sa" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">SA电子</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<div onclick="window.open('lobby_SA.html','SlotSA')" id="" class="width_set slot_sa">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</div>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_slot_kuma" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">KUMA电子</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<div onclick="window.open('lobby_KUMA.html','SlotKuma')" id="" class="width_set slot_kuma">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</div>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_slot_ag" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">AG电子</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<div onclick="window.open('lobby_AG.html','SlotAG')" id="" class="width_set slot_ag">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</div>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_slot_bbin" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">BBIN电子</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<div onclick="window.open('lobby_BBIN.html','SlotBBIN')" id="" class="width_set slot_bbin">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</div>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_slot_haba" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">哈巴电子</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<div onclick="window.open('lobby_HB.html','SlotHaba')" id="" class="width_set slot_haba">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</div>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_slot_mg" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">MG电子</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<div onclick="window.open('lobby_MG.html','SlotMG')" id="" class="width_set slot_mg">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</div>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_slot_pt" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">PT电子</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<div onclick="window.open('lobby_PT.html','SlotPT')" id="" class="width_set slot_pt">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</div>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_slot_dk" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">DK电子</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<div onclick="window.open('lobby_DK.html','SlotDK')" id="" class="width_set slot_dk">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</div>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_slot_Booongo" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">Booongo电子</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<div onclick="window.open('lobby_booongo.html','SlotBooongo')" id="" class="width_set slot_booongo">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</div>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_slot_im" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">IM电子</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<div onclick="window.open('lobby_IM.html','SlotIM')" id="" class="width_set slot_im">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</div>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_fishing_mwg" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">MWG捕鱼</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<div onclick="window.open('lobby_MWG.html','FishingMwg')" id="" class="width_set fishing_mwg">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</div>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_fishing_gg" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">GG捕鱼</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<div onclick="window.open('lobby_GG.html','FishingGg')" id="" class="width_set fishing_gg">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#" class="title">彩票游戏</a>
+				<ul>
+					<li>
+						<div class="tips_up" id="tips_lottery_winner" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">赢家彩票</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<a href="" class="width_set lottery_winner">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</a>
+					</li>
+					<li>
+						<div class="tips_up" id="tips_lottery_racing" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+							<div class="tips_bg">
+								<span>你没有进入 <span class="text" id="tipsID">劲速彩票</span> 的权限，<br>请至其他平台投注，谢谢！</span>
+								<i class="arrow_up"></i>
+							</div>
+						</div>
+						<a href="" class="width_set lottery_racing">
+							<div id="GameMaintain" class="game_maintain" style="display: none;"></div>
+							<div id="GameComingSoon" class="game_comingsoon" style="display: none;"></div>
+							<div id="GameNotPpen" class="game_notopen" style="display: none;"></div>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="DeleteCookie.bat" class="title">清除缓存</a>
+			</li>
+		</ol>
+	</div>
+</div>
+
+<!--中間-->
+<div id="indexMain" class="index_main">
+	<div class="top_set">
+		<!--跑馬燈-->
+		<div class="marquee_set">
+			<div class="time">2017/06/23 (五) 16:03:35</div>
+			<a href="Notice.html" onclick="window.open(this.href, 'News', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="News" class="text">
+				<marquee class="running" direction="left" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="6">
+					<span id="Notice">亲爱的赢家Game会员您好：本公司坚持最优质的服务提供给广大的玩家朋友，但近期有不肖网站恶意仿效赢家并发布不实谣言，在此声明本公司为自营平台且无任何合作授权网站，敬请注意【 官网：WIN666.NET ／ WIN666.US ／ WIN666.CC 】</span>
+				</marquee>
+			</a>
+		</div>
+
+		<!--廣告+最新消息+彩金-->
+		<div class="ad_news_jp">
+            <!--廣告輪播-->
+		    <div class="AD_Set" id="jssor_1">
+		        <div class="Loading_Set" data-u="loading">
+		            <div class="Loading1"></div>
+		            <div class="Loading2"></div>
+		        </div>
+		        <div class="ad_picSet" data-u="slides">
+		            <div class="ad_pic"><img data-u="image" src="images/cm/Index_AD_05.jpg?111" /></div>
+		            <div class="ad_pic"><img data-u="image" src="images/cm/Index_AD_06.jpg?111" /></div>
+		            <div class="ad_pic"><img data-u="image" src="images/cm/Index_AD_01.jpg?111" /></div>
+		            <div class="ad_pic"><img data-u="image" src="images/cm/Index_AD_02.jpg?111" /></div>
+		            <div class="ad_pic"><img data-u="image" src="images/cm/Index_AD_03.jpg?111" /></div>
+		            <div class="ad_pic"><img data-u="image" src="images/cm/Index_AD_04.jpg?111" /></div>
+		        </div>
+		        <div class="jssorb13 pointSet" data-u="navigator" data-autocenter="1">
+		            <div class="point" data-u="prototype"></div>
+		        </div>
+		    </div>
+			<script type="text/javascript">jssor_1_slider_init();</script>
+
+            <!--最新消息-->
+            <div class="news_set">
+                <div class="news_title">
+                    <div class="text_set"></div>
+                    <a href="news.html" onclick="window.open(this.href, 'News', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="News" class="more">more</a>
+                </div>
+                <div class="news_list">
+                	<div class="list_set">
+                		<div class="news_type news_fix">维护</div>
+                		<a href="news.html" onclick="window.open(this.href, 'News', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="News">手机版【欧博馆厅】维护时间</a>
+	                	<div class="news_time">2017-06-24</div>
+                	</div>
+                	<div class="list_set">
+                		<div class="news_type news_service">客服</div>
+                		<a href="news.html" onclick="window.open(this.href, 'News', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="News">影城视讯无法观看</a>
+	                	<div class="news_time">2017-04-28</div>
+                	</div>
+                	<div class="list_set">
+                		<div class="news_type news_new">最新</div>
+                		<a href="news.html" onclick="window.open(this.href, 'News', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="News">LINE客服已更新</a>
+	                	<div class="news_time">2017-03-31</div>
+                	</div>
+                	<div class="list_set">
+                		<div class="news_type news_active">活动</div>
+                		<a href="news.html" onclick="window.open(this.href, 'News', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="News">欧博馆厅手机网页版上市</a>
+	                	<div class="news_time">2017-03-26</div>
+                	</div>
+                	<div class="list_set">
+                		<div class="news_type news_win">得奖</div>
+                		<a href="news.html" onclick="window.open(this.href, 'News', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="News">恭贺会员 WBG627205 连过10局 彩金 154718</a>
+	                	<div class="news_time">2017-02-15</div>
+                	</div>
+                </div>
+            </div>
+
+            <!--百家樂彩金-->
+            <a href="#" target="JPList" class="jackpot">
+                <div class="news_title">
+                	<div class="text_set"></div>
+                	<div class="more" style="display: none;">得奖名单</div>
+                </div>
+                <div id="aGoldPrize" class="jp_number">
+                    <div class="t_num">
+                        <i id="JpNum" class="jp_num1"></i>
+                        <i id="JpNum" class="jp_num2"></i>
+                        <i id="JpNum" class="jp_num0"></i>
+                        <i id="JpNumComma" class="jp_comma"></i>
+                        <i id="JpNum" class="jp_num3"></i>
+                        <i id="JpNum" class="jp_num4"></i>
+                        <i id="JpNum" class="jp_num5"></i>
+                        <i id="JpNumComma" class="jp_comma"></i>
+                        <i id="JpNum" class="jp_num6"></i>
+                        <i id="JpNum" class="jp_num7"></i>
+                        <i id="JpNum" class="jp_num8"></i>
+                        <i id="JpNumPoint" class="jp_point"></i>
+                        <i id="JpNum" class="jp_num0"></i>
+                        <i id="JpNum" class="jp_num9"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!--列表選項-->
+        <div class="icon_bar">
+            <a href="#" target="Forum" class="icon_discussion">论坛专区</a>
+            <a href="javascript:void(0);" onclick="PromotionsChk();" id="Promotions1" class="icon_sports">赛事直播</a>
+            <a href="#" target="JPList" class="icon_movies">影城视讯</a>
+            <a href="promotions.html" class="icon_promotions">优惠活动</a>
+            <a href="complain.html" onclick="window.open(this.href, 'Complain', 'width=602, height=552, toolbar=no, location=no, direction=no, menubar=no, scrollars=no, resizable=no, left=300px, top=150px'); return false;" class="icon_complain">投诉箱</a>
+        </div>
+
+        <!--體育消息(舊)-->
+		<!--<div class="sport_news">
+			<div class="sport_pic"></div>
+			<div class="sport_news_info">
+				<div class="news_title">
+					<h1 class="text_set"></h1>
+					<a href="sports_news.html" onclick="window.open(this.href, 'News', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="Sport_News" class="more">more</a>
+				</div>
+				<ul class="sport_list">
+					<li>
+						<a href="sports_news.html" onclick="window.open(this.href, 'News', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="Sport_News">FIFA排名：国足上升5位杀入前80 近两年最佳排名</a>
+					</li>
+					<li>
+						<a href="sports_news.html" onclick="window.open(this.href, 'News', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="Sport_News">中超第16轮前瞻：国安如何斗恒大？苏宁迎复仇战</a>
+					</li>
+					<li>
+						<a href="sports_news.html" onclick="window.open(this.href, 'News', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="Sport_News">梅西能对飙C罗，但本世纪巴萨还拦得住皇马吗？</a>
+					</li>
+					<li>
+						<a href="sports_news.html" onclick="window.open(this.href, 'News', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="Sport_News">切尔西官方宣布今夏首签，曼城门将自由身加盟</a>
+					</li>
+					<li>
+						<a href="sports_news.html" onclick="window.open(this.href, 'News', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="Sport_News"></a>
+					</li>
+				</ul>
+			</div>
+		</div>-->
+
+		<!--技術支援與認證證書-->
+		<div class="sport_news">
+			<div class="sport_pic"></div>
+			<div class="sport_news_info">
+				<div class="news_title">
+					<h1 class="text_set"></h1>
+				</div>
+				<div class="sport_list">
+					<div class="logo_support"></div>
+					<div class="logo_line"></div>
+					<div class="logo_certifications"></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--下層-->
+<div id="indexFooter" class="index_footer">
+	<div id="FooterBar" class="footer_bar">
+		<div class="top_set">
+			<div class="list">
+				<a href="help/contact_us.html" onclick="window.open(this.href, 'help', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="HelpCenter" class="btn_footerbar">帮助中心</a>
+				<span class="line"></span>
+				<a href="help/online_service.html" onclick="window.open(this.href, 'OnlineService', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="OnlineService" class="btn_footerbar">客服中心</a>
+				<span class="line"></span>
+				<a href="help/terms_of_use.html" onclick="window.open(this.href, 'help', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="HelpCenter" class="btn_footerbar">服务条款</a>
+				<span class="line"></span>
+				<a href="help/privacy.html" onclick="window.open(this.href, 'help', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="HelpCenter" class="btn_footerbar">隐私政策</a>
+				<span class="line"></span>
+				<a href="help/disclaimer.html" onclick="window.open(this.href, 'help', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="HelpCenter" class="btn_footerbar">免责声明</a>
+				<span class="line"></span>
+				<a href="help/game_sports.html" onclick="window.open(this.href, 'gamelist', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="HelpCenter" class="btn_footerbar">产品信息</a>
+			</div>
+			<div class="browser">
+				<a class="chrome" href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank"></a>
+				<a class="firefox" href="https://www.mozilla.org/zh-TW/firefox/new/" target="_blank"></a>
+				<a class="ie" href="http://windows.microsoft.com/zh-tw/internet-explorer/download-ie" target="_blank"></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer_info">
+		<div class="top_set">
+			<div class="footer_logo"></div>
+			<div class="line"></div>
+			<div class="footer_icon_set">
+				<div class="footer_icon3"></div>
+				<div class="footer_icon1"></div>
+				<div class="footer_icon2"></div>
+				<div class="footer_text">我们积极推行负责任博彩，并极力拒绝未成年玩家使用我们的软体进行网上娱乐。同时，我们更透过专业人员及各种有效方法，以防止问题博彩的发生。</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--24小時客服_浮動視窗-->
+<div id="cm_bar" class="cm_bar_area">
+	<input type="button" class="cm_bar_close" onclick="document.getElementById('cm_bar').style.display='none'">
+	<div class="service_call"></div>
+	<div id="" class="service_bg">
+		<a href="#" onclick="window.open(this.href, 'LiveService', 'width=1030, height=850, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=100px, top=100px'); return false;">
+			<div class="service_icon1"></div>
+			<div class="service_text">在线客服</div>
+		</a>
+	</div>
+	<div id="" class="service_bg">
+		<a href="#" onclick="$('#Wechat').show();">
+			<div class="service_icon2"></div>
+			<div class="service_text">微信客服</div>
+		</a>
+	</div>
+	<div id="" class="service_bg">
+		<a href="help/remote_support.html" onclick="window.open(this.href, 'help', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="HelpCenter">
+			<div class="service_icon5"></div>
+			<div class="service_text">远程协助</div>
+		</a>
+	</div>
+</div>
+<!--客服浮動視窗(微信客服)-->
+<div id="Wechat" class="qr_code" style="display: none;">
+	<h4 class="qrcode_title">
+		<span>微信客服</span>
+		<input type="button" class="qrcode_closebtn" onclick="document.getElementById('Wechat').style.display='none'">
+	</h4>
+	<img src="images/help_icon/wechat_QRcode.jpg?111" width="190" height="190">
+</div>
+
+<!--跳框_補充資料-->
+<div id="RegAdditional" class="popup_regset" style="display: none;">
+	<div class="reg_title">
+		<div class="memberinfo_img"></div>
+		<div class="title">补充资料</div>
+		<input type="button" class="btn_close" onclick="document.getElementById('RegAdditional').style.display='none'">
+	</div>
+	<div class="reg_info">
+		<div class="margin_set">
+			<div class="reg_item">真实户名</div>
+			<div class="reg_input">
+				<input type="text" name="Pay_Name" id="Pay_Name" placeholder="须与银行卡户名相同，否则无法提款" class="item_input">
+			</div>
+			<!--提示訊息-->
+			<div id="BlankTips_PayName" class="popup_tipset text_red" style="display: none;">
+				<span class="tips_img ticon_error"></span>
+				<span class="tips_text">不能为空白！</span>
+			</div>
+		</div>
+
+		<div class="margin_set">
+			<div class="reg_item">银行卡号</div>
+			<div class="reg_input">
+				<input type="text" name="" id="" placeholder="卡号错误将无法提款" class="item_input">
+			</div>
+			<!--提示訊息-->
+			<div id="" class="popup_tipset text_red" style="display: none;">
+				<span class="tips_img ticon_error"></span>
+				<span class="tips_text">不能为空白！</span>
+			</div>
+		</div>
+		<div class="margin_set">
+			<div class="reg_item">银行名称</div>
+			<div class="reg_input">
+				<input type="text" name="" id="" placeholder="" value="" class="item_input">
+			</div>
+			<!--提示訊息-->
+			<div id="" class="popup_tipset text_red" style="display: none;">
+				<span class="tips_img ticon_error"></span>
+				<span class="tips_text">不能为空白！</span>
+			</div>
+		</div>
+		<div class="margin_set">
+			<div class="reg_item"></div>
+			<div class="reg_input">
+				<select name="" id="" class="reg_option">
+					<option value="">请选择省份</option>
+					<option value="北京市">北京市</option>
+					<option value="天津市">天津市</option>
+					<option value="河北省">河北省</option>
+					<option value="山西省">山西省</option>
+					<option value="内蒙古自治区">内蒙古自治区</option>
+					<option value="辽宁省">辽宁省</option>
+					<option value="吉林省">吉林省</option>
+					<option value="黑龙江省">黑龙江省</option>
+					<option value="上海市">上海市</option>
+					<option value="江苏省">江苏省</option>
+					<option value="浙江省">浙江省</option>
+					<option value="安徽省">安徽省</option>
+					<option value="福建省">福建省</option>
+					<option value="江西省">江西省</option>
+					<option value="山东省">山东省</option>
+					<option value="河南省">河南省</option>
+					<option value="湖北省">湖北省</option>
+					<option value="湖南省">湖南省</option>
+					<option value="广东省">广东省</option>
+					<option value="广西壮族自治区">广西壮族自治区</option>
+					<option value="海南省">海南省</option>
+					<option value="重庆市">重庆市</option>
+					<option value="四川省">四川省</option>
+					<option value="贵州省">贵州省</option>
+					<option value="云南省">云南省</option>
+					<option value="西藏自治区">西藏自治区</option>
+					<option value="陕西省">陕西省</option>
+					<option value="甘肃省">甘肃省</option>
+					<option value="青海省">青海省</option>
+					<option value="宁夏回族自治区">宁夏回族自治区</option>
+					<option value="新疆维吾尔自治区">新疆维吾尔自治区</option>
+				</select>
+			</div>
+			<!--提示訊息-->
+            <div id="" class="popup_tipset text_gray" style="display: none;">
+                <span class="tips_img ticon_warning"></span>
+                <span class="tips_text">尚未选择</span>
+            </div>
+		</div>
+		<div class="margin_set">
+			<div class="reg_item"></div>
+			<div class="reg_input">
+				<select name="" id="" class="reg_option">
+					<option value="">请选择城市</option>
+					<option value=""></option>
+				</select>
+			</div>
+			<!--提示訊息-->
+			<div id="" class="popup_tipset text_gray" style="display: none;">
+				<span class="tips_img ticon_warning"></span>
+				<span class="tips_text">尚未选择</span>
+			</div>
+		</div>
+
+		<!--安全性問題+答案*(舊)-->
+		<!--<div class="margin_set">
+			<div class="reg_item">安全性问题</div>
+			<div class="reg_input">
+				<select name="Ask" id="Ask" class="reg_option">
+					<option value="">请选择问题</option>
+					<option value="我母亲的姓">我母亲的姓</option>
+					<option value="我父亲的名">我父亲的名</option>
+					<option value="我最喜欢的食物">我最喜欢的食物</option>
+					<option value="我的宠物名字">我的宠物名字</option>
+					<option value="最喜欢的电影名称">最喜欢的电影名称</option>
+					<option value="就读小学的名称">就读小学的名称</option>
+					<option value="最喜欢的书名">最喜欢的书名</option>
+					<option value="zdd">自定义问题</option>
+				</select>
+			</div>
+			//提示訊息
+			<div id="InputTips_safeQ" class="popup_tipset text_gray" style="display: none;">
+				<span class="tips_img ticon_warning"></span>
+				<span class="tips_text">尚未选择问题</span>
+			</div>
+		</div>
+
+		<div id="myAnswer" class="margin_set" style="display: none;">
+			<div class="reg_item">自定义问题</div>
+			<div class="reg_input">
+				<input type="text" name="OtherA" id="OtherA" placeholder="手动输入自定的安全性问题" class="item_input">
+			</div>
+			//提示訊息
+			<div id="BlankTips_myA" class="popup_tipset text_red" style="display: none;">
+				<span class="tips_img ticon_error"></span>
+				<span class="tips_text">不能为空白！</span>
+			</div>
+		</div>
+
+		<div class="margin_set">
+			<div class="reg_item">安全性答案</div>
+			<div class="reg_input">
+				<input type="text" name="Answer" id="Answer" class="item_input">
+			</div>
+			//提示訊息
+			<div id="BlankTips_safeA" class="popup_tipset text_red" style="display: none;">
+				<span class="tips_img ticon_error"></span>
+				<span class="tips_text">不能为空白！</span>
+			</div>
+		</div>-->
+
+		<div class="margin_set">
+			<div class="reg_item">提款密码</div>
+			<div class="reg_input">
+				<input type="password" name="QK" id="QK" class="item_input" placeholder="6-12个英、数字组合" maxlength="12" onkeyup="value=value.replace(/[\W]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
+			</div>
+			<!--提示訊息-->
+			<div id="BlankTips_Withdrawal" class="popup_tipset text_red" style="display: none;">
+				<span class="tips_img ticon_error"></span>
+				<span class="tips_text">不能为空白！</span>
+			</div>
+			<div id="InputTips_Withdrawal" class="popup_tipset text_gray" style="display: none;">
+				<span class="tips_img ticon_warning"></span>
+				<span class="tips_text">请输入6-12个英、数字组合</span>
+			</div>
+			<div id="AcceptTips_Withdrawal" class="popup_tipset text_deepgreen" style="display: none;">
+				<span class="tips_img ticon_accept"></span>
+				<span class="tips_text">确认通过</span>
+			</div>
+		</div>
+		<div class="margin_set">
+			<div class="reg_item">使用提款密码</div>
+			<div class="reg_input">
+				<input type="radio" name="withdraw_pw" id="select_yes" class="input_check">
+				<span>是&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				<input type="radio" name="withdraw_pw" id="select_no" class="input_check">
+				<span>否</span>
+				<span class="text_red">(不需提款密码即可提款)</span>
+			</div>
+			<div class="regbtn_set" onclick="">
+				<div class="check_img"></div>
+				<span class="regbtn_text">确认送交</span>
+			</div>
+		</div>
+    </div>
+</div>
+
+<!--跳框_註冊成功-->
+<div id="RegPageOK" class="popup_regset" style="display: none;">
+	<div class="reg_title">
+		<div class="reg_logo"></div>
+		<input type="button" class="btn_close" onclick="document.getElementById('RegPageOK').style.display='none'">
+	</div>
+	<div class="reg_info">
+		<div class="reg_text_b">恭喜，您已成功加入会员！</div>
+		<div class="depositbtn_set" onclick="javascript:window.open('Deposit.html','_blank','width=1000, height=800, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px')";">
+			<div class="deposit_img"></div>
+			<span class="regbtn_text">我要存款</span>
+		</div>
+		<div class="reglogin_set" onclick="document.location.href='index.html';">
+			<div class="check_img"></div>
+			<span class="regbtn_text">先登入逛逛</span>
+		</div>
+	</div>
+</div>
+
+<!--跳框_註冊-->
+<div id="RegPage" class="popup_regset" style="display: none;">
+	<div class="reg_title">
+		<div class="joinus_img"></div>
+		<div class="title">加入会员</div>
+		<input type="button" class="btn_close" onclick="document.getElementById('RegPage').style.display='none'">
+	</div>
+
+	<form name="form_regist" id="form_regist" class="register_step1" action="/index/Register" method="post">
+		<div class="reg_info">
+			<div class="margin_set">
+				<div class="reg_item">经销商帐号</div>
+				<div class="reg_input">
+					<input type="text" name="Agent" id="AgentName" class="item_input" autocomplete="off" maxlength="10" onblur="checkAgent(this)" placeholder="没有推荐的经销商可不填写" onkeyup="value=value.replace(/[\W]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
+				</div>
+			</div>
+			<div class="margin_set">
+				<div class="reg_item">会员帐号</div>
+				<div class="reg_input">
+					<input type="text" name="UserName" id="UserName_Reg" class="item_input" placeholder="6-20个英、数字组合" maxlength="20" onkeyup="value=value.replace(/[\W]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
+				</div>
+				<!--提示訊息-->
+				<div id="BlankTips_UserName" class="popup_tipset text_red" style="display: none;">
+					<span class="tips_img ticon_error"></span>
+					<span class="tips_text">不能为空白！</span>
+				</div>
+				<div id="InputTips_UserName" class="popup_tipset text_gray" style="display: none;">
+					<span class="tips_img ticon_warning"></span>
+					<span class="tips_text">请输入6-20个英、数字组合</span>
+				</div>
+			</div>
+			<div class="margin_set">
+				<div class="reg_item">昵　　称</div>
+				<div class="reg_input">
+					<input type="text" name="NickName" id="NickName_Reg" class="item_input" placeholder="1-5个中、英、数字组合" maxlength="5">
+				</div>
+				<!--提示訊息-->
+				<div id="BlankTips_NickName" class="popup_tipset text_red" style="display: none;">
+					<span class="tips_img ticon_error"></span>
+					<span class="tips_text">不能为空白！</span>
+				</div>
+				<div id="InputTips_NickName" class="popup_tipset text_gray" style="display: none;">
+					<span class="tips_img ticon_warning"></span>
+					<span class="tips_text">请输入1-5个中、英、数字组合</span>
+				</div>
+			</div>
+			<div class="margin_set">
+				<div class="reg_item">帐号密码</div>
+				<div class="reg_input">
+					<input type="password" name="PW_Reg" id="PW_Reg" class="item_input" placeholder="6-12个英、数字组合" maxlength="12" onkeyup="value=value.replace(/[\W]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
+				</div>
+				<!--提示訊息-->
+				<div id="BlankTips_PW" class="popup_tipset text_red" style="display: none;">
+					<span class="tips_img ticon_error"></span>
+					<span class="tips_text">不能为空白！</span>
+				</div>
+				<div id="InputTips_PW" class="popup_tipset text_gray" style="display: none;">
+					<span class="tips_img ticon_warning"></span>
+					<span class="tips_text">请输入1-5个中、英、数字组合</span>
+				</div>
+				<div id="AcceptTips_PW" class="popup_tipset text_deepgreen" style="display: none;">
+					<span class="tips_img ticon_accept"></span>
+					<span class="tips_text">确认通过</span>
+				</div>
+			</div>
+
+			<!--手機號碼_驗證-->
+			<div class="verification">
+				<div class="margin_set">
+				 	<div class="reg_item">手机号码</div>
+					<input type="text" name="Mobile" id="Mobile" placeholder="" maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" class="reg_mobile">
+					<input type="button" id="VerifyCode" class="btn_verify1" value="发送短信" onclick="sendPhoneCheck()">
+					<!--發送短信、語音或重發驗證碼後，原按鈕消失，改顯示"重發驗證碼"+讀秒(不可按)-->
+					<div id="" class="btn_reverify2" style="display: none;">
+						<span>重发验证码</span>
+						<span class="text_sec">30</span>
+						<span>s</span>
+					</div>
+					<!--讀秒完後，則顯示"重發驗證碼"(綠色)-->
+					<input type="button" id="reVerifyCode" class="btn_reverify1" value="重发验证码" onclick="" style="display: none;">
+					<!--2次重發驗證碼失敗，第3次則改為語音發送-->
+					<input type="button" id="" class="btn_verify2" value="发送语音" onclick="" style="display: none;">
+
+					<!--提示訊息-->
+					<div id="BlankTips_Mobile" class="popup_tipset text_red" style="display: none;">
+						<span class="tips_img ticon_error"></span>
+						<span class="tips_text">请填正确的手机号码！</span>
+					</div>
+					<div id="InputTips_Mobile" class="popup_tipset text_red" style="display: none;">
+						<span class="tips_img ticon_warning"></span>
+						<span class="tips_text">您填写的手机号码不符合中国地区手机号格式！</span>
+					</div>
+					<div id="MsgTips_Mobile" class="popup_tipset text_red" style="display: none;">
+						<span class="tips_img ticon_accept"></span>
+						<span class="tips_text">验证码已发送至您的手机，请查收！</span>
+					</div>
+					<div id="phoneTips_Mobile" class="popup_tipset text_red" style="display: none;">
+						<span class="tips_img ticon_accept"></span>
+						<span class="tips_text">电话正在播出，请留意接听获取验证码</span>
+					</div>
+					<div id="" class="popup_tipset text_red" style="display: none;">
+						<span class="tips_img ticon_accept"></span>
+						<span class="tips_text">您今日验证次数已达上限！请联系客服专员！</span>
+					</div>
+				</div>
+				<!--手機驗證碼_驗證-->
+				<div class="margin_set">
+					<div class="reg_item">手机验证码</div>
+					<input type="text" name="MobileCheckCode" id="MobileCheckCode" placeholder="" maxlength="10" class="checkcode_input">
+					<input type="button" id="Recall" class="btn_recall" value="送出验证" onclick="">
+					<!--提示訊息-->
+					<div id="SendCodeTimeTXT" class="text_error" style="display: none;">
+						剩余<span id="SendCodeTime" class="text_red">10分钟</span>验证码失效
+					</div>
+					<div id="BlankTips_Code" class="popup_tipset text_red" style="display: none;">
+						<span class="tips_img ticon_error"></span>
+						<span class="tips_text">不能为空白！</span>
+					</div>
+					<div id="InputTips_Code" class="popup_tipset text_gray" style="display: none;">
+						<span class="tips_img ticon_warning"></span>
+						<span class="tips_text">请输入正确的验证码！</span>
+					</div>
+					<div id="ChanceTips_Code" class="popup_tipset text_red" style="display: none;">
+						<span class="tips_img ticon_error"></span>
+						<span class="tips_text">验证码输入错误，您还有 <span>?</span> 次输入机会！</span>
+					</div>
+					<div id="PassTips_Code" class="popup_tipset text_red" style="display: none;">
+						<span class="tips_img ticon_error"></span>
+						<span class="tips_text">验证码已过期，请重新发送！</span>
+					</div>
+					<div id="ErrorTips_Code" class="popup_tipset text_red" style="display: none;">
+						<span class="tips_img ticon_error"></span>
+						<span class="tips_text">验证失败，请重新发送！</span>
+					</div>
+					<div id="NoTimes_Code" class="popup_tipset text_gray" style="display: none;">
+						<span class="tips_img ticon_warning"></span>
+						<span class="tips_text">验证码输入错误，3次机会已经用完！</span>
+					</div>
+					<div id="OverTimes_Code" class="popup_tipset text_gray" style="display: none;">
+						<span class="tips_img ticon_warning"></span>
+						<span class="tips_text">您今日验证次数已达上限！请联系客服专员！</span>
+					</div>
+					<div id="ValidateTips_Mobile" class="popup_tipset text_gray" style="display: none;">
+						<span class="tips_img ticon_warning"></span>
+						<span class="tips_text">验证中...</span>
+					</div>
+					<div id="AcceptTips_Mobile" class="popup_tipset text_deepgreen" style="display: none;">
+						<span class="tips_img ticon_accept"></span>
+						<span class="tips_text">恭喜！你的手机号码验证成功！</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="margin_set">
+				<div class="regchk_set">
+					<input type="checkbox" name="Reg18Chk" id="Reg18Chk" class="input_check">
+					<span>我已年满18岁，并已阅读且同意接受投注规则相关规范以及</span>
+					<a href="/help/terms_of_use.html" target="_blank" class="text_red">使用条款</a>
+				</div>
+				<div class="regbtn_set disabled_big" onclick="registerCheck()">
+					<div class="check_img"></div>
+					<span class="regbtn_text">确认送交</span>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+<!--跳框_未讀訊息-->
+<div id="MessagePage" class="popup_regset" style="display: none;">
+	<div class="reg_title">
+		<div class="mailbox_img"></div>
+		<div class="title">邮箱</div>
+		<input type="button" class="btn_close" onclick="document.getElementById('MessagePage').style.display='none'">
+	</div>
+	<div class="reg_info">
+		<div class="reg_text_s">您有信息尚未读取!！</div>
+		<div class="regbtn_set">
+			<div class="regbtn_set" onclick="javascript:window.open('UserMsg.html','_blank','width=1000, height=800, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px')";">
+				<div class="check_img"></div>
+				<span class="regbtn_text">查看</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--跳框_快速轉帳(4大遊戲館)-->
+<div id="TransferFast" class="popup_transfast" style="display: none;">
+	<div id="" class="transfast_title banner_slot">
+		<input type="button" class="btn_close" onclick="document.getElementById('TransferFast').style.display='none'">
+	</div>
+	<div class="transfast_info">
+		<div class="margin_set">
+			<div class="transfast_text">转出</div>
+			<div class="transfast_points">123,456,789.00</div>
+			<div class="transfast_item">主帐户</div>
+		</div>
+		<div class="margin_set">
+			<div class="transfast_text">转入</div>
+			<div class="transfast_points">123,456,789.00</div>
+			<div class="transfast_item" id="">BBIN电子</div>
+		</div>
+		<div class="margin_set">
+			<div class="transfast_input">
+				<input type="text" name="" id="" placeholder="请输入整数金额" value="" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" class="item_input">
+			</div>
+			<div class="transfast_item">转帐金额</div>
+		</div>
+		<div class="margin_set">
+			<div class="transbtn_set1" onclick="">
+				<div class="check_img"></div>
+				<span class="transbtn_text">确认送交</span>
+			</div>
+		</div>
+		<div class="margin_set">
+			<div class="transbtn_set2" onclick="">
+				<div class="ok_img"></div>
+				<span class="transbtn_text">进入游戏</span>
+			</div>
+		</div>
+	</div>
+</div>
+<!--跳框_警告視窗-->
+<div id="" class="popup_regset" style="display: block;">
+	<div class="reg_title">
+		<div class="reg_logo"></div>
+		<input type="button" class="btn_close" onclick="document.getElementById('RegPageOK').style.display='none'">
+	</div>
+	<div class="reg_info">
+		<div class="reg_text_b">请稍后，您即将进入游戏！请稍后，您即将进入游戏！请稍后，您即将进入游戏！请稍后，您即将进入游戏！请稍后，您即将进入游戏！请稍后，您即将进入游戏！请稍后，您即将进入游戏！</div>
+		<div class="depositbtn_set2" onclick="">
+			<div class="check_img"></div>
+			<span class="regbtn_text">确定</span>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+@charset "utf-8";
+*:before, *:after {
+    box-sizing: border-box;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, 
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, 
+img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, 
+center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, 
+tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, 
+summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+h1, h2, h3, h4, h5, h6 {
+	-webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    font-weight: normal;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+img {
+    max-width: 100%;
+	height: auto;
+    border: 0;
+}
+/* for IE8 */
+@media \0screen {
+	img {
+        width: auto;
+    }
+}
+a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover, a:active, a:focus {
+    color: #ff0;
+}
+input, select, textarea {
+    font-family: Arial, "微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU", Georgia, "Times New Roman", Times, serif;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    height: 100%;
+    color: #333;
+    line-height: 1;
+    font-family: Arial, "微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU", Georgia, "Times New Roman", Times, serif;
+}
+input[type="text"], input[type="date"], input[type="submit"],
+input[type="password"], input[type="email"], select {
+    color: #555;
+    box-sizing: border-box;
+}
+input[type="text"], input[type="date"], input[type="button"],
+input[type="submit"], input[type="password"], input[type="email"], 
+select, textarea {
+    font-size: 0.9em;
+    font-weight: bold;
+    font-family: Arial, "微軟正黑體";
+    border: 0;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    border-radius: 0.3em;
+    -webkit-transition: all ease-in .15s;
+    -moz-transition: all ease-in .15s;
+    -o-transition: all ease-in .15s;
+    transition: all ease-in .15s;
+    -webkit-appearance: none; /* for chrome, safari */
+    -moz-appearance: none; /* for ff */
+    -o-appearance: none; /* for opera */
+    appearance: none;
+    vertical-align: middle;
+}
+input[type="text"]:focus, 
+input[type="date"]:focus, 
+input[type="button"]:focus, 
+input[type="submit"]:focus, 
+input[type="password"]:focus, 
+input[type="email"]:focus, 
+select:focus, textarea:focus {
+    outline: 2px dashed #ccc;
+}
+input[type="checkbox"] {
+    width: 1.5em;
+    height: 1.5em;
+    margin: 0 5px 0 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #aaa;
+    font-size: 1em;
+    font-weight: normal;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #aaa;
+    font-size: 1em;
+    font-weight: normal;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #aaa;
+    font-size: 1em;
+    font-weight: normal;
+}
+::-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #aaa;
+    font-size: 1em;
+    font-weight: normal;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    color: #2da090;
+}
+select:disabled,
+input[type="text"]:disabled,
+input[type="password"]:disabled,
+input[type="email"]:disabled {
+    -webkit-text-fill-color:#aaa; /* 覆蓋iOS_Android 字體顏色 */
+    -webkit-opacity:1; /* 覆蓋影響文本和背景顏色的iOS不透明度更改*/
+    color: #aaa; /* 覆蓋IE字體顏色 */
+    background-color: #e4e4e4 !important;
+    cursor: default !important;
+}

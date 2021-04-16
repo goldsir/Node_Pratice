@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="content-language" content="zh-cn" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="css/reset.css?111" rel="stylesheet" type="text/css">
+    <link href="css/popup.css?111" rel="stylesheet" type="text/css">
+    <link href="css/members.css?111" rel="stylesheet" type="text/css">
+    <title>在线网银</title>
+</head>
+
+<body>
+<div class="popup_withdrawal">
+	<div class="popup_bigtop">
+		<div class="bg_subtop">
+			<div class="popup_logo"></div>
+			<div class="title">存款</div>
+		</div>
+		<div class="bg_submenu">
+			<a href="Deposit.html" class="btn_submenu selected">存款</a>
+			<a href="Withdrawal.html" class="btn_submenu">提款</a>
+			<a href="MoneyChange.html" class="btn_submenu">交易记录</a>
+			<a href="Gifts.html" class="btn_submenu">活动点数</a>
+			<a href="ChangeInfoPassword.html" class="btn_submenu">变更资料</a>
+			<a href="#" class="btn_service">线上客服</a>
+		</div>
+	</div>
+
+	<!--網銀在線支付-->
+    <div class="depositweb_submain">
+        <!--支付欄位(左)-->
+        <div class="dp_left">
+            <table class="data_send">
+                <tbody>
+                <tr>
+                    <td class="left_set">
+                        <div class="wd_text">资料填写</div>
+                        <div class="img_memberinfo"></div>
+                    </td>
+                    <td class="right_set">
+                        <div class="wd_title">
+                            <h5>【在线网银】存款金额</h5>
+                            <div class="btn_back">
+                                <div class="back_img"></div>
+                                <input type="button" class="back_input" value="返回上一页" onclick="history.back()">
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="wd_data">
+                            <div class="item_set">
+                                <div class="item">
+                                    <span>帐　　号：</span>
+                                    <span id="txtAccounts" class="bank_span">wz0003</span>
+                                </div>
+                                <div class="item">
+                                    <span>存款金额：</span>
+                                    <input type="text" id="WebBank_Money" name="WebBank_Money" maxlength="10" autocomplete="off" class="bank_input" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" onblur="this.value=this.value.replace(/\D/g,'');" placeholder="50-10000">
+                                    <!--提示框-->
+                                    <div class="tips_up" id="showLimits" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+                                        <div class="tips_bg">
+                                            <span>存款金额 50 - 10000</span>
+                                            <i class="arrow_up"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn_set">
+                                <input type="button" class="btn_blue" value="确认送出" onclick="makeBill()">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="data_send">
+                <tbody>
+                <tr>
+                    <td class="left_set">
+                        <div class="wd_text">注意事项</div>
+                        <div class="img_note"></div>
+                    </td>
+                    <td class="right_set">
+                        <ul class="precautions">
+                            <li>存款上限须视您的【网银】绑定银行之限额而定。</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--廣告欄位(右)-->
+        <div class="dp_right">
+            <img src="images/member_icon/deposit_ad01.jpg">
+            <img src="images/member_icon/deposit_ad02.jpg">
+        </div>
+    </div>
+</div>
+
+<!--(銀聯卡)銀行彈跳視窗(先填存款金額，送出後跳此視窗)-->
+<div id="WebBank_Bank" name="WebBank_Bank" class="popup_selectbank" style="display: none;">
+    <div id="BankSelect" class="selectbank_top">
+        <span>请选择支付银行</span>
+        <input type="button" class="btn_close" onclick="document.getElementById('WebBank_Bank').style.display='none'">
+    </div>
+    <div class="selectbank_bottom">
+        <div id="BankName" class="bank_list">
+            <div class="btn_bank ecitic selected" id="bankIcon_962" onclick="changeBank('962')">中信银行</div>
+            <div class="btn_bank boc" id="bankIcon_963" onclick="changeBank('963')">中国银行</div>
+            <div class="btn_bank abchina" id="bankIcon_964" onclick="changeBank('964')">中国农业银行</div>
+            <div class="btn_bank ccb " id="bankIcon_965" onclick="changeBank('965')">中国建设银行</div>
+            <div class="btn_bank icbc" id="bankIcon_967" onclick="changeBank('967')">中国工商银行</div>
+            <div class="btn_bank cmbchina" id="bankIcon_970" onclick="changeBank('970')">招商银行</div>
+            <div class="btn_bank psbc" id="bankIcon_971" onclick="changeBank('971')">中国邮政储蓄银行</div>
+            <div class="btn_bank cib" id="bankIcon_972" onclick="changeBank('972')">兴业银行</div>
+            <div class="btn_bank cmbc" id="bankIcon_980" onclick="changeBank('980')">中国民生银行</div>
+            <div class="btn_bank bankcomm" id="bankIcon_981" onclick="changeBank('981')">交通银行</div>
+            <div class="btn_bank cebbank" id="bankIcon_986" onclick="changeBank('986')">中国光大银行</div>
+            <div class="btn_bank beijing" id="bankIcon_989" onclick="changeBank('989')">北京银行</div>
+            <div class="btn_bank spdb" id="bankIcon_976" onclick="changeBank('977')">浦东发展银行</div>
+            <div class="btn_bank cgbchina" id="bankIcon_985" onclick="changeBank('985')">广东发展银行</div>
+            <div class="btn_bank srcb" id="bankIcon_976" onclick="changeBank('976')">上海农村商业银行</div>
+            <div class="btn_bank nanjing" id="bankIcon_979" onclick="changeBank('979')">南京银行</div>
+            <div class="btn_bank hzbank" id="bankIcon_983" onclick="changeBank('983')">杭州银行</div>
+            <div class="btn_bank pingan" id="" onclick="changeBank('')">平安银行</div>
+            <div class="btn_bank hxb" id="" onclick="changeBank('')">华夏银行</div>
+            <div class="btn_bank nbcb" id="" onclick="changeBank('')">宁波银行</div>
+            <div class="btn_bank shanghai" id="b" onclick="changeBank('')">上海银行</div>
+        </div>
+        <div class="btn_wrap">
+            <div id="PaystepNext" class="popupbtn_bank" onclick="sendBill()">到银行页面付款</div>
+        </div>
+    </div>
+</div>
+
+<!--網銀_銀行彈跳視窗(先儲值再跳此視窗)-->
+<div id="WebPay_Bank" name="WebPay_Bank" class="popup_selectbank" style="display: none;">
+    <div id="BankSelect" class="selectbank_top">
+        <span>请选择支付银行</span>
+        <input type="button" class="btn_close" onclick="document.getElementById('WebPay_Bank').style.display='none'">
+    </div>
+    <div class="selectbank_bottom">
+        <div id="BankName" class="bank_list">
+            <div class="btn_bank ecitic selected" id="bankIcon_CITIC" onclick="changeBank('CITIC')">中信银行</div>
+            <div class="btn_bank boc" id="bankIcon_BOC" onclick="changeBank('BOC')">中国银行</div>
+            <div class="btn_bank abchina " id="bankIcon_ABC" onclick="changeBank('ABC')">中国农业银行</div>
+            <div class="btn_bank ccb " id="bankIcon_CCB" onclick="changeBank('CCB')">中国建设银行</div>
+            <div class="btn_bank icbc" id="bankIcon_ICBC" onclick="changeBank('ICBC')">中国工商银行</div>
+            <div class="btn_bank cmbchina" id="bankIcon_CMBCHINA" onclick="changeBank('CMBCHINA')">招商银行</div>
+            <div class="btn_bank cmbc" id="bankIcon_CMBC" onclick="changeBank('CMBC')">中国民生银行</div>
+            <div class="btn_bank psbc" id="bankIcon_POST" onclick="changeBank('POST')">中国邮政储蓄银行</div>
+            <div class="btn_bank cib" id="bankIcon_CIB" onclick="changeBank('CIB')">兴业银行</div>
+            <div class="btn_bank bankcomm" id="bankIcon_BOCO" onclick="changeBank('BOCO')">交通银行</div>
+            <div class="btn_bank cebbank" id="bankIcon_CEB" onclick="changeBank('CEB')">中国光大银行</div>
+            <div class="btn_bank beijing" id="bankIcon_BCCB" onclick="changeBank('BCCB')">北京银行</div>-->
+            <div class="btn_bank spdb" id="bankIcon_SPDB" onclick="changeBank('SPDB')">上海浦东发展银行</div>
+            <div class="btn_bank cgbchina" id="bankIcon_GDB" onclick="changeBank('GDB')">广东发展银行</div>
+            <div class="btn_bank nanjing" id="bankIcon_NJCB" onclick="changeBank('NJCB')">南京银行</div>-->
+            <div class="btn_bank pingan" id="bankIcon_PINGANBANK" onclick="changeBank('PINGANBANK')">平安银行</div>
+            <div class="btn_bank hxb" id="bankIcon_HXB" onclick="changeBank('HXB')">华夏银行</div>
+            <div class="btn_bank nbcb" id="bankIcon_NBCB" onclick="changeBank('NBCB')">宁波银行</div>
+            <div class="btn_bank shanghai" id="bankIcon_BOS" onclick="changeBank('BOS')">上海银行</div>
+        </div>
+        <div class="btn_wrap">
+            <div id="PaystepNext" class="popupbtn_bank" onclick="sendBill()">到银行页面付款</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="content-language" content="zh-cn" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="css/reset.css?111" rel="stylesheet" type="text/css">
+	<link href="css/popup.css?111" rel="stylesheet" type="text/css">
+    <link href="css/members.css?111" rel="stylesheet" type="text/css">
+    <link href="css/calendar.css" rel="stylesheet" type="text/css"><!--JS日历效果-->
+    <script src="js/calendar.js" type="text/javascript" language="javascript"></script><!--jS日历效果-->
+    <title>转帐记录</title>
+</head>
+
+<body>
+<div class="popup_members">
+	<div class="popup_bigtop">
+		<div class="bg_subtop">
+			<div class="popup_logo"></div>
+			<div class="title">转帐记录</div>
+		</div>
+		<div class="bg_submenu">
+			<a href="MyPurse.html" class="btn_submenu">平台转帐</a>
+			<a href="MyPurseChangeList.html" class="btn_submenu selected">转帐记录</a>
+			<a href="#" class="btn_service">线上客服</a>
+			<a href="index.html" target="_blank" class="btn_service">回到首页</a>
+		</div>
+	</div>
+
+    <!--轉帳紀錄-->
+    <div class="mypurse_submain">
+		<form class="type_list" id="" action="" method="post">
+			<div class="type_set">
+				<span>类型：</span>
+				<select name="Bao">
+					<option value="0" selected="selected">全部</option>
+					<option value="1">主账户</option>
+					<option value="12">哈巴电游</option>
+					<!--<option value="14">赢家体育</option>
+					<option value="3">彩票游戏</option>
+					<option value="2">电子游艺</option>
+					<option value="4">皇家娱乐</option>
+					<option value="6">东方会娱乐</option>
+					<option value="7">欧博娱乐</option>
+					<option value="13">eBet娱乐</option>
+					<option value="9">SA电子</option>
+					<option value="15">kuma电子</option>-->
+				</select>
+			</div>
+			<div class="date_select">
+				<span>选择日期：</span>
+				<input type="text" id="sDate" name="StartDate" class="tcal tcalInput" readonly="readonly">
+				<span>至</span>
+				<input type="text" id="eDate" name="EndDate" class="tcal tcalInput" readonly="readonly">
+				<input id="datepicker" class="btn_sentout" type="submit" onclick="$('#MyForm2').submit();">
+			</div>
+		</form>
+
+		<div class="record_set">
+			<table class="record_list">
+				<tbody>
+					<tr class="record_item">
+						<th class="cell1">转帐日期</th>
+						<th class="cell2"><span class="text_yellow">转出</span>帐户</th>
+						<th class="cell2"><span class="text_green">转入</span>帐户</th>
+						<th class="cell3">转帐金额</th>
+						<th class="cell4">备注说明</th>
+					</tr>
+					<!--無資訊-->
+					<tr id="Rec_NoData" class="no_data" style="display: none;">
+						<td colspan="4">尚无任何记录</td>
+					</tr>
+					<!--有資料-->
+					<tr class="data_item">
+						<td id="Rec_Date" class="record_date">
+							<span>2017-04-20</span>&nbsp;&nbsp;<span class="time_sec">18:48:41</span>
+						</td>
+						<td id="Rec_Out">主帐户</td>
+						<td id="Rec_Info">KUMA AV电子馆</td>
+						<td id="Rec_Money" class="recmoney text_red">-25000</td>
+						<td id="Rec_Tips">上笔交易失败，回复</td>
+					</tr>
+					<tr class="data_item">
+						<td id="Rec_Date" class="record_date">
+							<span>2017-02-19</span>&nbsp;&nbsp;<span class="time_sec">22:37:27</span>
+						</td>
+						<td id="Rec_Out">赢家/AV电子馆</td>
+						<td id="Rec_In">主帐户</td>
+						<td id="Rec_Money" class="recmoney">500</td>
+						<td id="Rec_Tips"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

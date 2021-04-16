@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>table</title>
+</head>
+
+<body>
+    <table class="Table1">
+        <tr>
+            <th colspan=6>会员资讯</th>
+        </tr>
+        <tr>
+            <td class="title1">会员编号:</td>
+            <td>148794</td>
+            <td class="title1">提款户名:</td>
+            <td><input type="text" name="name" value="刘鑫"></td>
+            <td class="title1">登录密码:</td>
+            <td><input type="text" name="password" placeholder="不修改请留空"><input type="button" value="忘记登录密码，发送短讯" class="forget"></td>
+        </tr>
+        <tr>
+            <td class="title1">会员帐号:</td>
+            <td class="account">020708<input type="button" value="忘记登录密码，发送短讯" class="forget"></td>
+            <td class="title1">银行帐号:</td>
+            <td></td>
+            <td class="title1">提款密码:</td>
+            <td><input type="text" name="password" placeholder="有使用不修改请留空"><input type="button" value="忘记登录密码，发送短讯" class="forget"></td>
+        </tr>
+        <tr>
+            <td class="title1">会员等级:</td>
+            <td>赢家会员</td>
+            <td class="title1">银行名称:</td>
+            <td></td>
+            <td class="title1">手机号码:</td>
+            <td><input type="text" name="phone" value="15946266666"></td>
+        </tr>
+        <tr>
+            <td class="title1">会员昵称:</td>
+            <td>159999925</td>
+            <td class="title1">银行省分:</td>
+            <td></td>
+            <td class="title1">身分证字号:</td>
+            <td><input type="text" name="id" value=""></td>
+        </tr>
+        <tr>
+            <td class="title1">影城观看权限:</td>
+            <td><input type="radio" name="sle" value="open">开启<input type="radio" name="sle" value="close">关闭</td>
+            <td class="title1">银行城市:</td>
+            <td></td>
+            <td class="title1">綁定其他銀行:</td>
+            <td><input type="button" value="新增/刪除/修改" class="other"></td>
+        </tr>
+    </table>
+
+    <table class="Table2">
+        <tr>
+            <th colspan=7>优惠活动开启设定</th>
+        </tr>
+        <tr>
+            <td colspan=7 class="text_red">(以下设定，前台须重启后开始生效，已领过关闭的活动不能取消勾选)</td>
+        </tr>
+        <tr>
+            <td class="title1">活动开启:</td>
+            <td><input type="checkbox" value="1" name="">网路银行优惠送1%</td>
+            <td><input type="checkbox" value="2" name="">首存礼</td>
+            <td><input type="checkbox" value="3" name="">生日礼</td>
+            <td><input type="checkbox" value="4" name="">救援金</td>
+            <td><input type="checkbox" value="5" name="">WINNER彩【乐透金2】</td>
+            <td><input type="checkbox" value="6" name="">WIN彩金</td>
+        </tr>
+    </table>
+    <table class="Table3">
+        <tr>
+            <th colspan=5>返水设定</th>
+        </tr>
+        <tr>
+            <td>查詢月份</td>
+            <td>上月等級</td>
+            <td>本月等級</td>
+            <td>更新者</td>
+            <td>是否更新等級</td>
+        </tr>
+        <tr>
+            <td colspan=5 class="text_none">查無資料</td>
+        </tr>
+    </table>
+    <table class="Table4">
+        <tr>
+            <th>备注</th>
+        </tr>
+    </table>
+    <textarea cols="260" rows="5">
+        　輸入你想要寫的內容...
+    </textarea>
+    <div class="btn">
+        <button class="confirm">确认送交</button>
+    </div>
+</body>
+
+</html>

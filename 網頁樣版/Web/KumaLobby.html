@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="content-language" content="zh-cn" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="css/reset.css?111" rel="stylesheet" type="text/css">
+    <link href="css/style.css?111" rel="stylesheet" type="text/css">
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script><!--回到頂端按鈕-->
+    <script src="js/go_top.js" type="text/javascript"></script><!--回到頂端按鈕-->
+	<title>电子游艺</title>
+</head>
+
+<body class="body_index">
+<!--回到頂端按鈕-->
+<div id="btn_goTop" class="btn_go_top"></div>
+
+<!--上層-->
+<div id="indexHeader" class="index_header">
+	<div id="HeaderLogin" class="header_login">
+		<div class="top_set">
+			<a href="index.html" class="header_logo"></a>
+			<!--未登入-->
+			<div id="NotLogin" class="notlogin_box" style="display: block;">
+				<div class="account_set">
+					<input type="text" id="Account" class="login_input magin_b" tabindex="1" maxlength="15" value="帐号｜手机号" placeholder="帐号｜手机号" data-placeholder="" onkeyup="value=value.replace(/[\W]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
+					<input type="password" id="Password" name="Password" class="login_input" tabindex="2" maxlength="15" placeholder="密码" data-placeholder="" onkeyup="value=value.replace(/[\W]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
+				</div>
+				<div class="verification_set">
+					<img class="RegNumber" src="/img.png">
+					<input type="text" id="Verification_Code" class="login_input" name="CheckCode" tabindex="3" maxlength="4" placeholder="验证码">
+				</div>
+				<a href="javascript:void(0);" id="LoginBtn" class="btn_login" tabindex="5"></a>
+				<a href="javascript:void(0);" onclick="showRegister();" class="btn_register"></a>
+				<div class="tip_set">
+					<a class="forgot_link" href="ForgotAccount.html" onclick="window.open(this.href, 'Forgot', 'width=602, height=412, toolbar=no, location=no, direction=no, menubar=no, scrollars=no, resizable=no, left=300px, top=150px'); return false;">忘記帳號？</a>
+					<a class="forgot_link" href="ForgotPassword.html" onclick="window.open(this.href, 'Forgot', 'width=602, height=412, toolbar=no, location=no, direction=no, menubar=no, scrollars=no, resizable=no, left=300px, top=150px'); return false;">忘記密碼？</a>
+					<input id="TermsOfUse" name="TermsOfUse" tabindex="4" type="checkbox" checked="">我已详细阅读且同意
+					<a href="/help/terms_of_use.html" target="_blank" class="terms_of_use">使用条款</a>
+				</div>
+			</div>
+			<!--已登入-->
+			<div id="Logined" class="login_box" style="display: none;">
+				<div class="members_id">
+					<span>赢家会员：</span>
+					<span class="text_yellow">WA60344</span>
+				</div>
+				<div class="main_account">
+					<span>主账户：</span>
+					<span id="AccountMoney" class="text_green">79,016.70</span>
+				</div>
+				<div class="line"></div>
+				<div class="members_itemlist">
+					<a class="itemlink" href="MyPurse.html" target="Member" onclick="window.open(this.href, 'MyPurse', 'width=1000, height=800, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;">平台转帐</a>
+					<a class="itemlink" href="MoneyChange.html" target="Member" onclick="window.open(this.href, 'MemberCenter', 'width=1000, height=800, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;">会员中心</a>
+					<a class="itemlink" href="Deposit.html" target="Member" onclick="window.open(this.href, 'MemberCenter', 'width=1000, height=800, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;">存&nbsp;款</a>
+					<a class="itemlink" href="Withdrawal.html" target="Member" onclick="window.open(this.href, 'MemberCenter', 'width=1000, height=800, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;">提&nbsp;款</a>
+					<a class="itemlogout" href="index.html">登&nbsp;出</a>
+					<a class="icon_message" href="UserMsg.html" onclick="window.open(this.href, 'Message', 'width=1000, height=800, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;">
+						<span id="MsgCnt" class="msg_list" style="display: block;">0</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--列表選單-->
+	<div id="HeaderBar" class="header_bar">
+		<ol class="gamelist_set">
+			<li class="submenu">
+				<a href="index.html" class="title">首页</a>
+			</li>
+			<li class="submenu">
+				<a href="http://awm.sxb168.win/app/m_index.php?lid=tVNp4935CMtDA5870yQn" class="title">赢家体育</a>
+			</li>
+			<li class="submenu">
+				<a href="#" class="title">真人娱乐</a>
+				<ul>
+					<li><a href="" class="width_set live_allbet"></a></li>
+					<li><a href="" class="width_set live_sa"></a></li>
+					<li><a href="" class="width_set live_ebet"></a></li>
+					<li><a href="" class="width_set live_ag"></a></li>
+					<li><a href="" class="width_set live_bbin"></a></li>
+					<li><a href="" class="width_set live_dg"></a></li>
+				</ul>
+			</li>        
+			<li class="submenu">
+				<a href="#" class="title">电子游艺</a>
+				<ul>
+					<li><a href="WinnerLobby.html" class="width_set slot_winner"></a></li>
+					<li><a href="SALobby.html" class="width_set slot_sa"></a></li>
+					<li><a href="KumaLobby.html" class="width_set slot_kuma"></a></li>
+					<li><a href="AGLobby.html" class="width_set slot_ag"></a></li>
+					<li><a href="BbinLobby.html" class="width_set slot_bbin"></a></li>
+					<li><a href="HabaLobby.html" class="width_set slot_haba"></a></li>
+					<li><a href="MGLobby.html" class="width_set slot_mg"></a></li>
+					<li><a href="PTLobby.html" class="width_set slot_pt"></a></li>
+					<li><a href="DKLobby.html" class="width_set slot_dk"></a></li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#" class="title">彩票游戏</a>
+				<ul>
+					<li><a href="" class="width_set lottery_shishicai"></a></li>
+					<li><a href="" class="width_set lottery_bjpk10"></a></li>
+				</ul>
+			</li>
+			<li class="submenu">
+				<a href="#" class="title">清除缓存</a>
+			</li>
+		</ol>
+	</div>
+</div>
+
+<!--中間-->
+<div class="index_main">
+	<div class="top_set">
+		<!--跑馬燈-->
+		<div class="marquee_set">
+			<div class="time">2017/06/23 (五) 16:03:35</div>
+			<a href="Notice.html" onclick="window.open(this.href, 'external', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" class="text">
+				<marquee class="running" direction="left" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="6">
+					<span id="Notice">亲爱的赢家Game会员您好：本公司坚持最优质的服务提供给广大的玩家朋友，但近期有不肖网站恶意仿效赢家并发布不实谣言，在此声明本公司为自营平台且无任何合作授权网站，敬请注意【 官网：WIN666.NET ／ WIN666.US ／ WIN666.CC 】</span>
+				</marquee>
+			</a>
+		</div>
+
+		<!--遊戲大廳_電子遊藝(Kuma電子)-->
+		<div class="mediumicon_area">
+			<a href="/Game/DTLaunch/1011" target="DT" class="game_icon_s">
+				<h1>乳姬无双</h1>
+				<img src="images/game_icon/dt/1011.png">
+			</a>
+			<a href="/Game/DTLaunch/1012" target="DT" class="game_icon_s">
+				<h1>性爱诊疗室</h1>
+				<img src="images/game_icon/dt/1012.png">
+			</a>
+			<a href="/Game/DTLaunch/1013" target="DT" class="game_icon_s">
+				<h1>淫乱学园</h1>
+				<img src="images/game_icon/dt/1013.png">
+			</a>
+			<a href="/Game/DTLaunch/1014" target="DT" class="game_icon_s">
+				<h1>明日花潮吹大作战</h1>
+				<img src="images/game_icon/dt/1014.png">
+			</a>
+			<a href="/Game/DTLaunch/1015" target="DT" class="game_icon_s">
+				<h1>快感‧三上悠亚</h1>
+				<img src="images/game_icon/dt/1015.png">
+			</a>
+			<a href="/Game/DTLaunch/1016" target="DT" class="game_icon_s">
+				<h1>女大生调教日记</h1>
+				<img src="images/game_icon/dt/1016.png">
+			</a>
+			<a href="/Game/DTLaunch/1017" target="DT" class="game_icon_s">
+				<h1>忧の无限中出约会</h1>
+				<img src="images/game_icon/dt/1017.png">
+			</a>
+			<a href="/Game/DTLaunch/1018" target="DT" class="game_icon_s">
+				<h1>神之乳RION</h1>
+				<img src="images/game_icon/dt/1018.png">
+			</a>
+			<a href="/Game/DTLaunch/1019" target="DT" class="game_icon_s">
+				<h1>旬果的发情诱惑</h1>
+				<img src="images/game_icon/dt/1019.png">
+			</a>
+			<a href="/Game/DTLaunch/1020" target="DT" class="game_icon_s">
+				<h1>豆腐西施淫乱觉醒</h1>
+				<img src="images/game_icon/dt/1020.png">
+			</a>
+			<a href="/Game/DTLaunch/1021" target="DT" class="game_icon_s">
+				<h1>G奶俱乐部</h1>
+				<img src="images/game_icon/dt/1021.png">
+			</a>
+			<a href="/Game/DTLaunch/1022" target="DT" class="game_icon_s">
+				<h1>女王啪啪啪</h1>
+				<img src="images/game_icon/dt/1022.png">
+			</a>
+			<a href="/Game/DTLaunch/1023" target="DT" class="game_icon_s">
+				<h1>千菜的调教教室</h1>
+				<img src="images/game_icon/dt/1023.png">
+			</a>
+			<a href="/Game/DTLaunch/1024" target="DT" class="game_icon_s">
+				<h1>换妻公寓</h1>
+				<img src="images/game_icon/dt/1024.png">
+			</a>
+			<a href="/Game/DTLaunch/1025" target="DT" class="game_icon_s">
+				<h1>和室里的激情</h1>
+				<img src="images/game_icon/dt/1025.png">
+			</a>
+			<a href="/Game/DTLaunch/1026" target="DT" class="game_icon_s">
+				<h1>高潮甜点屋</h1>
+				<img src="images/game_icon/dt/1026.png">
+			</a>
+			<a href="/Game/DTLaunch/0015" target="DT" class="game_icon_s">
+				<h1>梯子游戏</h1>
+				<img src="images/game_icon/dt/0015.png">
+			</a>
+			<a href="/Game/DTLaunch/0016" target="DT" class="game_icon_s">
+				<h1>甜心福袋</h1>
+				<img src="images/game_icon/dt/0016.png">
+			</a>
+		</div>
+        <div style="clear:both;"></div>
+	</div>
+</div>
+
+<!--下層-->
+<div id="indexFooter" class="index_footer">
+	<div id="FooterBar" class="footer_bar">
+		<div class="top_set">
+			<div class="list">
+				<a href="help.html" onclick="window.open(this.href, '', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="HelpCenter" class="btn_footerbar">帮助中心</a>
+				<span class="line"></span>
+				<a href="online_service.html" onclick="window.open(this.href, '', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="HelpCenter" class="btn_footerbar">客服中心</a>
+				<span class="line"></span>
+				<a href="help.html" onclick="window.open(this.href, '', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="HelpCenter" class="btn_footerbar">服务条款</a>
+				<span class="line"></span>
+				<a href="help.html" onclick="window.open(this.href, '', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="HelpCenter" class="btn_footerbar">隐私政策</a>
+				<span class="line"></span>
+				<a href="help.html" onclick="window.open(this.href, '', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="HelpCenter" class="btn_footerbar">免责声明</a>
+				<span class="line"></span>
+				<a href="help.html" onclick="window.open(this.href, '', 'width=1000, height=700, toolbar=no, location=no, direction=no, menubar=no, scrollars=yes, resizable=no, left=300px, top=150px'); return false;" target="HelpCenter" class="btn_footerbar">产品信息</a>
+			</div>
+			<div class="browser">
+				<a class="chrome" href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank"></a>
+	            <a class="firefox" href="https://www.mozilla.org/zh-TW/firefox/new/" target="_blank"></a>
+	            <a class="ie" href="http://windows.microsoft.com/zh-tw/internet-explorer/download-ie" target="_blank"></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer_info">
+		<div class="top_set">
+			<div class="footer_logo"></div>
+			<div class="line"></div>
+			<div class="footer_icon_set">
+				<div class="footer_icon1"></div>
+				<div class="footer_icon2"></div>
+				<div class="footer_text">本平台仅提供纯娱乐性质游戏，严禁会员有任何赌博行为，<br>未成年玩家请勿使用本平台。</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

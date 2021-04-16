@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="content-language" content="zh-cn" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="css/reset.css?111" rel="stylesheet" type="text/css">
+    <link href="css/popup.css?111" rel="stylesheet" type="text/css">
+    <link href="css/members.css?111" rel="stylesheet" type="text/css">
+    <title>微信支付</title>
+</head>
+
+<body>
+<div class="popup_withdrawal">
+	<div class="popup_bigtop">
+		<div class="bg_subtop">
+			<div class="popup_logo"></div>
+			<div class="title">存款</div>
+		</div>
+		<div class="bg_submenu">
+			<a href="Deposit.html" class="btn_submenu selected">存款</a>
+			<a href="Withdrawal.html" class="btn_submenu">提款</a>
+			<a href="MoneyChange.html" class="btn_submenu">交易记录</a>
+			<a href="Gifts.html" class="btn_submenu">活动点数</a>
+			<a href="ChangeInfoPassword.html" class="btn_submenu">变更资料</a>
+			<a href="#" class="btn_service">线上客服</a>
+		</div>
+	</div>
+
+	<!--微信充值-->
+    <div class="depositweb_submain">
+        <!--支付欄位(左)-->
+        <div class="dp_left">
+            <table class="data_send">
+                <tbody>
+                <tr>
+                    <td class="left_set">
+                        <div class="wd_text">资料填写</div>
+                        <div class="img_memberinfo"></div>
+                    </td>
+                    <td class="right_set">
+                        <div class="wd_title">
+                            <h5>【微信充值】存款金额</h5>
+                            <div class="btn_back">
+                                <div class="back_img"></div>
+                                <input type="button" class="back_input" value="返回上一页" onclick="history.back()">
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="wd_data">
+                            <div class="item_set">
+                                <div class="item">
+                                    <span>帐　　号：</span>
+                                    <span id="txtAccounts" class="bank_span">wz0003</span>
+                                </div>
+                                <div class="item">
+                                    <span>存款金额：</span>
+                                    <input type="text" id="WeChat_Money" name="WeChat_Money" maxlength="10" autocomplete="off" class="bank_input" placeholder="50~10000">
+                                    <!--提示框-->
+                                    <div class="tips_up" id="showLimits" type="tips" times="150" showtime="3000" contype="object" style="display: none;">
+                                        <div class="tips_bg">
+                                            <span>存款金额 50 - 10000</span>
+                                            <i class="arrow_up"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn_set">
+                                <input type="button" class="btn_blue" value="确认送出" onclick="sendBill()">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="data_send">
+                <tbody>
+                <tr>
+                    <td class="left_set">
+                        <div class="wd_text">注意事项</div>
+                        <div class="img_note"></div>
+                    </td>
+                    <td class="right_set">
+                        <ul class="precautions">
+                            <li>存款上限须视您的【微信】限额而定。</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--廣告欄位(右)-->
+        <div class="dp_right">
+            <img src="images/member_icon/deposit_ad01.jpg">
+            <img src="images/member_icon/deposit_ad02.jpg">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+/*********  未登入、登出、錯誤頁面  *********/
+.error_bg {
+    width: 100%;
+    height: 1080px;
+    margin: 0 auto;
+    text-align: center;
+    background: url(../images/index_icon/ErrorBG.jpg) center top no-repeat #101626;
+    background-size: 100% auto;
+}
+.main_error {
+    margin-top: 12%;
+}
+.winner_logo {
+    width: 249px;
+    height: 85px;
+    margin: 0 auto 2em;
+    background: url(../images/index_icon/index_logo.png) no-repeat;
+    background-size: auto 100%;
+}
+.error_info {
+    margin: 0 auto 2em;
+    text-align: center;
+}
+.error_info .text {
+    line-height: 1.4em;
+    margin: 0 auto;
+    font-size: 1.2em;
+    color: #fff;
+    text-shadow: 0px 2px 5px #000;
+}
+.error_btn {
+    margin: 0 auto;
+}
+.error_btn .btn_back {
+    display: inline-block;
+    *display: inline;
+    width: 15em;
+    height: 3em;
+    line-height: 3em;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    border: 0;
+    background: #3fb9ae;
+    background: -moz-linear-gradient(top, #3fb9ae 0%, #0a7168 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3fb9ae), color-stop(100%, #0a7168));
+    background: -webkit-linear-gradient(top, #3fb9ae 0%, #0a7168 100%);
+    background: -o-linear-gradient(top, #3fb9ae 0%, #0a7168 100%);
+    background: -ms-linear-gradient(top, #3fb9ae 0%, #0a7168 100%);
+    background: linear-gradient(to bottom, #3fb9ae 0%, #0a7168 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3fb9ae', endColorstr='#0a7168', GradientType=0 );
+    -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    -ms-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.error_btn .btn_back:hover {
+    background: #3fb9ae;
+    background: -moz-linear-gradient(top, #3fb9ae 0%, #0a7168 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3fb9ae), color-stop(100%, #0a7168));
+    background: -webkit-linear-gradient(top, #3fb9ae 0%, #0a7168 100%);
+    background: -o-linear-gradient(top, #3fb9ae 0%, #0a7168 100%);
+    background: -ms-linear-gradient(top, #3fb9ae 0%, #0a7168 100%);
+    background: linear-gradient(to bottom, #3fb9ae 0%, #0a7168 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3fb9ae', endColorstr='#0a7168', GradientType=0 );
+}

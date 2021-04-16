@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="content-language" content="zh-cn" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="css/reset.css?111" rel="stylesheet" type="text/css">
+    <link href="css/popup.css?111" rel="stylesheet" type="text/css">
+    <link href="css/members.css?111" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script><!--下拉縮放效果-->
+    <script src="js/promotions.js" type="text/javascript"></script><!--下拉縮放效果-->
+    <title>平台转帐</title>
+</head>
+
+<body>
+<div class="popup_members">
+    <div class="popup_bigtop">
+        <div class="bg_subtop">
+            <div class="popup_logo"></div>
+            <div class="title">平台转帐</div>
+        </div>
+        <div class="bg_submenu">
+            <a href="MyPurse.html" class="btn_submenu selected">平台转帐</a>
+            <a href="MyPurseChangeList.html" class="btn_submenu">转帐记录</a>
+            <a href="#" class="btn_service">线上客服</a>
+            <a href="index.html" target="_blank" class="btn_service">回到首页</a>
+        </div>
+    </div>
+
+    <!--平台转帐-->
+    <div class="point_submain">
+		<div class="wallet_set">
+            <div class="walletbox_left">
+                <div class="form_top">
+                	<span>主帐户：</span>
+                    <span id="Money" class="text_yellow">79,016.70</span>
+                </div>
+                <div class="form_content">
+                    <div class="items_left">
+                        <div class="project_box">
+                            <div class="project">赢家体育</div>
+                            <div id="SSB2" class="get_point" onclick="getPoint(14)">点击取点</div>
+                            <div id="SSB2Return" class="rewind" onclick="ReturnMainPoint('SSB2',14)" style="display: block;">转回</div>
+                        </div>
+                        <div class="project_box">
+                            <div class="project">彩票游戏</div>
+                            <div id="Lottery" class="get_point" onclick="getPoint(3)">点击取点</div>
+                            <div id="LotteryReturn" class="rewind" onclick="ReturnMainPoint('Lottery',3)" style="display: block;">转回</div>
+                        </div>
+                        <div class="project_box">
+                            <div class="project">BBIN娱乐场</div>
+                            <div id="Bbin" class="get_point" onclick="getPoint(4)">点击取点</div>
+                            <div id="BbinReturn" class="rewind" onclick="ReturnMainPoint('Bbin',4)" style="display: block;">转回</div>
+                        </div>
+                        <div class="project_box">
+                            <div class="project">SA娱乐场</div>
+                            <div id="SA" class="get_point" onclick="getPoint(6)">点击取点</div>
+                            <div id="SAReturn" class="rewind" onclick="ReturnMainPoint('OC',6)" style="display: block;">转回</div>
+                        </div>
+                        <div class="project_box">
+                            <div class="project">欧博娱乐场</div>
+                            <div id="Allbet" class="get_point" onclick="getPoint(7)">点击取点</div>
+                            <div id="AllbetReturn" class="rewind" onclick="ReturnMainPoint('Allbet',7)" style="display: block;">转回</div>
+                        </div>
+                        <div class="project_box">
+                            <div class="project">eBet娱乐场</div>
+                            <div id="eBet" class="get_point" onclick="getPoint(13)">点击取点</div>
+                            <div id="eBetReturn" class="rewind" onclick="ReturnMainPoint('eBet',13)" style="display: block;">转回</div>
+                        </div>
+                        <div class="project_box">
+                            <div class="project">AG娱乐场</div>
+                            <div id="Ag" class="get_point" onclick="getPoint(?)">点击取点</div>
+                            <div id="AgReturn" class="rewind" onclick="ReturnMainPoint('Ag',?)" style="display: block;">转回</div>
+                        </div>
+                        <div class="project_box">
+                            <div class="project">PT电子</div>
+                            <div id="PtGaming" class="get_point" onclick="getPoint(?)">点击取点</div>
+                            <div id="PtGamingReturn" class="rewind" onclick="ReturnMainPoint('PtGamingPoints',?)" style="display: block;">转回</div>
+                        </div>
+                    </div>
+                    <div class="items_right">
+                        <div class="project_box">
+                            <div class="project">赢家电子</div>
+                            <div id="GamePoints" class="get_point" onclick="getPoint(2)">点击取点</div>
+                            <div id="GamePointsReturn" class="rewind" onclick="ReturnMainPoint('GamePoints',2)" style="display: block;">转回</div>
+                        </div>
+                        <div class="project_box">
+                            <div class="project">KUMA电子</div>
+                            <div id="DT" class="get_point" onclick="getPoint(15)">点击取点</div>
+                            <div id="DTReturn" class="rewind" onclick="ReturnMainPoint('DT',15)" style="display: block;">转回</div>
+                        </div>
+                        <div class="project_box">
+                            <div class="project">BBIN电子</div>
+                            <div id="BbinGaming" class="get_point" onclick="getPoint(?)">点击取点</div>
+                            <div id="BbinGamingReturn" class="rewind" onclick="ReturnMainPoint('BbinGamingPoints',?)" style="display: block;">转回</div>
+                        </div>
+                        <div class="project_box">
+                            <div class="project">AG电子</div>
+                            <div id="AgGaming" class="get_point" onclick="getPoint(?)">点击取点</div>
+                            <div id="AgGamingReturn" class="rewind" onclick="ReturnMainPoint('AgGamingPoints',?)" style="display: block;">转回</div>
+                        </div>
+                        <div class="project_box">
+                            <div class="project">DK电子</div>
+                            <div id="DkGaming" class="get_point" onclick="getPoint(?)">点击取点</div>
+                            <div id="DkGamingReturn" class="rewind" onclick="ReturnMainPoint('DkGamingPoints',?)" style="display: block;">转回</div>
+                        </div>
+                        <div class="project_box">
+                            <div class="project">MG电子</div>
+                            <div id="MgGaming" class="get_point" onclick="getPoint(?)">点击取点</div>
+                            <div id="MgGamingReturn" class="rewind" onclick="ReturnMainPoint('MgGamingPoints',?)" style="display: block;">转回</div>
+                        </div>
+                        <div class="project_box">
+                            <div class="project">SA电子</div>
+                            <div id="SAGaming" class="get_point" onclick="getPoint(9)">点击取点</div>
+                            <div id="SAGamingReturn" class="rewind" onclick="ReturnMainPoint('SAGaming',9)" style="display: block;">转回</div>
+                        </div>
+                        <div class="project_box">
+                            <div class="project"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="walletbox_right">
+                <div class="form_top">
+                	<div>游戏进行前，请将主帐户点数转至各游戏馆，左边为各游戏馆的点数余额，右边为各游戏馆可进行之游戏。</div>
+                </div>
+                <div class="transfer_box">
+                    <div class="title_text text_deepred">转出帐户</div>
+                    <div id="ddlPayout" class="select_set">
+                        <div class="select_text">
+                            <span>— 请选择 —</span>
+                            <div class="select_account">
+                                <div class="arrow"></div>
+                            </div>
+                        </div>
+                        <div class="transfer_list" style="display: none;">
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="1">主账户</a>
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="14">赢家体育</a>
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="3">赢家彩票</a>
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="4">皇家娱乐场</a>
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="6">东方会娱乐场</a>
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="7">欧博娱乐场</a>
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="13">eBet娱乐场</a>
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="2">赢家电子</a>
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="9">SA电子</a>
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="15">KUMA电子</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="transfer_box">
+                    <div class="title_text text_deepgreen">转入账户</div>
+                    <div id="ddlPayin" class="select_set">
+                        <div class="select_text">
+                            <span>— 请选择 —</span>
+                            <div class="select_account">
+                                <div class="arrow"></div>
+                            </div>
+                        </div>
+                        <div class="transfer_list" style="display: none;">
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="1">主账户</a>
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="14">赢家体育</a>
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="3">赢家彩票</a>
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="4">皇家娱乐场</a>
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="6">东方会娱乐场</a>
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="7">欧博娱乐场</a>
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="13">eBet娱乐场</a>
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="2">赢家电子</a>
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="9">SA电子</a>
+                            <a href="javascript:void(0);" class="option_getPoint" selectid="15">KUMA电子</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="transfer_box">
+                    <span class="title_text enter_t">转点点数</span>
+                    <input type="text" id="Amount" name="Amount" class="Input_box" onkeydown="return SubmitEnter(event);" onkeyup="if( isNaN(value )) execCommand ('undo') " value="请输入整数点数" onfocus="FocusText(this.id, '请输入整数点数');" onblur="BlurText(this.id, '请输入整数点数');">
+                </div>
+                <div class="transfer_box">
+                    <input type="button" onclick="Transfer()" value="确认送出" class="btn_sent">
+                </div>
+            </div>
+        </div>
+
+	</div>
+</div>
+</body>
+</html>

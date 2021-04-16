@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="content-language" content="zh-cn" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="css/reset.css?111" rel="stylesheet" type="text/css">
+	<link href="css/popup.css?111" rel="stylesheet" type="text/css">
+    <title>投诉箱</title>
+</head>
+
+<body class="body_complain">
+<div class="comment_set">
+	<div class="comment_top">
+		<div class="mailbox_img"></div>
+		<div class="title">赢家投诉箱</div>
+	</div>
+	<form class="comment" name="form1" method="POST" action="">
+		<div class="comment_text_b">请给我们一些改进或鼓劢的意见，我们绝对尊重并依赖「您的意见」、「您的批评」与「您的赞赏」。由衷感谢您的宝贵意见！</div>
+		<div class="comment_info">
+	        <div class="margin_set">
+	            <div class="comment_text_s">* 为必填项目</div>
+	            <div class="comment_item">会员帐号：</div>
+	            <div class="comment_input">
+	                <input name="Pay_Name" id="Pay_Name" type="text" placeholder="填写后无法变更" class="item_input">
+	            </div>
+	        </div>
+	        <div class="margin_set">
+	            <div class="comment_item">* 服务态度：</div>
+	            <div class="comment_input">
+	                <select id="attitude" name="attitude" class="comment_option">
+	                    <option value="">请选择</option>
+	                    <option value="非常满意">非常满意</option>
+	                    <option value="满意">满意</option>
+	                    <option value="一般">一般</option>
+	                    <option value="不满意">不满意</option>
+	                    <option value="很差">很差</option>
+	                </select>
+	            </div>
+	        </div>
+	        <div class="margin_set">
+	            <div class="comment_item">* 投诉客服人员：</div>
+	            <div class="comment_input">
+	                <select name="Ask" id="Ask" class="comment_option">
+	                    <option value="">请选择</option>
+	                    <option value="aaa">aaa</option>
+	                    <option value="bbb">bbb</option>
+	                    <option value="ccc">ccc</option>
+	                    <option value="ddd">ddd</option>
+	                </select>
+	            </div>
+	        </div>
+	        <div class="margin_set">
+	            <div class="comment_item">投诉内容：</div>
+	            <div class="comment_input">
+	                <textarea class="comment_textarea" id="info" name="info" cols="" rows=""></textarea>
+	            </div>
+	        </div>
+	        <div class="margin_set">
+				<div class="commentbtn_ok" onclick="showRegAdditional();">
+					<span class="regbtn_text">送交</span>
+				</div>
+				<div class="commentbtn_clean" onclick="document.location.href='index.html';">
+					<span class="regbtn_text">清除</span>
+				</div>
+	        </div>
+	    </div>
+	</form>
+</div>
+</body>
+</html>

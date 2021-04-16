@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telphone=no, email=no"><!-- 禁止數字識別為電話或email -->
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/new_style.css" rel="stylesheet" type="text/css">
+    <link href="css/color_white.css" rel="stylesheet" type="text/css">
+	<!--側欄滑出+下拉縮放+翻轉箭頭+回到頂端效果JS-->
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="js/slider.js" type="text/javascript"></script>
+    <!--西曆繁中日曆css+js-->
+    <link href="css/jquery-ui-1.10.2.css" rel="stylesheet" type="text/css">
+    <link href="css/jqui_change.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-ui-1.10.2.min.js" type="text/javascript"></script>
+    <script src="js/jquery.ui.datepicker-zh-TW.js" type="text/javascript"></script>
+    <title>文章專區 | 劉北元專欄</title>
+</head>
+<body>
+    <!--回到頂端按鈕-->
+    <div id="btn_goTop" class="btn_go_top"></div>
+
+    <!--上層(共用)-->
+    <div class="navbar">
+        <div class="navbar_bg">
+            <div class="navbar_box">
+                <div class="header_title">
+                    <img src="images/index_icon/index_logo.png" onclick="javascript:location.href=''" class="header_logo">
+                    <span>管理系統</span>
+                </div>
+                <div class="top_iconset">
+                    <div class="text">
+                        <div class="icon_account"></div>
+                        <div class="top_member" onclick="javascript:location.href=''">今日新增會員 <span>1</span> 人</div>
+                    </div>
+                    <div class="text">
+                        <div class="icon_coins"></div>
+                        <div class="top_member" onclick="javascript:location.href=''">今日訂單金額 <span>150,000</span> 元</div>
+                    </div>
+                    <a href="" class="marquee_set">
+                        <div class="icon_announcement"></div>
+                        <marquee class="running" direction="left" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="6">
+                            <span id="Notice">防護保管理系統訊息公告</span>
+                        </marquee>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--手機版_導覽列下拉按鈕(共用)-->
+        <a href="javascript:void(0);" class="navbar_toggle"></a>
+        <div class="navbar_iconset" style="display: none;">
+            <div>
+                <div class="text">
+                    <div class="icon_account"></div>
+                    <div class="top_member" onclick="javascript:location.href=''">今日新增會員 <span>1</span> 人</div>
+                </div>
+                <div class="text">
+                    <div class="icon_coins"></div>
+                    <div class="top_member" onclick="javascript:location.href=''">今日訂單金額 <span>150,000</span> 元</div>
+                </div>
+            </div>
+            <div>
+                <a href="#" class="marquee_set">
+                    <div class="icon_announcement"></div>
+                    <marquee class="running" direction="left" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="6">
+                        <span id="Notice">防護保管理系統訊息公告</span>
+                    </marquee>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--左側選單_下拉按鈕(共用)-->
+    <a href="javascript:void(0);" id="MenuBtn" class="menu_btn"></a>
+    <!--左側選單_滑出資訊(共用)-->
+    <div id="sidebar" class="sidebar_set" style="display: none;">
+        <div id="slider_content" class="slider_content">
+            <!--會員資訊-->
+            <div class="member_info">
+                <div class="icon_bighead"></div>
+                <div class="member_id">abc543</div>
+            </div>
+
+            <!--選單列滑出效果-->
+            <ul id="inside" class="inside">
+                <li class="sidebar_list">
+                    <div class="link" onclick="javascript:location.href='dashboard.html';">
+                        <div class="icon_home"></div>
+                        <span class="text_orange">首頁</span>
+                    </div>
+                </li>
+                <li class="sidebar_list">
+                    <div class="link">
+                        <div class="icon_item"></div>
+                        <span>商品管理</span>
+                        <div class="icon_arrow"></div>
+                    </div>
+                    <ul id="" class="submenu">
+                        <li><a href="insurance_1.html" class="submenu_item">商品列表</a></li>
+                        <li><a href="insurance_2.html" class="submenu_item">險種列表</a></li>
+                        <li><a href="insurance_3.html" class="submenu_item">壽險公司列表</a></li>
+                        <li><a href="insurance_4.html" class="submenu_item">產險公司列表</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar_list">
+                    <div class="link">
+                        <div class="icon_member"></div>
+                        <span>會員管理</span>
+                        <div class="icon_arrow"></div>
+                    </div>
+                    <ul id="" class="submenu">
+                        <li><a href="members.html" class="submenu_item">會員列表</a></li>
+                        <li><a href="cookies.html" class="submenu_item">瀏覽紀錄</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar_list">
+                    <div class="link" onclick="javascript:location.href='order.html'">
+                        <div class="icon_coins"></div>
+                        <span>訂單管理</span>
+                    </div>
+                </li>
+                <li class="sidebar_list">
+                    <div class="link">
+                        <div class="icon_message"></div>
+                        <span>文章專區</span>
+                        <div class="icon_arrow"></div>
+                    </div>
+                    <ul id="" class="submenu">
+                        <li><a href="consultations.html" class="submenu_item">討論專區</a></li>
+                        <li><a href="qa_liu.html" class="submenu_item">劉北元專區</a></li>
+                        <li><a href="qa.html" class="submenu_item">小編專區</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar_list">
+                    <div class="link" onclick="javascript:location.href='permission.html'">
+                        <div class="icon_system"></div>
+                        <span>權限設置</span>
+                    </div>
+                </li>
+                <li class="sidebar_list">
+                    <div class="link" onclick="javascript:location.href='change_pw.html'">
+                        <div class="icon_account"></div>
+                        <span>變更密碼</span>
+                    </div>
+                </li>
+                <li class="sidebar_list">
+                    <div class="link" onclick="javascript:location.href='index.html'">
+                        <div class="icon_logout"></div>
+                        <span>登出</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--側選單_滑出的黑色背景-->
+        <div id="BlackBG" class="bg_black" style="display: none;"></div>
+    </div>
+
+    <!--右側內容-->
+    <div class="content_r">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title">
+                <span>劉北元專欄</span>
+                <input type="button" id="liu_add" value="新增文章" class="btn_back">
+            </div>
+
+            <!--內容-->
+            <div class="box_inside">
+                <form action="" method="">
+                    <!-- 功能按鈕(分左右兩邊的) -->
+                    <div class="col_1">
+                        <!-- 左邊 -->
+                        <div class="col50_left">
+                            <span class="title">查詢內容</span>
+                            <input type="text" id="" name="" placeholder="請輸入關鍵字" value="" class="no_width" required="">
+                            <input type="button" value="搜尋" class="btn_small btn_yellow">
+                        </div>
+                        <!-- 右邊-->
+                        <div class="col50_right">
+                            <div class="radio_inline">
+                                <input type="button" value="全選" class="btn_small">
+                                <input type="button" value="全清" class="btn_small btn_gray">
+                                <input type="button" value="刪除" class="btn_small btn_red">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 表格 -->
+                    <div class="tbbox tbfree">
+                        <table class="fixed_table">
+                            <thead>
+                                <tr>
+                                    <th class="freeze cell_m"></th>
+                                    <th class="freeze cell_ss">編號</th>
+                                    <th class="freeze cell_m">發佈日期</th>
+                                    <th class="freeze">文章標題</th>
+                                    <th class="freeze cell_m">最後編修人</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-th="操作">
+                                        <input type="checkbox" name="" value="" class="check_box">
+                                        <input type="button" id="liu_edit" value="編輯" class="btn_small">
+                                        <input type="button" id="item_del" value="刪除" class="btn_small btn_red">
+                                    </td>
+                                    <td data-th="編號">01</td>
+                                    <td data-th="發佈日期">2020/05/25</td>
+                                    <td data-th="文章標題">買保險是最糟糕的選擇，繳一堆保費卻什麼都不理賠！買保險時業務員沒有跟你說的，這篇一次告訴你。</td>
+                                    <td data-th="最後編修人">abc543</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 功能按鈕(分左右兩邊的) -->
+                    <div class="col_1">
+                        <!-- 左邊 -->
+                        <div class="col50_left">
+                            <div class="col_inline">
+                                <span class="title">共</span>
+                                <span class="title text_red">10</span>
+                                <span class="title">筆，</span>
+                            </div>
+                            <div class="col_inline">
+                                <span class="title">顯示</span>
+                                <select id="" class="no_width">
+                                    <option value="" selected="">10</option>
+                                    <option value="">20</option>
+                                    <option value="">30</option>
+                                    <option value="">40</option>
+                                    <option value="">50</option>
+                                </select>
+                                <span class="title">筆</span>
+                            </div>
+                        </div>
+                        <!-- 右邊 -->
+                        <div class="col50_right">
+                            <ul class="pagination">
+                                <li><a href="#" class="previous">«</a></li>
+                                <li><a href="#" class="previous">‹</a></li>
+                                <li><a href="#" class="active">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#" class="next">›</a></li>
+                                <li><a href="#" class="next">»</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框(新增留言)-->
+    <div id="popup_liu_add" class="content_r" style="/*display: none;*/">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title">
+                <span>新增文章</span>
+                <div class="btn_close" onclick="document.getElementById('popup_liu_add').style.display='none'"></div>
+            </div>
+            <!--內容-->
+            <div class="box_inside">
+                <form action="" method="">
+                    <!--挑選日期(西曆)-->
+                    <div class="col_5">
+                        <div class="input_title">發佈日期</div>
+                        <input type="text" id="liu_datepick1" autocomplete="off" value="" class="input100 tcal tcalInput col_date hasDatepick">
+                        <script language="JavaScript">
+                            //點擊跳出西曆日曆JS
+                            $(document).ready(function(){
+                                $("#liu_datepick1").datepicker();
+                            });
+                        </script>
+                    </div>
+                    <div class="col_1">
+                        <div class="input_title">文章標題</div>
+                        <input type="text" id="" placeholder="" maxlength="80" class="input100" required="">
+                    </div>
+                    <div class="col_1">
+                        <div class="input_title">文章內容</div>
+                        <textarea placeholder="" class="textarea100"></textarea>
+                    </div>
+
+                    <!-- 按鈕 -->
+                    <div class="col_btn">
+                        <input type="button" onclick="" value="清除" class="btn_big">
+                        <input type="submit" onclick="" value="確認新增" class="btn_big">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框(編輯留言)-->
+    <div id="popup_liu_edit" class="content_r" style="/*display: none;*/">
+        <div class="boxset">
+            <!--標題-->
+            <div class="box_title">
+                <span>編輯文章</span>
+                <div class="btn_close" onclick="document.getElementById('popup_liu_edit').style.display='none'"></div>
+            </div>
+            <!--內容-->
+            <div class="box_inside">
+                <form action="" method="">
+                    <!--挑選日期(西曆)-->
+                    <div class="col_5">
+                        <div class="input_title">發佈日期</div>
+                        <input type="text" id="liu_datepick2" autocomplete="off" value="2020/06/08" class="input100 tcal tcalInput col_date hasDatepick">
+                        <script language="JavaScript">
+                            //點擊跳出西曆日曆JS
+                            $(document).ready(function(){
+                                $("#liu_datepick2").datepicker();
+                            });
+                        </script>
+                    </div>
+                    <div class="col_1">
+                        <div class="input_title">文章標題</div>
+                        <input type="text" id="" placeholder="" value="買保險是最糟糕的選擇，繳一堆保費卻什麼都不理賠！買保險時業務員沒有跟你說的，這篇一次告訴你。" maxlength="80" class="input100" required="">
+                    </div>
+                    <div class="col_1">
+                        <div class="input_title">文章內容</div>
+                        <textarea placeholder="" class="textarea100">
+買保險真的讓你安心嗎？買不買保險又有什麼差嗎？
+
+買保險每年要花數萬元的保費，經濟壓力真的不小，要不是當初業務說：「你看這個費率，現在買多便宜，60歲買保險多貴？既然愈老愈容易進醫院，是不是現在買最划算？」無法反駁的數據加上人情壓力，很容易就買下去了。
+
+現在買的終身型保險，真的是「替未來準備」，還是在「壓榨你現在的生活」？買保險時業務員沒有跟你說的，這篇一次告訴你。
+
+現實生活中，如果你今天的資產只有200萬，買保險對你而言是必要的嗎？任何一個50萬、100萬的意外或疾病，就會讓你的資產損失一大部分，很明顯會感受到經濟壓力。
+
+關掉這篇文章以前，一定要記住一個觀念：
+
+「財富累積愈多，對保險的依賴就愈低，我要想辦法讓財富累積愈多，這才是我的最終目的。」
+
+如果要用委婉一點的說法，可以說：保險是給資產不足的人用的。 用誠實、不拐彎抹角的說法，會說：保險是給窮人用的。
+
+從數字上來看，資產比較少的人，對於「金錢的損失」會受到比較劇烈的影響；當你資產充足(例如有2,000萬的資產)，對保險的依賴度就比較低，這個時候你就有本事買更少的保險，省下這些買保險的錢，又可以讓財富用更快的速度累積。
+
+要想辦法讓自己「從窮人成為資產充足的人」，比你買什麼險都還重要，想辦法在「節省保費」這件事多做一點功課，省下來的錢又可以讓你在投資理財的時候累積更多財富。
+
+收入是公司固定發給你的，但「花更少的保費」卻是你可以決定的，每年花在買保險的費用愈少，你就能存下更多的錢，存更多的錢就愈接近脫離對保險的需求，這樣的循環才是一個正確的觀念。
+
+但是不知道什麼時候，一場車禍、不幸罹癌，我們瞬間要支出龐大的醫療費用，嚴重影響到我們辛辛苦苦累積的財富，如果不幸缺手缺腳無法工作，就像左下角的紅色箭頭一樣，辛苦累積的財富受到重大損失，日後的生活費用更是會造成自己和家人的負擔。
+
+買保險，其實是對自己負責任：「生為一個成年人，我希望對我自己的財產負責，不希望任何的意外或疾病，需要麻煩我的家人提供經濟協助。」
+                        </textarea>
+                    </div>
+
+                    <!-- 按鈕 -->
+                    <div class="col_btn">
+                        <input type="button" onclick="" value="清除" class="btn_big">
+                        <input type="submit" onclick="" value="確認修改" class="btn_big">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--跳框_刪除確認-->
+    <div id="popup_del" class="popup_windows" style="display: none;">
+        <div class="popup_container">
+            <div class="popup">
+                <div class="btn_close" onclick="document.getElementById('popup_del').style.display='none'"></div>
+                <div class="popup_title">
+                    <span>文章訊息</span>
+                </div>
+                <div class="popup_in">
+                    <div class="text_center">確認要刪除此文章？</div>
+                    <!--按鈕-->
+                    <div class="popup_btn">
+                        <input type="button" value="取消" class="btn_left">
+                        <input type="button" value="確認刪除" class="btn_right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--新增+編輯欄位_JS-->
+    <script>
+        //新增留言
+        let modal_liu_add = document.getElementById('liu_add');
+        modal_liu_add.addEventListener('click', function(e){
+            e.preventDefault();
+            document.getElementById('popup_liu_add').style.display='block';
+        });
+        //編輯留言
+        let modal_liu_edit = document.getElementById('liu_edit');
+        modal_liu_edit.addEventListener('click', function(e){
+            e.preventDefault();
+            document.getElementById('popup_liu_edit').style.display='block';
+        });
+        //刪除跳框
+        let modal_item_del = document.getElementById('item_del');
+        modal_item_del.addEventListener('click', function(e){
+            e.preventDefault();
+            document.getElementById('popup_del').style.display='block';
+        });
+    </script>
+</body>
+</html>

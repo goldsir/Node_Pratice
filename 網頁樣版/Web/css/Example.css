@@ -1,0 +1,756 @@
+/*********  共用樣式  *********/
+.popup_Example {
+    width: 983px;
+    height: 790px;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+    overflow: hidden;
+}
+.bg_subtop {
+    width: 100%;
+    height: 90px;
+    line-height: 90px;
+    text-align: left;
+    border-bottom: 1px solid #0f1a21;
+    background: #003b65;
+    background: -moz-linear-gradient(top, #0083ce 0%, #003b65 100%);
+    background: -webkit-linear-gradient(top, #0083ce 0%, #003b65 100%);
+    background: linear-gradient(to bottom, #0083ce 0%, #003b65 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0083ce', endColorstr='#003b65', GradientType=0 );
+}
+.Example_logo {
+    display: inline-block;
+    *display: inline;
+    width: 78px;
+    height: 80px;
+    margin: 0 10px;
+    background: url(../images/index_icon/popup_logo.png) top center no-repeat;
+    background-size: 100% auto;
+    vertical-align: middle;
+}
+.bg_subtop .title {
+    display: inline-block;
+    *display: inline;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+    font-size: 2.2em;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.bg_submenu {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    font-size: 15px;
+    background: #1b3856;
+    border-top: 1px solid #2c6e9a;
+}
+.btn_submenu {
+    float: left;
+    width: 104px;
+    height: 28px;
+    line-height: 28px;
+    margin: 5px 0 0 7px;
+    text-align: center;
+    font-weight: bold;
+    color: #000;
+    background: #f1f1f1;
+    background: -moz-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f1f1f1), color-stop(50%, #bfbfbf), color-stop(51%, #afafaf), color-stop(100%, #fefefe));
+    background: -webkit-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: -o-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: -ms-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: linear-gradient(to bottom, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f1', endColorstr='#afafaf', GradientType=0 );
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+.bg_submenu .selected, .btn_submenu:hover {
+    color: #fff;
+    font-weight: bold;
+    background: #ff003a;
+    background: -moz-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff003a), color-stop(53%, #cd0c38), color-stop(100%, #cd0b37));
+    background: -webkit-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: -o-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: -ms-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: linear-gradient(to bottom, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff003a', endColorstr='#cd0b37', GradientType=0 );
+}
+.btn_service {
+    float: right;
+    width: 90px;
+    height: 28px;
+    line-height: 28px;
+    margin: 5px 0 0 7px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px 3px #000;
+    background: #385000;
+    background: -moz-linear-gradient(top, #a8dc09 0%, #385000 50%, #486b00 51%, #7ea717 100%);
+    background: -webkit-linear-gradient(top, #a8dc09 0%, #385000 50%, #486b00 51%, #7ea717 100%);
+    background: linear-gradient(to bottom, #a8dc09 0%, #385000 50%, #486b00 51%, #7ea717 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8dc09', endColorstr='#385000', GradientType=0 );
+    border: 1px solid #b8ff94;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+.btn_service:hover {
+    background: #819014;
+    background: -moz-linear-gradient(top, #e6f0a3 0%, #819014 50%, #9bad16 51%, #dbf043 100%);
+    background: -webkit-linear-gradient(top, #e6f0a3 0%, #819014 50%, #9bad16 51%, #dbf043 100%);
+    background: linear-gradient(to bottom, #e6f0a3 0%, #819014 50%, #9bad16 51%, #dbf043 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f0a3', endColorstr='#819014', GradientType=0 );
+}
+/*********  共用樣式  *********/
+.Example_submain img, .web_Alipay01, .web_Alipay02, .web_Alipay03, .web_Alipay04, .web_Alipay05, .web_Alipay06, 
+.m_Alipay01, .m_Alipay02, .m_Alipay03, .m_Alipay04, .m_Alipay05, .m_Alipay06, .m_Alipay07, 
+.bank_Alipay02, .bank_Alipay03, .bank_Alipay04, .bank_Alipay05, .bank_Alipay06, .bank_Alipay07, 
+.logon_Alipay01, .logon_Alipay02, .logon_Alipay03, .logon_Alipay04, .logon_Alipay05, .logon_Alipay06, .logon_Alipay07, 
+.Order_Alipay01, .Order_Alipay02, .Order_Alipay03, .Order_Alipay04, .Order_Alipay05, .Order_Alipay06, 
+.activate_Alipay01, .activate_Alipay02, .activate_Alipay03, .activate_Alipay04, .activate_Alipay05, 
+.activate_Alipay06, .activate_Alipay07, .payfor_Web01, .payfor_Web02, .payfor_Web03, .payfor_Web04, 
+.payfor_Union01, .payfor_Union02, .payfor_RealBank01, .payfor_RealBank02, .payfor_RealBank03 {
+    margin: 10px 0;
+    display: inline-block;
+    *display: inline;
+}
+
+/*********  微信支付范例_Web  *********/
+.Example_submain {
+    width: 90%;
+    height: 575px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.top_decimal {
+    list-style: decimal;
+    padding-left: 20px;
+    line-height: 24px;
+    font-size: 16px;
+    color: #005fab;
+    font-weight: bold;
+}
+.top_decimal span {
+    font-size: 16px;
+    color: #f06642;
+    font-weight: bold;
+}
+/*.web_Wechat01 {
+    background: url(../images/Example_icon/web_Wechat01.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 400px;
+}
+.web_Wechat02 {
+    background: url(../images/Example_icon/web_Wechat02.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 320px;
+}
+.web_Wechat03 {
+    background: url(../images/Example_icon/web_Wechat03.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 540px;
+}
+.web_Wechat04 {
+    background: url(../images/Example_icon/web_Wechat04.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 380px;
+}
+.web_Wechat01, .web_Wechat02, .web_Wechat03, .web_Wechat04 {
+    margin: 10px 0px;
+    display: inline-block;
+    *display: inline;
+}*/
+
+/*********  微信支付范例_mobil  *********/
+/*.m_Wechat01 {
+    background: url(../images/Example_icon/m_Wechat01.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 250px;
+}
+.m_Wechat02 {
+    background: url(../images/Example_icon/m_Wechat02.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 540px;
+}
+.m_Wechat03 {
+    background: url(../images/Example_icon/m_Wechat03.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 960px;
+}
+.m_Wechat04 {
+    background: url(../images/Example_icon/m_Wechat04.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 560px;
+}
+.m_Wechat05 {
+    background: url(../images/Example_icon/m_Wechat05.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 930px;
+}
+.m_Wechat06 {
+    background: url(../images/Example_icon/m_Wechat06.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 930px;
+}
+.m_Wechat07 {
+    background: url(../images/Example_icon/m_Wechat07.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 930px;
+}
+.m_Wechat08 {
+    background: url(../images/Example_icon/m_Wechat08.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 600px;
+}
+.m_Wechat09 {
+    background: url(../images/Example_icon/m_Wechat09.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 930px;
+}
+.m_Wechat10 {
+    background: url(../images/Example_icon/m_Wechat10.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 600px;
+}
+.m_Wechat01, .m_Wechat02, .m_Wechat03, .m_Wechat04, .m_Wechat05, 
+.m_Wechat06, .m_Wechat07, .m_Wechat08, .m_Wechat09, .m_Wechat10 {
+    margin: 10px 0px;
+    display: inline-block;
+    *display: inline;
+}*/
+.qa_text {
+    font-weight: bold;
+    font-size: 24px;
+    color: red;
+    line-height: 50px;
+}
+
+/*********  微信存款明细查询  *********/
+.Example_submain2 {
+    width: 94%;
+    height: 615px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.type_list {
+    width: 100%;
+    height: 40px;
+    line-height: 37px;
+    color: #fff;
+    background-color: #05659e;
+    border-top: 1px solid #cecece;
+    border-bottom: 1px solid #cecece;
+    margin: 0px auto;
+    padding-left: 17px;
+}
+.btn_sentout {
+    width: 80px;
+    height: 25px;
+    margin: 0 0 0 10px;
+    color: #000;
+    background: #f1f1f1;
+    background: -moz-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f1f1f1), color-stop(50%, #bfbfbf), color-stop(51%, #afafaf), color-stop(100%, #fefefe));
+    background: -webkit-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: -o-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: -ms-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: linear-gradient(to bottom, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f1', endColorstr='#afafaf', GradientType=0 );
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    *display: inline;
+}
+.type_list .selected {
+    color: #fff;
+    font-weight: bold;
+    background: #ff003a;
+    background: -moz-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff003a), color-stop(53%, #cd0c38), color-stop(100%, #cd0b37));
+    background: -webkit-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: -o-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: -ms-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: linear-gradient(to bottom, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff003a', endColorstr='#cd0b37', GradientType=0 );
+}
+.top_decimal2 {
+    list-style: decimal;
+    padding: 20px 40px;
+    line-height: 24px;
+    font-size: 16px;
+    color: #005fab;
+    font-weight: bold;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 532px;
+}
+.linkset {
+    color: #f00;
+}
+.linkset:hover {
+    text-decoration: underline;
+    color: #00BCD4;
+}
+/*.ex_Wechat1-1 {
+    background: url(../images/Example_icon/ex_Wechat1-1.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 960px;
+}
+.ex_Wechat1-2 {
+    background: url(../images/Example_icon/ex_Wechat1-2.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 600px;
+}
+.ex_Wechat1-3 {
+    background: url(../images/Example_icon/ex_Wechat1-3.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 960px;
+}
+.ex_Wechat1-4 {
+    background: url(../images/Example_icon/ex_Wechat1-4.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 840px;
+}
+.ex_Wechat2-1 {
+    background: url(../images/Example_icon/ex_Wechat2-1.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 960px;
+}
+.ex_Wechat2-2 {
+    background: url(../images/Example_icon/ex_Wechat2-2.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 600px;
+}
+.ex_Wechat2-3 {
+    background: url(../images/Example_icon/ex_Wechat2-3.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 960px;
+}
+.ex_Wechat2-4 {
+    background: url(../images/Example_icon/ex_Wechat2-4.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 840px;
+}
+.ex_Wechat2-5 {
+    background: url(../images/Example_icon/ex_Wechat2-5.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 840px;
+}
+.ex_Wechat3-3 {
+    background: url(../images/Example_icon/ex_Wechat3-3.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 840px;
+}
+.ex_Wechat3-4 {
+    background: url(../images/Example_icon/ex_Wechat3-4.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 750px;
+}
+.ex_Wechat3-5 {
+    background: url(../images/Example_icon/ex_Wechat3-5.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 840px;
+}
+.ex_Wechat3-6 {
+    background: url(../images/Example_icon/ex_Wechat3-6.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 550px;
+}
+.ex_Wechat4-1 {
+    background: url(../images/Example_icon/ex_Wechat4-1.jpg?2018070401) no-repeat;
+    width: 950px;
+    height: 840px;
+}
+.ex_Wechat4-2 {
+    background: url(../images/Example_icon/ex_Wechat4-2.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 950px;
+}
+.ex_Wechat4-3 {
+    background: url(../images/Example_icon/ex_Wechat4-3.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 950px;
+}.ex_Wechat1-1, .ex_Wechat1-2, .ex_Wechat1-3, .ex_Wechat1-4, 
+.ex_Wechat2-1, .ex_Wechat2-2, .ex_Wechat2-3, .ex_Wechat2-4, .ex_Wechat2-5, 
+.ex_Wechat3-3, .ex_Wechat3-4, .ex_Wechat3-5, .ex_Wechat3-6, 
+.ex_Wechat4-1, .ex_Wechat4-2, .ex_Wechat4-3 {
+    display: inline-block;
+    *display: inline;
+    margin: 10px 0px;
+}*/
+
+/*********  QQ支付范例  *********/
+/*.payfor_QQ01, .payfor_QQ02, .payfor_QQ03 {
+    display: inline-block;
+    *display: inline;
+    width: 700px;
+    height: 383px;
+    margin: 10px 0px;
+}
+.payfor_QQ01 {
+    background: url(../images/Example_icon/payfor_QQ01.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+}
+.payfor_QQ02 {
+    background: url(../images/Example_icon/payfor_QQ02.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+}
+.payfor_QQ03 {
+    background: url(../images/Example_icon/payfor_QQ03.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+}*/
+
+/*********  支付宝支付范例_Web  *********/
+/*.web_Alipay01 {
+    background: url(../images/Example_icon/web_Alipay01.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 800px;
+    height: 530px;
+}
+.web_Alipay02 {
+    background: url(../images/Example_icon/web_Alipay02.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 800px;
+    height: 390px;
+}
+.web_Alipay03 {
+    background: url(../images/Example_icon/web_Alipay03.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 800px;
+    height: 400px;
+}
+.web_Alipay04 {
+    background: url(../images/Example_icon/web_Alipay04.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 800px;
+    height: 700px;
+}
+.web_Alipay05 {
+    background: url(../images/Example_icon/web_Alipay05.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 800px;
+    height: 450px;
+}
+.web_Alipay06 {
+    background: url(../images/Example_icon/web_Alipay06.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 800px;
+    height: 170px;
+}*/
+
+/*********  支付宝支付范例_mobil  *********/
+/*.m_Alipay01 {
+    background: url(../images/Example_icon/m_Alipay01.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 660px;
+}
+.m_Alipay02 {
+    background: url(../images/Example_icon/m_Alipay02.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 790px;
+    height: 580px;
+}
+.m_Alipay03 {
+    background: url(../images/Example_icon/m_Alipay03.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 790px;
+    height: 500px;
+}
+.m_Alipay04 {
+    background: url(../images/Example_icon/m_Alipay04.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 800px;
+    height: 620px;
+}
+.m_Alipay05 {
+    background: url(../images/Example_icon/m_Alipay05.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 480px;
+    height: 170px;
+}
+.m_Alipay06 {
+    background: url(../images/Example_icon/m_Alipay06.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 400px;
+}
+.m_Alipay07 {
+    background: url(../images/Example_icon/m_Alipay07.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 800px;
+    height: 630px;
+}*/
+
+/*********  支付宝支付范例_bank  *********/
+/*.bank_Alipay02 {
+    background: url(../images/Example_icon/bank_Alipay02.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 660px;
+}
+.bank_Alipay03 {
+    background: url(../images/Example_icon/bank_Alipay03.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 660px;
+}
+.bank_Alipay04 {
+    background: url(../images/Example_icon/bank_Alipay04.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 660px;
+}
+.bank_Alipay05 {
+    background: url(../images/Example_icon/bank_Alipay05.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 660px;
+}
+.bank_Alipay06 {
+    background: url(../images/Example_icon/bank_Alipay06.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 660px;
+}
+.bank_Alipay07 {
+    background: url(../images/Example_icon/bank_Alipay07.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 660px;
+}*/
+
+/*********  支付宝支付范例_logon  *********/
+/*.logon_Alipay01 {
+    background: url(../images/Example_icon/logon_Alipay01.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 660px;
+}
+.logon_Alipay02 {
+    background: url(../images/Example_icon/logon_Alipay02.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 660px;
+}
+.logon_Alipay03 {
+    background: url(../images/Example_icon/logon_Alipay03.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 660px;
+}
+.logon_Alipay04 {
+    background: url(../images/Example_icon/logon_Alipay04.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 660px;
+}
+.logon_Alipay05 {
+    background: url(../images/Example_icon/logon_Alipay05.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 660px;
+}
+.logon_Alipay06 {
+    background: url(../images/Example_icon/logon_Alipay06.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 660px;
+}
+.logon_Alipay07 {
+    background: url(../images/Example_icon/logon_Alipay07.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 540px;
+    height: 660px;
+}*/
+
+/*********  支付宝支付范例_Order  *********/
+/*.Order_Alipay01 {
+    background: url(../images/Example_icon/Order_Alipay01.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 600px;
+    height: 500px;
+}
+.Order_Alipay02 {
+    background: url(../images/Example_icon/Order_Alipay02.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 600px;
+    height: 400px;
+}
+.Order_Alipay03 {
+    background: url(../images/Example_icon/Order_Alipay03.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 600px;
+    height: 660px;
+}
+.Order_Alipay04 {
+    background: url(../images/Example_icon/Order_Alipay04.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 600px;
+    height: 320px;
+}
+.Order_Alipay05 {
+    background: url(../images/Example_icon/Order_Alipay05.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 600px;
+    height: 400px;
+}
+.Order_Alipay06 {
+    background: url(../images/Example_icon/Order_Alipay06.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 600px;
+    height: 450px;
+}*/
+
+/*********  支付宝支付范例_activate  *********/
+/*.activate_Alipay01 {
+    background: url(../images/Example_icon/activate_Alipay01.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 800px;
+    height: 400px;
+}
+.activate_Alipay02 {
+    background: url(../images/Example_icon/activate_Alipay02.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 800px;
+    height: 550px;
+}
+.activate_Alipay03 {
+    background: url(../images/Example_icon/activate_Alipay03.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 800px;
+    height: 450px;
+}
+.activate_Alipay04 {
+    background: url(../images/Example_icon/activate_Alipay04.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 800px;
+    height: 450px;
+}
+.activate_Alipay05 {
+    background: url(../images/Example_icon/activate_Alipay05.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 800px;
+    height: 550px;
+}
+.activate_Alipay06 {
+    background: url(../images/Example_icon/activate_Alipay06.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 800px;
+    height: 450px;
+}
+.activate_Alipay07 {
+    background: url(../images/Example_icon/activate_Alipay07.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 800px;
+    height: 400px;
+}*/
+
+/*********  网银支付范例  *********/
+/*.payfor_Web01 {
+    background: url(../images/Example_icon/payfor_Web01.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 383px;
+}
+.payfor_Web02 {
+    background: url(../images/Example_icon/payfor_Web02.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 510px;
+}
+.payfor_Web03 {
+    background: url(../images/Example_icon/payfor_Web03.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 440px;
+}
+.payfor_Web04 {
+    background: url(../images/Example_icon/payfor_Web04.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 480px;
+}*/
+
+
+/*********  网路银行支付范例  *********/
+/*.payfor_RealBank01 {
+    background: url(../images/Example_icon/payfor_RealBank01.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 392px;
+}
+.payfor_RealBank02 {
+    background: url(../images/Example_icon/payfor_RealBank02.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 355px;
+}
+.payfor_RealBank03 {
+    background: url(../images/Example_icon/payfor_RealBank03.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 491px;
+}*/
+
+/*********  银联支付范例  *********/
+/*.payfor_Union01 {
+    background: url(../images/Example_icon/payfor_Union01.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 383px;
+}
+.payfor_Union02 {
+    background: url(../images/Example_icon/payfor_Union02.jpg?2018070401) no-repeat;
+    background-size: 100% auto;
+    width: 700px;
+    height: 510px;
+}*/

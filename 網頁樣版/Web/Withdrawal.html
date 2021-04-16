@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="content-language" content="zh-cn" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="css/reset.css?111" rel="stylesheet" type="text/css">
+    <link href="css/popup.css?111" rel="stylesheet" type="text/css">
+    <link href="css/members.css?111" rel="stylesheet" type="text/css">
+    <title>提款</title>
+</head>
+
+<body>
+<div class="popup_withdrawal">
+	<div class="popup_bigtop">
+		<div class="bg_subtop">
+			<div class="popup_logo"></div>
+			<div class="title">提款</div>
+		</div>
+		<div class="bg_submenu">
+			<a href="Deposit.html" class="btn_submenu">存款</a>
+			<a href="Withdrawal.html" class="btn_submenu selected">提款</a>
+			<a href="MemberChange.html" class="btn_submenu">会员互转</a>
+			<a href="MoneyChange.html" class="btn_submenu">交易记录</a>
+			<a href="Gifts.html" class="btn_submenu">活动点数</a>
+			<a href="ChangeInfoPassword.html" class="btn_submenu">变更资料</a>
+			<a href="http://www41.53kf.com/webCompany.php?arg=10126075&style=1" target="_blank" class="btn_service">线上客服</a>
+		</div>
+	</div>
+
+	<!--提款-->
+	<div class="withdrawal_submain">
+		<table class="data_send">
+			<tbody>
+				<tr>
+					<td class="left_set">
+						<div class="wd_text">资料填写</div>
+						<div class="img_memberinfo"></div>
+					</td>
+					<td class="right_set">
+						<div class="wd_title">
+							<h5>请填入提款密码与金额</h5><span>(*银行帐号信息最多默认保留5组)</span>
+							<div class="btn_back">
+								<div class="back_img"></div>
+								<input type="button" class="back_input" value="返回上一页" onclick="history.back()">
+							</div>
+						</div>
+						<div class="line"></div>
+						<div class="wd_data">
+							<div class="item_set">
+								<div class="item">
+									<span>银行帐号：</span>
+									<input type="text" id="" name="" maxlength="23" placeholder="仅接受注册户名之银行卡号" data-realval="" class="bank_input">
+								</div>
+								<div class="item">
+									<span>提款户名：</span>
+									<input type="text" id="UserName" name="UserName" value="刘**" maxlength="50" disabled="disabled" class="bank_input">
+								</div>
+								<div class="item">
+									<span>银行名称：</span>
+									<select id="ddlBankCode" textboxname="" comboname="" disabled="disabled" class="bank_input">
+										<option value="">请选择银行</option>
+										<option value="中国工商银行">中国工商银行</option>
+										<option value="中国建设银行">中国建设银行</option>
+										<option value="中国招商银行">中国招商银行</option>
+										<option value="中国交通银行">中国交通银行</option>
+										<option value="中国农业银行">中国农业银行</option>
+										<option value="中国邮政储蓄">中国邮政储蓄</option>
+										<option value="中国银行">中国银行</option>
+										<option value="中国民生银行">中国民生银行</option>
+										<option value="中国光大银行">中国光大银行</option>
+										<option value="中信银行">中信银行</option>
+										<option value="兴业银行">兴业银行</option>
+										<option value="浦东发展银行">浦东发展银行</option>
+										<option value="广发银行">广发银行</option>
+										<option value="华夏银行">华夏银行</option>
+										<option value="北京银行">北京银行</option>
+										<option value="上海银行">上海银行</option>
+										<option value="东莞农村商业银行">东莞农村商业银行</option>
+										<option value="宁波银行">宁波银行</option>
+										<option value="平安银行">平安银行</option>
+										<option value="贵阳市商业银行">贵阳市商业银行</option>
+										<option value="重庆农村商业银行">重庆农村商业银行</option>
+										<option value="桂林银行">桂林银行</option>
+										<option value="江苏银行">江苏银行</option>
+										<option value="河北银行">河北银行</option>
+										<option value="兰州银行">兰州银行</option>
+										<option value="广西北部湾银行">广西北部湾银行</option>
+										<option value="柳州银行">柳州银行</option>
+										<option value="山东省农村信用社">山东省农村信用社</option>
+										<option value="江苏省农村信用社">江苏省农村信用社</option>
+										<option value="云南省农村信用社">云南省农村信用社</option>
+										<option value="湖北省农村信用社">湖北省农村信用社</option>
+										<option value="浙江省农村信用社">浙江省农村信用社</option>
+										<option value="上海农村商业银行">上海农村商业银行</option>
+										<option value="重庆黔江银座村镇银行">重庆黔江银座村镇银行</option>
+										<option value="深圳农村商业银行">深圳农村商业银行</option>
+										<option value="广州银行">广州银行</option>
+										<option value="北京农村商业银行">北京农村商业银行</option>
+										<option value="厦门银行">厦门银行</option>
+										<option value="福建省农村信用社">福建省农村信用社</option>
+										<option value="海南省农村信用社">海南省农村信用社</option>
+										<option value="广东省农村信用社">广东省农村信用社</option>
+										<option value="吉林省农村信用社">吉林省农村信用社</option>
+										<option value="成都银行">成都银行</option>
+										<option value="陕西省农村信用社">陕西省农村信用社</option>
+										<option value="贵州省农村信用社">贵州省农村信用社</option>
+										<option value="辽宁省农村信用社">辽宁省农村信用社</option>
+										<option value="东莞银行">东莞银行</option>
+										<option value="四川省农村信用社">四川省农村信用社</option>
+										<option value="浙江泰隆商业银行">浙江泰隆商业银行</option>
+										<option value="南充市商业银行">南充市商业银行</option>
+										<option value="广东南粤银行">广东南粤银行</option>
+										<option value="成都农村商业银行">成都农村商业银行</option>
+										<option value="安徽省农村信用社">安徽省农村信用社</option>
+										<option value="鞍山市商业银行">鞍山市商业银行</option>
+										<option value="包商银行股份有限公司">包商银行股份有限公司</option>
+										<option value="渤海银行">渤海银行</option>
+										<option value="北京顺义银座村镇银行">北京顺义银座村镇银行</option>
+										<option value="沧州银行">沧州银行</option>
+										<option value="长安银行">长安银行</option>
+										<option value="长沙银行">长沙银行</option>
+										<option value="常熟农村商业银行">常熟农村商业银行</option>
+										<option value="承德银行">承德银行</option>
+										<option value="重庆银行股份有限公司">重庆银行股份有限公司</option>
+										<option value="重庆渝北银座村镇银行">重庆渝北银座村镇银行</option>
+										<option value="大连银行">大连银行</option>
+										<option value="德阳银行">德阳银行</option>
+										<option value="德州银行">德州银行</option>
+										<option value="东亚银行（中国）有限公司">东亚银行（中国）有限公司</option>
+										<option value="鄂尔多斯银行">鄂尔多斯银行</option>
+										<option value="福建海峡银行">福建海峡银行</option>
+										<option value="阜新银行结算中心">阜新银行结算中心</option>
+										<option value="富滇银行">富滇银行</option>
+										<option value="赣州银行">赣州银行</option>
+										<option value="广东华兴银行">广东华兴银行</option>
+										<option value="广西省农村信用社">广西省农村信用社</option>
+										<option value="广州农村商业银行">广州农村商业银行</option>
+										<option value="贵阳银行">贵阳银行</option>
+										<option value="哈尔滨银行">哈尔滨银行</option>
+										<option value="邯郸市商业银行">邯郸市商业银行</option>
+										<option value="韩亚银行">韩亚银行</option>
+										<option value="汉口银行">汉口银行</option>
+										<option value="杭州银行">杭州银行</option>
+										<option value="恒丰银行">恒丰银行</option>
+										<option value="湖北农信">湖北农信</option>
+										<option value="湖北银行">湖北银行</option>
+										<option value="湖州银行">湖州银行</option>
+										<option value="葫芦岛银行">葫芦岛银行</option>
+										<option value="黄河农村商业银行">黄河农村商业银行</option>
+										<option value="徽商银行">徽商银行</option>
+										<option value="吉林省农村信用社">吉林省农村信用社</option>
+										<option value="吉林银行">吉林银行</option>
+										<option value="济宁银行">济宁银行</option>
+										<option value="江苏长江商行">江苏长江商行</option>
+										<option value="江西赣州银座村镇银行">江西赣州银座村镇银行</option>
+										<option value="江阴农村商业银行">江阴农村商业银行</option>
+										<option value="江阴农村商业银行">江阴农村商业银行</option>
+										<option value="锦州银行">锦州银行</option>
+										<option value="晋商银行">晋商银行</option>
+										<option value="九江银行">九江银行</option>
+										<option value="昆仑银行">昆仑银行</option>
+										<option value="昆山农村商业银行">昆山农村商业银行</option>
+										<option value="莱商银行">莱商银行</option>
+										<option value="廊坊银行">廊坊银行</option>
+										<option value="临商银行">临商银行</option>
+										<option value="龙江银行">龙江银行</option>
+										<option value="洛阳银行">洛阳银行</option>
+										<option value="绵阳市商业银行">绵阳市商业银行</option>
+										<option value="南昌银行">南昌银行</option>
+										<option value="南京银行">南京银行</option>
+										<option value="内蒙古银行">内蒙古银行</option>
+										<option value="宁波通商银行">宁波通商银行</option>
+										<option value="宁夏银行">宁夏银行</option>
+										<option value="攀枝花市商业银行">攀枝花市商业银行</option>
+										<option value="齐鲁银行">齐鲁银行</option>
+										<option value="齐商银行">齐商银行</option>
+										<option value="企业银行">企业银行</option>
+										<option value="青岛银行">青岛银行</option>
+										<option value="青海银行">青海银行</option>
+										<option value="泉州银行">泉州银行</option>
+										<option value="山东省农联社">山东省农联社</option>
+										<option value="上饶银行">上饶银行</option>
+										<option value="绍兴银行">绍兴银行</option>
+										<option value="深圳福田银座村镇银行">深圳福田银座村镇银行</option>
+										<option value="深圳前海微众银行">深圳前海微众银行</option>
+										<option value="苏州银行">苏州银行</option>
+										<option value="厦门国际银行">厦门国际银行</option>
+										<option value="台州银行">台州银行</option>
+										<option value="顺德农村商业银行">顺德农村商业银行</option>
+										<option value="天津农村商业银行">天津农村商业银行</option>
+										<option value="天津银行">天津银行</option>
+										<option value="威海市商业银行">威海市商业银行</option>
+										<option value="潍坊银行">潍坊银行</option>
+										<option value="温州银行">温州银行</option>
+										<option value="乌鲁木齐市商业银行">乌鲁木齐市商业银行</option>
+										<option value="吴江农村商业银行">吴江农村商业银行</option>
+										<option value="西安银行">西安银行</option>
+										<option value="新韩银行中国">新韩银行中国</option>
+										<option value="邢台银行">邢台银行</option>
+										<option value="烟台银行">烟台银行</option>
+										<option value="鄞州银行">鄞州银行</option>
+										<option value="营口银行">营口银行</option>
+										<option value="友利银行">友利银行</option>
+										<option value="枣庄银行">枣庄银行</option>
+										<option value="张家港农村商业银行">张家港农村商业银行</option>
+										<option value="浙江稠州商业银行">浙江稠州商业银行</option>
+										<option value="浙江景宁银座村镇银行">浙江景宁银座村镇银行</option>
+										<option value="浙江民泰商业银行">浙江民泰商业银行</option>
+										<option value="浙江三门银座村镇银行">浙江三门银座村镇银行</option>
+										<option value="浙商银行">浙商银行</option>
+										<option value="郑州银行">郑州银行</option>
+										<option value="中原银行">中原银行</option>
+										<option value="珠海华润银行">珠海华润银行</option>
+										<option value="自贡市商业银行">自贡市商业银行</option>
+										<option value="武汉农村商业银行">武汉农村商业银行</option>
+										<option value="湖北银行">湖北银行</option>
+										<option value="江西省农村信用社">江西省农村信用社</option>
+										<option value="河北省农村信用社">河北省农村信用社</option>
+										<option value="安徽省农村信用联社">安徽省农村信用联社</option>
+										<option value="江苏农村信用社银行">江苏农村信用社银行</option>
+									</select>
+								</div>
+								<div class="item">
+									<span>提款金额：</span>
+									<input type="text" id="txtMoney" name="" maxlength="50" autocomplete="off" class="bank_input" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" onblur="this.value=this.value.replace(/\D/g,'');" placeholder="最低300点">
+								</div>
+								<div class="item">
+									<select id="ChooseCity" name="" onchange="Djzxcn.ChooseCity()" class="bank_city">
+										<option value="">请选择省份</option>
+										<option value="北京市">北京市</option>
+										<option value="天津市">天津市</option>
+										<option value="河北省">河北省</option>
+										<option value="山西省">山西省</option>
+										<option value="内蒙古自治区">内蒙古自治区</option>
+										<option value="辽宁省">辽宁省</option>
+										<option value="吉林省">吉林省</option>
+										<option value="黑龙江省">黑龙江省</option>
+										<option value="上海市">上海市</option>
+										<option value="江苏省">江苏省</option>
+										<option value="浙江省">浙江省</option>
+										<option value="安徽省">安徽省</option>
+										<option value="福建省">福建省</option>
+										<option value="江西省">江西省</option>
+										<option value="山东省">山东省</option>
+										<option value="河南省">河南省</option>
+										<option value="湖北省">湖北省</option>
+										<option value="湖南省">湖南省</option>
+										<option value="广东省">广东省</option>
+										<option value="广西壮族自治区">广西壮族自治区</option>
+										<option value="海南省">海南省</option>
+										<option value="重庆市">重庆市</option>
+										<option value="四川省">四川省</option>
+										<option value="贵州省">贵州省</option>
+										<option value="云南省">云南省</option>
+										<option value="西藏自治区">西藏自治区</option>
+										<option value="陕西省">陕西省</option>
+										<option value="甘肃省">甘肃省</option>
+										<option value="青海省">青海省</option>
+										<option value="宁夏回族自治区">宁夏回族自治区</option>
+										<option value="新疆维吾尔自治区">新疆维吾尔自治区</option>
+									</select>
+									<!--北京市-->
+									<select id="ddlCityArea" name="ddlCityArea" class="bank_location">
+										<option value="">请选择城市</option>
+										<option value="东城区">东城区</option>
+										<option value="西城区">西城区</option>
+										<option value="崇文区">崇文区</option>
+										<option value="宣武区">宣武区</option>
+										<option value="朝阳区">朝阳区</option>
+										<option value="丰台区">丰台区</option>
+										<option value="石景山区">石景山区</option>
+										<option value="海淀区">海淀区</option>
+										<option value="门头沟区">门头沟区</option>
+										<option value="房山区">房山区</option>
+										<option value="通州区">通州区</option>
+										<option value="顺义区">顺义区</option>
+										<option value="昌平区">昌平区</option>
+										<option value="大兴区">大兴区</option>
+										<option value="怀柔区">怀柔区</option>
+										<option value="平谷区">平谷区</option>
+										<option value="密云县">密云县</option>
+										<option value="延庆县">延庆县</option>
+									</select>
+									<!--天津市-->
+									<select id="ddlCityArea" name="ddlCityArea" class="bank_location" style="display: none;">
+										<option value="">请选择城市</option>
+										<option value="和平区">和平区</option>
+										<option value="河东区">河东区</option>
+										<option value="河西区">河西区</option>
+										<option value="南开区">南开区</option>
+										<option value="河北区">河北区</option>
+										<option value="红桥区">红桥区</option>
+										<option value="塘沽区">塘沽区</option>
+										<option value="汉沽区">汉沽区</option>
+										<option value="大港区">大港区</option>
+										<option value="东丽区">东丽区</option>
+										<option value="西青区">西青区</option>
+										<option value="津南区">津南区</option>
+										<option value="北辰区">北辰区</option>
+										<option value="武清区">武清区</option>
+										<option value="宝坻区">宝坻区</option>
+										<option value="宁河县">宁河县</option>
+										<option value="静海县">静海县</option>
+										<option value="蓟县">蓟县</option>
+									</select>
+									<!--河北省-->
+									<select id="ddlCityArea" name="ddlCityArea" class="bank_location" style="display: none;">
+										<option value="">请选择城市</option>
+										<option value="石家庄市">石家庄市</option>
+										<option value="唐山市">唐山市</option>
+										<option value="秦皇岛市">秦皇岛市</option>
+										<option value="邯郸市">邯郸市</option>
+										<option value="邢台市">邢台市</option>
+										<option value="保定市">保定市</option>
+										<option value="张家口市">张家口市</option>
+										<option value="承德市">承德市</option>
+										<option value="沧州市">沧州市</option>
+										<option value="廊坊市">廊坊市</option>
+										<option value="衡水市">衡水市</option>
+									</select>
+									<!--山西省-->
+									<select id="ddlCityArea" name="ddlCityArea" class="bank_location" style="display: none;">
+										<option value="">请选择城市</option>
+										<option value="太原市">太原市</option>
+										<option value="大同市">大同市</option>
+										<option value="阳泉市">阳泉市</option>
+										<option value="长治市">长治市</option>
+										<option value="晋城市">晋城市</option>
+										<option value="朔州市">朔州市</option>
+										<option value="晋中市">晋中市</option>
+										<option value="运城市">运城市</option>
+										<option value="忻州市">忻州市</option>
+										<option value="临汾市">临汾市</option>
+										<option value="吕梁市">吕梁市</option>
+									</select>
+								</div>
+								<div class="item">
+									<span>提款密码：</span>
+									<input type="password" id="WithdrawalPw" name="WithdrawalPw" maxlength="20" placeholder="" autocomplete="off" data-placeholder="" onkeyup="value=value.replace(/[\W]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="bank_input">
+								</div>
+							</div>
+							<div class="btn_set">
+								<input type="button" class="btn_blue" value="确认送出" onclick="">
+								<div class="btn_green" onclick="javascript:window.open('ForgotPassword.html', 'Forgot', 'width=602, height=412, toolbar=no, location=no, direction=no, menubar=no, scrollars=no, resizable=no, left=300px, top=150px');">忘记密码</div>
+							</div>	
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="data_send">
+			<tbody>
+				<tr>
+					<td class="left_set">
+						<div class="wd_text">注意事项</div>
+						<div class="img_note"></div>
+					</td>
+					<td class="right_set">
+						<ul class="precautions">
+							<li>提款时须达到近期存款金额的<span class="red_t">1倍</span>有效投注量才可提出申请。如会员必须提款而未达提款标准，本公司将收取存款金额<span class="red_t">5%</span>的行政处理费用。</li>
+							<li>如需取消提款申请，请至会员中心→交易记录→取消申请操作。</li>
+							<li>您的提款每<span class="text_deepred">日</span>可申请<span class="text_deepred">2</span>次，每次手续费<span class="text_deepred">0</span>点数，之后每次手续费<span class="text_deepred">0</span>点数，{提款金额未达<span class="text_deepred">1000</span>点数,则每次手续费<span class="text_deepred">50</span>点数}。<br><span class="text_deepred">(每日之定义:当日00:00~当日23:59:59)</span></li>
+						</ul>
+						<div class="deposit_msg">
+							<div class="bankinfo_box">
+								<h5>存款方式维护通知</h5>
+								<div class="notice_box"><span class="text_yellow">4</span>&nbsp;则</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<!--跳框_警告視窗-->
+<div id="WarningPopup" class="popup_blackbg" style="/*display: none;*/">
+    <div class="popup_container">
+        <div id="no_deposit" class="popup_warning">
+            <div class="reg_title">
+                <div class="reg_logo"></div>
+                <input type="button" class="btn_close" onclick="document.getElementById('WarningPopup').style.display='none'">
+            </div>
+            <div class="reg_info">
+                <div class="reg_text_b">提款功能尚未开启，请洽询线上客服。<p>谢谢！</p></div>
+            </div>
+            <div class="closebtn_set">
+                <span class="regbtn_text">确认关闭</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--跳框_存款维护公告-->
+<div id="BankMsg" class="popup_bankmsg" style="/*display: none;*/">
+    <div class="bankmsg_title">
+        <div class="title">存款维护公告</div>
+        <input type="button" class="btn_close" onclick="document.getElementById('BankMsg').style.display='none'">
+    </div>
+	<div class="bankmsg_info">
+		<div class="data_list">
+			<a class="bankmsg_link" href="service_news.html">
+				<span class="blue_ball"></span>
+				<span class="text">在线微信维护公告在线微信维护公告在线微信维护公告</span>
+			</a>
+			<a class="bankmsg_link" href="service_news.html">
+				<span class="blue_ball"></span>
+				<span class="text">存款实名制公告</span>
+			</a>
+			<a class="bankmsg_link" href="service_news.html">
+				<span class="blue_ball"></span>
+				<span class="text">在线支付宝维护公告</span>
+			</a>
+			<a class="bankmsg_link" href="service_news.html">
+				<span class="blue_ball"></span>
+				<span class="text">暂停柜员机存款公告</span>
+			</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

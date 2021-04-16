@@ -1,0 +1,3317 @@
+/*共用樣式*/
+.clear {
+    clear: both;
+}
+/*共用文字*/
+.text_yellow {
+    color: #ffde00;
+}
+.text_red {
+    color: #e10000;
+}
+.text_orange {
+    color: #ea5507;
+}
+.text_blue {
+    color: #2196F3;
+}
+.text_green {
+    color:#00966c;
+}
+.text_pink {
+    color: #ff8062;
+}
+.text_gray {
+    color: #aaa;
+}
+.text_darkgray {
+    color: #666;
+}
+.fixed_table .text_center, 
+.popup_in .tips_text.text_center {
+    text-align: center;
+}
+.fixed_table .text_right, 
+.popup_in .tips_text.text_right {
+    text-align: right;
+}
+.fixed_table .text_left, 
+.popup_in .tips_text.text_left {
+    text-align: left;
+}
+/*共用背景色*/
+.bg_blue {
+    background: #5bd7e6;
+}
+.bg_green {
+    background: #bee264;
+}
+.bg_yellow {
+    background: #f9d74f;
+}
+.bg_pink {
+    background: #ffb0b0;
+}
+.bg_gray {
+    background: #aaa;
+}
+/*小按鈕-共用設定*/
+.btn_s, .btn_small, .btn_big, .btn_big50, .btn_big100, .nav_btn {
+    display: inline-block;
+    padding: 3px 10px;
+    color: #444;
+    font-size: 1em;
+    text-align: center;
+    cursor: pointer;
+}
+input[type="button"]:hover, input[type="button"]:focus, input[type="button"]:active, 
+input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active, 
+.nav_btn:hover, .nav_btn:focus, .nav_btn:active, .nav_btn.selected, 
+.btn_small:hover, .btn_small:focus, .btn_small:active, .btn_small.selected, 
+.btn_big:hover, .btn_big:focus, .btn_big:active, .btn_big.selected, 
+.btn_big50:hover, .btn_big50:focus, .btn_big50:active, .btn_big50.selected, 
+.btn_big100:hover, .btn_big100:focus, .btn_big100:active, .btn_big100.selected {
+    color: #fff;
+    outline: none;
+    vertical-align: middle;
+}
+input[type="button"], input[type="submit"] {
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+}
+/*大按鈕-共用設定*/
+.content .btn_big,
+.content .btn_big50,
+.content .btn_big100 {
+    width: 47%;
+    padding: 8px 0;
+    margin: 0 2px;
+    font-size: 1.4em;
+}
+.content .btn_big {
+    width: 20%;
+}
+.btn_big100 {
+    width: 98%;
+}
+.btn_green {
+    background: #75dcbf;
+}
+.btn_green:hover,
+.btn_green:focus,
+.btn_green:active,
+.btn_green.selected {
+    background: #009e88;
+    border-bottom: 3px solid #185a54;
+    outline: none;
+}
+.btn_gray {
+    background: #d6d6d6;
+}
+.btn_gray:hover,
+.btn_gray:focus,
+.btn_gray:active,
+.btn_gray.selected {
+    background: #888;
+    border-bottom: 3px solid #666;
+    outline: none;
+}
+.btn_yellow {
+    background: #f9d74f;
+}
+.btn_yellow:hover,
+.btn_yellow:focus,
+.btn_yellow:active,
+.btn_yellow.selected {
+    background: #c3a84f;
+    border-bottom: 3px solid #88783c;
+    outline: none;
+}
+.btn_pink {
+    background: #ffb6b6;
+}
+.btn_pink:hover,
+.btn_pink:active,
+.btn_pink:focus {
+    background: #ea738a;
+    border-bottom: 3px solid #944949;
+    outline: none;
+}
+.btn_blue {
+    background: #a8dbf9;
+}
+.btn_blue:hover,
+.btn_blue:active,
+.btn_blue:focus {
+    background: #378abb;
+    border-bottom: 3px solid #0c4b70;
+    outline: none;
+}
+/*回到頂端按鈕*/
+.go_top {
+    display: none;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 99;
+}
+.go_top:before, .go_top:after {
+    content: "";
+    position: absolute;
+    top: 30px;
+    width: 34px;
+    height: 10px;
+    background: #ea5526;
+}
+.go_top:before {
+    left: 7px;
+    -webkit-transform: rotate(-45deg) translate(0, -50%);
+    -moz-transform: rotate(-45deg) translate(0, -50%);
+    -ms-transform: rotate(-45deg) translate(0, -50%);
+    -o-transform: rotate(-45deg) translate(0, -50%);
+    transform: rotate(-45deg) translate(0, -50%);
+}
+.go_top:after {
+    right: 7px;
+    -webkit-transform: rotate(-45deg) translate(0, -50%);
+    -moz-transform: rotate(-45deg) translate(0, -50%);
+    -ms-transform: rotate(-45deg) translate(0, -50%);
+    -o-transform: rotate(-45deg) translate(0, -50%);
+    transform: rotate(45deg) translate(0, -50%);
+}
+.go_top:focus {
+    outline: none;
+}
+/*共用背景*/
+.index_body, .other_body {
+    width: 100%;
+    height: 100%;
+    background: url(../images/index/bg1.jpg) top center no-repeat #000;
+    background-size: cover;
+}
+.other_body {
+    background: url(../images/index/bg2.jpg) top center no-repeat #010109;
+    background-size: cover;
+}
+/*置頂選單列*/
+.header_box {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    z-index: 110;
+}
+.header_top {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.header_l {
+    position: relative;
+    cursor: pointer;
+}
+.top_logo {
+    position: absolute;
+    top: 0;
+}
+/* 登入+註冊+登出按鈕 */
+.header_r {
+    float: right;
+    text-align: right;
+    vertical-align: middle;
+}
+.header_r .nav_input {
+    display: inline-block;
+    width: 28%;
+    height: 35px;
+    padding: 0 0 0 30px;
+    color: #666;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+.nav_input.account {
+    background: url(../images/icon/fa-user.png) center left no-repeat #e0e0e0;
+    background-size: 10% auto;
+    background-position-x: 4px;
+}
+.nav_input.password {
+    background: url(../images/icon/fa-lock.png) center left no-repeat #e0e0e0;
+    background-size: 10% auto;
+    background-position-x: 4px;
+}
+.nav_text {
+    display: inline-block;
+    margin: 0 20px 0 0;
+    vertical-align: middle;
+}
+.nav_text span {
+    color: #ff5700;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.icon_arrow {
+    margin: 5px 0 0 5px;
+    border: 5px solid;
+    border-color: #333 transparent transparent transparent;
+    vertical-align: middle;
+}
+.nav_menu > li > a:hover .icon_arrow, 
+.nav_menu > li > a:active .icon_arrow, 
+.nav_menu > li > a:focus .icon_arrow, 
+.nav_menu > li > a.selected .icon_arrow {
+    border: 5px solid;
+    border-color: #fff transparent transparent transparent;
+}
+.header_r a {
+    color: #7b3939;
+}
+.header_r a:hover {
+    color: #fff;
+    background: darkorange;
+}
+.header_r .nav_btn {
+    padding: 5px 15px;
+    margin: 2px 0 0 0;
+    font-size: 1.1em;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+}
+.header_r .nav_btn:hover,
+.header_r .nav_btn:active,
+.header_r .nav_btn:focus {
+    color: #fff;
+    outline: none;
+}
+.bg_blue:hover, .bg_blue:active, .bg_blue:focus {
+    background: #49b8c5;
+}
+.bg_green:hover, .bg_green:active, .bg_green:focus {
+    background: #9bb94f;
+}
+.bg_pink:hover, .bg_pink:active, .bg_pink:focus {
+    background: #de89ad;
+}
+.forgot_pw {
+    display: inline-block;
+    margin: 0 0 0 5px;
+    color: #005fab;
+    font-size: 1em;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.forgot_pw:hover,
+.forgot_pw:focus,
+.forgot_pw:active {
+    color: #d62525;
+    text-decoration: underline;
+}
+/* 選單列 */
+.header_nav {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: right;
+    background: #fceabb;
+    background: -moz-linear-gradient(top, #fceabb 0%, #fccd4d 50%, #f8b500 51%, #fbdf93 92%, #fbdf93 92%, #f8b500 98%, #fbdf93 99%);
+    background: -webkit-linear-gradient(top, #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 92%,#fbdf93 92%,#f8b500 98%,#fbdf93 99%);
+    background: linear-gradient(to bottom, #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 92%,#fbdf93 92%,#f8b500 98%,#fbdf93 99%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#fceabb", endColorstr="#fbdf93",GradientType=0 );
+    z-index: 105;
+}
+.nav_menu {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: right;
+}
+.nav_menu > li {
+    float: left;
+}
+.nav_menu > li {
+    position: relative;
+    width: 19%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: left;
+    white-space: nowrap;
+    border-right: 1px solid rgba(0, 0, 0, .2);
+    border-left: 1px solid rgba(255, 255, 255, .6);
+}
+.nav_menu > li:last-child {
+    border-right: none;
+}
+.nav_menu > li:first-child {
+    border-left: none;
+}
+.nav_menu > li > a {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 0 0 5px;
+    color: #333;
+    text-align: center;
+    background: #fceabb;
+    background: -moz-linear-gradient(top, #fceabb 0%, #fccd4d 50%, #f8b500 51%, #fbdf93 92%, #fbdf93 92%, #f8b500 98%, #fbdf93 99%);
+    background: -webkit-linear-gradient(top, #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 92%,#fbdf93 92%,#f8b500 98%,#fbdf93 99%);
+    background: linear-gradient(to bottom, #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 92%,#fbdf93 92%,#f8b500 98%,#fbdf93 99%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#fceabb", endColorstr="#fbdf93",GradientType=0 );
+}
+/* 滑入選單，按鈕變色*/
+.nav_menu > li > a:hover,
+.nav_menu > li > a:focus,
+.nav_menu > li > a:active,
+.nav_menu > li > a.selected {
+    color: #fff;
+    background: #feccb1;
+    background: -moz-linear-gradient(top,  #feccb1 0%, #f17432 50%, #ea5507 51%, #fb955e 100%);
+    background: -webkit-linear-gradient(top,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%);
+    background: linear-gradient(to bottom,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#feccb1", endColorstr="#fb955e",GradientType=0 );
+}
+.nav_menu ul {
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    min-width: 180px;
+    border: #ccc 1px solid;
+    z-index: 99;
+}
+.nav_menu ul li {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+.nav_menu ul li:last-child {
+    border-bottom: none;
+}
+/*隱藏次選單*/
+.nav_menu .nav_menu2 {
+    display: none;
+}
+/* 滑入展開次選單*/
+.nav_menu li:hover > .nav_menu2,
+.nav_menu li:focus > .nav_menu2,
+.nav_menu li:active > .nav_menu2 {
+    display: block;
+}
+/* 次選單*/
+.nav_menu > li > .nav_menu2 {
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+}
+.nav_menu2 a {
+    width: 97%;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 0 0 5px;
+    color: #fff;
+    font-size: 15px;
+    text-align: left;
+    background: #927640;
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+/* 滑入次選單，按鈕變色*/
+.nav_menu2 a:hover,
+.nav_menu2 a:focus,
+.nav_menu2 a:active {
+    background: #7b5f29;
+}
+.nav_menu2 a.selected {
+    color: #ff0;
+    background: #6d4120;
+}
+.nav_menu2 a:last-child {
+    border-bottom: 0;
+}
+.nav_menu2 a:first-child {
+    border-top: 0;
+}
+.nav_menu i {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    line-height: 20px;
+    margin: 0 5px 0 0;
+    text-align: center;
+    vertical-align: middle;
+}
+.nav_menu span {
+    display: inline-block;
+    vertical-align: middle;
+}
+/* 漢堡圖 */
+.header_top .menu-trigger {
+    float: right;
+    width: 35px;
+    height: 35px;
+    margin: 2px 5px 0 5px;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    opacity: .7;
+    outline: none;
+    cursor: pointer;
+}
+/****** 左側滑入選單 ******/
+.menu-container {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background: #2662ad;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    transition: .4s;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 120;
+}
+.position-left.open {
+    left: 0;
+}
+.position-left {
+    left: -270px;
+}
+/* 黑色背景 */
+.dim-overlay {
+    display: none;
+    cursor: pointer;
+}
+.dim-overlay:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .4);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 119;
+}
+.menu-items > li,
+.menu-items .has-sub > ul > li {
+    line-height: 35px;
+    color: #fff;
+    font-size: 1em;
+    text-align: left;
+    background: #2662ad;
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    cursor: pointer;
+}
+.menu-items > li:hover,
+.menu-items > li:active,
+.menu-items > li:focus,
+.menu-items > li.selected {
+    background: #c35330;
+    border-bottom: 1px solid #2662ad;
+}
+.menu-items .has-sub > ul > li {
+    padding: 0 0 0 10px;
+    background: transparent;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+    opacity: .6;
+}
+.menu-items li.has-sub > ul > li:hover,
+.menu-items li.has-sub > ul > li:active,
+.menu-items li.has-sub > ul > li:focus,
+.menu-items li.has-sub > ul > li.selected {
+    background: #002973;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+.menu-items li.has-sub > ul > li.selected {
+    background: #a22700;
+}
+.menu-items li.has-sub > ul > li.selected span {
+    color: #ff0;
+}
+.menu-items .has-sub > ul {
+    height: 0;
+    background: #003698;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    transition: .4s;
+    overflow: hidden;
+}
+.item-icon {
+    padding: 0 0 0 10px;
+}
+.item-icon i,
+.dropdown-heading i,
+.has-sub > ul > li > i {
+    display: inline-block;
+    margin: 0 5px 0 0;
+    text-align: center;
+    vertical-align: middle;
+}
+.item-icon i,
+.has-sub > ul > li > i {
+    width: 18px;
+    height: 18px;
+    line-height: 20px;
+}
+.menu-items > li > ul > li > span,
+.dropdown-heading {
+    display: inline-block;
+    padding: 0 0 0 10px;
+    vertical-align: middle;
+}
+.dropdown-heading {
+    position: relative;
+    width: 78%;
+    padding: 0 0 0 5px;
+}
+.dropdown-heading .arrow {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    border: 7px solid;
+    border-color: #fff transparent transparent transparent;
+}
+.menu-items > li.has-sub > .dropdown-heading:hover .arrow,
+.menu-items > li.has-sub > .dropdown-heading:active .arrow,
+.menu-items > li.has-sub > .dropdown-heading:focus .arrow,
+.menu-items > li.has-sub > .dropdown-heading.selected .arrow {
+    top: 5px;
+    border: 7px solid;
+    border-color: transparent transparent #fff transparent;
+    -webkit-transition: .1s;
+    -moz-transition: .1s;
+    -ms-transition: .1s;
+    transition: .1s;
+}
+.menu-items > li:last-child {
+    border-bottom: 0;
+}
+/* 首頁內容 */
+.home_box {
+    position: relative;
+    margin: 0 auto;
+}
+.home_box img {
+    position: absolute;
+}
+.home_pic1 {
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+    opacity: .6;
+}
+.home_text1, .home_text2 {
+    position: absolute;
+    color: #fff;
+    font-size: 3.5em;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 2px 2px black;
+}
+/* 遊戲內容 */
+.content {
+    position: relative;
+    top: 110px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 25px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+}
+.content.bet,
+.content.deposit, .content.withdrawal,
+.content.invite, .content.setup {
+    padding: 0;
+}
+.content.game, .content.total,
+.content.payout, .content.gameinfo {
+    background: #fff;
+}
+.game_title, .total_title {
+    width: 97%;
+    margin: 0 auto;
+    padding: 0 0 15px 0;
+    border-bottom: 5px dotted #ddd;
+}
+.game_title .text,
+.total_title .text {
+    display: inline-block;
+    width: 23%;
+    margin: 0 0 0 -5px;
+    padding: 0 0 0 10px;
+    line-height: 28px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-left: 5px solid #e2e2e2;
+    vertical-align: top;
+}
+.game_title .text:first-child {
+    border-left: 6px solid #53dac1;
+}
+.game_title .text div:first-child {
+    color: #2b66d2;
+}
+.before_ball li, .betok_ball li {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    color: #fff;
+    text-align: center;
+    background: #ea8585;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    vertical-align: middle;
+}
+.game_main {
+    width: 90%;
+    padding: 25px 0;
+    margin: 0 auto;
+}
+.game_wrap {
+    display: inline-block;
+    width: 74%;
+    padding: 0 15px;
+    font-size: 1.2em;
+    vertical-align: top;
+}
+.set_title, .set_btn, .set_bet {
+    display: inline-block;
+    width: 39%;
+    line-height: 35px;
+    margin: 0 0 10px 0;
+    vertical-align: middle;
+}
+/* 電腦選號 */
+.set_btn {
+    width: 20%;
+}
+.set_btn .btn {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    line-height: 37px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background: #ff8a4b;
+    border: 2px solid #f17432;
+    cursor: pointer;
+}
+.set_btn .btn:hover,
+.set_btn .btn:focus,
+.set_btn .btn:active,
+.btn.selected {
+    color: #fffba1;
+    background: #da1f1f;
+}
+.set_btn .btn:last-child {
+    width: 100px;
+}
+/* 每注金額設定 */
+.set_bet span {
+    display: inline-block;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.set_bet input {
+    display: inline-block;
+    width: 50%;
+    padding: 5px;
+    font-size: 18px;
+    border: 1px solid #d6d6d6;
+    vertical-align: middle;
+    cursor: pointer;
+}
+/* 已選號碼 */
+.set_number {
+    width: 94%;
+    height: 80px;
+    line-height: 26px;
+    padding: 10px;
+    color: #444;
+    font-size: 1.2em;
+    border: 3px solid #ccc;
+    resize: none;
+}
+.game_pic {
+    display: inline-block;
+    width: 20.5%;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: top;
+}
+.ball_box {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+.ball_tb {
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+}
+.game_btn {
+    width: 50%;
+    height: 55px;
+    line-height: 55px;
+    margin: 0 auto;
+    text-align: center;
+}
+.ball_box .num_ball {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    line-height: 60px;
+    margin: 0 15px 15px 0;
+    color: #fff;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    background: #f8b500;
+    cursor: pointer;
+}
+
+.ball_box .num_ball:hover {
+    background: #cc970a;
+}
+
+.ball_box .num_ball.selected {
+    background: #ea5507;
+}
+
+/* 下注+派彩內容 */
+.bet .ball_l,
+.payout .ball_l,
+.setup .ball_l {
+    position: absolute;
+    bottom: -40px;
+    left: -50px;
+    width: 9%;
+    z-index: 100;
+}
+.bet .ball_r,
+.payout .ball_r,
+.setup .ball_r {
+    position: absolute;
+    top: 0;
+    right: -40px;
+    width: 17%;
+    z-index: 100;
+}
+/* 下注頁籤 */
+.page_wrap {
+    padding: 20px 25px;
+    text-align: center;
+    color: #444;
+    background: #fff;
+    -webkit-border-radius: 0 20px 20px 20px;
+    -moz-border-radius: 0 20px 20px 20px;
+    -ms-border-radius: 0 20px 20px 20px;
+    -o-border-radius: 0 20px 20px 20px;
+    border-radius: 0 20px 20px 20px;
+}
+.bet .page_wrap, .setup .page_wrap {
+    -webkit-border-radius: 0 0 20px 20px;
+    -moz-border-radius: 0 0 20px 20px;
+    -ms-border-radius: 0 0 20px 20px;
+    -o-border-radius: 0 0 20px 20px;
+    border-radius: 0 0 20px 20px;
+}
+/* 隱藏內容 */
+.page_wrap > .setup_con1,
+.page_wrap > .setup_con2,
+.page_wrap > .setup_con3,
+.page_wrap > .invite_con1,
+.page_wrap > .invite_con2,
+.page_wrap > .invite_con3 {
+    display: none;
+}
+/* 隱藏選取的原點radio */
+.bet_radio1, .bet_radio2, .bet_radio3,
+.dp_radio1, .dp_radio2, .dp_radio3,
+.wd_radio1, .wd_radio2, .wd_radio3,
+.setup_radio1, .setup_radio2, .setup_radio3,
+.invite_radio1, .invite_radio2, .invite_radio3 {
+    display: none;
+}
+.bet_label, .dp_label, .wd_label,
+.setup_label, .invite_label {
+    display: inline-block;
+    width: 33%;
+    padding: 10px 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    background: #ecc5c5;
+    -webkit-border-radius: 20px 20px 0 0;
+    -moz-border-radius: 20px 20px 0 0;
+    -ms-border-radius: 20px 20px 0 0;
+    -o-border-radius: 20px 20px 0 0;
+    border-radius: 50px 50px 0 0;
+}
+.bet_label:hover, .bet_label:focus, .bet_label:active,
+.dp_label:hover, .dp_label:focus, .dp_label:active,
+.wd_label:hover, .wd_label:focus, .wd_label:active,
+.setup_label:hover, .setup_label:focus, .setup_label:active,
+.invite_label:hover, .invite_label:focus, .invite_label:active {
+    color: #b9416c;
+    cursor: pointer;
+}
+/* 選取到標題的效果 */
+.bet_radio1:checked + .bet_label,
+.bet_radio2:checked + .bet_label,
+.bet_radio3:checked + .bet_label,
+.dp_radio1:checked + .dp_label,
+.dp_radio2:checked + .dp_label,
+.dp_radio3:checked + .dp_label,
+.wd_radio1:checked + .wd_label,
+.wd_radio2:checked + .wd_label,
+.wd_radio3:checked + .wd_label,
+.setup_radio1:checked + .setup_label,
+.setup_radio2:checked + .setup_label,
+.setup_radio3:checked + .setup_label,
+.invite_radio1:checked + .invite_label,
+.invite_radio2:checked + .invite_label,
+.invite_radio3:checked + .invite_label {
+    background: #ed5a6a;
+    color: #fff;
+}
+/* 點選後秀出隱藏的內容(父層勿刪)-下注+派彩 */
+.bet_radio1:checked ~ .page_wrap .bet_con1,
+.bet_radio2:checked ~ .page_wrap .bet_con2,
+.bet_radio3:checked ~ .page_wrap .bet_con3,
+.dp_radio1:checked ~ .page_wrap .dp_con1,
+.dp_radio2:checked ~ .page_wrap .dp_con2,
+.dp_radio3:checked ~ .page_wrap .dp_con3,
+.wd_radio1:checked ~ .page_wrap .wd_con1,
+.wd_radio2:checked ~ .page_wrap .wd_con2,
+.wd_radio3:checked ~ .page_wrap .wd_con3,
+.setup_radio1:checked ~ .page_wrap .setup_con1,
+.setup_radio2:checked ~ .page_wrap .setup_con2,
+.setup_radio3:checked ~ .page_wrap .setup_con3,
+.invite_radio1:checked ~ .page_wrap .invite_con1,
+.invite_radio2:checked ~ .page_wrap .invite_con2,
+.invite_radio3:checked ~ .page_wrap .invite_con3 {
+    display: block;
+}
+.btn_date,
+.col50_left span,
+.col50_right span {
+    display: inline-block;
+}
+/*充值_轉出*/
+.wd_con1 .listset {
+    text-align: center;
+}
+/* 日曆 */
+.history_date, .page_list {
+    line-height: 36px;
+    margin: 10px auto;
+    font-size: 19px;
+    font-weight: bold;
+    text-align: left;
+}
+.page_list .input {
+    width: 30%;
+    padding: 4px;
+    margin: 0 10px 0 0;
+    color: #555;
+    border: 1px solid #d6d6d6;
+    cursor: pointer;
+}
+.history_date span.title {
+    display: inline-block;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+/* 日曆設定 */
+.history_date .tcalInput {
+    display: inline-block;
+    width: 130px;
+    padding: 5px 10px;
+    color: #666;
+    background: url(../images/calendar/calendar.png) 96% center no-repeat #f1f1f1;
+    background-size: auto 70%;
+    border: 1px solid #d6d6d6;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.history_date .tcalInput:hover,
+.history_date .tcalInput:active,
+.history_date .tcalInput:focus {
+    background-image: url(../images/calendar/no_calendar.png);
+}
+.ui-widget {
+    font-size: 15px;
+}
+.ui-widget .ui-widget {
+    font-size: 15px;
+}
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+    font-size: 15px;
+}
+.ui-widget-content {
+    background: #fff;
+    z-index: 99 !important;
+}
+.ui-widget-header {
+    color: #6d0000;
+    font-weight: bold;
+    background: #fff;
+    border: none;
+}
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+    background: rgb(255 255 255 / 16%);
+    border: 1px solid #fff;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+    color: #222;
+    background: #ffc0c0;
+}
+.ui-datepicker {
+    width: 13.5em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 1px solid #bbb;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color="rgba(0, 0, 0, .5)")";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color="rgba(0, 0, 0, .5)");
+}
+.ui-datepicker .ui-datepicker-title {
+    line-height: 24px;
+    font-size: 16px;
+}
+.ui-datepicker th {
+    padding: 5px 2px;
+    font-weight: bold;
+}
+.ui-datepicker td span, .ui-datepicker td a {
+    padding: 2px;
+}
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited,
+.ui-state-focus a,
+.ui-state-focus a:hover,
+.ui-state-focus a:link,
+.ui-state-focus a:visited {
+    color: #222;
+    font-size: 14px;
+}
+.ui-datepicker-calendar thead tr {
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff3d00;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+    color: #222;
+    background: #ffc0c0;
+}
+tbody .ui-datepicker-week-end {
+    background-color: #fff9c3;
+}
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+    color: #222;
+    text-decoration: none
+}
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+    color: #222;
+    background: #a7ffe5;
+}
+/***********表格首列凍結***********/
+/*外表格盒子*/
+.tbbox, .free_tbbox {
+    width: 100%;
+    margin: 0 auto 20px;
+    overflow: auto;
+}
+.tbbox {
+	height: 515px; /*要限制高度，首列固定為上功能才會出現*/
+}
+/*凍結表格(頁首頁尾設定)*/
+.fht-table-wrapper,
+.fht-table-wrapper .fht-thead,
+.fht-table-wrapper .fht-tfoot,
+.fht-table-wrapper .fht-fixed-column .fht-tbody,
+.fht-table-wrapper .fht-fixed-body .fht-tbody,
+.fht-table-wrapper .fht-tbody {
+    overflow: hidden;
+    position: relative;
+}
+.fht-table-wrapper .fht-fixed-body .fht-tbody,
+.fht-table-wrapper .fht-tbody {
+    overflow: auto;
+}
+/*首列凍結功能*/
+.freeze {
+    position: -webkit-sticky; /* Chrome、Safari */
+    position: -moz-sticky; /* FireFox */
+    position: -ms-sticky; /* IE */
+    position: -o-sticky; /* Opera */
+    position: sticky;
+    top: -1px;
+    z-index: 10;
+}
+/*凍結表格(內表格)*/
+.fixed_table {
+    table-layout: fixed; /*首列永遠固定於上*/
+    text-align: left;
+    font-weight: normal;
+    background: #fff;
+}
+.fht-table-wrapper .fixed_table {
+    width: 100% !important;
+}
+.fixed_table thead th,
+.fixed_table thead td,
+.fixed_table tfoot th,
+.fixed_table tfoot td {
+	height: 22px;
+    padding: 5px;
+    font-size: 1em;
+    word-break: break-word;
+    vertical-align: middle;
+}
+.fixed_table thead th {
+    color: #fff;
+    font-weight: bold;
+    background: #988036;
+}
+.fixed_table tbody td {
+    line-height: 18px;
+    padding: 5px 10px;
+    font-size: 1em;
+    -webkit-text-fill-color:#555; /* 覆蓋iOS_Android 字體顏色 */
+    -webkit-opacity:1; /* 覆蓋影響文本和背景顏色的iOS不透明度更改*/
+    color: #555; /* 覆蓋IE字體顏色 */
+    word-break: break-all;
+    border-bottom: 1px solid #ccc;
+
+}
+.fixed_table thead th:nth-of-type(2n) {
+    background: #bbb;
+}
+.fixed_table tbody tr:nth-of-type(2n+1) {
+    background: #f3f3f3;
+}
+.fixed_table tbody tr:hover,
+.fixed_table tbody tr:nth-of-type(2n+1):hover {
+    background: #e0e0e0;
+}
+.fixed_table tfoot tr {
+    background: #f0f1df;
+}
+.fixed_table tfoot tr.subtotal {
+    background: #e4e3b8;
+}
+.fixed_table tfoot tr th,
+.fixed_table tfoot tr td
+.fixed_table tfoot tr.subtotal th,
+.fixed_table tfoot tr.subtotal td {
+    padding-right: 10px !important;
+    font-weight: bold;
+}
+.fixed_table tfoot tr th,
+.fixed_table tfoot tr td {
+    color: #e00000;
+}
+.fixed_table tfoot tr.subtotal th,
+.fixed_table tfoot tr.subtotal td {
+    color:#555;
+}
+/*表格寬度*/
+.fixed_table .cell_ss {
+    width: 5%;
+}
+.fixed_table .cell_s {
+    width: 9%;
+}
+.fixed_table .cell_m {
+    width: 13%;
+}
+.fixed_table .cell_l {
+    width: 17%;
+}
+.fixed_table .cell_xl {
+    width: 21%;
+}
+.fixed_table .cell_xxl {
+    width: 26%;
+}
+.text_overflow, .td_overflow {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+/* 表格_黃色 */
+.tb_yellow .fixed_table thead th {
+    background: #988036;
+}
+.tb_yellow .fixed_table thead th:nth-of-type(2n) {
+    background: #b39c57;
+}
+.tb_yellow .fixed_table tfoot tr {
+    background: #f0f1df;
+}
+.tb_yellow .fixed_table tfoot tr.subtotal {
+    background: #e4e3b8;
+}
+/* 表格_粉紅色 */
+.tb_pink .fixed_table thead th {
+    background: #d0546c;
+}
+.tb_pink .fixed_table thead th:nth-of-type(2n) {
+    background: #e27e92;
+}
+.tb_pink .fixed_table tfoot tr {
+    background:#fff3f3;
+}
+.tb_pink .fixed_table tfoot tr.subtotal {
+    background: #fbe1e1;
+}
+/* 表格_綠色 */
+.tb_green .fixed_table thead th {
+    background: #366f6f;
+}
+.tb_green .fixed_table thead th:nth-of-type(2n) {
+    background: #4d9696;
+}
+.tb_green .fixed_table tfoot tr {
+    background:#dfeff3;
+}
+.tb_green .fixed_table tfoot tr.subtotal {
+    background: #c2e1e8;
+}
+/* 表格_藍色 */
+.tb_blue .fixed_table thead th {
+    background: #3768a5;
+}
+.tb_blue .fixed_table thead th:nth-of-type(2n) {
+    background: #5b88bd;
+}
+.tb_blue .fixed_table tfoot tr {
+    background: #dfe8f1;
+}
+.tb_blue .fixed_table tfoot tr.subtotal {
+    background: #b8d0e4;
+}
+/*跳頁*/
+.col_1 {
+    width: 99%;
+}
+.col50_left, .col50_right {
+    float: left;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: middle;
+}
+.col50_right {
+    float: right;
+}
+.col_inline,
+.col_1 div.title,
+.col_1 span.title {
+    display: inline-block;
+    margin: 0 2px 0 0;
+    font-size: 18px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.col_inline {
+    color: #666;
+    margin: 0 2px 5px 0;
+}
+.col_1 .input_title,
+.col_1 .list_text {
+    display: inline-block;
+    line-height: 20px;
+    color: #333;
+    font-size: 18px;
+    vertical-align: middle;
+}
+.col_1 .input_title {
+    width: 20%;
+}
+.col_1 .list_text {
+    width: 78%;
+    font-weight: bold;
+}
+.col_1 .input100,
+.col_1 .select100 {
+    display: inline-block;
+    width: 77%;
+    padding: 5px 10px;
+    font-size: 18px;
+    border: 1px solid #d6d6d6;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.col_1 select.no_width {
+    display: inline-block;
+    line-height: 22px;
+    padding: 3px 5px;
+    color: #555;
+    border: 1px solid #ddd;
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+    -o-appearance: auto;
+    appearance: auto;
+    outline: none;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.col_2, .col_3 {
+    display: inline-block;
+    width: 48%;
+    margin: 0 5px 10px 0;
+    vertical-align: top;
+}
+.col_3 {
+    width: 32%;
+}
+.col_1.title {
+    padding: 0 0 10px 0;
+    margin: 0 0 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,.5);
+}
+.col_text {
+    padding: 10px;
+    line-height: 24px;
+    color: #444;
+    font-size: 18px;
+    word-break: break-word;
+    background:#f1f1f1;
+    border: 1px solid #d6d6d6;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+.title_l, .title_r {
+    display: inline-block;
+    width: 60%;
+    font-size: 1.4em;
+    line-height: 22px;
+    font-weight: bold;
+    vertical-align: top;
+}
+.title_r {
+    width: 23%;
+    font-size: 1.2em;
+    text-align: center;
+}
+.number_text {
+    display: inline-block;
+    width: 84%;
+    vertical-align: top;
+}
+.list_text.list_url {
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: normal;
+    word-break: break-all;
+}
+/*頁碼*/
+.pagination {
+    display: flex;
+    margin: 0 0 8px 0;
+    list-style: none;
+    white-space: nowrap;
+    justify-content: flex-end;
+}
+.pagination li a {
+    position: relative;
+    display: block;
+    padding: 7px 10px;
+    margin-left: -1px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    -webkit-transition: background-color .3s;
+    -moz-transition: background-color .3s;
+    -o-transition: background-color .3s;
+    transition: background-color .3s;
+}
+.pagination li a {
+    color: #888;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+.pagination li a.active {
+    color: #fff;
+    background-color: #777;
+}
+.pagination li a:hover:not(.active) {
+    background-color: #ddd;
+}
+/* 總獎金金額 */
+.total_main {
+    width: 97%;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+.total_wrap {
+    display: inline-block;
+    width: 75%;
+    margin: 0 0 10px 0;
+    vertical-align: top;
+}
+.total_set {
+    width: 97%;
+    padding: 0 0 10px 10px;
+    margin: 0 0 10px 0;
+    line-height: 40px;
+    text-align: left;
+    border-bottom: 5px dotted #dedede;
+}
+.total_set span {
+    padding: 3px 20px 3px 5px;
+    font-size: 22px;
+    font-weight: bold;
+    border-left: 6px solid #53dac1;
+    vertical-align: middle;
+}
+.total_set select {
+    width: 25%;
+    padding: 4px;
+    margin: 0 10px 0 0;
+    font-size: 1.1em;
+    color: #555;
+    background: url(../images/icon/menu_arrow_down.png) 95% center no-repeat #fff;
+    border: 1px solid #d6d6d6;
+    cursor: pointer;
+}
+.total_set .btn_small {
+    padding: 3px 20px;
+    font-size: 1.2em;
+}
+.total_title .text:last-child {
+    width: 40%;
+}
+.total_title .text div:first-child {
+    color: #5185d2;
+    font-weight: bold;
+}
+.total_pic {
+    display: inline-block;
+    width: 23%;
+    vertical-align: top;
+}
+.tbbox.total_tb {
+    height: 300px;
+}
+.fixed_table tbody tr.wining {
+    color: #fff;
+    font-weight: bold;
+    background:#f77;
+}
+/*總獎金中獎名單*/
+.tbbox.winlist {
+    height: 176px;
+    border: 1px solid #ccc;
+}
+.win_table tbody td {
+    font-weight: bold;
+}
+/* 帳號設置 */
+.boxset {
+    width: 95%;
+    margin: 10px auto;
+    text-align: left;
+}
+.setup_con3 .boxset,
+.setup_con3 .invite_set {
+    width: 65%;
+    padding: 15px 20px;
+    border: 1px solid #dedede;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+.bank_card, .invite_card {
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px 0;
+    color: #fff;
+    text-align: left;
+    background: #319cb2;
+    background: -moz-linear-gradient(top, #319cb2 0%, #124c9d 100%);
+    background: -webkit-linear-gradient(top, #319cb2 0%,#124c9d 100%);
+    background: linear-gradient(to bottom, #319cb2 0%,#124c9d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#319cb2', endColorstr='#124c9d',GradientType=0 );
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+.setup_con1 .col_1,
+.setup_con2 .col_1 {
+    line-height: 50px;
+}
+.setup_con3 .col_1 {
+    line-height: 40px;
+}
+.setup_con3 .col_1.text {
+    line-height: 30px;
+}
+.pw_tips {
+    display: inline-block;
+    line-height: 20px;
+    padding-left: 5px;
+    margin: 10px 0;
+    font-size: 15px;
+    list-style: decimal;
+    vertical-align: top;
+}
+.b_pic {
+    display: inline-block;
+    width: 25%;
+    line-height: 35px;
+    text-align: center;
+    vertical-align: middle;
+}
+.b_pic img {
+    display: block;
+    margin: 0 auto 6px;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    filter: alpha(opacity=30);
+    opacity: .3;
+}
+.b_text, .iv_text {
+    display: inline-block;
+    width: 70%;
+    vertical-align: middle;
+}
+.bank_card .input_title {
+    width: 22%;
+    color: rgba(255, 255, 255, .65);
+}
+.bank_card .list_text {
+    width: 74%;
+    color: #fff;
+}
+/* 邀請碼 */
+.invite_set {
+    width: 75%;
+    margin: 10px auto;
+    text-align: left;
+}
+.invite_card {
+    background: #4ca1af;
+    background: -moz-linear-gradient(top,  #4ca1af 0%, #2c3e50 100%);
+    background: -webkit-linear-gradient(top,  #4ca1af 0%,#2c3e50 100%);
+    background: linear-gradient(to bottom,  #4ca1af 0%,#2c3e50 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4ca1af', endColorstr='#2c3e50',GradientType=0 );
+}
+.iv_text {
+    width: 73%;
+}
+.invite_con2 {
+    text-align: left;
+}
+.teambox {
+    height: 500px;
+    margin: 15px auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.invite_card .btn_small,
+.bank_card .btn_small {
+    width: 70px;
+    font-size: 1em;
+    vertical-align: top;
+}
+.btn_small.title_btn,
+.setup_con3 .btn_small:hover,
+.setup_con3 .btn_small:focus,
+.setup_con3 .btn_small:active,
+.setup_con3 .btn_small.selected {
+    vertical-align: top;
+}
+.invite_set .select100,
+.popup_in .select100 {
+    margin: 0 10px 0 0;
+    color: #555;
+    background: url(../images/icon/menu_arrow_down.png) 98% center no-repeat #fff;
+}
+.game_set {
+    margin: 10px auto;
+    padding: 10px 0;
+    border-top: 2px dotted #dedede;
+}
+.game_name {
+    display: block;
+    width: 100%;
+    margin: 5px auto;
+    padding: 0 0 0 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-left: 5px solid #f98484;
+}
+/* 遊戲說明 */
+.info_box {
+    width: 80%;
+    height: 600px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.info_text {
+    width: 95%;
+    padding: 15px;
+    margin: 10px auto;
+    background: rgba(0,0,0,0.08);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+.info_text li {
+    line-height: 20px;
+    margin: 5px 0 0 20px;
+    color: #555;
+    font-size: 1em;
+    list-style: disc;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+}
+.info_title {
+    margin: 0 auto;
+    padding: 0 0 6px 0;
+    color: #ad1919;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 1px solid #ca8b8b;
+}
+.info_pic {
+    position: absolute;
+    top: 15px;
+    right: 38px;
+    width: 20%;
+}
+/****** 聯絡客服 *****/
+.online_service {
+    position: fixed;
+    bottom: 25px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    text-align: center;
+    background-color: #ff9400;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+    -ms-box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    cursor: pointer;
+    white-space: nowrap;
+    animation: fromBottom 1.6s 1;
+    -webkit-animation: fromBottom 1.6s 1;
+    z-index: 300;
+}
+.online_service img {
+    width: 65%;
+    margin: 8px 0 0 0;
+}
+/* 客服滑出視窗 */
+.on_chat {
+    display: none;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    width: 350px;
+    color: #fff;
+    background: #072473;
+    border: 2px solid #2f7dbb;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    border-radius: 0.3em;
+    z-index: 305;
+}
+.chat_box {
+    position: relative;
+    padding: 15px;
+    margin: 0 auto;
+    font-size: 1em;
+    text-align: center;
+}
+.chat_box .chat_close {
+    position: absolute;
+    top: -13px;
+    right: -5px;
+    width: 35px;
+    height: 35px;
+    background: url(../images/icon/fa-times.png) center no-repeat #b8e0ff;
+    background-size: 40% auto;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.chat_pic {
+    margin: 0 auto;
+}
+.chat_title {
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    color: #ffe100;
+}
+.chat_text {
+    line-height: 20px;
+    margin: 0 10px;
+    text-align: left;
+}
+.chat_msgbox {
+    margin: 10px 0 0 0;
+    text-align: left;
+}
+.chat_textarea {
+    width: 93%;
+    height: 100px;
+    padding: 10px;
+    resize: none;
+    color: #555;
+    font-size: 18px;
+    margin: 3px auto;
+    background: #fff;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    border-radius: 0.3em;
+    -webkit-box-shadow: inset 2px 2px 3px #aaa;
+    -moz-box-shadow: inset 2px 2px 3px #aaa;
+    -o-box-shadow: inset 2px 2px 3px #aaa;
+    box-shadow: inset 2px 2px 3px #aaa;
+}
+.chat_msgbox .input_m {
+    display: inline-block;
+    width: 76%;
+    padding: 5px;
+    margin: 10px 0;
+    color: #666;
+    font-size: 1em;
+    background: #fff;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+}
+.chat_msgbox .btn_s {
+    width: 20%;
+    height: 30px;
+    line-height: 26px;
+    font-size: 1em;
+    vertical-align: middle;
+}
+/****** 跳框 *****/
+.popup_windows {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    z-index: 10001;
+}
+.popup_container {
+    position: absolute;
+    width: 100%;
+    top: 45%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 10000;
+}
+.popup {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    background: #fff;
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .5);
+    -o-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .5);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .5);
+}
+.btn_close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    background: url(../images/icon/fa-times.png) center center no-repeat #fff;
+    background-size: 50% auto;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    border-radius: 0.3em;
+    -webkit-transition: transform .4s;
+    -moz-transition: transform .4s;
+    -ms-transition: transform .4s;
+    -o-transition: transform .4s;
+    transition: transform .4s;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+    opacity: .8;
+    cursor: pointer;
+}
+.btn_close:hover,
+.btn_close:active,
+.btn_close:focus {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+/*跳框_標題*/
+.popup_title {
+    padding: 10px 0 10px 10px;
+    color: #fff;
+    text-align: left;
+    text-transform: uppercase;
+    background: #366c9a;
+}
+.popup_title span {
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.popup_title span.fa {
+    width: 27px;
+    height: 30px;
+    margin: 0 8px 0 0;
+}
+/*跳框_內容*/
+.popup_in {
+    width: 85%;
+    padding: 25px 0 30px 0;
+    margin: 0 auto;
+    text-align: center;
+}
+.popup_in .page_wrap {
+    padding: 0;
+}
+.popup_in .listset {
+    position: relative;
+    margin: 0 0 10px 0;
+    text-align: left;
+}
+.popup_in .fa {
+    position: absolute;
+    top: 11px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=45)";
+    filter: alpha(opacity=45);
+    opacity: .45;
+}
+/* fontawesome */
+.fa-home-y { /*首頁(黃)*/
+    background: url(../images/icon/fa-home-y.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-home-w { /*首頁(白)*/
+    background: url(../images/icon/fa-home-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-crown-w { /*遊戲(白)*/
+    background: url(../images/icon/fa-crown-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-video-w { /*live(白)*/
+    background: url(../images/icon/fa-video-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-file-text-o-w { /*歷史紀錄(白)*/
+    background: url(../images/icon/fa-file-text-o-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-coins-w { /*總獎金金額(白)*/
+    background: url(../images/icon/fa-coins-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-gift-w { /*派彩紀錄(白)*/
+    background: url(../images/icon/fa-gift-w.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-clipboard-check-w { /*下注紀錄(白)*/
+    background: url(../images/icon/fa-clipboard-check-w.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-dollar-sign-w { /*充值_轉出紀錄(白)*/
+    background: url(../images/icon/fa-dollar-sign-w.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-user-w { /*個人中心(白)*/
+    background: url(../images/icon/fa-user-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-cog-w { /*帳號設置(白)*/
+    background: url(../images/icon/fa-cog-w.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-qrcode-w { /*邀請碼(白)*/
+    background: url(../images/icon/fa-qrcode-w.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-info-circle-w { /*玩法與介紹(白)*/
+    background: url(../images/icon/fa-info-circle-w.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-share-square-w { /*登出(白)*/
+    background: url(../images/icon/fa-share-square-w.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-share-square-p { /*登出(紅)*/
+    background: url(../images/icon/fa-share-square-p.png) center center no-repeat ;
+    background-size: 100% auto;
+}
+.fa-sign-in-w { /*登入(白)*/
+    background: url(../images/icon/fa-sign-in-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-user-circle-o-w { /*註冊(白)*/
+    background: url(../images/icon/fa-registered-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-key-w { /*忘記密碼(白)*/
+    background: url(../images/icon/fa-key-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-lightbulb-w { /*提示(白)*/
+    background: url(../images/icon/fa-lightbulb-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-user { /*帳號(黑)*/
+    background: url(../images/icon/fa-user.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-lock { /*密碼(黑)*/
+    background: url(../images/icon/fa-lock.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-crown { /*皇冠(黑)*/
+    background: url(../images/icon/fa-crown.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-key { /*交易密碼(黑)*/
+    background: url(../images/icon/fa-key.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-envelope { /*E-Mail(黑)*/
+    background: url(../images/icon/fa-envelope.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-mobile { /*手機號碼(黑)*/
+    background: url(../images/icon/fa-mobile.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-check-circle { /*驗證碼(黑)*/
+    background: url(../images/icon/fa-check-circle.png) center center no-repeat;
+    background-size: 100% auto;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .7);
+}
+.fa-hand-holding-usd-w {
+    background: url(../images/icon/fa-hand-holding-usd-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-donate-w {
+    background: url(../images/icon/fa-donate-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-credit-card {
+    background: url(../images/icon/fa-credit-card.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.fa-landmark-w {
+    background: url(../images/icon/fa-landmark-w.png) center center no-repeat;
+    background-size: 100% auto;
+}
+.popup_in .input,
+.popup_in .list_text,
+.popup_in .tips_text {
+    display: block;
+    padding: 7px 0 7px 40px;
+    color: #333;
+    font-size: 1.2em;
+    background: none;
+    border: 0;
+}
+.popup_in .input {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+.popup_in .list_text {
+    width: 88%;
+}
+.popup_in .tips_text {
+    width: 90%;
+    padding: 0 0 0 10%;
+    margin: 11px auto;
+    font-size: 1.1em;
+    list-style: decimal;
+    text-align: left;
+}
+.popup_in .tips_text li {
+    line-height: 22px;
+    margin: 10px 0;
+}
+.btnbox {
+    height: 55px;
+    line-height: 55px;
+    margin: 0 auto;
+}
+.popup_in .input_s {
+    display: inline-block;
+    width: 55%;
+}
+.popup_in .btn_s {
+    width: 41%;
+    padding: 5px 0;
+    color: #444;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+.popup_in .btn_33,
+.popup_in .btn_50,
+.popup_in .btn_100 {
+    padding: 8px 0;
+    color: #444;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+.popup_in .btn_33 {
+    width: 32%;
+}
+.popup_in .btn_50 {
+    width: 48%;
+}
+.popup_in .btn_100 {
+    width: 98%;
+}
+/* 跳框_登入 */
+.remember {
+    width: 100%;
+    margin: 15px auto 0;
+}
+.chkbox_label {
+    float: left;
+    color: #666;
+    font-size: 1em;
+    font-weight: normal;
+    text-transform: capitalize;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.chkbox_label input {
+    position: absolute;
+    left: -9999px;
+}
+.chkbox_label i {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 6px 0 0;
+    background: #fff;
+    border: 1px solid #aaa;
+    vertical-align: middle;
+}
+.chkbox_label div {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+.chkbox_label .rule {
+    width: 85%;
+}
+.chkbox_label input + i:after {
+    content: "";
+    position: absolute;
+    background: url(../images/icon/check.png) 0 2px no-repeat;
+    top: 0;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+    text-align: center;
+    -webkit-transition: opacity .1s;
+    -moz-transition: opacity .1s;
+    -ms-transition: opacity .1s;
+    -o-transition: opacity .1s;
+    transition: opacity .1s;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+.chkbox_label input:checked + i:after {
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+/* 跳框-免費註冊 */
+.go_reg {
+    width: 85%;
+    min-width: 250px;
+    margin: 20px auto 0;
+    padding: 0;
+    font-size: 1em;
+    text-align: center;
+}
+.go_reg .text {
+    display: inline-block;
+    margin: 0 0 0 5px;
+    color: #2196f3;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: underline;
+    cursor: pointer;
+}
+/* 跳框_忘記密碼 */
+.forgot_pw {
+    float: right;
+    color: #dc0000;
+    font-size: 1em;
+    -webkit-transition: .5s ease-in;
+    -moz-transition: .5s ease-in;
+    -ms-transition: .5s ease-in;
+    -o-transition: .5s ease-in;
+    transition: .5s ease-in;
+    cursor: pointer;
+}
+.forgot_pw:hover,
+.forgot_pw:active,
+.forgot_pw:focus {
+    text-decoration: underline;
+}
+/* 跳框-電腦選號 */
+.panel_group {
+    margin: 0 auto;
+    color: #555;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+}
+.panel_group span {
+    margin: 0 5px;
+    vertical-align: middle;
+}
+.panel_group .panel_input {
+    width: 90px;
+    height: 35px;
+    line-height: 35px;
+    margin: 0 -5px 0 0;
+    font-weight: bold;
+    text-align: center;
+    background: #fff;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    vertical-align: middle;
+}
+.panel_group .stock_btn2_0a,
+.panel_group .stock_btn2_0b {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin: 0 -5px 0 0;
+    border: 1px solid #999;
+    border-radius: 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.stock_title .stock_btn2_0a, .stock_btn2_0a {
+    background: url(../images/other/stock_btn2_0a.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.stock_title .stock_btn2_0b, .stock_btn2_0b {
+    background: url(../images/other/stock_btn2_0b.jpg) no-repeat;
+    background-size: 100% auto;
+}
+.betok_box {
+    width: 100%;
+    /* height: 300px; */
+    overflow: hidden;
+}
+.betok_ball {
+    height: 120px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.betok_ball ul {
+    margin: 0 0 5px 0;
+}
+.betok_set {
+    margin: 10px 0 0 0;
+    line-height: 22px;
+    color: #555;
+    font-size: 1.1em;
+    text-align: center;
+    font-weight: bold;
+}
+.betok_set .title {
+    display: inline-block;
+    width: 20%;
+    vertical-align: middle;
+}
+.betok_set .text {
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+    vertical-align: middle;
+}
+.betok_set .text span {
+    margin: 0 5px;
+}
+/* 跳框-邀請碼 */
+.popup_invite {
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+.popup_invite .input_title {
+    width: 100%;
+    margin: 5px 0 3px 0;
+}
+.popup_invite .input100,
+.popup_invite .select100 {
+    width: 100%;
+    margin: 0 0 5px 0;
+}
+.invite_set .text {
+    display: inline-block;
+    font-size: 18px;
+    vertical-align: middle;
+}
+/* 跳框-充值+轉出頁籤 */
+.popup_tabbox {
+    border-bottom: 1px solid #ccc;
+}
+.wam_text {
+    line-height: 22px;
+    margin: 0 0 10px 0;
+    color: #f00;
+    font-weight: bold;
+    font-style: italic;
+    text-align: justify;
+}
+.account_set {
+    margin: 10px auto;
+    padding: 10px 0;
+    border-top: 2px dotted #ddd;
+}
+.popup_account .input100,
+.popup_account .select100 {
+    width: 63%;
+    margin: 0 0 5px 0;
+}
+.popup_account
+.input_title {
+    width: 35%;
+    margin: 5px 0;
+    text-align: left;
+}
+.popup_tabbox label {
+    position: relative;
+    bottom: -1px;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #bbb;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+.popup_tabbox label:hover {
+    color: #888;
+}
+.allpage {
+    width: 0;
+    height: 0;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    -webkit-transition: opacity .1s;
+    -moz-transition: opacity .1s;
+    -ms-transition: opacity .1s;
+    -o-transition: opacity .1s;
+    transition: opacity .1s;
+    overflow: hidden;
+}
+.popup_in.page_box,
+#popup_deposit .popup_in .page_wrap,
+#popup_withdrawal .popup_in .page_wrap {
+    padding: 15px 0;
+}
+#deposittab1:checked~.popup_tabbox [for="deposittab1"],
+#deposittab2:checked~.popup_tabbox [for="deposittab2"],
+#withdrawaltab1:checked~.popup_tabbox [for="withdrawaltab1"],
+#withdrawaltab2:checked~.popup_tabbox [for="withdrawaltab2"]   {
+    color: #fff;
+    background: #ed5a6a;
+    border-bottom: 5px solid #ecc5c5;
+    -webkit-border-radius: 20px 20px 0 0;
+    -moz-border-radius: 20px 20px 0 0;
+    -ms-border-radius: 20px 20px 0 0;
+    -o-border-radius: 20px 20px 0 0;
+    border-radius: 20px 20px 0 0;
+}
+#deposittab1:checked~.page_wrap .dp_con1,
+#deposittab2:checked~.page_wrap .dp_con2,
+#withdrawaltab1:checked~.page_wrap .wd_con1,
+#withdrawaltab2:checked~.page_wrap .wd_con2 {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+.popup_in .fa-credit-card {
+    top: 3px;
+    left: 5px;
+    width: 25px;
+    height: 25px;
+}
+.popup_account .add_card {
+    line-height: 30px;
+    margin: 0 0 0 40px;
+    color: #f00;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.popup_account .add_card:hover,
+.popup_account .add_card:focus,
+.popup_account .add_card:active {
+    color: #00839e;
+    text-decoration: underline;
+}
+
+/*********  以下為 手機畫面_設定  *********/
+/* 寬度大於 901px (iPad, iPad pro)*/
+@media screen and (min-width: 901px) {
+    /* 表格內的ScrollBar樣式設定 */
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2px #bbb;
+        background: #e8e8e8;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #bbb;
+    }
+    ::-webkit-scrollbar-thumb:hover,
+    ::-webkit-scrollbar-thumb:active,
+    ::-webkit-scrollbar-thumb:focus {
+        background: #888;
+    }
+    /*回到頂端按鈕*/
+    .go_top {
+        right: 20%;
+        bottom: 2%;
+        width: 3em;
+        height: 3em;
+    }
+    .go_top::before, .go_top::after {
+        top: 1.5em;
+        width: 25px;
+        height: 6px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -o-border-radius: 3px;
+        border-radius: 3px;
+    }
+    .go_top::before {
+        left: 0.42em;
+    }
+    .go_top::after {
+        right: 0.42em;
+    }
+    /*首頁*/
+    .home_box {
+        max-width: 1200px;
+    }
+    .home_pic1 {
+        top: 200px;
+        left: 26%;
+    }
+    .home_pic2 {
+        top: 460px;
+        left: 18%;
+    }
+    .home_pic3 {
+        top: 120px;
+        left: 55%;
+    }
+    .home_pic4 {
+        top: 145px;
+        left: 23%;
+    }
+    .home_pic5 {
+        top: 260px;
+        left: 42%;
+    }
+    .home_text1 {
+        top: 525px;
+        left: 40%;
+    }
+    .home_text2 {
+        top: 590px;
+        right: 25%;
+    }
+    /* 漢堡圖 */
+    .menu-trigger {
+        display: none;
+    }
+    /* 選單列 */
+    .header_box {
+        background: #fff;
+    }
+    /* 凍結表格(內表格) */
+    .fixed_table tfoot tr th,
+    .fixed_table tfoot tr td .fixed_table tfoot tr.subtotal th,
+    .fixed_table tfoot tr.subtotal td {
+        padding-right: 20px !important;
+    }
+    /*跳框*/
+    .popup {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+/* 寬度小於 900px (平板+手機)*/
+@media screen and (max-width: 900px) {
+    /*首頁*/
+    .home_box {
+        max-width: 400px;
+    }
+    .home_pic1 {
+        top: 40px;
+        left: 0;
+    }
+    .home_pic2 {
+        top: 100px;
+        left: 0;
+        width: 40%;
+    }
+    .home_pic3 {
+        top: 0;
+        right: 0;
+        width: 50%;
+    }
+    .home_pic4 {
+        top: 50px;
+        left: 22%;
+        width: 30%;
+    }
+    .home_pic5 {
+        top: 60px;
+        right: 20%;
+        width: 40%;
+    }
+    .home_text1 {
+        top: 200px;
+        right: 10%;
+        font-size: 2em;
+    }
+    .home_text2 {
+        top: 240px;
+        right: 0;
+        font-size: 2em;
+    }
+    /* Logo */
+    .top_logo, .header_nav,
+    .game_pic, .total_pic {
+        display: none;
+    }
+    /* 漢堡圖 */
+    .menu-trigger {
+        display: block !important;
+    }
+    /* 選單列 */
+    .header_box {
+        height: 65px;
+        line-height: 65px;
+    }
+    .header_r {
+        width: 100%;
+        line-height: 30px;
+        background: #153c86;
+    }
+    .index_body .header_r {
+        padding: 0 5px 0 0;
+        line-height: 40px;
+        background: #fff;
+    }
+    .nav_text {
+        margin: 0 5px 0 0;
+        color: #fff;
+    }
+    .nav_text:last-child {
+        margin: 0;
+    }
+    .nav_text span {
+        color: #f8b700;
+        font-size: 1.1em;
+    }
+    /* 登入+註冊+登出按鈕 */
+    .header_r .nav_btn,
+    .nav_btn.nav_register,
+    .nav_btn.nav_login,
+    .nav_btn.nav_logout {
+        font-size: 1em;
+    }
+    /* 凍結表格(內表格) */
+    .tbbox {
+        border: 1px solid #ccc;
+    }
+    .fixed_table {
+        min-width: 900px;
+    }
+    /* 遊戲 */
+    .winlist .fixed_table,
+    .deposit .fixed_table,
+    .withdrawal .fixed_table {
+        min-width: 600px;
+    }
+    .winlist .fixed_table .cell_xl {
+        width: 29%;
+    }
+    .winlist .fixed_table .cell_l {
+        width: 22%;
+    }
+    .winlist .fixed_table .cell_s {
+        width: 13%;
+    }
+    /* 充值_轉出紀錄 */
+    .deposit .fixed_table .cell_xl,
+    .withdrawal .fixed_table .cell_xl {
+        width: 23%;
+    }
+    /* 遊戲內容 */
+    .content {
+        top: 68px;
+        padding: 15px;
+    }
+    .game_title, .total_title {
+        width: 93%;
+        padding: 5px;
+        border: 5px solid #53dac1;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        border-radius: 10px;
+    }
+    .game_title .text, .total_title .text {
+        width: 97%;
+        line-height: 30px;
+        margin: 0;
+        padding: 0 5px;
+        border-left: 0;
+        border-bottom: 2px solid #e2e2e2;
+    }
+    .game_title .text:first-child,
+    .total_title .text:first-child {
+        border-left: 0;
+    }
+    .game_title .text:last-child,
+    .total_title .text:last-child {
+        border-bottom: 0;
+    }
+    .game_title .text div,
+    .total_title .text div {
+        display: inline-block;
+        width: 48%;
+    }
+    .game_main, .ball_tb {
+        width: 100%;
+    }
+    .game_main {
+        padding: 15px 0;
+    }
+    .game_wrap {
+        width: 100%;
+        padding: 0;
+    }
+    .set_number {
+        width: 90%;
+        height: 100px;
+    }
+    .ball_box .num_ball {
+        margin: 0 0 5px 0;
+    }
+    /* 下注頁籤 */
+    .content.bet, .content.deposit,
+    .content.withdrawal, .content.invite,
+    .content.setup {
+        top: 80px;
+    }
+    .bet_label, .dp_label, .wd_label, .setup_label {
+        width: 32%;
+        padding: 8px 0 6px 0;
+        font-size: 18px;
+        -webkit-border-radius: 40px 40px 0 0;
+        -moz-border-radius: 40px 40px 0 0;
+        -ms-border-radius: 40px 40px 0 0;
+        -o-border-radius: 40px 40px 0 0;
+        border-radius: 40px 40px 0 0;
+    }
+    .invite_label {
+        width: 49%;
+    }
+    .bet .ball_l, .payout .ball_l,
+    .setup .ball_l, .bet .ball_r,
+    .payout .ball_r, .setup .ball_r {
+        display: none;
+    }
+    .page_wrap {
+        padding: 15px;
+    }
+    .content, .page_wrap,
+    .bet .page_wrap,
+    .setup .page_wrap {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+    }
+    .page_list .input {
+        width: 60%;
+    }
+    /* 派彩紀錄 */
+    .payout .fixed_table .cell_l {
+        width: 16%;
+    }
+    .payout .fixed_table .cell_xl {
+        width: 19%;
+    }
+    /* 總獎金金額 */
+    .total_pic {
+        display: none;
+    }
+    .total_wrap {
+        width: 100%;
+    }
+    .total_title .text:last-child {
+        width: 97%;
+    }
+    .total_main {
+        padding: 0;
+    }
+    .total_set {
+        padding: 0 0 10px 0;
+    }
+    .total_set select {
+        width: 49%;
+    }
+    /* 帳號設置 */
+    .setup_con3 .boxset, .setup_con3 .invite_set {
+        width: 88%;
+        padding: 15px;
+    }
+    .setup_label {
+        letter-spacing: -1px;
+    }
+    .setup .col_1 .input_title,
+    .invite .col_1 .input_title {
+        width: 100%;
+        margin: 5px 0 3px 0;
+    }
+    .setup_con3 .bank_card .col_1.text {
+        margin: 0 0 5px 0;
+        border-bottom: 1px dotted rgba(255,255,255,.3);
+    }
+    .setup_con3 .bank_card .col_1.text:last-child {
+        border-bottom: 0;
+    }
+    /* 邀請碼 */
+    .invite_card .title_r, .number_text {
+        width: 65%;
+    }
+    .invite_card .title_r {
+        text-align: left;
+        vertical-align: middle;
+    }
+    .invite_card .btn_small.title_btn {
+        vertical-align: middle;
+    }
+    .teambox {
+        height: 340px;
+    }
+    .title_l {
+        width: 100%;
+    }
+    /* 遊戲說明 */
+    .content.gameinfo {
+        height: 550px;
+        overflow: hidden;
+    }
+    .info_pic {
+        top: 20px;
+        right: 10px;
+    }
+    .info_box {
+        width: 100%;
+        height: 470px;
+    }
+    .info_text {
+        width: 90%;
+    }
+    /* 浮動客服 */
+    .online_service {
+        background-color: #f00;
+    }
+}
+/* 寬度大於 2560px (iMac) */
+@media screen and (min-width: 2560px) {
+    /* 浮動客服 */
+    .online_service {
+        bottom: 30%;
+        right: 29%;
+    }
+    .on_chat {
+        bottom: 30%;
+        right: 23%;
+    }
+}
+/* 寬度介於 1301px - 1900px (ipad pro,舊電腦) */
+@media screen and (min-width: 1301px) and (max-width: 1900px) {
+    /* 遊戲 */
+    .set_number {
+        width: 92%;
+    }
+}
+/* 寬度介於 901px - 1300px (ipad) */
+@media screen and (min-width: 901px) and (max-width: 1300px) {
+    /*跳框*/
+    .popup_container {
+        top: 47%;
+    }
+    /* 遊戲 */
+    .set_number {
+        width: 97%;
+    }
+    /* 派彩紀錄 */
+    .bet .ball_r, .payout .ball_r, .setup .ball_r,
+    .bet .ball_l, .payout .ball_l, .setup .ball_l {
+        display: none;
+    }
+}
+/* 寬度介於 751px - 900px (iPad, 手機橫放) */
+@media screen and (min-width: 751px) and (max-width: 900px) {
+    /*跳框*/
+    .popup_container {
+        top: 50%;
+    }
+    #popup_register .popup_container,
+    #popup_deposit .popup_container {
+        top: 70%;
+    }
+    .popup {
+        width: 90%;
+        max-width: 400px;
+    }
+    /* 跳框-邀請碼 */
+    .popup_invite .input_title {
+        width: 30%;
+    }
+    .popup_invite .input100, .popup_invite .select100 {
+        width: 68%;
+    }
+    /* 遊戲 */
+    .game_main {
+        width: 95%;
+    }
+    .set_number {
+        width: 93.5%;
+    }
+    .ball_box {
+        width: 95%;
+    }
+    /* 帳號設置 */
+    .setup_con1 .col_1, .setup_con2 .col_1 {
+        line-height: 40px;
+    }
+    .setup .col_1 .input_title, .invite .col_1 .input_title {
+        width: 140px;
+    }
+    .setup_con3 .col_1 .input_title {
+        width: 90px;
+    }
+    .setup_con3 .col_1 .input100 {
+        width: 77%;
+    }
+    /* 邀請碼 */
+    .teambox .col_text {
+        padding: 8px 5px;
+        line-height: 18px;
+    }
+}
+/* 寬度介於 671px - 750px (iPad, 手機橫放) */
+@media screen and (min-width: 671px) and (max-width: 750px) {
+    /*回到頂端按鈕*/
+    .go_top {
+        width: 4em;
+        height: 4em;
+    }
+    .go_top::before, .go_top::after {
+        top: 2em;
+        width: 30px;
+        height: 10px;
+    }
+    .go_top::before {
+        left: 0.8em;
+    }
+    .go_top::after {
+        right: 0.8em;
+    }
+    /*跳框*/
+    .popup_container {
+        top: 50%;
+    }
+    #popup_register .popup_container,
+    #popup_deposit .popup_container {
+        top: 91%;
+    }
+    .popup {
+        width: 90%;
+        max-width: 400px;
+    }
+    /* 跳框-邀請碼 */
+    .popup_invite .input_title {
+        width: 30%;
+    }
+    .popup_invite .input100, .popup_invite .select100 {
+        width: 68%;
+    }
+    /* 遊戲 */
+    .content {
+        padding: 7px;
+    }
+    .set_number {
+        width: 95%;
+    }
+    /* 總獎金金額 */
+    .total_set {
+        width: 100%;
+    }
+    /* 充值轉出紀錄 */
+    .history_date, .page_list {
+        font-size: 18px;
+    }
+    /* 帳號設置 */
+    .bank_card, .invite_card {
+        width: 80%
+    }
+    .setup_con1 .col_1, .setup_con2 .col_1 {
+        line-height: 40px;
+    }
+    .setup .col_1 .input_title, .invite .col_1 .input_title {
+        width: 140px;
+    }
+    .setup_con3 .col_1 .input_title {
+        width: 90px;
+    }
+    .setup_con3 .col_1 .input100 {
+        width: 77%;
+    }
+    /* 邀請碼 */
+    .col_3 {
+        width: 48%;
+    }
+    .teambox .col_text {
+        padding: 8px 5px;
+        line-height: 18px;
+    }
+}
+/* 寬度介於 551px - 670px (手機橫放) */
+@media screen and (min-width: 551px) and (max-width: 670px) {
+    /*回到頂端按鈕*/
+    .go_top {
+        width: 3.6em;
+        height: 3.6em;
+    }
+    .go_top::before, .go_top::after {
+        top: 1.8em;
+        width: 25px;
+        height: 8px;
+    }
+    .go_top::before {
+        left: 0.8em;
+    }
+    .go_top::after {
+        right: 0.8em;
+    }
+    /*跳框*/
+    .popup_container {
+        top: 50%;
+    }
+    #popup_register .popup_container,
+    #popup_deposit .popup_container {
+        top: 95%;
+    }
+    .popup {
+        width: 90%;
+        max-width: 400px;
+    }
+    /* 跳框-邀請碼 */
+    .popup_invite .input_title {
+        width: 30%;
+    }
+    .popup_invite .input100, .popup_invite .select100 {
+        width: 68%;
+    }
+    /* 遊戲 */
+    .content {
+        padding: 13px;
+    }
+    .set_number {
+        width: 91%;
+    }
+    /* 總獎金金額 */
+    .total_set select {
+        width: 36%;
+    }
+    /* 充值轉出紀錄 */
+    .history_date span.title {
+        margin: 0;
+    }
+    .history_date, .page_list {
+        font-size: 18px;
+    }
+    .btn_s, .btn_small, .btn_big, .btn_big50, .btn_big100, .nav_btn {
+        padding: 3px 9px;
+    }
+    /* 帳號設置 */
+    .bank_card, .invite_card {
+        width: 80%
+    }
+    .setup_con1 .col_1, .setup_con2 .col_1 {
+        line-height: 40px;
+    }
+    .setup .col_1 .input_title, .invite .col_1 .input_title {
+        width: 140px;
+    }
+    .setup_con3 .col_1 .input_title {
+        width: 90px;
+    }
+    .setup_con3 .col_1 .input100 {
+        width: 77%;
+    }
+    /* 邀請碼 */
+    .col_3 {
+        width: 48%;
+    }
+    .teambox .col_text {
+        padding: 8px 5px;
+        line-height: 18px;
+    }
+}
+/* 寬度介於 401px - 550px (iPhone 6+) */
+@media screen and (min-width: 401px) and (max-width: 550px) {
+    /*回到頂端按鈕*/
+    .go_top {
+        width: 3.6em;
+        height: 3.6em;
+    }
+    .go_top::before, .go_top::after {
+        top: 1.8em;
+        width: 25px;
+        height: 8px;
+    }
+    .go_top::before {
+        left: 0.8em;
+    }
+    .go_top::after {
+        right: 0.8em;
+    }
+    /*跳框*/
+    .popup_container {
+        top: 56%;
+    }
+    .popup {
+        width: 90%;
+        max-width: 400px;
+    }
+    /* 遊戲 */
+    .set_title {
+        width: 100%;
+    }
+    .set_btn {
+        width: 30%;
+    }
+    .set_bet {
+        width: 65%;
+    }
+    .set_number {
+        width: 93%;
+    }
+    /* 總獎金金額 */
+    .total_set {
+        width: 100%;
+    }
+    .total_set span {
+        padding: 3px 5px 3px 5px;
+        font-size: 21px;
+    }
+    .total_set select {
+        width: 32%;
+        margin: 0;
+    }
+    .total_set .btn_small {
+        padding: 3px 12px;
+        font-size: 17px;
+    }
+    /* 遊戲內容_帳號設定_邀請碼 */
+    .game_btn {
+        width: 100%;
+    }
+    /* 邀請碼 */
+    .invite_card {
+        width: 99%;
+    }
+    .col_3 {
+        width: 99%;
+    }
+    .teambox .col_text {
+        padding: 8px 5px;
+        line-height: 18px;
+    }
+    /* 遊戲說明 */
+    .info_pic {
+        top: 10px;
+        right: 5px;
+        width: 27%;
+    }
+}
+/* 寬度介於 480px  */
+@media screen and (min-width: 480px) and (max-width: 480px) {
+    /* 跳框 */
+    #popup_register .popup_container,
+    #popup_deposit .popup_container {
+        top: 86%;
+    }
+}
+/* 寬度介於 401px - 414px  */
+@media screen and (min-width: 401px) and (max-width: 414px) {
+    /* 內容 */
+    .content {
+        padding: 15px 10px;
+    }
+    /* 遊戲 */
+    .set_number {
+        width: 92%;
+    }
+    .game_btn {
+        width: 55%;
+    }
+}
+/* 寬度介於 321px - 400px (iPhone 5,iPhone 6,Galaxy S5) */
+@media screen and (min-width: 321px) and (max-width: 400px) {
+    /*回到頂端按鈕*/
+    .go_top {
+        width: 3.5em;
+        height: 3.5em;
+    }
+    .go_top::before, .go_top::after {
+        top: 1.7em;
+        width: 30px;
+        height: 8px;
+    }
+    .go_top::before {
+        left: 0.5em;
+    }
+    .go_top::after {
+        right: 0.5em;
+    }
+    /*跳框*/
+    .popup_container {
+        top: 47%;
+    }
+    /* 遊戲 */
+    .set_title {
+        width: 100%;
+    }
+    .set_btn {
+        width: 30%;
+    }
+    .set_bet {
+        width: 65%;
+    }
+    .set_number {
+        width: 93%;
+    }
+    .content .btn_big, .content .btn_big50, .content .btn_big100 {
+        width: 46%;
+    }
+    /* 派彩紀錄 */
+    .btn_s, .btn_small, .btn_big, .btn_big50, .btn_big100, .nav_btn {
+        padding: 3px 8px;
+    }
+    /* 遊戲內容_帳號設定_邀請碼 */
+    .game_btn {
+        width: 100%;
+    }
+    .b_pic {
+        display: block;
+        width: 95%;
+        padding: 0 0 10px 0;
+        margin: 0 auto 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, .5);
+    }
+    /* 帳號設置 */
+    .setup_con1 .col_1, .setup_con2 .col_1 {
+        line-height: 35px;
+    }
+    .b_text, .iv_text {
+        width: 90%;
+        text-align: left;
+    }
+    /* 邀請碼 */
+    .bank_card, .invite_card {
+        width: 99%;
+        text-align: center;
+    }
+    .iv_text {
+        width: 95%;
+        margin: 0 auto;
+        text-align: left;
+    }
+    .invite_card .title_r, .number_text {
+        width: 75%;
+    }
+    .col_3 {
+        width: 99%;
+    }
+    .teambox .col_text {
+        padding: 8px 5px;
+        line-height: 18px;
+    }
+    /* 遊戲說明 */
+    .info_pic {
+        right: 5px;
+        width: 30%;
+    }
+}
+/* 寬度小於 320px */
+@media screen and (max-width: 320px) {
+    /*回到頂端按鈕*/
+    .go_top {
+        width: 3.5em;
+        height: 3.5em;
+    }
+    .go_top::before, .go_top::after {
+        top: 1.7em;
+        width: 30px;
+        height: 8px;
+    }
+    .go_top::before {
+        left: 0.5em;
+    }
+    .go_top::after {
+        right: 0.5em;
+    }
+    /* 選單 */
+    .header_r {
+        line-height: 24px;
+    }
+    /* 內容 */
+    .content {
+        top: 88px;
+        padding: 0;
+    }
+    .content.bet, .content.deposit, .content.withdrawal, .content.invite, .content.setup {
+        top: 96px;
+    }
+    /*跳框*/
+    .popup_container {
+        top: 58%;
+    }
+    .popup_in {
+        width: 95%;
+    }
+    .popup_tabbox label {
+        padding: 10px;
+    }
+    .popup_in .input, .popup_in .list_text, .popup_in .tips_text {
+        font-size: 1em;
+    }
+    .popup_account .input_title {
+        width: 33%;
+    }
+    .popup_account .input100, .popup_account .select100 {
+        width: 65%;
+    }
+    /* 遊戲 */
+    .game_main {
+        width: 95%;
+    }
+    .set_title {
+        width: 100%;
+    }
+    .set_btn {
+        width: 40%;
+    }
+    .set_bet {
+        width: 90%;
+    }
+    .set_number {
+        width: 88%;
+    }
+    .game_btn {
+        width: 74%;
+    }
+    /* 總獎金金額 */
+    .total_set select {
+        width: 48%;
+    }
+    .total_set span {
+        padding: 3px 10px 3px 5px;
+        font-size: 20px;
+    }
+    .game_title .text div, .total_title .text div {
+        width: 52%;
+    }
+    /* 派彩紀錄 */
+    .history_date span.title {
+        margin: 0;
+    }
+    .total_set {
+        width: 97%;
+        margin: 0 auto;
+    }
+    .page_box {
+        padding: 5px;
+    }
+    /* 下注紀錄 */
+    .page_wrap {
+        padding: 5px;
+    }
+    .history_date .tcalInput {
+        width: 120px;
+        padding: 5px 5px;
+    }
+    /* 充值紀錄 */
+    .dp_label, .wd_label {
+        width: 37%;
+    }
+    .btn_small {
+        padding: 3px 24px;
+    }
+    /* 遊戲內容_帳號設定_邀請碼 */
+    .game_btn {
+        width: 100%;
+    }
+    .b_pic {
+        display: block;
+        width: 95%;
+        padding: 0 0 10px 0;
+        margin: 0 auto 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, .5);
+    }
+    .invite_card .btn_small, .bank_card .btn_small {
+        width: auto;
+    }
+    /* 邀請碼 */
+    .total_set .btn_small {
+        padding: 3px 10px;
+        font-size: 1.1em;
+    }
+    .bank_card, .invite_card {
+        width: 99%;
+        text-align: center;
+    }
+    .iv_text {
+        width: 95%;
+        margin: 0 auto;
+        text-align: left;
+    }
+    .invite_card .title_r, .number_text {
+        width: 60%;
+    }
+    .number_text .text_pink {
+        display: block;
+    }
+    .col_3 {
+        width: 99%;
+    }
+    .teambox .col_text {
+        padding: 8px 5px;
+        line-height: 18px;
+    }
+    /* 遊戲說明 */
+    .info_pic {
+        right: 5px;
+        width: 30%;
+    }
+}

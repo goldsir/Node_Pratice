@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="content-language" content="zh-cn" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="css/reset.css?111" rel="stylesheet" type="text/css">
+	<link href="css/error.css?111" rel="stylesheet" type="text/css">
+	<title>赢家娱乐城</title>
+</head>
+
+<body class="error_bg">
+<!--尚未登入訊息-->
+<div class="main_error" style="display: block;">
+	<div class="error_info">
+		<div class="winner_logo"></div>
+		<div id="ErrorText" class="text">敬爱的会员，您目前尚未登入本站。<br>如欲享受本站各馆游戏体验，<br>请由下方按钮进行登入。</div>
+	</div>
+	<div class="error_btn">
+		<input type="button" id="ErrorBack" class="btn_back" value="返回首页" onclick="self.location.href='index.html'"/>
+	</div>
+</div>
+
+<!--已登出訊息-->
+<div class="main_error" style="display: none;">
+	<div class="error_info">
+		<div class="winner_logo"></div>
+		<div id="ErrorText" class="text">敬爱的会员，您目前已登出本站。<br>如欲再次享受体验，烦请重新登入。</div>
+	</div>
+	<div class="error_btn">
+		<input type="button" id="ErrorBack" class="btn_back" value="返回首页" onclick="self.location.href='index.html'"/>
+	</div>
+</div>
+
+</body>
+</html>

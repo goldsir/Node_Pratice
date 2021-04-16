@@ -1,0 +1,1281 @@
+.body_news, .body_complain {
+    background: #ddd;
+}
+/*********  跳框_錯誤訊息提示(共用)  *********/
+.popup_tipset {
+    clear: both;
+    display: block;
+    font-size: 12px;
+    text-align: right;
+    margin: 3px 10px 0 0;
+}
+.tips_img {
+    display: inline-block;
+    *display: inline;
+    width: 12px;
+    vertical-align: middle;
+}
+.ticon_arrowl { /*左箭頭*/
+    background: url(../images/index_icon/ticon_arrowl.png) no-repeat;
+    height: 14px;
+}
+.ticon_arrowr { /*右箭頭*/
+    background: url(../images/index_icon/ticon_arrowr.png) no-repeat;
+    height: 14px;
+}
+.ticon_warning { /*警告*/
+    background: url(../images/index_icon/ticon_warning.png) no-repeat;
+    height: 12px;
+}
+.ticon_accept { /*同意*/
+    background: url(../images/index_icon/ticon_accept.png) no-repeat;
+    height: 12px;
+}
+.ticon_error { /*錯誤*/
+    background: url(../images/index_icon/ticon_error.png) no-repeat;
+    height: 12px;
+}
+.tips_text {
+    margin-left: 3px;
+    vertical-align: middle;
+}
+/*********  跳框_警告視窗+全畫面黑背景(共用)  *********/
+.popup_blackbg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.46);
+    overflow: auto;
+    z-index: 100000;
+}
+.popup_container {
+    position: fixed;
+    width: 100%;
+    top: 30%;
+    transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+.popup_warning {
+    position: relative;
+    margin: 0 auto;
+    width: 500px;
+    color: #466489;
+    text-align: center;
+    background-color: #f5f5f5;
+    border: 1px solid #29405c;
+    overflow: hidden;
+    z-index: 99999;
+}
+.closebtn_set {
+    width: 80%;
+    height: 45px;
+    line-height: 44px;
+    margin: 0 auto 20px;
+    text-align: center;
+    background-color: #0e6292;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    border-radius: 0.3em;
+    cursor: pointer;
+}
+.closebtn_set:hover {
+    background-color: #083c67;
+}
+/*跳框設定(註冊、手機驗証碼、註冊成功)*/
+.popup_regset {
+    position: absolute;
+    left: 33%;
+    top: 17%;
+    width: 500px;
+    color: #466489;
+    text-align: center;
+    background-color: #f5f5f5;
+    border: 1px solid #29405c;
+    overflow: hidden;
+    z-index: 99999;
+}
+.popup_mobile {
+    left: 25%;
+    top: 22%;
+}
+.input_check {
+    display: inline-block;
+    *display: inline;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.popup_bigtop .bg_subtop {
+    width: 100%;
+    height: 90px;
+    line-height: 90px;
+    text-align: left;
+    border-bottom: 1px solid #0f1a21;
+    background: #003b65;
+    background: -moz-linear-gradient(top, #0083ce 0%, #003b65 100%);
+    background: -webkit-linear-gradient(top, #0083ce 0%, #003b65 100%);
+    background: linear-gradient(to bottom, #0083ce 0%, #003b65 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0083ce', endColorstr='#003b65', GradientType=0 );
+}
+.reg_title, .comment_top, .bankmsg_title {
+    width: 100%;
+    height: 80px;
+    line-height: 70px;
+    text-align: center;
+    border-bottom: 1px solid #0f1a21;
+    background: #003b65;
+    background: -moz-linear-gradient(top, #0083ce 0%, #003b65 100%);
+    background: -webkit-linear-gradient(top, #0083ce 0%, #003b65 100%);
+    background: linear-gradient(to bottom, #0083ce 0%, #003b65 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0083ce', endColorstr='#003b65', GradientType=0 );
+}
+.bg_subtop .title, .reg_title .title, .comment_top .title {
+    display: inline-block;
+    *display: inline;
+    color: #fff;
+    font-size: 2.2em;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.bg_subtop .title {
+    height: 78px;
+}
+.reg_title .title {
+    margin: 10px 0 0 5px;
+}
+.reg_logo {
+    display: inline-block;
+    *display: inline;
+    width: 220px;
+    height: 70px;
+    background: url(../images/index_icon/index_logo.png) top center no-repeat;
+    background-size: 100% auto;
+    margin: 5px 10px 0 10px;
+    vertical-align: middle;
+}
+.popup_logo {
+    display: inline-block;
+    *display: inline;
+    background: url(../images/index_icon/popup_logo.png) top center no-repeat;
+    width: 78px;
+    height: 80px;
+    margin: 5px 10px 0 10px;
+    vertical-align: middle;
+}
+.joinus_img, .mobile_img, .memberinfo_img, .mailbox_img, .webbank_img {
+    display: inline-block;
+    *display: inline;
+    width: 56px;
+    height: 57px;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+.joinus_img {
+    background: url(../images/index_icon/icon_joinus.png) no-repeat;
+}
+.mobile_img {
+    background: url(../images/index_icon/icon_mobile.png) no-repeat;
+}
+.memberinfo_img {
+    background: url(../images/index_icon/icon_member_info.png) no-repeat;
+}
+.mailbox_img {
+    background: url(../images/index_icon/icon_mailbox.png) no-repeat;
+}
+.webbank_img {
+    background: url(../images/index_icon/icon_webbank.png) no-repeat;
+}
+.popup_regset .btn_close, .popup_bankmsg .btn_close, 
+.popup_selectbank .btn_close, .popup_warning .btn_close {
+    display: inline-block;
+    *display: inline;
+    float: right;
+    width: 23px;
+    height: 22px;
+    background: url(../images/index_icon/btn_close.png) no-repeat;
+    border: 0;
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+}
+.popup_transfast .btn_close {
+    display: inline-block;
+    *display: inline;
+    float: right;
+    width: 25px;
+    height: 25px;
+    background: url(../images/index_icon/btn_close_new.png) no-repeat;
+    border: 0;
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+}
+.popup_regset input[type="text"]:focus, .popup_regset input[type="password"]:focus, 
+.popup_transfast input[type="password"]:focus {
+    color: #d00000;
+}
+.reg_info {
+    width: 80%;
+    margin: 15px auto;
+}
+.text_content {
+    line-height: 20px;
+    color: #555;
+    font-size: 16px;
+    font-weight: bold;
+}
+.verification {
+    width: 100%;
+    padding: 15px 0 5px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.reg_info .margin_set {
+    text-align: left;
+    margin-bottom: 10px;
+}
+.comment_info .margin_set {
+    margin-bottom: 10px;
+    clear: both;
+}
+.popup_line {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 15px auto;
+}
+.reg_info .reg_item {
+    display: inline-block;
+    *display: inline;
+    width: 25%;
+    height: 30px;
+    line-height: 30px;
+    color: #666;
+    text-align: left;
+    vertical-align: middle;
+}
+.reg_input {
+    display: inline-block;
+    *display: inline;
+    width: 72%;
+    text-align: left;
+}
+.reg_info .item_input, .reg_info .reg_mobile, .reg_info .checkcode_input, .comment_info .item_input {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    color: #1c2e3a;
+    font-size: 0.95em;
+    list-style: none;
+    letter-spacing: 1px;
+    background-color: #e2e2e2;
+    border: 0;
+    vertical-align: middle;
+}
+.reg_info .item_input {
+    width: 96%;
+}
+.reg_info .reg_mobile {
+    width: 160px;
+}
+.reg_info .checkcode_input {
+    width: 160px;
+}
+.reg_info .text_error {
+    margin-right: 5px;
+    font-size: 13px;
+    color: #000;
+    text-align: right;
+    vertical-align: middle;
+}
+.reg_info .reg_option {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 5px;
+    padding-left: 0 \9;
+    color: #757575;
+    font-size: 0.95em;
+    list-style: none;
+    letter-spacing: 1px;
+    background-color: #e2e2e2;
+    border: 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.reg_info .reg_option option {
+    background-color: #fff;
+    color: #666;
+}
+.reg_info .item_input:disabled:disabled, 
+.reg_info .reg_option:disabled:disabled {
+    background-color: #e2e2e2 !important;
+    color: #aaa;
+    cursor: default;
+}
+.reg_info .btn_verify1, .reg_info .btn_verify2, 
+.reg_info .btn_reverify1, .reg_info .btn_reverify2, 
+.reg_info .btn_recall, .disabled_small {
+    position: relative;
+    display: inline-block;
+    width: 105px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 5px;
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
+    border: none;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    border-radius: 0.3em;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.reg_info .btn_verify1 {
+    background-color: #308eec;
+}
+.reg_info .btn_verify1:hover {
+    background-color: #1e6bb7;
+}
+.reg_info .btn_verify2 {
+    background-color: #ff4d4d;
+}
+.reg_info .btn_verify2:hover {
+    background-color: #ff1a1a;
+}
+.reg_info .btn_reverify1 {
+    background-color: #279a32;
+}
+.reg_info .btn_reverify1:hover {
+    background-color: #1c6d24;
+}
+.reg_info .btn_reverify2 {
+    background-color: #888;
+    color: #ccc;
+    cursor: default;
+}
+.reg_info .btn_reverify2:hover {
+    background-color: #888;
+}
+.reg_info .btn_reverify2 .text_sec {
+    color: #ff0;
+}
+.reg_info .btn_recall {
+    background-color: #308eec;
+}
+.reg_info .btn_recall:hover {
+    background-color: #1e6bb7;
+}
+.reg_info .disabled_small {
+    background-color: #888;
+    color: #ccc;
+    cursor: default;
+}
+.reg_info .disabled_small:hover {
+    background-color: #888;
+}
+.regchk_set {
+    width: 350px;
+    line-height: 25px;
+    text-align: center;
+    margin: 15px auto 10px;
+}
+.regchk_set .text_red:hover {
+    color: #af0000;
+    text-decoration: underline;
+}
+.regbtn_set, .disabled_big, .reglogin_set, .depositbtn_set, .resend_set, 
+.recall_set, .commentbtn_ok, .commentbtn_clean {
+    height: 45px;
+    line-height: 44px;
+    cursor: pointer;
+    text-align: center;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    border-radius: 0.3em;
+}
+.regbtn_set {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #0e6292;
+}
+.regbtn_set:hover, .reglogin_set:hover, .commentbtn_clean:hover {
+    background-color: #083c67;
+}
+.disabled_big {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #888;
+    cursor: default;
+}
+.disabled_big:hover {
+    background-color: #888;
+}
+.disabled_big .check_img {
+    background: url(../images/index_icon/icon_checked.png) no-repeat;
+    opacity: 0.8;
+}
+.disabled_big .regbtn_text {
+    font-size: 18px;
+    color: #ccc;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+.reglogin_set, .commentbtn_clean {
+    width: 49%;
+    margin-bottom: 10px;
+    background-color: #0e6292;
+}
+.depositbtn_set, .commentbtn_ok {
+    float: right;
+    width: 49%;
+    margin-bottom: 10px;
+    background-color: #e27d00;
+}
+.depositbtn_set2 {
+    line-height: 44px;
+    background-color: #e27d00;
+    cursor: pointer;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    border-radius: 0.3em;
+    padding: 3px 0;
+}
+.depositbtn_set:hover, .depositbtn_set2:hover, .commentbtn_ok:hover {
+    background-color: #ce5f00;
+}
+.resend_set {
+    float: left;
+    width: 49%;
+    margin-bottom: 30px;
+    color: #fff;
+    background-color: #da4421;
+}
+.resend_set:hover {
+    background-color: #bc3b1d;
+}
+.recall_set {
+    float: right;
+    width: 49%;
+    margin-bottom: 30px;
+    color: #fff;
+    background-color: #56a045;
+}
+.recall_set:hover {
+    background-color: #2a701a;
+}
+.check_img, .deposit_img, .refresh_img, .recall_img, .ok_img {
+    display: inline-block;
+    *display: inline;
+    width: 26px;
+    height: 26px;
+    vertical-align: middle;
+}
+.deposit_img {
+    background: url(../images/index_icon/icon_deposit.png) no-repeat;
+}
+.check_img {
+    background: url(../images/index_icon/icon_checked.png) no-repeat;
+}
+.refresh_img {
+    background: url(../images/index_icon/icon_refresh.png) no-repeat;
+}
+.recall_img {
+    background: url(../images/index_icon/icon_recall.png) no-repeat;
+}
+.regbtn_text, .transbtn_text {
+    font-size: 18px;
+    color: #fff;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+.reg_text_b {
+    line-height: 28px;
+    font-size: 1.4em;
+    margin: 18px auto;
+}
+.reg_text_s {
+    font-size: 1.2em;
+    margin: 20px auto;
+}
+/*跳框設定(匯款信息)*/
+.popup_info {
+    position: absolute;
+    left: 33%;
+    top: 17%;
+    width: 500px;
+    color: #466489;
+    text-align: center;
+    background-color: #f5f5f5;
+    border: 1px solid #29405c;
+    overflow: hidden;
+    z-index: 99999;
+    font-family: Arial, "微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU", Georgia, "Times New Roman", Times, serif;
+}
+.popup_info .info_title {
+    width: 100%;
+    height: 80px;
+    line-height: 70px;
+    text-align: center;
+    border-bottom: 1px solid #0f1a21;
+    background: #003b65;
+    background: -moz-linear-gradient(top, #0083ce 0%, #003b65 100%);
+    background: -webkit-linear-gradient(top, #0083ce 0%, #003b65 100%);
+    background: linear-gradient(to bottom, #0083ce 0%, #003b65 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0083ce', endColorstr='#003b65', GradientType=0 );
+}
+.popup_info .webbank_img {
+    display: inline-block;
+    *display: inline;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    background: url(../images/index_icon/icon_webbank.png) no-repeat;
+    background-size: 100% auto;
+    vertical-align: middle;
+}
+.info_title .title {
+    display: inline-block;
+    *display: inline;
+    margin: 10px 0 0 5px;
+    color: #fff;
+    font-size: 2.2em;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.popup_info .btn_close {
+    display: inline-block;
+    *display: inline;
+    float: right;
+    width: 23px;
+    height: 22px;
+    background: url(../images/index_icon/btn_close.png) no-repeat;
+    border: 0;
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+}
+.popinfo_set {
+    width: 80%;
+    margin: 15px auto;
+}
+.popinfo_set .text_set {
+    color: #a70000;
+    font-size: 18px;
+    text-align: left;
+    margin: 20px auto;
+}
+.popinfo_set .margin_set {
+    text-align: left;
+    margin-bottom: 10px;
+}
+.popinfo_set .info_item {
+    display: inline-block;
+    *display: inline;
+    width: 25%;
+    height: 30px;
+    line-height: 30px;
+    color: #666;
+    text-align: left;
+    vertical-align: middle;
+}
+.info_input {
+    display: inline-block;
+    *display: inline;
+    width: 72%;
+    text-align: left;
+}
+.popinfo_set .copy_btn {
+    display: inline-block;
+    *display: inline;
+    float: right;
+    width: 70px;
+    height: 28px;
+    line-height: 28px;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    background-color: #0e6292;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    border-radius: 0.3em;
+    border: 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.popinfo_set .bank_text {
+    display: inline-block;
+    *display: inline;
+    width: 65%;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    color: #466489;
+    font-size: 16px;
+    font-weight: bold;
+    background: #f5f5f5;
+    border: 0;
+    vertical-align: middle;
+}
+.info_input .item_input {
+    display: inline-block;
+    *display: inline;
+    width: 65%;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    color: #f00;
+    font-size: 18px;
+    background: #f5f5f5;
+    border: 0;
+    vertical-align: middle;
+}
+.infobtn_set {
+    width: 100%;
+    height: 45px;
+    line-height: 44px;
+    cursor: pointer;
+    text-align: center;
+    margin: 20px auto;
+    background-color: #0e6292;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    border-radius: 0.3em;
+}
+.infobtn_left {
+    float: left;
+    width: 49%;
+    height: 45px;
+    line-height: 44px;
+    cursor: pointer;
+    text-align: center;
+    margin: 20px auto;
+    background-color: #009688;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    border-radius: 0.3em;
+}
+.infobtn_right {
+    float: right;
+    width: 49%;
+    height: 45px;
+    line-height: 44px;
+    cursor: pointer;
+    text-align: center;
+    margin: 20px auto;
+    background-color: #e27d00;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    border-radius: 0.3em;
+}
+.infobtn_text {
+    font-size: 18px;
+    color: #fff;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+.popinfo_set .copy_btn:hover, .infobtn_left:hover {
+    background-color: #083c67;
+}
+/*跳框_快速轉帳*/
+.popup_transfast {
+    position: absolute;
+    left: 33%;
+    top: 17%;
+    width: 500px;
+    color: #466489;
+    text-align: center;
+    background: #fff;
+    background: -moz-linear-gradient(top, #fff 0%, #d4efff 100%);
+    background: -webkit-linear-gradient(top, #fff 0%, #d4efff 100%);
+    background: linear-gradient(to bottom, #fff 0%, #d4efff 100%);
+    border: 1px solid #29405c;
+    overflow: hidden;
+    z-index: 99999;
+}
+.transfast_title {
+    width: 100%;
+    height: 90px;
+    line-height: 80px;
+    text-align: center;
+    border-bottom: 1px solid #0f1a21;
+    vertical-align: middle;
+}
+.banner_sports {
+    background: url(../images/index_icon/banner_sports.jpg) no-repeat;
+}
+.banner_live {
+    background: url(../images/index_icon/banner_live.jpg) no-repeat;
+}
+.banner_slot {
+    background: url(../images/index_icon/banner_slot.jpg) no-repeat;
+}
+.banner_lottery {
+    background: url(../images/index_icon/banner_lottery.jpg) no-repeat;
+}
+.transfast_title .title {
+    display: inline-block;
+    *display: inline;
+    margin: 10px 0 0 5px;
+    color: #fff;
+    font-size: 2.2em;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.transfast_info {
+    width: 80%;
+    margin: 30px auto;
+}
+.transfast_info .margin_set {
+    margin-bottom: 10px;
+    clear: both;
+}
+.transfast_info .transfast_text {
+    float: left;
+    line-height: 35px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #0e6292;
+    vertical-align: middle;
+}
+.transfast_info .transfast_item {
+    float: right;
+    width: 35%;
+    height: 35px;
+    line-height: 35px;
+    color: #fff;
+    text-align: center;
+    background-color: #666;
+    vertical-align: middle;
+}
+.transfast_points {
+    float: right;
+    width: 52.5%;
+    line-height: 35px;
+    height: 35px;
+    text-align: left;
+    padding-left: 10px;
+    color: #0e8000;
+    font-size: 1em;
+    font-weight: bold;
+    list-style: none;
+    letter-spacing: 1px;
+    background-color: #fff;
+    border: 0;
+    vertical-align: middle;
+}
+.transfast_input {
+    float: right;
+    width: 55%;
+    line-height: 31px;
+    text-align: left;
+}
+.transfast_info .item_input {
+    width: 96%;
+    height: 33px;
+    line-height: 33px;
+    padding-left: 10px;
+    color: #0e8000;
+    font-size: 1em;
+    list-style: none;
+    letter-spacing: 1px;
+    background-color: #fff;
+    border: 0;
+    vertical-align: middle;
+}
+.ok_img {
+    background: url(../images/index_icon/icon_ok.png) no-repeat;
+}
+.transbtn_set1 {
+    float: right;
+    width: 90%;
+    height: 45px;
+    line-height: 44px;
+    margin: 30px 0 10px 0;
+    padding: 3px 0;
+    cursor: pointer;
+    text-align: center;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    border-radius: 0.3em;
+    background-color: #e27d00;
+}
+.transbtn_set1:hover {
+    background-color: #ce5f00;
+}
+.transbtn_set2 {
+    float: right;
+    width: 90%;
+    height: 45px;
+    line-height: 44px;
+    margin: 5px 0 30px 0;
+    padding: 3px 0;
+    cursor: pointer;
+    text-align: center;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    border-radius: 0.3em;
+    background-color: #0e6292;
+}
+.transbtn_set2:hover {
+    background-color: #083c67;
+}
+/*跳框_投訴箱*/
+.comment_set {
+    max-width: 598px;
+    min-height: 549px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #000;
+}
+.comment_set .comment_top {
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    border: 1px solid #fff;
+}
+.comment_top .mailbox_img {
+    display: inline-block;
+    *display: inline;
+    width: 57px;
+    height: 56px;
+    background: url(../images/index_icon/mailbox.png) no-repeat;
+    vertical-align: middle;
+}
+.comment_info {
+    width: 80%;
+    margin: 20px auto;
+}
+.comment_text_b {
+    font-size: 1.1em;
+    line-height: 22px;
+    color: #044e7c;
+    text-align: center;
+    padding: 20px 30px 0;
+}
+.comment_text_s {
+    color: #f00;
+    font-size: 0.85em;
+    text-align: right;
+    margin: 0 0 5px 0;
+}
+.comment_info .comment_item {
+    display: inline-block;
+    *display: inline;
+    float: left;
+    width: 32.5%;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    text-align: right;
+    padding-right: 10px;
+    background-color: #666;
+    vertical-align: middle;
+}
+.comment_info .comment_input {
+    display: inline-block;
+    *display: inline;
+    width: 65%;
+    text-align: right;
+}
+.comment_info .item_input {
+    width: 95%;
+}
+.comment_textarea {
+    resize: none;
+    width: 96%;
+    height: 100px;
+    padding: 5px 0 0 5px;
+    font-size: 18px;
+    font-family: Arial, "微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU";
+}
+.comment_info .comment_option {
+    width: 98%;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 5px;
+    padding-left: 0 \9;
+    color: #757575;
+    font-size: 0.95em;
+    list-style: none;
+    letter-spacing: 1px;
+    background-color: #a0d4f3;
+    border: 0;
+    vertical-align: middle;
+}
+.comment_info .comment_option option {
+    background-color: #fff;
+    color: #666;
+}
+/*跳框_公告專區*/
+.popup_news {
+    width: 983px;
+    height: 790px;
+    margin: 0 auto;
+    background-color: #ececec;
+    overflow: hidden;
+}
+.popup_news .popup_logo {
+    margin: 0 10px 0 15px;
+}
+.bg_submenu {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    font-size: 15px;
+    background: #1b3856;
+    border-top: 1px solid #2c6e9a;
+}
+.btn_submenu {
+    float: left;
+    width: 104px;
+    height: 28px;
+    line-height: 28px;
+    margin: 5px 0 0 7px;
+    text-align: center;
+    font-weight: bold;
+    color: #000;
+    background: #f1f1f1;
+    background: -moz-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f1f1f1), color-stop(50%, #bfbfbf), color-stop(51%, #afafaf), color-stop(100%, #fefefe));
+    background: -webkit-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: -o-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: -ms-linear-gradient(top, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    background: linear-gradient(to bottom, #f1f1f1 0%, #bfbfbf 50%, #afafaf 51%, #fefefe 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f1', endColorstr='#afafaf', GradientType=0 );
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+.selected, .btn_submenu:hover {
+    color: #fff;
+    font-weight: bold;
+    background: #ff003a;
+    background: -moz-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff003a), color-stop(53%, #cd0c38), color-stop(100%, #cd0b37));
+    background: -webkit-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: -o-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: -ms-linear-gradient(top, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    background: linear-gradient(to bottom, #ff003a 0%, #cd0c38 53%, #cd0b37 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff003a', endColorstr='#cd0b37', GradientType=0 );
+}
+.btn_service {
+    float: right;
+    width: 90px;
+    height: 28px;
+    line-height: 28px;
+    margin: 5px 0 0 7px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px 3px #000;
+    background: #385000;
+    background: -moz-linear-gradient(top, #a8dc09 0%, #385000 50%, #486b00 51%, #7ea717 100%);
+    background: -webkit-linear-gradient(top, #a8dc09 0%, #385000 50%, #486b00 51%, #7ea717 100%);
+    background: linear-gradient(to bottom, #a8dc09 0%, #385000 50%, #486b00 51%, #7ea717 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8dc09', endColorstr='#385000', GradientType=0 );
+    border: 1px solid #b8ff94;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+.btn_service:hover {
+    background: #819014;
+    background: -moz-linear-gradient(top, #e6f0a3 0%, #819014 50%, #9bad16 51%, #dbf043 100%);
+    background: -webkit-linear-gradient(top, #e6f0a3 0%, #819014 50%, #9bad16 51%, #dbf043 100%);
+    background: linear-gradient(to bottom, #e6f0a3 0%, #819014 50%, #9bad16 51%, #dbf043 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f0a3', endColorstr='#819014', GradientType=0 );
+}
+.popnews_info {
+    width: 96%;
+    height: 618px;
+    padding: 20px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.no_news {
+    font-size: 16px;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+.news_info_set {
+    width: 100%;
+}
+.news_info_set:hover, .mailbox_info_set:hover, 
+.fast_select:hover, .help_qa:hover { /*標題滑過或按下發亮*/
+    background-color: #fff;
+    -webkit-border-radius: 0 0 0.5em 0.5em;
+    -moz-border-radius: 0 0 0.5em 0.5em;
+    -ms-border-radius: 0 0 0.5em 0.5em;
+    -o-border-radius: 0 0 0.5em 0.5em;
+    border-radius: 0 0 0.5em 0.5em;
+}
+.popnews_list { /*標題設定*/
+    height: 22px;
+    margin: 5px auto 0;
+    padding: 8px 10px 8px 5px;
+    background-color: #1e5e88;
+    border: 1px solid #aaa;
+}
+.popnews_list:hover {
+    background-color: #093450;
+}
+.popnews_info .news_title_left {
+    display: inline-block;
+    *display: inline;
+    width: 8%;
+    text-align: center;
+    vertical-align: middle;
+}
+.popnews_info .news_title_center {
+    display: inline-block;
+    *display: inline;
+    width: 20%;
+    text-align: left;
+    vertical-align: middle;
+}
+.popnews_info .news_title_right {
+    display: inline-block;
+    *display: inline;
+    float: right;
+    width: 71%;
+    line-height: 22px;
+    color: #fff;
+    font-weight: normal;
+    vertical-align: middle;
+}
+.popnews_type {
+    display: inline-block;
+    *display: inline;
+    height: 21px;
+    line-height: 21px;
+    line-height: 24px \9;
+    padding: 0 6px;
+    font-size: 13px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+.news_new { /*最新(桃紅)*/
+    background-color: #d400b0;
+    border: 1px solid #ff76d4;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+}
+.news_marquee { /*跑馬燈(黃)*/
+    background-color: #9c8900;
+    border: 1px solid #e4cc00;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+}
+.news_fix { /*維護(紅)*/
+    background-color: #c10000;
+    border: 1px solid #ff5959;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+}
+.news_service { /*客服(綠)*/
+    background-color: #00821b;
+    border: 1px solid #4ece08;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+}
+.news_active { /*活動(橘)*/
+    background-color: #e68a00;
+    border: 1px solid #ffc38f;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+}
+.news_win { /*得獎(淺藍)*/
+    background-color: #007be4;
+    border: 1px solid #7ec6ff;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+}
+.news_sports { /*体育(深藍)*/
+    background-color: #0045de;
+    border: 1px solid #54a8ff;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+}
+.popnews_time, .mail_time {
+    display: inline-block;
+    *display: inline;
+    line-height: 22px;
+    font-size: 14px;
+    color: #fff;
+    vertical-align: middle;
+    opacity: 0.6;
+    -webkit-opacity: 0.6;
+    -moz-opacity: 0.6;
+    -khtml-opacity: 0.6;
+    filter:alpha(opacity=60);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+}
+.popnews_text {
+    display: inline-block;
+    *display: inline;
+    float: left;
+    width: 90%;
+    font-size: 16px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.tips_icon_arrowD {
+    display: inline-block;
+    *display: inline;
+    float: right;
+    margin: 7px 5px 0 0;
+    border: 6px solid;
+    border-color: #60c4ff transparent transparent transparent;
+}
+.news_container, .help_container { /*內文設定*/
+    display: none;
+    margin-bottom: 10px;
+    padding: 12px 17px;
+    line-height: 20px;
+    font-size: 15px;
+    text-align: justify;
+    color: #404040;
+    background-color: #fff;
+    -webkit-border-radius: 0 0 0.5em 0.5em;
+    -moz-border-radius: 0 0 0.5em 0.5em;
+    -ms-border-radius: 0 0 0.5em 0.5em;
+    -o-border-radius: 0 0 0.5em 0.5em;
+    border-radius: 0 0 0.5em 0.5em;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+.news_container h1, .news_container h2, .news_container h3, .news_container h4, .news_container h5, 
+.mail_container h1, .mail_container h2, .mail_container h3, .mail_container h4, .mail_container h5, 
+.help_container h1, .help_container h2, .help_container h3, .help_container h4, .help_container h5 {
+    color: #2180bd;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.news_container div {
+    margin-bottom: 15px;
+}
+.news_container ol, .mail_container ol, .help_container ol { /*中文數字_表頭*/
+    width: 90%;
+    list-style-type: cjk-ideographic;
+    padding: 0 1.6em;
+}
+.news_container ul, .mail_container ul, .help_container ul { /*羅馬數字_表頭*/
+    width: 90%;
+    list-style-type: decimal;
+    padding: 0 1.6em;
+}
+.news_container ul li, .news_container ol li, 
+.mail_container ul li, .mail_container ol li, 
+.help_container ul li, .help_container ol li {
+    padding: 0.3em 0;
+}
+/*跳框_銀行維護公告*/
+.popup_bankmsg {
+    position: absolute;
+    left: 37%;
+    top: 28%;
+    width: 250px;
+    color: #466489;
+    text-align: center;
+    background-color: #f5f5f5;
+    border: 1px solid #29405c;
+    -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 99999;
+}
+.bankmsg_title {
+    height: 45px;
+    line-height: 45px;
+}
+.popup_bankmsg .title {
+    display: inline-block;
+    *display: inline;
+    color: #fff;
+    font-size: 1.3em;
+    vertical-align: middle;
+}
+.bankmsg_info {
+    width: 80%;
+    margin: 0 auto;
+}
+.data_list {
+    float: left;
+    padding: 10px 0;
+}
+.bankmsg_link {
+    display: block;
+    width: 200px;
+    line-height: 15px;
+    margin: 5px 0;
+    color: #666;
+    font-size: 13px;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+.bankmsg_link:hover {
+    text-decoration: underline;
+}
+.blue_ball {
+    float: left;
+    width: 8px;
+    height: 8px;
+    margin-top: 4px;
+    margin-right: 10px;
+    background-color: #3361a0;
+    -webkit-border-radius: 99em;
+    -moz-border-radius: 99em;
+    -ms-border-radius: 99em;
+    -o-border-radius: 99em;
+    border-radius: 99em;
+}
+.bankmsg_info div:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}

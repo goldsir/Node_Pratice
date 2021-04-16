@@ -1,0 +1,119 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#header {
+    position: relative;
+    background-image: url("../images/head_bg.png");
+    width: 1000px;
+    height: 126px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.logo {
+    position: relative;
+    /* background-image: url("../images/LOGO.png"); */
+    width: 244px;
+    height: 82px;
+    align-self: center;
+    left: 5px;
+}
+
+.login {
+    position: relative;
+    color: #fff;
+    background: #0b5688;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    align-self: center;
+    left: 400px;
+}
+
+hr {
+    margin: 10px;
+}
+
+.login>a {
+    padding: 5px;
+    color: #fff;
+}
+
+.login>a:hover {
+    color: rgb(238, 4, 4);
+}
+
+#nav {
+    background-color: #0b456b;
+    width: 980px;
+    height: 80px;
+    margin: 5px auto;
+    text-align: center;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    background-color: #0b5688;
+    color: #fff;
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    margin: 5px 10px;
+    border-radius: 5px;
+}
+
+.btn>img {
+    vertical-align: middle;
+}
+
+#content {
+    margin: 0 auto;
+    width: 980px;
+    height: auto;
+    background-color: rgba(245, 245, 220, 0.705);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.game {
+    width: 230px;
+    height: auto;
+    padding: 10px 30px;
+    margin: 5px;
+    text-align: center;
+}
+
+.game p {
+    color: rgba(0, 0, 255, 0.692);
+    margin: 5px;
+}
+
+.btn1 {
+    color: white;
+    padding: 5px 10px;
+    background-color: #0b456b;
+    border: #094872;
+    font-size: 18px;
+    border-right: 1px #fff solid;
+    border-radius: 5px;
+}
+
+.btn2 {
+    color: white;
+    padding: 5px 6px;
+    background-color: #0b456b;
+    border: #094872;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.btn:hover,
+.btn1:hover,
+.btn2:hover {
+    background-color: #0a5b91;
+}
