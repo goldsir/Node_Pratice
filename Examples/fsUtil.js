@@ -21,7 +21,7 @@ function fsExists(path) {
             if (err) {
                 resolve(false);
             }
-            else{
+            else {
                 resolve(true);
             }
         });
@@ -34,7 +34,7 @@ function writeFile(path, data) {
             if (err) {
                 console.log(err);
                 resolve(false);
-            } else {                
+            } else {
                 resolve(true);
             }
         });
@@ -42,7 +42,7 @@ function writeFile(path, data) {
 }
 
 function readFile(path) {
-   return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         fs.readFile(path, "utf8", function (err, data) {
             if (err) {
                 reject(err);
@@ -53,12 +53,31 @@ function readFile(path) {
     });
 }
 
-// 【async function always returns a Promise】
-// 【就算是return 1, 也會被包裝成 Promise】
+function fsReadDir(dirName) {
 
-module.exports = {    
+    return new Promise((resolve, reject) => {
+
+        fs.readdir(dirName, (err, files) => {
+
+            if (err) {
+                return reject(err);
+            }
+            resolve(files);
+        });
+    });
+}
+
+
+module.exports = {
     fsMKDir
     , fsExists
     , writeFile
     , readFile
+    , fsReadDir
 }
+
+
+
+
+// 【async function always returns a Promise】
+// 【就算是return 1, 也會被包裝成 Promise】
