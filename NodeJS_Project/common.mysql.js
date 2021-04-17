@@ -14,10 +14,10 @@ function executeSQL(sql) {
         connection.query(sql, function (err, results, fields) {
 
             if (err) {
-                reject(err);
+
                 common.log("dbError.txt", `${err}${endOfLine}${endOfLine}`);
                 common.log("dbErrorSQL.sql", `${sql}${endOfLine}${endOfLine}`);
-				return;
+                return reject(err);;
             }
 
             if (results !== undefined && results != null) {
@@ -32,20 +32,20 @@ function executeSQL(sql) {
                 resolve([]);
             }
 
-			connection.end(function (err) {
-				if (err) {
-					common.log("dbError.txt", `${err}${endOfLine}${endOfLine}`);
-				}
-	        });
-        });        
+            connection.end(function (err) {
+                if (err) {
+                    common.log("dbError.txt", `${err}${endOfLine}${endOfLine}`);
+                }
+            });
+        });
     });
 }
 
 
 /*
-	executeSQL('select * from `User` ;').catch(err => {
-		console.log('----------', err);
-	});
+    executeSQL('select * from `User` ;').catch(err => {
+        console.log('----------', err);
+    });
 */
 
 module.exports = {
