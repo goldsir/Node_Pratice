@@ -14,12 +14,16 @@ router.get("/", function (req, res) {
     // end 則不會加 Content-Type
 });
 
-/*  檢查環境參數用的，沒事不要開
+/*  檢查環境參數用的*/
 router.get("/config", (req, res) => {
     let config = common.getConfig();
     res.json(config);
 });
-*/
+
+router.get("/keepCaptcha", (req, res) => {
+    let config = common.getConfig();
+    res.json(keepCaptcha);
+});
 
 router.get("/myIP", (req, res) => {
     res.send(req.ip);
@@ -47,7 +51,7 @@ router.get("/captcha", (req, res) => {
 
 router.post('/login', (req, res) => {
 
-    let msg = {} ;
+    let msg = {};
 
     let _captcha = req.body.captcha || "";
 
@@ -74,15 +78,25 @@ router.post('/login', (req, res) => {
             res.json(msg);
         }
         else {
-    
-			delete keepCaptcha[sid]; // 驗證碼正確，從儲存區移掉
 
-			msg = {
-                resultCode: 0,
-                resultMessage: "",
-            };
-	
-			// 要再向資料庫那驗證帳號密碼
+            // 要再向資料庫那驗證帳號密碼
+            let { userName, userPW } = req.body;
+
+            if (userName === 'tc' && userPW === '123456') {
+
+                msg = {
+                    resultCode: 0,
+                    resultMessage: "登入成功",
+                };
+
+                delete keepCaptcha[sid]; // 驗證碼正確，從儲存區移掉 
+            }
+            else {
+                msg = {
+                    resultCode: 1,
+                    resultMessage: "帳號/密碼錯誤",
+                };
+            }
             res.json(msg);
         }
 
