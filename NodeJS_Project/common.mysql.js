@@ -31,13 +31,13 @@ function executeSQL(sql) {
                 //console.log(sql, "查詢失敗");
                 resolve([]);
             }
-        });
 
-        connection.end(function (err) {
-            if (err) {
-                common.log("dbError.txt", `${err}${endOfLine}${endOfLine}`);
-            }
-        });
+			connection.end(function (err) {
+				if (err) {
+					common.log("dbError.txt", `${err}${endOfLine}${endOfLine}`);
+				}
+	        });
+        });        
     });
 }
 
