@@ -6,11 +6,9 @@ const captcha = require("svg-captcha");
 const fs = require('fs');
 const path = require('path');
 const common = require('../common');
-
-const keepCaptcha = {};
+const keepCaptcha = {};				 // 儲存圖片驗證碼用的
 
 router.get("/", function (req, res) {
-
     res.send("這是首頁");
     // send 會在 response header 中加上 Content-Type
     // end 則不會加 Content-Type
@@ -49,11 +47,12 @@ router.get("/captcha", (req, res) => {
 
 router.post('/login', (req, res) => {
 
-    let msg;// toLowerCase
+    let msg = {} ;
 
     let _captcha = req.body.captcha || "";
 
     if (_captcha === "") {
+
         msg = {
             resultCode: -1,
             resultMessage: "請輸入驗證碼",
@@ -75,10 +74,15 @@ router.post('/login', (req, res) => {
             res.json(msg);
         }
         else {
-            msg = {
+    
+			delete keepCaptcha[sid]; // 驗證碼正確，從儲存區移掉
+
+			msg = {
                 resultCode: 0,
-                resultMessage: "驗證碼正確，請繼續檢查帳密",
+                resultMessage: "",
             };
+	
+			// 要再向資料庫那驗證帳號密碼
             res.json(msg);
         }
 
