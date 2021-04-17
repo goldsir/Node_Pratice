@@ -1,0 +1,1 @@
+const mysql = require('../common.mysql.pool');
