@@ -1,39 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <body>
+        <form method="post" action="/login" id="loginForm">
+            <label>帳號:</label>
+            <input type="text" name="userName" value="" />
+            <br />
+            <label>密碼:</label>
+            <input type="password" name="userPW" value="" />
+            <br />
+            <label>驗證碼:</label>
+            <input type="text" name="captcha" value="" />
+            <img src="/captcha" style="cursor: pointer" id="captcha" />
+            <br />
+            <button type="submit">送出</button>
+        </form>
 
-<body>
+        <script type="application/javascript">
+            document.getElementById("captcha").addEventListener("click", function () {
+                this.src = `/captcha?t=${new Date().getTime()}`;
+            });
 
-    <form method="post" action="/login" id="loginForm">
-        <label>帳號:</label>
-        <input type="text" name="userName" value="">
-        <br>
-        <label>密碼:</label>
-        <input type="password" name="userPW" value="">
-        <br>
-        <img src="/captcha" style="cursor: pointer;" id="captcha">
-        <input type="text" name="captcha" value=""><label>驗證碼</label>
-        <br>
-        <button type="submit">送出</button>
-
-    </form>
-
-    <script type="application/javascript">
-
-        document.getElementById('captcha').addEventListener('click', function () {
-            this.src = `/captcha?t=${new Date().getTime()}`;
-        });
-
-        document.getElementById('loginForm').addEventListener('submit', function (event) {
-            //event.preventDefault();
-        });
-
-    </script>
-</body>
-
+            document.getElementById("loginForm").addEventListener("submit", function (event) {
+                //event.preventDefault();
+            });
+        </script>
+    </body>
 </html>

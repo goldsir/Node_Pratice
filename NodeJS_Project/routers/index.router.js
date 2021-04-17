@@ -114,7 +114,7 @@ function createCaptcha() {
         size: 4,
         ignoreChars: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
         noise: 2,
-        color: true,
+        color: false,
         background: "#fff",
         fontSize: 24
     });
