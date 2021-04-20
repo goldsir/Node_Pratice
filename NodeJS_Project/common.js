@@ -4,6 +4,14 @@ const jwt = require('jsonwebtoken');
 const { v4 } = require('uuid');
 const crypto = require('crypto');
 
+function resultMessage(resultCode, resultMessage, datas) {
+    return {
+        resultCode
+        , resultMessage
+        , datas
+    }
+}
+
 function _tokenPrivateKey() {
     let tokenPrivateKey = crypto.randomBytes(64).toString('hex');
     console.log(tokenPrivateKey);
@@ -69,7 +77,6 @@ function getConfig() {
 
     let configStr = '';
 
-    //這樣寫感覺好欠打...
     try {
         configStr = fs.readFileSync(configPath_prod, 'utf-8');
     }
@@ -180,4 +187,5 @@ module.exports = {
     , getYYYYMMDDhhmmss
     , dateSplitByMin
     , delay
+    , resultMessage
 }

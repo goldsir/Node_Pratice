@@ -6,6 +6,7 @@ const captcha = require("svg-captcha");
 const fs = require('fs');
 const path = require('path');
 const common = require('../common');
+const { resultMessage } = common;
 const keepCaptcha = {};				 // 儲存圖片驗證碼用的
 
 router.get("/", function (req, res) {
@@ -57,11 +58,7 @@ router.post('/login', (req, res) => {
 
     if (_captcha === "") {
 
-        msg = {
-            resultCode: -1,
-            resultMessage: "請輸入驗證碼",
-        };
-        return res.json(msg);
+        return res.json(resultMessage(-1, '請輸入驗證碼'));
     }
 
     let sid = req.signedCookies["sid"] || '';
@@ -71,11 +68,8 @@ router.post('/login', (req, res) => {
         let captcha = keepCaptcha[sid];
 
         if (_captcha.toLowerCase() !== captcha.toLowerCase()) {
-            msg = {
-                resultCode: -1,
-                resultMessage: "驗證碼錯誤",
-            };
-            res.json(msg);
+
+            res.json(resultMessage(-1, '驗證碼錯誤'));
         }
         else {
 
@@ -84,39 +78,32 @@ router.post('/login', (req, res) => {
 
             if (userName === 'tc' && userPW === '123456') {
 
-                msg = {
-                    resultCode: 0,
-                    resultMessage: "登入成功",
-                };
-
                 delete keepCaptcha[sid]; // 驗證碼正確，從儲存區移掉 
+                res.json(resultMessage(0, '登入成功'));
             }
             else {
-                msg = {
-                    resultCode: 1,
-                    resultMessage: "帳號/密碼錯誤",
-                };
+
+                res.json(resultMessage(-1, '帳號/密碼錯誤'));
             }
-            res.json(msg);
+
         }
 
     } else {
-        msg = {
-            resultCode: -1,
-            resultMessage: "請重新登入",
-        };
-        return res.json(msg);
+
+        res.json(resultMessage(-1, '請重新登入'));
     }
 });
 
 function createCaptcha() {
     return captcha.create({
-        size: 4,
-        ignoreChars: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
-        noise: 2,
-        color: false,
-        background: "#fff",
-        fontSize: 24
+        size: 4
+        , ignoreChars: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        , noise: 2
+        , color: true
+        , background: "#888888"
+        , fontSize: 64
+        , width: 120
+        , height: 60
     });
 }
 
