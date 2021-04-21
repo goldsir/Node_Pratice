@@ -21,13 +21,14 @@
 
     <script>
 
-        setInterval(fn, 6 * 1000);
+        //setInterval(fn, 6 * 1000);
 
         async function fn() {
 
             let res = await fetch('https://dog.ceo/api/breeds/image/random/30');
             let json = await res.json();
 
+			console.log(json);
 
             Array.prototype.forEach.call(document.querySelectorAll('img'), function (node) {
                 node.parentNode.removeChild(node);
