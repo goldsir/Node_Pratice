@@ -15,7 +15,9 @@ function requestListener(req, res) {// req = request, res =response
         res.end();
     } else if (req.url === '/handlePost' && req.method === 'POST') {
 
-        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' })
+        res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
+
+        /*
 
         let buffer = [];
 
@@ -32,7 +34,18 @@ function requestListener(req, res) {// req = request, res =response
             console.log(`data from client ${dataStr}`);
             res.end(`<br>接收完客戶端全部資料${dataStr}`);          // 回應給客戶端
 
-        });
+        });*/
+
+        for (let i = 1; i <= 10; i++) {
+            setTimeout(() => {
+                if (i == 10) {
+                    res.end('嚶'.padStart(i, '嚶'));
+                }
+                else {
+                    res.write('嚶'.padStart(i, '嚶'));
+                }
+            }, i * 1000);
+        }
 
     }
 

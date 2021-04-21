@@ -13,21 +13,27 @@
             display: block;
             float: left;
         }
+		button{
+		 display: block;
+            float: left;
+		}
     </style>
 </head>
 
 <body>
 
-
+	<button onclick="fn()">看狗狗</button><br>
     <script>
 
-        //setInterval(fn, 6 * 1000);
+        // setInterval(fn, 6 * 1000);
+		// curl "http://127.0.0.1:3000/getUserList?pageIndex=1&pageSize=30" -v -H "charset=utf-8"
 
         async function fn() {
 
             let res = await fetch('https://dog.ceo/api/breeds/image/random/30');
-            let json = await res.json();
+			console.dir(res);
 
+			let json = await res.json();
 			console.log(json);
 
             Array.prototype.forEach.call(document.querySelectorAll('img'), function (node) {

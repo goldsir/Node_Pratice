@@ -24,14 +24,18 @@ let request = http.request(options, (response) => {
         console.log('end', dataStr);
     });
 
+    response.on('error', function (error) {
+
+        console.log(error);
+    });
+
 });
 
 // 資料傳輸: stream
-
-request.write('name=jess');
-request.write('&job=rd');
-request.write('&sound=嚶嚶嚶');
-request.write('&action=扁嘴');
+//request.write('name=jess');
+//request.write('&job=rd');
+//request.write('&sound=嚶嚶嚶');
+//request.write('&action=扁嘴');
 request.end();
 
 /*
