@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-    </head>
 
-    <body>
-        <form method="post" action="/login" id="loginForm">
-            <label>帳號:</label>
-            <input type="text" name="userName" value="" />
-            <br />
-            <label>密碼:</label>
-            <input type="password" name="userPW" value="" />
-            <br />
-            <label>驗證碼:</label>
-            <input type="text" name="captcha" value="" />
-            <img src="/captcha" style="cursor: pointer" id="captcha" />
-            <br />
-            <button type="submit">送出</button>
-        </form>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+</head>
 
-        <script type="application/javascript">
-            document.getElementById("captcha").addEventListener("click", function () {
-                this.src = `/captcha?t=${new Date().getTime()}`;
-            });
+<body>
+    <form method="post" action="/login" id="loginForm">
+        <label>帳號:</label>
+        <input type="text" name="userName" value="" />
+        <br />
+        <label>密碼:</label>
+        <input type="password" name="userPW" value="" />
+        <br />
+        <label>驗證碼:</label>
+        <input type="text" name="captcha" value="" />
+        <img src="/captcha" style="cursor: pointer" id="captcha" />
+        <br />
+        <button type="submit">送出</button>
+    </form>
 
-            document.getElementById("loginForm").addEventListener("submit", function (event) {
-                //event.preventDefault();
-            });
-        </script>
-    </body>
+    <script type="application/javascript">
+        document.getElementById("captcha").addEventListener("click", function () {
+            this.src = `/captcha?t=${new Date().getTime()}`;
+        });
+
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            return false;
+        });
+    </script>
+</body>
+
 </html>
