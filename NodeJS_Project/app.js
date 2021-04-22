@@ -2,6 +2,7 @@ const path = require('path');
 const express = require("express");
 const cookieParser = require('cookie-parser');
 const common = require("./common");
+const { resultMessage } = common;
 const app = express();
 const cookieSessionSecret = "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed";
 
@@ -23,14 +24,10 @@ app.use((req, res, next) => {
 
     if (config.maintainingFlag === true) {
 
-        let msg = {
-            resultCode: -1,
-            resultMessage: "網站維護中",
-        };
-        res.json(msg);
+        res.json(resultMessage(1, '網站維護中'));
     }
     else {
-        res.setHeader("Content-Type", "application/json;charset=utf8");
+        //res.setHeader("Content-Type", "application/json;charset=utf8"); 
         next(); // 讓流程往下走
     }
 });
@@ -41,31 +38,20 @@ app.use("/", router_index);
 
 //最末端，不匹配處理
 app.all("*", (req, res, next) => {
-    let msg = {
-        resultCode: -1,
-        resultMessage: "not found",
-    };
-    res.json(msg);
+
+    res.json(resultMessage(1, '404 not found'));
 });
 
 app.use((err, req, res, next) => {
-
-    //uncaught  
     common.log('uncaughtError.txt', err.stack + '\r\n');
-
-    let msg = {
-        resultCode: -1,
-        resultMessage: "網站忙碌中，請稍後重試。",
-    };
-    res.json(msg);
-
-})
+    res.json(resultMessage(1, '網站忙碌中，請稍後重試。'));
+});
 
 
 // 啟動網站
 const { port } = common.getConfig();
 app.listen(port, () => {
-    console.log(`網站已啟動，並監聽 ${port} 埠`);
+    console.log(`網站已啟動，監聽 ${port} 埠`);
 });
 
 

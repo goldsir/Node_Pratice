@@ -83,7 +83,7 @@ router.post('/login', (req, res) => {
             }
             else {
 
-                res.json(resultMessage(-1, '帳號/密碼錯誤'));
+                res.json(resultMessage(1, '帳號/密碼錯誤'));
             }
 
         }
