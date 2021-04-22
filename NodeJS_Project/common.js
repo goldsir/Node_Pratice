@@ -8,7 +8,7 @@ const crypto = require('crypto');
 async function checkLogin(req, res, next) {
 
     try {
-        let tokenHeaderName = 'jwt'
+        let tokenHeaderName = 'token'
         let data = await common.jwtVerify(req.get(tokenHeaderName));
 
         if (data.ip !== req.ip) { //簽出去的token載體，要包含ip，不然會gg            
@@ -226,13 +226,13 @@ module.exports = {
 
 
 /*
-    登入成功後存下token: sessionStorage.setItem('jwt', token);
+    登入成功後存下token: sessionStorage.setItem('token', token);
 
     fetch(url
         , {
             headers: {
                 'content-type': 'application/json'
-                , 'jwt': sessionStorage.getItem('jwt')
+                , 'token': sessionStorage.getItem('token')
             }
             , body: JSON.stringify(data)
         }
