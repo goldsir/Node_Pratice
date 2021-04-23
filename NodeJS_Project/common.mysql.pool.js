@@ -1,19 +1,23 @@
 const mysql = require('mysql');
-const fs = require("fs");
-const path = require('path');
 const common = require('./common');
 const endOfLine = require('os').EOL;
-const { createCipher } = require('crypto');
 
-const { mySQLPoolOptions } = common.getConfig();
-const pool = mysql.createPool(mySQLPoolOptions);
+const options = {
+    "host": "127.0.0.1",
+    "user": "root",
+    "password": "ixwn4uwc",
+    "database": "sfeat",
+    "timezone": 8,
+    "connectionLimit": 50,
+    "multipleStatements": true
+};
+const pool = mysql.createPool(options);
 
 async function getConnection() {
 
     return new Promise((resolve, reject) => {
 
         pool.getConnection(function (err, connection) {
-
             if (err) {
                 common.log('poolGetConnectionErr.txt', err);
                 resolve(null);
@@ -21,8 +25,9 @@ async function getConnection() {
                 resolve(connection);
             }
         });
+    }).catch((err) => {
+        common.log('poolGetConnectionErr.txt', err);
     });
-
 }
 
 function executeSQL(sql) {
@@ -68,18 +73,6 @@ function executeSQL(sql) {
         console.log(err)
     });
 }
-
-/*
-    executeSQL('select * from `User` ;').catch(err => {
-        console.log('----------', err);
-    }).then(value => {
-
-        console.log(value);
-        pool.end(function (err) {
-            // all connections in the pool have ended
-        });
-    });
-*/
 
 module.exports = {
     dbconnectionPool: pool

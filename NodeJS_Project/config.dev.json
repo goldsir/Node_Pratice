@@ -1,14 +1,6 @@
 {
     "env": "development",
-    "apiBaseUrl": "http://localhost:8080/api",  
-    "mySQLPoolOptions": {
-        "host": "127.0.0.1",
-        "user": "root",
-        "password": "ixwn4uwc",
-        "database": "SFEat",
-        "timezone": 8,
-        "connectionLimit": 50
-    },
+    "apiBaseUrl": "http://localhost:8080/api"
     "maintainingFlag": false,
     "port": 8080,
     "tokenPrivateKey": "69d208a8e4011afdd1aa5db89e1a8e40d53798243e5ff5c4325ae7d7d7c51e91dd55d5b5d4a4d2bbc9c20edd94855d0f7a84d22ffabce9eccf51a17fa4e7a781"
