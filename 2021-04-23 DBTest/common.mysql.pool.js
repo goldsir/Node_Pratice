@@ -3,7 +3,7 @@ const common = require('./common');
 const endOfLine = require('os').EOL;
 
 const options = {
-    "host": "127.0.0",
+    "host": "127.0.0.1",
     "user": "root",
     "password": "ixwn4uwc",
     "database": "sfeat",
@@ -13,7 +13,7 @@ const options = {
 };
 const pool = mysql.createPool(options);
 
-async function executeSQL(sql) {
+function executeSQL(sql) {
 
     return new Promise((resolve, reject) => {
 
