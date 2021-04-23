@@ -3,39 +3,26 @@ const common = require('./common');
 const endOfLine = require('os').EOL;
 
 const options = {
-    "host": "127.0.0.1",
+    "host": "127.0.0",
     "user": "root",
     "password": "ixwn4uwc",
     "database": "sfeat",
     "timezone": 8,
     "connectionLimit": 50,
-    "multipleStatements": true
+    "multipleStatements": false
 };
 const pool = mysql.createPool(options);
 
-async function getConnection() {
+async function executeSQL(sql) {
 
     return new Promise((resolve, reject) => {
 
         pool.getConnection(function (err, connection) {
             if (err) {
-                common.log('poolGetConnectionErr.txt', err);
-                resolve(null);
-            } else {
-                resolve(connection);
+                common.log('getConnectionErr.txt', err);
+                return reject(err);
             }
-        });
-    }).catch((err) => {
-        common.log('poolGetConnectionErr.txt', err);
-    });
-}
 
-function executeSQL(sql) {
-
-    return new Promise(async (resolve, reject) => {
-
-        try {
-            let connection = await getConnection();
             connection.query(sql, function (err, results, fields) {
 
                 try {
@@ -62,15 +49,12 @@ function executeSQL(sql) {
                     connection.release();
                 }
             });
-        } catch (err) {
-            common.log("dbError.txt", `${err}${endOfLine}${endOfLine}`);
-            common.log("dbErrorSQL.sql", `${sql}${endOfLine}${endOfLine}`);
-            reject(err);
-        }
+
+        });
     }).catch((err) => {
         common.log("dbError.txt", `${err}${endOfLine}${endOfLine}`);
         common.log("dbErrorSQL.sql", `${sql}${endOfLine}${endOfLine}`);
-        console.log(err)
+        console.log(err);
     });
 }
 
