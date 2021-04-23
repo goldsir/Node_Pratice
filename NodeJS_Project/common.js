@@ -5,36 +5,41 @@ const { v4 } = require('uuid');
 const crypto = require('crypto');
 
 // 檢查登入狀態，各路由都會用到
-async function checkLogin(req, res, next) {
 
-    try {
-        let tokenHeaderName = 'token'
-        let data = await common.jwtVerify(req.get(tokenHeaderName));
+function checkLogin(responseType){
 
-        if (data.ip !== req.ip) { //簽出去的token載體，要包含ip，不然會gg            
+	return async function checkLogin(req, res, next) {
 
-            res.json(resultMessage(1, 'IP變動，請重新登入'));
+		try {
 
-            /*
-                區分出請求類型
-                    html -> 轉址
-                    json -> 回應 重新登入
-            */
+			let tokenHeaderName = 'token'
+			let data = await common.jwtVerify(req.get(tokenHeaderName));
 
-            let reqContentType = req.get('Content-Type');
-            console.log('checkLogin: --->' + reqContentType);
+			if (data.ip !== req.ip) { //簽出去的token載體，要包含ip，不然會gg
+				
+				if('json'=== responseType){
+					res.json(resultMessage(1, 'IP變動，請重新登入'));				
+				}else if('html'=== responseType){
+					res.redirect('/');
+				}
+			}
+			else {
+				req.userData = data;
+				next();
+			}			
+		}
+		catch (err) {
 
-        }
-        else {
-            req.userData = data;
-        }
-        next();
-    }
-    catch (err) {
-
-        log('checkLoginFail.txt', err.stack);
-        res.json(resultMessage(1, '請重新登入'));
-    }
+			log('checkLoginFail.txt', err.stack);
+			
+			if('json'=== responseType){
+				res.json(resultMessage(1, '請重新登入'));
+			}
+			else if('html'=== responseType){
+					res.redirect('/');
+			}
+		}
+	}
 }
 
 function resultMessage(resultCode, resultMessage, datas) {
