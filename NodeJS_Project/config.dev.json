@@ -1,13 +1,6 @@
 {
     "env": "development",
-    "apiBaseUrl": "http://localhost:8080/api",
-    "mySQLOptions": {
-        "host": "127.0.0.1",
-        "user": "root",
-        "password": "ixwn4uwc",
-        "database": "SFEat",
-        "timezone": 8
-    },
+    "apiBaseUrl": "http://localhost:8080/api",  
     "mySQLPoolOptions": {
         "host": "127.0.0.1",
         "user": "root",

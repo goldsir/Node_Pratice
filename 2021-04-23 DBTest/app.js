@@ -5,7 +5,10 @@ let {
 } = require('./common.mysql.pool');
 
 
-let sqlStr = `slect * from game_list;`;
+//let sqlStr = `INSERT INTO \`user\` SET Account = 'TTT3', PASSWORD=MD5('123456'), CreateDate=CURRENT_TIMESTAMP;`;
+let sqlStr = `
+        select 1 from \`user\` where Account ='ttt4'
+`;
 
 (async function () {
 

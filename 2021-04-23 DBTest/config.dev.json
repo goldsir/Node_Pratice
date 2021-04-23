@@ -1,19 +1,11 @@
 {
     "env": "development",
     "apiBaseUrl": "http://localhost:8080/api",
-    "mySQLOptions": {
-        "host": "127.0.0.1",
-        "user": "root",
-        "password": "ixwn4uwc",
-        "database": "platform_db",
-        "timezone": 8,
-        "multipleStatements": true
-    },
     "mySQLPoolOptions": {
         "host": "127.0.0.1",
         "user": "root",
         "password": "ixwn4uwc",
-        "database": "platform_db",
+        "database": "sfeat",
         "timezone": 8,
         "connectionLimit": 50,
         "multipleStatements": true

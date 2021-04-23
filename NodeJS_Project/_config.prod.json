@@ -1,14 +1,7 @@
 {
     "memo": "正式環境才會更名為 config.prod.json",
     "env": "production",
-    "apiBaseUrl": "http://localhost:8080/api",
-    "mySQLOptions": {
-        "host": "localhost",
-        "user": "root",
-        "password": "ixwn4uwc",
-        "database": "SFEat",
-        "timezone": 8
-    },
+    "apiBaseUrl": "http://localhost:8080/api",    
     "mySQLPoolOptions": {
         "host": "localhost",
         "user": "root",

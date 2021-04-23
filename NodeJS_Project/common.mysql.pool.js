@@ -58,11 +58,9 @@ function executeSQL(sql) {
                 }
             });
         } catch (err) {
-
             common.log("dbError.txt", `${err}${endOfLine}${endOfLine}`);
             common.log("dbErrorSQL.sql", `${sql}${endOfLine}${endOfLine}`);
             reject(err);
-            connection.release();
         }
     }).catch((err) => {
         common.log("dbError.txt", `${err}${endOfLine}${endOfLine}`);
