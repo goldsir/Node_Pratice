@@ -1,6 +1,6 @@
 const { createPool } = require('mysql');
 let {
-        dbconnectionPool
+        dbConnectionPool
         , executeSQL
 } = require('./common.mysql.pool');
 
@@ -37,16 +37,16 @@ for (let i = 1; i <= 123; i++) {
 
                 let sqlStr = `
                 INSERT INTO \`User\`
-                SET 
-                        UserName = N'嚶嚶怪'
-                        , UserAccount = '${UserName}'
-                        , UserPassword = MD5('123456')
-                        , Memo = N'${Memo}'
-                        , CreateDate = CURRENT_TIMESTAMP
-                ;        
+				SET 
+						UserName = N'嚶嚶怪'
+						, UserAccount = '${UserName}'
+						, UserPassword = MD5('123456')
+						, Memo = N'${Memo}'
+						, CreateDate = CURRENT_TIMESTAMP
+				;        
         ` ;
 
-                await executeSQL(sqlStr)
+			await executeSQL(sqlStr)
         }
-        dbconnectionPool.end();
+        dbConnectionPool.end();
 })();
