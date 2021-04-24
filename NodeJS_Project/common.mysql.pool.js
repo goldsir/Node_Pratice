@@ -53,8 +53,7 @@ function executeSQL(sql) {
         });
     }).catch((err) => {
         common.log("dbError.txt", `${err}${endOfLine}${endOfLine}`);
-        common.log("dbErrorSQL.sql", `${sql}${endOfLine}${endOfLine}`);
-        console.log(err);
+        common.log("dbErrorSQL.sql", `${sql}${endOfLine}${endOfLine}`);       
     });
 }
 
