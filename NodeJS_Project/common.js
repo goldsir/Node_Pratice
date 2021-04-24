@@ -5,7 +5,6 @@ const { v4 } = require('uuid');
 const crypto = require('crypto');
 
 // 檢查登入狀態，各路由都會用到
-
 function checkLogin(responseType){
 
 	return async function checkLogin(req, res, next) {
@@ -42,12 +41,25 @@ function checkLogin(responseType){
 	}
 }
 
-function resultMessage(resultCode, resultMessage, datas) {
-    return {
-        resultCode
-        , resultMessage
-        , datas
-    }
+function resultMessage(resultCode, resultMessage, result) {
+	
+	if( Object.prototype.toString.call(result) === '[object Array]' )
+	{
+		return {
+			resultCode
+			, resultMessage
+			, datas: result
+		}
+
+	}
+	else{
+
+		return {
+			resultCode
+			, resultMessage
+			, data: result
+		}
+	}
 }
 
 function _tokenPrivateKey() {
@@ -143,10 +155,12 @@ function log(fileName, text) {
 }
 
 function getYYYYMMDDhhmmss(_date) {
-
-    //console.log(new Date().toTimeString());
-    //console.log(new Date().toUTCString());
-    //console.log(new Date().toISOString());
+	
+	/*
+		console.log(new Date().toTimeString());
+		console.log(new Date().toUTCString());
+		console.log(new Date().toISOString());
+	*/
 
     _date = _date || new Date();
     let year = _date.getFullYear();
@@ -181,9 +195,9 @@ function getYYYYMMDDhhmmss(_date) {
 
 function dateSplitByMin(date, min) {
     // date 是一個 yyyy-MM-dd 的字串
-    let y = date.slice(0, 4); //不含end
-    let m = date.slice(5, 7);
-    let d = date.slice(8, 10);
+    let y = date.slice(0, 4);	// 不含end => 0 1 2 3 = yyyy 
+    let m = date.slice(5, 7);	// 不含end => 5 6     = MM
+    let d = date.slice(8, 10);	// 不含end => 8 9     = dd
 
     let count = (24 * 60) / min; // 算出一天全部有多少分鐘，再除掉min，得到迴圈計數器(以秒為單位)
 
