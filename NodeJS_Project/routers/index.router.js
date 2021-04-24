@@ -6,21 +6,13 @@ const captcha = require("svg-captcha");
 const { resultMessage, checkLogin, getConfig } = require('../common');
 const keepCaptcha = {}; // 儲存圖片驗證碼用的
 
+
+/*
+	res.send 會在 response header 中加上 Content-Type
+	res.end  不會加 Content-Type
+*/
 router.get("/", function (req, res) {
     res.send("這是首頁");
-    // send 會在 response header 中加上 Content-Type
-    // end 則不會加 Content-Type
-});
-
-/*  檢查環境參數用的*/
-router.get("/config", (req, res) => {
-    let config = getConfig();
-    res.json(config);
-});
-
-router.get("/keepCaptcha", (req, res) => {
-    let config = getConfig();
-    res.json(keepCaptcha);
 });
 
 router.get("/myIP", (req, res) => {
@@ -79,7 +71,6 @@ router.post('/login', (req, res) => {
                 res.json(resultMessage(0, '登入成功'));
             }
             else {
-
                 res.json(resultMessage(1, '帳號/密碼錯誤'));
             }
         }
