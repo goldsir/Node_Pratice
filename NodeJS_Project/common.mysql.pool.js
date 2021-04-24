@@ -1,12 +1,12 @@
+const endOfLine = require('os').EOL;
 const mysql = require('mysql');
 const common = require('./common');
-const endOfLine = require('os').EOL;
 
 const options = {
     "host": "127.0.0.1",
     "user": "root",
     "password": "ixwn4uwc",
-    "database": "sfeat",
+    "database": "Study",
     "timezone": 8,
     "connectionLimit": 50,
     "multipleStatements": false
