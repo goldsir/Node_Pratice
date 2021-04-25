@@ -11,13 +11,13 @@ function checkLogin(responseType){
 
 		try {
 
-			let tokenHeaderName = 'token'
-			let data = await common.jwtVerify(req.get(tokenHeaderName));
+			let _token = req.get('token') || '' ;
+			let data = await common.jwtVerify(_token);
 
 			if (data.ip !== req.ip) { //簽出去的token載體，要包含ip，不然會gg
 				
 				if('json'=== responseType){
-					res.json(resultMessage(1, 'IP變動，請重新登入'));				
+					res.json(resultMessage(-1, 'IP變動，請重新登入'));				
 				}else if('html'=== responseType){
 					res.redirect('/');
 				}
@@ -32,7 +32,7 @@ function checkLogin(responseType){
 			log('checkLoginFail.txt', err.stack);
 			
 			if('json'=== responseType){
-				res.json(resultMessage(1, '請重新登入'));
+				res.json(resultMessage(-1, '請重新登入'));
 			}
 			else if('html'=== responseType){
 					res.redirect('/');
