@@ -22,6 +22,7 @@ function co(it) {
         function next(data) {
 
             let { value, done } = it.next(data);
+            console.log(value, done);
 
             if (done) {
 

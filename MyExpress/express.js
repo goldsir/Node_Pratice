@@ -18,6 +18,17 @@ http.METHODS.forEach((method) => {
     }
 });
 
+Application.prototype.use = function (path, handler) { // 中間件一次只能註冊一個cb
+
+    if (typeof handler !== 'function') {
+        handler = path;
+        path = '/';
+    }
+
+    this._router.use(path, handler);
+
+}
+
 Application.prototype.listen = function () {
 
     let server = http.createServer((req, res) => {

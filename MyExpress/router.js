@@ -27,6 +27,13 @@ http.METHODS.forEach((method) => {
     }
 });
 
+Router.prototype.use = function (path, handler) {
+
+    let layer = new Layer(path, handler);
+    this.stack.push(layer);
+
+}
+
 Router.prototype.handle = function (req, res, out) {
 
     let reqPath = url.parse(req.url).pathname;
@@ -41,12 +48,34 @@ Router.prototype.handle = function (req, res, out) {
 
         let layer = this.stack[idx++];
 
-        if (layer.match(reqPath) && layer.route && layer.route.handleMethod(reqMethod)) {
+        // Router.stack這個棧中，目前有路由跟中間件2種東西
+        if (layer.route) {//一般路由
 
-            layer.handleRequest(req, res, next);
+            if (layer.match(reqPath) && layer.route.handleMethod(reqMethod)) { //路徑跟請求方法都匹配
+
+                layer.handleRequest(req, res, next);
+            }
+            else {
+                next();  // 走下一個layer
+            }
         }
-        else {
-            next();
+        else {// 中間件 (layer上沒有route)
+
+            if (layer.path === '/'
+
+                /* 
+                   加上斜線 避免 /user 跟 /user123 匹配上
+                   '/user123'.startsWith('/user/') : false
+                */
+                || reqPath.startsWith(layer.path + '/')
+                || layer.match(reqPath)) {
+
+                layer.handleRequest(req, res, next);
+            }
+            else {
+                next();
+            }
+
         }
     }
 
