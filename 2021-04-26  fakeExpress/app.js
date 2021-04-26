@@ -1,4 +1,10 @@
-const express = require('./fakeExpress');
+/*
+
+	express 只是對原生的http做出功能封裝，方便使用。
+
+*/
+
+const express = require('./simpleExpress');
 let app = express();
 
 app.get('/a', function (req, res) {
