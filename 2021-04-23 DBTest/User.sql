@@ -16,4 +16,4 @@ SET
     , UserAccount = ${}
     , UserPassword = MD5('123456')
     , Memo = ${}
-    , CreateDate = CURRENT_TIMESTAMP
+    , CreateDate = CURRENT_TIMESTAMP ;
