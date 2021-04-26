@@ -1,15 +1,18 @@
 /*
-
     express 只是對原生的http做出功能封裝，方便使用。
-
 */
 
 const express = require('./simpleExpress');
 let app = express();
 
 app.get('/a', function (req, res) {
-    res.end('a');
+    res.end('1.a\n');
 });
+
+app.get('/a', function (req, res) {
+    res.end('2.a');
+});
+
 
 app.get('/b', function (req, res) {
     res.end('b');

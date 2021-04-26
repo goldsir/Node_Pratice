@@ -11,7 +11,7 @@ function express() {
         for (let i = 0; i < app.routes.length; i++) {
             let route = app.routes[i];
             if (route.method === reqMethod && route.path === reqPath) {
-                return route.handler(req, res);
+                route.handler(req, res);
             }
         }
         return res.end(`can not ${reqMethod} ${reqPath}`);
