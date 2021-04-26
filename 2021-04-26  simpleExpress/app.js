@@ -3,16 +3,13 @@
 */
 
 const express = require('./simpleExpress');
-let app = express();
+let app = express();   //express 是一個函式 (一對圓括號調用) 
 
+
+// 註冊一個路由: 匹配規則 
 app.get('/a', function (req, res) {
-    res.end('1.a\n');
+    res.end('a');
 });
-
-app.get('/a', function (req, res) {
-    res.end('2.a');
-});
-
 
 app.get('/b', function (req, res) {
     res.end('b');
@@ -25,3 +22,6 @@ app.get('/c', function (req, res) {
 app.listen(3000, function () {
     console.log('Server start at 3000 port');
 });
+
+
+// 中間件
