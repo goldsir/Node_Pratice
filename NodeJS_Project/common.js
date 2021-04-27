@@ -5,46 +5,44 @@ const { v4 } = require('uuid');
 const crypto = require('crypto');
 
 // 調用API前先檢查登入狀態 (中間件)
-async function checkLoginForAPI(req, res, next){
+async function checkLoginForAPI(req, res, next) {
+    try {
 
-	try {
+        let _token = req.get('token') || '';
+        let data = await common.jwtVerify(_token);
 
-		let _token = req.get('token') || '' ;
-		let data = await common.jwtVerify(_token);
-
-		if (data.ip !== req.ip) { //簽出去的token載體，要包含ip，不然會gg								
-				res.json(resultMessage(-1, 'IP變動，請重新登入'));				
-		}
-		else {
-			req.userData = data;
-			next();
-		}
-	}
-	catch (err) {
-		log('checkLoginFail.txt', err.stack);			
-		res.json(resultMessage(-1, '請重新登入'));
-	}	
+        if (data.ip !== req.ip) { //簽出去的token載體，要包含ip，不然會gg								
+            res.json(resultMessage(-1, 'IP變動，請重新登入'));
+        }
+        else {
+            req.userData = data;
+            next();
+        }
+    }
+    catch (err) {
+        //log('checkLoginFail.txt', err.stack);
+        res.json(resultMessage(-1, '請重新登入'));
+    }
 }
 
 function resultMessage(resultCode, resultMessage, result) {
-	
-	if( Object.prototype.toString.call(result) === '[object Array]' )
-	{
-		return {
-			resultCode
-			, resultMessage
-			, datas: result
-		}
 
-	}
-	else{
+    if (Object.prototype.toString.call(result) === '[object Array]') {
+        return {
+            resultCode
+            , resultMessage
+            , datas: result
+        }
 
-		return {
-			resultCode
-			, resultMessage
-			, data: result
-		}
-	}
+    }
+    else {
+
+        return {
+            resultCode
+            , resultMessage
+            , data: result
+        }
+    }
 }
 
 function _tokenPrivateKey() {
@@ -140,12 +138,12 @@ function log(fileName, text) {
 }
 
 function getYYYYMMDDhhmmss(_date) {
-	
-	/*
-		console.log(new Date().toTimeString());
-		console.log(new Date().toUTCString());
-		console.log(new Date().toISOString());
-	*/
+
+    /*
+        console.log(new Date().toTimeString());
+        console.log(new Date().toUTCString());
+        console.log(new Date().toISOString());
+    */
 
     _date = _date || new Date();
     let year = _date.getFullYear();
@@ -230,13 +228,13 @@ module.exports = {
 
 
 /*
-    登入成功後存下token: sessionStorage.setItem('token', token);
+    登入成功後存下token: localStorage.setItem('token', token);
 
     fetch(url
         , {
             headers: {
                 'content-type': 'application/json'
-                , 'token': sessionStorage.getItem('token')
+                , 'token': localStorage.getItem('token')
             }
             , body: JSON.stringify(data)
         }

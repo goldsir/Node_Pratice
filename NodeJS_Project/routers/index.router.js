@@ -6,10 +6,9 @@ const captcha = require("svg-captcha");
 const { resultMessage, checkLogin, getConfig, log, jwtVerify } = require('../common');
 const keepCaptcha = {}; // 儲存圖片驗證碼用的
 
-
 /*
-	res.send 會在 response header 中加上 Content-Type
-	res.end  不會加 Content-Type
+    res.send 會在 response header 中加上 Content-Type
+    res.end  不會加 Content-Type
 */
 router.get("/", function (req, res) {
     res.send("這是首頁");
@@ -31,7 +30,7 @@ router.get("/captcha", (req, res) => {
             httpOnly: true
         });
     }
-    
+
     let captchaObj = createCaptcha();
     console.log(sid, captchaObj.text);
     keepCaptcha[sid] = captchaObj.text;
@@ -39,35 +38,23 @@ router.get("/captcha", (req, res) => {
     res.send(captchaObj.data);
 });
 
-router.get('/checkLogin', async function(req, res){
-	 
-    let isLogin = false ;
-    let message = '請登入系統';
+router.post('/checkLogin', async function (req, res) {
+
+    let isLogin = false;
 
     try {
 
-        let _token = req.get('token') || '' ;
+        let _token = req.get('token') || '';
         let data = await jwtVerify(_token);
-        if (data.ip === req.ip) { //簽出去的token載體，要包含ip，不然會gg
+        if (data.ip == req.ip) { //簽出去的token載體，要包含ip，不然會gg								
             isLogin = true;
-        }
-        else{
-            message = 'IP異動，請重新登入';
         }
     }
     catch (err) {
-        //log('checkLoginFail.txt', err.message); 先不寫了， 會一大坨
     }
 
-    // 頁面端以 <script src='/checkLogin'></script> 方式調用
-    res.setHeader("Content-Type", "application/javascript; charset=utf8");
-    res.end(`
-        let isLogin = ${isLogin};
-        if(!isLogin){
-            alert('${message}');
-            location.href = '/login.html';
-        }	
-    `);
+    res.json({ isLogin: isLogin });
+
 });
 
 router.post('/login', (req, res) => {
