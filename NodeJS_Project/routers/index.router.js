@@ -3,7 +3,7 @@ const router = express.Router();
 const service = require("./index.service");
 const { v4: uuidv4 } = require('uuid');
 const captcha = require("svg-captcha");
-const { resultMessage, checkLogin, getConfig } = require('../common');
+const { resultMessage, checkLogin, getConfig, log, jwtVerify } = require('../common');
 const keepCaptcha = {}; // 儲存圖片驗證碼用的
 
 
@@ -47,7 +47,7 @@ router.get('/checkLogin', async function(req, res){
     try {
 
         let _token = req.get('token') || '' ;
-        let data = await common.jwtVerify(_token);
+        let data = await jwtVerify(_token);
         if (data.ip === req.ip) { //簽出去的token載體，要包含ip，不然會gg
             isLogin = true;
         }
@@ -56,13 +56,12 @@ router.get('/checkLogin', async function(req, res){
         }
     }
     catch (err) {
-        log('checkLoginFail.txt', err.stack);			
-        res.json(resultMessage(-1, '請重新登入'));
+        //log('checkLoginFail.txt', err.message); 先不寫了， 會一大坨
     }
 
     // 頁面端以 <script src='/checkLogin'></script> 方式調用
-    res.setHeader("Content-Type", "application/javascript");
-    res.write(`
+    res.setHeader("Content-Type", "application/javascript; charset=utf8");
+    res.end(`
         let isLogin = ${isLogin};
         if(!isLogin){
             alert('${message}');
