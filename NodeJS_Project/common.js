@@ -4,41 +4,26 @@ const jwt = require('jsonwebtoken');
 const { v4 } = require('uuid');
 const crypto = require('crypto');
 
-// 檢查登入狀態，各路由都會用到
-function checkLogin(responseType){
+// 調用API前先檢查登入狀態 (中間件)
+async function checkLoginForAPI(req, res, next){
 
-	return async function checkLogin(req, res, next) {
+	try {
 
-		try {
+		let _token = req.get('token') || '' ;
+		let data = await common.jwtVerify(_token);
 
-			let _token = req.get('token') || '' ;
-			let data = await common.jwtVerify(_token);
-
-			if (data.ip !== req.ip) { //簽出去的token載體，要包含ip，不然會gg
-				
-				if('json'=== responseType){
-					res.json(resultMessage(-1, 'IP變動，請重新登入'));				
-				}else if('html'=== responseType){
-					res.redirect('/');
-				}
-			}
-			else {
-				req.userData = data;
-				next();
-			}			
+		if (data.ip !== req.ip) { //簽出去的token載體，要包含ip，不然會gg								
+				res.json(resultMessage(-1, 'IP變動，請重新登入'));				
 		}
-		catch (err) {
-
-			log('checkLoginFail.txt', err.stack);
-			
-			if('json'=== responseType){
-				res.json(resultMessage(-1, '請重新登入'));
-			}
-			else if('html'=== responseType){
-					res.redirect('/');
-			}
+		else {
+			req.userData = data;
+			next();
 		}
 	}
+	catch (err) {
+		log('checkLoginFail.txt', err.stack);			
+		res.json(resultMessage(-1, '請重新登入'));
+	}	
 }
 
 function resultMessage(resultCode, resultMessage, result) {

@@ -31,12 +31,44 @@ router.get("/captcha", (req, res) => {
             httpOnly: true
         });
     }
-
-    res.setHeader("Content-Type", "image/svg+xml")
+    
     let captchaObj = createCaptcha();
     console.log(sid, captchaObj.text);
     keepCaptcha[sid] = captchaObj.text;
+    res.setHeader("Content-Type", "image/svg+xml")
     res.send(captchaObj.data);
+});
+
+router.get('/checkLogin', async function(req, res){
+	 
+    let isLogin = false ;
+    let message = '請登入系統';
+
+    try {
+
+        let _token = req.get('token') || '' ;
+        let data = await common.jwtVerify(_token);
+        if (data.ip === req.ip) { //簽出去的token載體，要包含ip，不然會gg
+            isLogin = true;
+        }
+        else{
+            message = 'IP異動，請重新登入';
+        }
+    }
+    catch (err) {
+        log('checkLoginFail.txt', err.stack);			
+        res.json(resultMessage(-1, '請重新登入'));
+    }
+
+    // 頁面端以 <script src='/checkLogin'></script> 方式調用
+    res.setHeader("Content-Type", "application/javascript");
+    res.write(`
+        let isLogin = ${isLogin};
+        if(!isLogin){
+            alert('${message}');
+            location.href = '/login.html';
+        }	
+    `);
 });
 
 router.post('/login', (req, res) => {
