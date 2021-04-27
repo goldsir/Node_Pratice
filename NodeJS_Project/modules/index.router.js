@@ -1,6 +1,6 @@
 const express = require("express");
-const router = express.Router();
-const service = require("./index.service");
+const router = express.Router();				// 路由管理
+const bll = require("./index.bll");
 const { v4: uuidv4 } = require('uuid');
 const captcha = require("svg-captcha");
 const { resultMessage, checkLogin, getConfig, log, jwtVerify } = require('../common');

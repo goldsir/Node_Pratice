@@ -58,6 +58,6 @@ function executeSQL(sql) {
 }
 
 module.exports = {
-    dbConnectionPool: pool
+    dbConnection: pool
     , executeSQL
 }

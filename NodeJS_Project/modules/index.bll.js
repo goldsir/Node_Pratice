@@ -1,4 +1,6 @@
-const db = require('./index.db');
+// 商業邏輯層 ( Business Logic Layer，簡稱 BLL )
+
+const dal = require('./index.dal');
 const { resultMessage } = require('../common');
 
 
