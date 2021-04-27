@@ -8,13 +8,23 @@ function express() {
         let reqPath = url.parse(req.url).pathname;
         let reqMethod = req.method.toLowerCase();
 
-        for (let i = 0; i < app.routes.length; i++) {
-            let route = app.routes[i];
+        let idx = 0;
+        function next(){
+
+            if (idx >= app.routes.length)
+            {
+                return res.end(`can not ${reqMethod} ${reqPath}`);
+            }
+
+            let route = app.routes[idx++];
             if (route.method === reqMethod && route.path === reqPath) {
-                route.handler(req, res);
+                route.handler(req, res, next);
+            }
+            else{
+                next();
             }
         }
-        return res.end(`can not ${reqMethod} ${reqPath}`);
+        next();
     }
 
     app.routes = [];

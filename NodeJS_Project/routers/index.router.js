@@ -3,13 +3,12 @@ const router = express.Router();
 const service = require("./index.service");
 const { v4: uuidv4 } = require('uuid');
 const captcha = require("svg-captcha");
-const { resultMessage, checkLogin, getConfig } = require('../common');
+const { resultMessage, checkLogin, getConfig, log, jwtVerify } = require('../common');
 const keepCaptcha = {}; // 儲存圖片驗證碼用的
 
-
 /*
-	res.send 會在 response header 中加上 Content-Type
-	res.end  不會加 Content-Type
+    res.send 會在 response header 中加上 Content-Type
+    res.end  不會加 Content-Type
 */
 router.get("/", function (req, res) {
     res.send("這是首頁");
@@ -32,11 +31,30 @@ router.get("/captcha", (req, res) => {
         });
     }
 
-    res.setHeader("Content-Type", "image/svg+xml")
     let captchaObj = createCaptcha();
     console.log(sid, captchaObj.text);
     keepCaptcha[sid] = captchaObj.text;
+    res.setHeader("Content-Type", "image/svg+xml")
     res.send(captchaObj.data);
+});
+
+router.post('/checkLogin', async function (req, res) {
+
+    let isLogin = false;
+
+    try {
+
+        let _token = req.get('token') || '';
+        let data = await jwtVerify(_token);
+        if (data.ip == req.ip) {
+            isLogin = true;
+        }
+    }
+    catch (err) {
+    }
+
+    res.json({ isLogin: isLogin });
+
 });
 
 router.post('/login', (req, res) => {

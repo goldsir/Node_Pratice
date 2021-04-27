@@ -10,6 +10,8 @@ CREATE TABLE `User` (
     , PRIMARY KEY   (Id)
 );
 
+/*
+
 INSERT INTO `User`
 SET 
     UserName = ${}
@@ -17,3 +19,5 @@ SET
     , UserPassword = MD5('123456')
     , Memo = ${}
     , CreateDate = CURRENT_TIMESTAMP ;
+
+*/
