@@ -46,7 +46,7 @@ router.post('/checkLogin', async function (req, res) {
 
         let _token = req.get('token') || '';
         let data = await jwtVerify(_token);
-        if (data.ip == req.ip) { //簽出去的token載體，要包含ip，不然會gg								
+        if (data.ip == req.ip) {
             isLogin = true;
         }
     }
