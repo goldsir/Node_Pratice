@@ -12,18 +12,18 @@ for (let i = 1; i <= 105; i++) {
     datas.push(i);
 }
 
-let pageIndex = 10;
+let pageIndex = 1;
 let pageSize = 10;
 let startIndex = (pageIndex - 1) * pageSize;  // 陣列是 0 Base
 let endIndex = pageIndex * pageSize;
 
-if (pageIndex < 0) {
-    pageIndex = 0;
+if (startIndex < 0) {
+    startIndex = 0;
 }
 
 if (endIndex > datas.length) {
     endIndex = datas.length
 }
 
-let targets = datas.slice(startIndex, 105);  // 0-9
+let targets = datas.slice(startIndex, endIndex);  // 0-9
 console.log(targets);
