@@ -25,25 +25,26 @@ async function checkLoginForAPI(req, res, next) {
     }
 }
 
-function resultMessage(resultCode, resultMessage, result) {
 
-    if (Object.prototype.toString.call(result) === '[object Array]') {
-        return {
-            resultCode
-            , resultMessage
-            , datas: result
+/*
+    {
+        "resultCode": 0,
+        "resultMessage": "",
+        "result": {
+            "datas": [],
+            "pageInfo": {}
         }
-
     }
-    else {
 
-        return {
-            resultCode
-            , resultMessage
-            , data: result
-        }
+*/
+function resultMessage(resultCode, resultMessage, result) {
+    return {
+        resultCode
+        , resultMessage
+        , result
     }
 }
+
 
 function _tokenPrivateKey() {
     let tokenPrivateKey = crypto.randomBytes(64).toString('hex');

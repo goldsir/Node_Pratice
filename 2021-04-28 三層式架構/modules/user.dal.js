@@ -5,11 +5,9 @@ async function getUserList(pageIndex, pageSize) {
     let totalRows = 0; // 資料總筆數
 
     let ids = await executeSQL(`SELECT Id FROM \`User\` ORDER BY Id ASC ;`);
-    totalRows = ids.length;  // 取得資料總筆數
-    console.log(ids);
+    totalRows = ids.length;  // 取得資料總筆數   
 
     ids = ids.map(item => { return item.Id });
-    console.log(ids);
 
     let startIndex = (pageIndex - 1) * pageSize;  // 陣列是 0 Base
     let endIndex = pageIndex * pageSize;
@@ -24,7 +22,6 @@ async function getUserList(pageIndex, pageSize) {
 
     let targets = ids.slice(startIndex, endIndex);
     targets = targets.join(',');
-    console.log(targets);
 
     let result = await executeSQL(`
         SELECT 
@@ -38,8 +35,6 @@ async function getUserList(pageIndex, pageSize) {
         Where Id IN (${targets}) 
         ORDER BY Id ASC ;`
     );
-
-    console.log(result);
 
     return {
         datas: result
