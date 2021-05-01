@@ -7,7 +7,7 @@ let {
 let quote = [
     '一直烙賽賽'
     , '嚶嚶嚶嚶嚶嚶'
-    , '賴皮鬼'
+    , '懂事，不賴皮了'
     , '一把眼淚一把鼻涕'
     , '肚子餓會鬧脾氣'
 ];
@@ -38,7 +38,7 @@ for (let i = 1; i <= 4999; i++) {
         let sqlStr = `
                         INSERT INTO \`User\`
                         SET 
-                                UserName = N'嚶嚶怪'
+                                UserName = N'Jess'
                                 , UserAccount = '${UserName}'
                                 , UserPassword = MD5('123456')
                                 , Memo = N'${Memo}'
