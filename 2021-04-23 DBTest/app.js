@@ -1,8 +1,4 @@
-const { createPool } = require('mysql');
-let {
-    dbConnectionPool
-    , executeSQL
-} = require('./common.mysql.pool');
+let { dbConnectionPool, executeSQL } = require('./common.mysql.pool');
 
 let quote = [
     '一直烙賽賽'
