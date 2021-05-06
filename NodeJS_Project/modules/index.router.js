@@ -51,9 +51,10 @@ router.post('/checkLogin', async function (req, res) {
         }
     }
     catch (err) {
+        res.json(resultMessage(1, err.message));
     }
 
-    res.json({ isLogin: isLogin });
+    res.json(resultMessage(0, '', isLogin));
 
 });
 

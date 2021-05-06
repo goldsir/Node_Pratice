@@ -14,12 +14,11 @@
     };
 
     let response = await fetch(url, fetchOptions);
-    let result = await response.json();
+    let json = await response.json();
 
-    if (!result.isLogin) {
+    if (!json.result) {
         alert('請登入系統。');
         location.href = '/login.html';
     }
 
-    // 要不要同步執行呢??
 })();
