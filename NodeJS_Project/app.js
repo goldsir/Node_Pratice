@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const common = require("./common");
 const { resultMessage } = common;
 const app = express();
+const inputCheck = require('./inputCheck');
 const cookieSessionSecret = "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed";
 
 // API    http://expressjs.com/zh-tw/4x/api.html#express
@@ -17,6 +18,8 @@ app.use(express.static(path.resolve('./web')));         // 靜態資源服務
 app.use(express.urlencoded({ extended: false }));       // 解析請求體  => req.body
 app.use(express.json());
 app.use(cookieParser(cookieSessionSecret));             // 解析cookie => req.cookies
+app.use(inputCheck);                                    // 檢查請求參數
+
 
 app.use((req, res, next) => {
 
