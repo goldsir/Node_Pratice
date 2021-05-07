@@ -1,0 +1,72 @@
+[
+    {
+        "BankName": "VietcomBank",
+        "UserName": "NGUYỄN THANH TRÀ",
+        "Account": "0021000453455",
+        "LoginAccount": "15344509A29",
+        "Password": "AAaa1111"
+    },
+    {
+        "BankName": "ACBBank",
+        "UserName": "NGUYỄN THANH TRÀ",
+        "Account": "2586157",
+        "LoginAccount": "0902103600",
+        "Password": "AAaa1111"
+    },
+    {
+        "BankName": "BIDVBank",
+        "UserName": "NGUYỄN THANH TRÀ",
+        "Account": "26010001205557",
+        "LoginAccount": "0902103600",
+        "Password": "Tra12345*"
+    },
+    {
+        "BankName": "VietcomBank",
+        "UserName": "TRẦN TÚ LINH",
+        "Account": "0011004433112",
+        "LoginAccount": "16196792A57",
+        "Password": "AAaa1111"
+    },
+    {
+        "BankName": "ACBBank",
+        "UserName": "TRẦN TÚ LINH",
+        "Account": "6817377",
+        "LoginAccount": "6817377",
+        "Password": "AAaa1111"
+    },
+    {
+        "BankName": "BIDVBank",
+        "UserName": "TRẦN TÚ LINH",
+        "Account": "26810000337772",
+        "LoginAccount": "0902103763",
+        "Password": "Linh12345*"
+    },
+    {
+        "BankName": "VietcomBank",
+        "UserName": "PHẠM HỒ TRỌNG",
+        "Account": "421000544623",
+        "LoginAccount": "10359276A30",
+        "Password": "Trong123@"
+    },
+    {
+        "BankName": "SacomBank",
+        "UserName": "PHẠM HỒ TRỌNG",
+        "Account": "60237641267",
+        "LoginAccount": "392010074",
+        "Password": "Trong123"
+    },
+    {
+        "BankName": "ACBBank",
+        "UserName": "NGUYỄN QUỐC BÍNH",
+        "Account": "9790707",
+        "LoginAccount": "9790707",
+        "Password": "Binh123@"
+    },
+    {
+        "BankName": "TechcomBank",
+        "UserName": "NGUYỄN QUỐC BÍNH",
+        "Account": "19035233093016",
+        "LoginAccount": "344420825",
+        "Password": "Binh123"
+    }
+]

@@ -1,1 +1,10 @@
-console.log('(σ′▽‵)′▽‵)σ 哈哈哈哈～你看看你');
+
+import data from './data.json';
+
+console.log(data);
+
+function add(x, y) {
+    return x + y;
+}
+
+console.log(add(1, 2));

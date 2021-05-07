@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VI-WebATM-掃帳爬蟲</title>
+</head>
+
+<style>
+    table,
+    tr,
+    td,
+    th {
+        border: 1px solid black;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    NO.
+                </th>
+                <th>
+                    卡片持有人名稱
+                </th>
+                <th>
+                    銀行名稱
+                </th>
+
+                <th>
+                    銀行帳號
+                </th>
+                <th>
+                    登入帳號
+                </th>
+                <th>
+                    操作
+                </th>
+            </tr>
+
+        </thead>
+        <tbody id='tabContent'>
+
+        </tbody>
+    </table>
+    <script type="application/javascript">
+        let banks;
+        let tableContent = document.getElementById('tabContent');
+        (async function () {
+            banks = await fetch('/api/banks/list').then(res => res.json())
+
+            banks = banks.sort((a, b) => {
+                let keyA = a.BankName;
+                let keyB = b.BankName;
+                if (keyA < keyB) return -1;
+                if (keyA > keyB) return 1;
+                return 0;
+            });
+
+            let html = '';
+            let idx = 1;
+            for (let bank of banks) {
+                html += `
+                 <tr>
+                     <td>
+                         ${idx++}
+                    </td>
+                    <td>
+                         ${bank.UserName}
+                    </td>
+                    <td>
+                        ${bank.BankName}
+                    </td>
+                    
+                    <td>
+                         ${bank.Account}
+                    </td>
+                    <td>
+                         ${bank.LoginAccount}
+                    </td>
+                     <td>
+                         <button info='${JSON.stringify(bank)}'' onclick="openBank(this)">打開網銀</button>
+                    </td>
+                </tr>
+                `;
+            }
+
+            tableContent.innerHTML = html;
+        })();
+
+        function openBank(btn) {
+
+            let infoStr = btn.getAttribute('info');
+            let infoObj = JSON.parse(infoStr);
+            fetch(`/api/banks/open/${infoObj.BankName}/${infoObj.UserName}/${infoObj.LoginAccount}`)
+        }
+
+    </script>
+</body>
+
+</html>

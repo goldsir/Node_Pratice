@@ -1,0 +1,39 @@
+APIId=WRVBank                   小羅指定的
+Date=2020-06-09                 銀行後台上該筆資料的日期
+BankName=""                     只送空字串""
+BankNumber=""                   只送空字串""
+Mark=12345                      A12345A中抓出來的5位辨識碼
+Amount=10000                    金額
+Balance=xxxxx                   銀行後台上該筆資料的交易碼 (字串)
+AdminBankName=SacomBank         收款銀行
+AdminBankNumber=03065611259     收款人銀行帳戶
+VCode=xxxxx                     驗證碼
+
+
+驗證碼 = 
+
+    MD5(
+            APIId
+            + Date
+            + BankName
+            + BankNumber
+            + Mark
+            + Amount
+            + Balance
+            + AdminBankName
+            + AdminBankNumber
+            + key               key要自己生成
+        )
+
+
+
+
+遠端連過去後，再開teamviewer去安裝
+
+遠桌： 202.182.125.9
+賬戶： administrator
+密碼： 2h(Dsu4of]sL,L7e
+
+teamviewer
+    123266911
+    t8k2w8

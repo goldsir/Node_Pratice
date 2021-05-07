@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增銀行資料</title>
+</head>
+
+<body>
+
+    <form method="POST" action="/api/banks/add" id="form">
+
+        <label>卡片持有人</label>
+        <input type="text" name="UserName"><br>
+
+        <label>銀行名稱</label>
+        <input type="text" name="BankName"><br>
+
+        <label>銀行帳號</label>
+        <input type="text" name="Account"><br>
+
+        <label>網銀登入帳號</label>
+        <input type="text" name="LoginAccount"><br>
+
+        <label>網銀登入密碼</label>
+        <input type="text" name="Password"><br>
+        <input type="submit" value="新增" id="submitBtn">
+
+    </form>
+
+    <script type="application/javascript">
+
+        let submitBtn = document.getElementById('submitBtn');
+        submitBtn.addEventListener('click', function (event) {
+
+            event.preventDefault();
+
+            let data = {
+                "UserName": form.UserName.value.trim()
+                , "BankName": form.BankName.value.trim()
+                , "Account": form.Account.value.trim()
+                , "LoginAccount": form.LoginAccount.value.trim()
+                , "Password": form.Password.value.trim()
+            };
+
+
+
+            fetch('/api/banks/add'
+                , {
+                    body: JSON.stringify(data), // must match 'Content-Type' header
+                    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                    credentials: 'same-origin', // include, same-origin, *omit
+                    headers: {
+                        'user-agent': 'Mozilla/4.0 MDN Example',
+                        'content-type': 'application/json'
+                    },
+                    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                    mode: 'cors', // no-cors, cors, *same-origin
+                    redirect: 'follow', // manual, *follow, error
+                    referrer: 'no-referrer', // *client, no-referrer
+                }
+            ).then(response => response.json());
+
+
+            return false;
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>

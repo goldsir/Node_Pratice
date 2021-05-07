@@ -1,0 +1,7 @@
+{
+    "AbcChinaBank": "https://perbank.abchina.com/EbankSite/startup.do",
+    "CmbcBank": "https://nper.cmbc.com.cn/pweb/static/login.html",
+    "PBank": "https://pbank.95559.com.cn/personbank/system/syLogin.do",
+    "ICBCBank": "https://mybank.icbc.com.cn/icbc/newperbank/perbank3/frame/frame_index.jsp",
+    "CITCBank": "https://i.bank.ecitic.com/perbank6/signIn.do"
+}

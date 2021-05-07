@@ -1,0 +1,58 @@
+[
+  {
+    "UserName": "郭建忠",
+    "BankName": "ICBCBank",
+    "BankName_C": "工商银行",
+    "Account": "6212263602116329962",
+    "LoginAccount": "6212263602116329962",
+    "Password": "ws987654"
+  },
+  {
+    "UserName": "郭建忠",
+    "BankName": "AbcChinaBank",
+    "BankName_C": "农业银行",
+    "Account": "6230520080037532777",
+    "LoginAccount": "440223197910084012",
+    "Password": "aa125478"
+  },
+  {
+    "UserName": "向文珍",
+    "BankName": "AbcChinaBank",
+    "BankName_C": "农业银行",
+    "Account": "6228480039199712371",
+    "LoginAccount": "512221197007187856",
+    "Password": "aa125478"
+  },
+  {
+    "UserName": "刘晓明",
+    "BankName": "AbcChinaBank",
+    "BankName_C": "农业银行",
+    "Account": "6228480039212781676",
+    "LoginAccount": "23232619830218381x",
+    "Password": "aa236589"
+  },
+  {
+    "UserName": "刘艳",
+    "BankName": "CmbcBank",
+    "BankName_C": "民生银行",
+    "Account": "6222620310010805437",
+    "LoginAccount": "18351672452",
+    "Password": "aa110119"
+  },
+  {
+    "UserName": "刘艳",
+    "BankName": "PBank",
+    "BankName_C": "交通银行",
+    "Account": "6226226504781291",
+    "LoginAccount": "6222620310010805437",
+    "Password": "aa110119"
+  },
+  {
+    "UserName": "张东亮",
+    "BankName": "PBank",
+    "BankName_C": "交通银行",
+    "Account": "150403198008183914",
+    "LoginAccount": "150403198008183914",
+    "Password": "xx101202"
+  }
+]
