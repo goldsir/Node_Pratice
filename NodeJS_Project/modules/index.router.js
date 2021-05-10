@@ -46,7 +46,7 @@ router.post('/checkLogin', async function (req, res) {
 
         let _token = req.get('token') || '';
         let data = await jwtVerify(_token);
-        if (data.ip == req.ip) {
+        if (data.ip === req.ip) {
             isLogin = true;
         }
     }
