@@ -15,7 +15,6 @@ async function start() {
 }
 
 /*
-
 for (let i = 1; i <= 3; i++) {
     start();
     console.log(`${i}------------------`);
