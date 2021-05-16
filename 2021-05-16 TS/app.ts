@@ -1,0 +1,4 @@
+enum Gendor{
+    man
+    , woman
+}
