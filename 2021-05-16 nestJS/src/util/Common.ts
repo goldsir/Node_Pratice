@@ -127,6 +127,45 @@ export class Common {
 
     // 延遲
     static Delay(ms: number) {
-        return new Promise(res => setTimeout(() => res(), ms));
+        return new Promise(res => setTimeout(() => res(''), ms));
     }
+
+    static getYYYYMMDDhhmmss(_date) {
+
+    /*
+        console.log(new Date().toTimeString());
+        console.log(new Date().toUTCString());
+        console.log(new Date().toISOString());
+    */
+
+    _date = _date || new Date();
+    let year = _date.getFullYear();
+    let month = String(_date.getMonth() + 1); // month value: 0(一月) ~ 11(十二月)
+    let date = String(_date.getDate());
+    let hour = String(_date.getHours());
+    let min = String(_date.getMinutes());
+    let second = String(_date.getSeconds());
+
+    if (Number.parseInt(month) < 10) {
+        month = `0${month}`;
+    }
+
+    if (Number.parseInt(date) < 10) {
+        date = `0${date}`;
+    }
+
+    if (Number.parseInt(hour) < 10) {
+        hour = `0${hour}`;
+    }
+
+    if (Number.parseInt(min) < 10) {
+        min = `0${min}`;
+    }
+
+    if (Number.parseInt(second) < 10) {
+        second = `0${second}`;
+    }
+
+    return `${year}-${month}-${date} ${hour}:${min}:${second}`;
+}
 }

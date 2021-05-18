@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JiLi 捕魚拉帳</title>
+    <title>JiLi 捕魚接帳</title>
     <style>
         table,
         tr,
@@ -67,16 +67,19 @@
     async function getAPIRequest(date) {
 
         let html = '';
-        let json = await fetch(`/wrc/agin/bet-data/APIRequestList?date=${date}`).then(res => res.json());
+        let res = await fetch(`/wrv/jiliFishing/bet-data/getDateTimeList?date=${date}`)
+        let json = await res.json();
 
         let index = 0;
-        json.forEach(url => {
+        json.forEach(dateObj => {
 
-            let herf = `/wrc/agin/bet-data/getXML?url=${url}`;
+            let herf = `/wrv/jiliFishing/bet-data/getBetData?start=${dateObj.start}&end=${dateObj.end}`;
 
             html += `
                 <tr>
-                    <td colspan="2"><a href="${herf}" target='_blank'>${atob(url)}</a></td>
+                    <td colspan="2" align="center">
+                        <a href="${herf}" target='_blank'>${dateObj.start} ~ ${dateObj.end}</a>
+                    </td>
                 </tr>
             `
             apiCalls.push(herf);  // 把請求放到陣列中
@@ -87,6 +90,8 @@
     }
 
     getAPIRequest('');
+
+    /*
 
     setInterval(() => {
 
@@ -99,8 +104,8 @@
             getAPIRequest('');
         }
 
-    }, 3 * 1000);
-
+    }, 4 * 1000);
+    */
 </script>
 
 </html>
