@@ -1,9 +1,14 @@
-class Animal {
-    constructor(public name: string) {}
+class Animal {    
+    public sayMyName():void{
+
+    }
 }
 
-class Cat extends Animal {
-    constructor() {
-        super("");
+class Cat extends Animal{
+    private name:string = '';
+    public sayMyName(){        
     }
+
+    
+    
 }

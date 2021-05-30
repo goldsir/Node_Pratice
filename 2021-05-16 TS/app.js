@@ -15,15 +15,20 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var Animal = /** @class */ (function () {
-    function Animal(name) {
-        this.name = name;
+    function Animal() {
     }
+    Animal.prototype.sayMyName = function () {
+    };
     return Animal;
 }());
 var Cat = /** @class */ (function (_super) {
     __extends(Cat, _super);
     function Cat() {
-        return _super.call(this, "") || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.name = '';
+        return _this;
     }
+    Cat.prototype.sayMyName = function () {
+    };
     return Cat;
 }(Animal));
