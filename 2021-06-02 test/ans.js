@@ -31,21 +31,3 @@ async function start() {
         await start()
     }
 })()
-
-
-
-/*
-    連續3次調用 start(),  但執行結果並沒有按aaa/bbb/cc 順序顯示， 請修正。
-
-
-    正確結果應為
-        aaa
-        bbb
-        ccc
-        aaa
-        bbb
-        ccc
-        aaa
-        bbb
-        ccc
-*/
