@@ -12,7 +12,7 @@ const authorizationToken = Buffer.from(`${config.casinoId}:${config.gameHistoryA
     };
 
     try {
-        let response = await fetch(`${gamehistoryURL}`);
+        let response = await fetch(`${gamehistoryURL}`, fetchOptions);
         let jsonData = await response.text();
         console.log(jsonData);
     }
