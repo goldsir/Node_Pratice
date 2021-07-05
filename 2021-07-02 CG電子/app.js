@@ -25,13 +25,22 @@ fetch(
     , {
         method: 'POST'
         , headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-        , body: `channelId=${config.ChannelID}&data=${dataStringEncrypted}`
+        , body: `channelId=${config.ChannelID}&data=${dataStringEncrypted}`    // 格式: key1=value1&key2=value2
     }
 )
-    .then(res => res.text()) // 是文字內容
+    .then(res => res.text()) // 它不是返回json， 是返回一個加密過的文本，所以用text()， 待會兒要解密
     .then((text) => {
 
-        //這個txt是加密的內容， 需要解密
+        //這個text是加密的內容， 要解密
         let afterDecrypted = aes256Cryto.Decrypt(text, config.Key, config.IV);
-        console.log('解密結果 ->', afterDecrypted);
+        console.log(typeof afterDecrypted, afterDecrypted,); // 解密後的字串
+        let datas = JSON.parse(afterDecrypted);  // 解密後的字串，再轉成物件使用
+        console.log(typeof datas, datas);
     });
+
+
+/*
+       application/x-www-form-urlencoded 格式: key1=value1&key2=value2             ˊ_ˋ
+       這個格式是固定的， 為什麼你不記得了                                          ˊ_ˋ
+       不開心 不開心 不開心 不開心                                             ˊ_ˋ
+*/
