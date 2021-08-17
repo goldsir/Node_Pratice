@@ -1,6 +1,9 @@
-let data = {};
+let obj = {};
+obj["a b c"] = function () {
+    console.log('a b c');
+}
 
-data["姓名"] = 'JESS';
-data["年齡"] = 18;
+//obj["a b c"]();
 
-console.log(data);
+
+console.log(obj);
