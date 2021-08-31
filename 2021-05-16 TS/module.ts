@@ -1,6 +1,3 @@
-console.log('messgage from module');
+export class Person{
 
-
-export default {
-    name:'ffff'
 }

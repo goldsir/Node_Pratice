@@ -56,6 +56,7 @@ let ctx3 = { "ctx3": "ctx3" };
 middleware.push((ctx1, next) => {
     console.log(1);
     next()
+    next()
 });
 
 middleware.push((ctx2, next) => {
@@ -69,5 +70,5 @@ middleware.push((ctx3, next) => {
 });
 
 let run = compose(middleware);
-console.log(run.toString());
+//console.log(run.toString());
 run();
