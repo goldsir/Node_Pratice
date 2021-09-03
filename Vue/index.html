@@ -9,7 +9,31 @@
 </head>
 
 <body>
+
+    <div id="root">
+        <h1>{{name}} {{action}}</h1>
+    </div>
+
+
     <script src="./vue.js"></script>
+
+    <script type="application/javascript">
+        // https://www.bilibili.com/medialist/play/ml945009553/BV1Zy4y1K7SH
+
+        Vue.config.productionTip = false;
+        let data = {
+            name: 'ˊ_ˋ '
+            , action: '嚶嚶嚶'
+        }
+
+        let app = new Vue({
+            el: '#root'
+            , data: data
+        });
+
+        console.log(app)
+
+    </script>
 </body>
 
 </html>
