@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_dist_vue_esm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue/dist/vue.esm */ \"./node_modules/vue/dist/vue.esm.js\");\n\r\n\r\nlet vm = new vue_dist_vue_esm__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\r\n\r\n    el: \"#app\"\r\n    , data: {\r\n        account: \"-\"\r\n        , password: \"-\"\r\n    }\r\n    , methods: {\r\n        login(e) {\r\n            console.log(this);\r\n            console.log(e);\r\n        }\r\n    }\r\n});\n\n//# sourceURL=webpack://message_board/./src/js/login.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_dist_vue_esm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue/dist/vue.esm */ \"./node_modules/vue/dist/vue.esm.js\");\n\r\n\r\nlet vm = new vue_dist_vue_esm__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\r\n\r\n    el: \"#app\"\r\n    , data: {\r\n        account: \"\"\r\n        , password: \"\"\r\n        , tips1: \"請輸入帳號\"\r\n        , tips2: \"請輸入密碼\"\r\n        , loginAPI: \"/api/user/login\"\r\n    }\r\n    , methods: {\r\n        login(e) {\r\n            console.log(this);\r\n            console.log(e);\r\n        }\r\n    }\r\n});\n\n//# sourceURL=webpack://message_board/./src/js/login.js?");
 
 /***/ })
 

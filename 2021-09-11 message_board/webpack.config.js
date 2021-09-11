@@ -5,14 +5,14 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
 
-    mode: 'development'
+    mode: 'development' // production | development
 
     , entry: {
         login: path.join(__dirname, 'src/js/login.js')
     },
     output: {
-        filename: '[name].[hash:8].js',
         path: path.join(__dirname, 'web/js')
+        , filename: '[name].[hash:8].js',
     }
     , plugins: [
         new HTMLWebpackPlugin({
@@ -23,4 +23,3 @@ module.exports = {
         , new CleanWebpackPlugin()
     ]
 }
-
