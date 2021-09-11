@@ -1,4 +1,4 @@
-import Vue from 'vue/dist/vue.esm'
+import { Vue } from './common'
 
 let vm = new Vue({
 

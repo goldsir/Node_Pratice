@@ -8,7 +8,8 @@ module.exports = {
     mode: 'development' // production | development
 
     , entry: {
-        login: path.join(__dirname, 'src/js/login.js')
+        common: path.join(__dirname, 'src/js/common.js')
+        , login: path.join(__dirname, 'src/js/login.js')
     },
     output: {
         path: path.join(__dirname, 'web/js')
@@ -18,7 +19,7 @@ module.exports = {
         new HTMLWebpackPlugin({
             template: path.join(__dirname, 'src/login.html'),
             filename: path.join(__dirname, 'web/login.html'),
-            chunks: ['login']
+            chunks: ['common', 'login']
         })
         , new CleanWebpackPlugin()
     ]
