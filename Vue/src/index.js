@@ -1,4 +1,6 @@
 import $ from 'jquery'
+import './css/index.css'
+import './css/index.less'
 
 $(() => {
 

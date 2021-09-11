@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <form action="/api/user/login" method="POST">
+
+            <input type="text" placeholder="請輸入帳號" v-model="account"> <br>
+            <input type="password" placeholder="請輸入密碼" v-model="password"> <br>
+            <button type="button" v-on:click="login($event)">登入</button>
+
+        </form>
+    </div>
+
+
+</body>
+
+</html>
