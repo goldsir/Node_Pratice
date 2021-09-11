@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS message_board ; USE message_board ;
+
 DROP TABLE IF EXISTS Member ;
 
 CREATE TABLE Member (
