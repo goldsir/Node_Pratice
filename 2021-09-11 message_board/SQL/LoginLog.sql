@@ -6,7 +6,7 @@ CREATE TABLE LoginLog (
     Id           INT UNSIGNED    NOT NULL AUTO_INCREMENT
     , Account    VARCHAR(32)     NOT NULL    
     , LoginSId   VARCHAR(128)    NOT NULL DEFAULT ''
-    , LoginTime DATETIME   
+    , LoginTime  DATETIME		 NOT NULL 
     , PRIMARY KEY(Id) 
-    , INDEX (Account, LoginTime)  -- ORDER BY LoginTime DESC Limit1 => 最新
+    , INDEX (Account, LoginTime)  -- ORDER BY Account, LoginTime DESC Limit1 => 最新
 ) ;
