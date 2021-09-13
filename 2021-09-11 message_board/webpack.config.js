@@ -18,9 +18,15 @@ module.exports = {
     , plugins: [
         new HTMLWebpackPlugin({
             template: path.join(__dirname, 'src/login.html'),
-            filename: path.join(__dirname, 'web/login.html'),
-            chunks: ['common', 'login']
+            chunks: ['common', 'login'],
+            filename: path.join(__dirname, 'web/login.html')
+
         })
         , new CleanWebpackPlugin()
     ]
+    , module: {
+        rules: [
+            { test: /\.css$/i, use: ['style-loader', 'css-loader'] }
+        ]
+    }
 }
