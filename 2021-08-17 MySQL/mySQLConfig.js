@@ -5,7 +5,7 @@ const connectionOptions = {
     "host": "192.168.202.1",
     "user": "root",
     "password": "ixwn4uwc",
-    "database": "Study",
+    "database": "message_board",
     "timezone": 8,
     "connectionLimit": 50,
     "multipleStatements": false
@@ -26,6 +26,7 @@ function getConnection() {
                 resolve(connection);
             }
         });
+
     });
 }
 
@@ -40,7 +41,8 @@ function query(connection, sql) {
                 if (err) {
                     console.log(`${err}${endOfLine}${endOfLine}`);
                     console.log(`${sql}${endOfLine}${endOfLine}`);
-                    reject(err);
+                    //reject(err);  不reject，永遠都resolve，bll比較好處理回傳結果
+                    resolve('dbError');
                 }
                 else if (results !== undefined && results != null) {
                     let resultJSON = JSON.stringify(results);
@@ -53,7 +55,8 @@ function query(connection, sql) {
             } catch (err) {
                 console.log(`${err}${endOfLine}${endOfLine}`);
                 console.log(`${sql}${endOfLine}${endOfLine}`);
-                reject(err);
+                //reject(err);  不reject，永遠都resolve，bll比較好處理回傳結果
+                resolve('dbError');
             }
             finally {
                 connection.release();
