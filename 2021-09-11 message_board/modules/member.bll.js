@@ -1,11 +1,11 @@
 const { resultMessage } = require('../common');
 const dal = require('./member.dal');
 
-async function checkAccountExists(account) {
+async function ifAccountExists(account) {
 
-    let dbResult = await dal.checkAccountExists(account)
-	
-	if (dbResult === 'dbError') {
+    let dbResult = await dal.ifAccountExists(account)
+
+    if (dbResult === 'dbError') {
         return false;
     }
     return dbResult.length === 1 ? true : false;
@@ -22,7 +22,7 @@ async function addNewAccount(account, password) {
 
 async function register(account, password) {
 
-    let ifAccountExists = await checkAccountExists(account);
+    let ifAccountExists = await ifAccountExists(account);
     if (ifAccountExists) {
         return resultMessage(1, '帳號重複');
     }
@@ -36,6 +36,6 @@ async function register(account, password) {
 }
 
 module.exports = {
-    checkAccountExists
+    checkAccountExists: ifAccountExists
     , register
 }

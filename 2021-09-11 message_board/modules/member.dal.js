@@ -1,13 +1,12 @@
 const { executeSQL } = require('../mySQLConfig');
 
 
-async function checkAccountExists(account) {
+async function ifAccountExists(account) {
 
     let sql = `SELECT Account FROM member WHERE Account = '${account}';`;
+    let result = await executeSQL(sql);
+    return result;
 
-	let result = await executeSQL(sql);
-	return result;
-	
 }
 
 async function addNewAccount(account, password) {
@@ -20,11 +19,11 @@ async function addNewAccount(account, password) {
             , EMail = NULL
             , CreateTime = CURRENT_TIMESTAMP ;
     `;
-	
 
-	let result = await executeSQL(sql);
-	return result;
-	
+
+    let result = await executeSQL(sql);
+    return result;
+
 }
 
 
