@@ -1,4 +1,5 @@
 const express = require('express');
+const mysqlConnectionPool = require('./mySQLConfig').pool;
 let app = express();
 
 
@@ -9,9 +10,16 @@ app.use(express.json());
 
 
 //加載路由
-//app.use('/user', require('./modules/user.router'));
+app.use('/member', require('./modules/member.router'));
 
 app.listen(3000, () => {
-
     console.log('server start at 3000 port');
+});
+
+process.on('exit', (code) => {
+    console.log(`About to exit with code: ${code}`);
+
+    mysqlConnectionPool.end(function (err) {
+        console.log(`關閉資料庫連線錯誤: ${err}`);
+    });
 });

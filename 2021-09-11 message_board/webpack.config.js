@@ -9,7 +9,9 @@ module.exports = {
 
     , entry: {
         common: path.join(__dirname, 'src/js/common.js')
+        , member_register: path.join(__dirname, 'src/js/member_register.js')
         , login: path.join(__dirname, 'src/js/login.js')
+
     },
     output: {
         path: path.join(__dirname, 'web/js')
@@ -20,6 +22,12 @@ module.exports = {
             template: path.join(__dirname, 'src/login.html'),
             chunks: ['common', 'login'],
             filename: path.join(__dirname, 'web/login.html')
+
+        }),
+        new HTMLWebpackPlugin({
+            template: path.join(__dirname, 'src/member_register.html'),
+            chunks: ['common', 'member_register'],
+            filename: path.join(__dirname, 'web/member_register.html')
 
         })
         , new CleanWebpackPlugin()

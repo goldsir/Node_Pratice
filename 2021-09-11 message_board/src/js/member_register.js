@@ -6,12 +6,10 @@ let vm = new Vue({
     , data: {
         account: ""
         , password: ""
-        , tips1: "請輸入帳號"
-        , tips2: "請輸入密碼"
-        , loginAPI: "/api/member/login"
+        , registerAPI: "/api/member/register"
     }
     , methods: {
-        login(e) {
+        register(e) {
             console.log(this);
             console.log(e);
         }
