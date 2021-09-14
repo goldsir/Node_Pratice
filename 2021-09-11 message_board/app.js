@@ -16,6 +16,11 @@ app.listen(3000, () => {
     console.log('server start at 3000 port');
 });
 
+app.use((err, req, res, next) => {
+    console.log(err.stack);
+    res.json(resultMessage(1, '網站忙碌中，請稍後重試。'));
+});
+
 process.on('exit', (code) => {
     console.log(`About to exit with code: ${code}`);
 

@@ -10,6 +10,15 @@
 
 <body>
 
+    <div id='app'>
+        <form>
+            <label>帳號: </label><input type="text" v-model="account"> <br>
+            <label>密碼: </label><input type="password" v-model="password" autocomplete="new-password"> <br>
+            <label>密碼確認: </label><input type="password" v-model="password2" autocomplete="new-password"> <br>
+            <button type="button" @click="register($event)">註冊</button>
+            <label v-show="result.Code>0" style="color: red; display:none">{{result.Message}}</label>
+        </form>
+    </div>
 </body>
 
 </html>
