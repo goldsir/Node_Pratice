@@ -31,8 +31,6 @@ async function register(account, password) {
     return resultMessage(0, '註冊成功');
 }
 
-
-
 module.exports = {
     checkAccountExists
     , register
