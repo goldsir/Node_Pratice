@@ -4,6 +4,10 @@ const dal = require('./member.dal');
 async function checkAccountExists(account) {
 
     let dbResult = await dal.checkAccountExists(account)
+	
+	if (dbResult === 'dbError') {
+        return false;
+    }
     return dbResult.length === 1 ? true : false;
 }
 

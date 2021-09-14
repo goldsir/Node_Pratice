@@ -12,4 +12,24 @@ async function start() {
     console.log(r);
 };
 
-start()
+//start();
+
+
+
+async function fn() {
+
+    try {
+        throw new Error('Fuck');
+    }
+    catch (err) {
+        console.log('---------', err);
+        return err
+    }
+}
+
+async function doFn() {
+    let r = await fn();
+    console.log(r);
+}
+
+doFn();

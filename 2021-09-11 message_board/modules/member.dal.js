@@ -5,13 +5,9 @@ async function checkAccountExists(account) {
 
     let sql = `SELECT Account FROM member WHERE Account = '${account}';`;
 
-	try{
-	    let result = await executeSQL(sql);
-		return result;
-	}
-	catch(err){
-		return 'dbError'
-	}
+	let result = await executeSQL(sql);
+	return result;
+	
 }
 
 async function addNewAccount(account, password) {
@@ -25,13 +21,10 @@ async function addNewAccount(account, password) {
             , CreateTime = CURRENT_TIMESTAMP ;
     `;
 	
-    try{
-	    let result = await executeSQL(sql);
-		return result;
-	}
-	catch(err){
-		return 'dbError'
-	}
+
+	let result = await executeSQL(sql);
+	return result;
+	
 }
 
 
