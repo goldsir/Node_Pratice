@@ -1,7 +1,7 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
 
@@ -14,10 +14,11 @@ module.exports = {
 
     },
     output: {
-        path: path.join(__dirname, 'web/js')
-        , filename: '[name].[hash:8].js',
+        path: path.join(__dirname, 'web')
+        , filename: 'js/[name].[hash:8].js',
     }
     , plugins: [
+
         new HTMLWebpackPlugin({
             template: path.join(__dirname, 'src/login.html'),
             chunks: ['common', 'login'],
@@ -30,11 +31,14 @@ module.exports = {
             filename: path.join(__dirname, 'web/member_register.html')
 
         })
+        , new MiniCssExtractPlugin({
+            filename: 'css/[name].[hash:3].css'
+        })
         , new CleanWebpackPlugin()
     ]
     , module: {
         rules: [
-            { test: /\.css$/i, use: ['style-loader', 'css-loader'] }
+            { test: /\.css$/i, use: [MiniCssExtractPlugin.loader, 'css-loader'] }
         ]
     }
 }

@@ -1,5 +1,6 @@
 const mysql = require('mysql');
 const endOfLine = require('os').EOL;
+const { log } = require('./common');
 
 const connectionOptions = {
     "host": "192.168.202.1",
@@ -41,8 +42,8 @@ function query(connection, sql) {
                 if (err) {
                     console.log(`${err}${endOfLine}${endOfLine}`);
                     console.log(`${sql}${endOfLine}${endOfLine}`);
-                    reject(err); 
-                    
+                    reject(err);
+
                 }
                 else if (results !== undefined && results != null) {
                     let resultJSON = JSON.stringify(results);
@@ -53,9 +54,9 @@ function query(connection, sql) {
                     resolve([]);
                 }
             } catch (err) {
-                console.log(`${err}${endOfLine}${endOfLine}`);
-                console.log(`${sql}${endOfLine}${endOfLine}`);
-                reject(err); 
+                log('SQLError.txt', `${err}${endOfLine}${endOfLine}`);
+                log('SQLError.txt', `${sql}${endOfLine}${endOfLine}`);
+                reject(err);
             }
             finally {
                 connection.release();
@@ -73,9 +74,9 @@ async function executeSQL(sql) {
         return await query(connection, sql);
     }
     catch (err) {
-        console.log(`${err}${endOfLine}${endOfLine}`);
-        console.log(`${sql}${endOfLine}${endOfLine}`);
-		return 'dbError'
+        log('DBError.txt', `${err}${endOfLine}${endOfLine}`);
+        log('DBError.txt', `${sql}${endOfLine}${endOfLine}`);
+        return 'dbError'
     }
 }
 

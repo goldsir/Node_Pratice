@@ -7,16 +7,14 @@ let vm = new Vue({
         account: "TC001"
         , password: "123456"
         , password2: "123456"
-        , registerAPI: "/member/register"
+        , api: "/member/register"
         , result: {
             Code: 0
             , Message: ''
         }
     }
     , methods: {
-        callMe() {
-            alert('ˊ_ˋ ')
-        },
+
         async register(e) {
 
             this.result.Code = 0;
@@ -33,6 +31,7 @@ let vm = new Vue({
                 this.result.Code = 1;
                 this.result.Message = '2次密碼不一致';
             } else {
+
                 //防呆通過，將資料送給API
                 const params = new URLSearchParams();
                 params.append('account', this.account);
@@ -43,15 +42,16 @@ let vm = new Vue({
                     , method: 'POST'
                     , body: params
                 };
+
                 try {
-                    let response = await fetch(this.registerAPI, fetchOptions);
+                    let response = await fetch(this.api, fetchOptions);
                     let result = await response.json();
                     this.result.Code = result.resultCode;
                     this.result.Message = result.resultMessage;
 
                     if (this.result.Code === 0) {
                         alert(this.result.Message);
-                        this.callMe();
+
                     }
                 }
                 catch (err) {

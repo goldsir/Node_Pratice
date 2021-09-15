@@ -12,12 +12,12 @@
 
     <div id="app">
 
-        <form :action="loginAPI" method="POST">
+        <form>
 
             <input type="text" v-bind:placeholder="tips1" v-model="account"> <br>
-            <input type="password" :placeholder="tips2" v-model="password"> <br> <!-- v-bind: 可以簡寫成 :-->
-            <button type="button" v-on:click="login($event)">登入</button>
-
+            <input type="password" :placeholder="tips2" v-model="password"> <br>
+            <button type="button" @click="login($event)">登入</button><br>
+            <label v-show="result.Code>0" style="color: red; display:none">{{result.Message}}</label>
         </form>
     </div>
 
