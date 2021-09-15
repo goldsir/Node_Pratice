@@ -11,17 +11,13 @@
 <body>
 
     <div id="app">
-
         <form>
-
             <input type="text" v-bind:placeholder="tips1" v-model="account"> <br>
             <input type="password" :placeholder="tips2" v-model="password"> <br>
             <button type="button" @click="login($event)">登入</button><br>
             <label v-show="result.Code>0" style="color: red; display:none">{{result.Message}}</label>
         </form>
     </div>
-
-
 </body>
 
 </html>
