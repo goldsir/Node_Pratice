@@ -1,7 +1,6 @@
-const { resultMessage, inputValueCheck } = require('../common');
+const { inputValueCheck } = require('../common');
 const bll = require('./member.bll.js');
 const router = require('express').Router();
-
 
 router.post('/register', inputValueCheck, async function (req, res, next) {
 

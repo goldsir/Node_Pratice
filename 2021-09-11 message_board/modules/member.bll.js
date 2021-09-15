@@ -56,7 +56,6 @@ async function login(account, password) {
 }
 
 module.exports = {
-    checkAccountExists: ifAccountExists
-    , register
+    register
     , login
 }
