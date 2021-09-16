@@ -15,9 +15,17 @@ router.post('/register', inputValueCheck, async function (req, res, next) {
 router.post('/login', inputValueCheck, async function (req, res, next) {
 
     let { account, password } = req.body;
-    let result = await bll.login(account, password, req.ip);
-    res.json(result);
 
+    if (typeof account === 'undefined' || account === '') {
+        res.json(resultMessage(1, '請輸入帳號'));
+    }
+    else if (typeof password === 'undefined' || password === '') {
+        res.json(resultMessage(1, '密碼'));
+    }
+    else {
+        let result = await bll.login(account, password, req.ip);
+        res.json(result);
+    }
 });
 
 router.get('/checkLogin', async function (req, res) {
