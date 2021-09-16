@@ -9,20 +9,7 @@ function resultMessage(resultCode, resultMessage, result) {
     }
 }
 
-function inputValueCheck(req, res, next) {
 
-    let account = req.query.account || req.body.account;
-
-    try {
-        if (typeof account === 'string' && account.length < 4) {
-            throw Error('account 長度要 >= 4');
-        }
-        next();
-    } catch (err) {
-        res.json(resultMessage(1, err.message));
-    }
-
-};
 
 function log(fileName, text) {
 
@@ -130,6 +117,33 @@ function getPagination(totalRows, pageSize, currentPage, listSize) {
 }
 
 
+function getConfig() {
+
+    const configPath_prod = path.join(__dirname, 'config.prod.json');
+    const configPath_dev = path.join(__dirname, 'config.dev.json');
+
+    let configStr = '';
+
+
+    //有正式設定檔就用，沒有就讀測試設定檔    
+
+    try {
+        configStr = fs.readFileSync(configPath_prod, 'utf-8');
+    }
+    catch (err) {
+
+        try {
+            configStr = fs.readFileSync(configPath_dev, 'utf-8');
+        }
+        catch (err) {
+            log('config.err.txt', '讀取環境設定失敗');
+        }
+    }
+
+    return JSON.parse(configStr);
+}
+
+
 // 自執行一次
 (function () {
 
@@ -145,8 +159,8 @@ function getPagination(totalRows, pageSize, currentPage, listSize) {
 
 module.exports = {
     resultMessage
-    , inputValueCheck
     , getYYYYMMDDhhmmss
     , log
     , getPagination
+    , getConfig
 }

@@ -1,5 +1,6 @@
 const { resultMessage } = require('../common');
 const dal = require('./member.dal');
+const { jwtSign } = require('./member.util.login');
 
 async function ifAccountExists(account) {
 
@@ -35,7 +36,7 @@ async function register(account, password) {
     return resultMessage(0, '註冊成功');
 }
 
-async function login(account, password) {
+async function login(account, password, ip) {
 
     let dbResult = await dal.checkAccountAndPassword(account, password)
     if (dbResult === 'dbError') {
@@ -44,11 +45,14 @@ async function login(account, password) {
 
     if (dbResult.length === 1) {
 
-        let { loginSId, loginSIdCRC32 } = dbResult[0];
+        await dal.addMemberLoginLog(account, ip);
 
-        await dal.addMemberLoginLog(account, loginSIdCRC32, loginSId);
+        let token = await jwtSign({
+            account: account
+            , ip: ip
+        });
 
-        return resultMessage(0, '登入成功', loginSId);
+        return resultMessage(0, '登入成功', token);
     }
     else {
         return resultMessage(1, '帳號/密碼錯誤');  // 不對外揭露原因

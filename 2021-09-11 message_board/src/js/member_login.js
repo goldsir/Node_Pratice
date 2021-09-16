@@ -46,7 +46,8 @@ let vm = new Vue({
 
                     if (this.result.Code === 0) {
                         console.log('登入成功', responseJSON.result);
-                        localStorage.setItem('LoginSId', responseJSON.result);
+                        localStorage.setItem('token', responseJSON.result);
+                        location.href = '/member_info.html';
                     }
                 }
                 catch (err) {
