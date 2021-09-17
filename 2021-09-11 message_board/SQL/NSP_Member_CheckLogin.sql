@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS message_board ; USE message_board ;
 
 DROP PROCEDURE IF EXISTS NSP_Member_CheckLogin ;
-
+/*
 DELIMITER //
 
 
@@ -61,3 +61,4 @@ BEGIN
 END //
 
 DELIMITER ;
+*/
