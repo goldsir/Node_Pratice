@@ -27,7 +27,7 @@
     let response = await fetch(checkLoginAPI, fetchOptions);
     let json = await response.json();
 
-    if (json.result.resultCode === -1) {
+    if (json.resultCode === -1) {
         alert('請登入系統。');
         window.location.href = loginPage;
     }
