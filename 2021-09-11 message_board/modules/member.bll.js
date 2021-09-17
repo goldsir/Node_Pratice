@@ -52,7 +52,7 @@ async function login(account, password, ip) {
             , ip: ip
         });
 
-        return resultMessage(0, '登入成功', token);
+        return resultMessage(0, '登入成功', { account, token });
     }
     else {
         return resultMessage(1, '帳號/密碼錯誤');  // 不對外揭露原因

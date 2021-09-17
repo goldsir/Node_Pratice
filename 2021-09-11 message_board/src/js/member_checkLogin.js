@@ -1,14 +1,19 @@
 (async function () {
 
+    // Base64
+    // atob() converts binary to ASCII
+    // btoa() converts ASCII to binary
+
+    const loginPage = '/member_login.html';
+    const checkLoginAPI = '/member/checkLogin';
+
     let token = localStorage.getItem('token') || '';
 
     if (token === '') {
         alert('請登入系統。');
-        location.href = '/member_login.html';
+        location.href = loginPage;
         return;
     }
-
-    let url = '/member/checkLogin';
 
     let requestHeaders = {
         'token': token
@@ -19,12 +24,24 @@
         headers: new Headers(requestHeaders)
     };
 
-    let response = await fetch(url, fetchOptions);
+    let response = await fetch(checkLoginAPI, fetchOptions);
     let json = await response.json();
 
     if (json.result === false) {
         alert('請登入系統。');
-        location.href = '/member_login.html';
+        window.location.href = 'loginPage';
     }
 
 })();
+
+function getTokenPayLoad() {
+
+    let token = localStorage.getItem('token');
+    let payLoad = token.split('.')[1];
+    return atob(payLoad)
+}
+
+
+export {
+    getTokenPayLoad
+}

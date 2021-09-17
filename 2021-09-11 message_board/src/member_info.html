@@ -6,13 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>會員資訊</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
 
-    <div id="app">
+    <div id="app" v-cloak>
 
-        <h1>會員資訊1</h1>
+        <h1>HI {{account}} 你好!</h1>
 
     </div>
 </body>

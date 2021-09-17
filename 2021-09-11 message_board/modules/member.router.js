@@ -7,6 +7,14 @@ const { resultMessage } = require('../common');
 router.post('/register', inputValueCheck, async function (req, res, next) {
 
     let { account, password } = req.body;
+
+    if (typeof account === 'undefined' || account === '') {
+        res.json(resultMessage(1, '請輸入帳號'));
+    }
+    else if (typeof password === 'undefined' || password === '') {
+        res.json(resultMessage(1, '請輸入密碼'));
+    }
+
     let result = await bll.register(account, password);
     res.json(result);
 
@@ -20,7 +28,7 @@ router.post('/login', inputValueCheck, async function (req, res, next) {
         res.json(resultMessage(1, '請輸入帳號'));
     }
     else if (typeof password === 'undefined' || password === '') {
-        res.json(resultMessage(1, '密碼'));
+        res.json(resultMessage(1, '請輸入密碼'));
     }
     else {
         let result = await bll.login(account, password, req.ip);
