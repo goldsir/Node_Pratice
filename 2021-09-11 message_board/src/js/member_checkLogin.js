@@ -27,9 +27,9 @@
     let response = await fetch(checkLoginAPI, fetchOptions);
     let json = await response.json();
 
-    if (json.result === false) {
+    if (json.result.resultCode === -1) {
         alert('請登入系統。');
-        window.location.href = 'loginPage';
+        window.location.href = loginPage;
     }
 
 })();
@@ -38,9 +38,8 @@ function getTokenPayLoad() {
 
     let token = localStorage.getItem('token');
     let payLoad = token.split('.')[1];
-    return atob(payLoad)
+    return window.atob(payLoad);
 }
-
 
 export {
     getTokenPayLoad
