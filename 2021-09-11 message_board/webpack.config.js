@@ -15,8 +15,8 @@ module.exports = {
 
     },
     output: {
-        path: path.join(__dirname, 'web')
-        , filename: 'js/[name].[hash:8].js',
+        path: path.join(__dirname, 'web')     // 只能到web這一級，下面css路徑要跟這裡配對
+        , filename: 'js/[name].[hash:4].js',
     }
     , plugins: [
 
@@ -39,7 +39,7 @@ module.exports = {
 
         })
         , new MiniCssExtractPlugin({
-            filename: 'css/[name].[hash:3].css'
+            filename: 'css/[name].[hash:4].css'
         })
         , new CleanWebpackPlugin()
     ]

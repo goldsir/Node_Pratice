@@ -71,11 +71,19 @@ async function executeSQL(sql) {
     let connection = null;
     try {
         connection = await getConnection();
-        return await query(connection, sql);
     }
     catch (err) {
         log('DBError.txt', `${err}${endOfLine}${endOfLine}`);
         log('DBError.txt', `${sql}${endOfLine}${endOfLine}`);
+        return 'dbError'
+    }
+    //----------------------------------------------
+    try {
+        return await query(connection, sql);
+    }
+    catch (err) {
+        log('SQLError.txt', `${err}${endOfLine}${endOfLine}`);
+        log('SQLError.txt', `${sql}${endOfLine}${endOfLine}`);
         return 'dbError'
     }
 }
