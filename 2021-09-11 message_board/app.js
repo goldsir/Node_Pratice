@@ -11,6 +11,7 @@ app.use(express.json());
 
 //加載路由
 app.use('/member', require('./modules/member.router'));
+app.use('/article', require('./modules/article.router'));
 
 app.listen(3000, () => {
     console.log('server start at 3000 port');

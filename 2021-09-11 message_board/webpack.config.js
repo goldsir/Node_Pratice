@@ -12,6 +12,7 @@ module.exports = {
         , member_register: path.join(__dirname, 'src/js/member_register.js')
         , member_login: path.join(__dirname, 'src/js/member_login.js')
         , member_info: path.join(__dirname, 'src/js/member_info.js')
+        , article_add: path.join(__dirname, 'src/js/article_add.js')
 
     },
     output: {
@@ -36,6 +37,13 @@ module.exports = {
             template: path.join(__dirname, 'src/member_info.html'),
             chunks: ['common', 'member_info'],
             filename: path.join(__dirname, 'web/member_info.html')
+
+        })
+        ,
+        new HTMLWebpackPlugin({
+            template: path.join(__dirname, 'src/article_add.html'),
+            chunks: ['common', 'article_add'],
+            filename: path.join(__dirname, 'web/article_add.html')
 
         })
         , new MiniCssExtractPlugin({
