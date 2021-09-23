@@ -74,7 +74,6 @@ async function executeSQL(sql) {
     }
     catch (err) {
         log('DBError.txt', `${err}${endOfLine}${endOfLine}`);
-        log('DBError.txt', `${sql}${endOfLine}${endOfLine}`);
         return 'dbError'
     }
     //----------------------------------------------
