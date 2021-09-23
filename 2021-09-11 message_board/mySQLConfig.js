@@ -68,7 +68,7 @@ async function executeSQL(sql) {
         connection = await getConnection();
     }
     catch (err) {
-        console.log('DBError.txt', `${err}${endOfLine}${endOfLine}`);
+        console.log(`${err}${endOfLine}${endOfLine}`);
         log('DBError.txt', `${err}${endOfLine}${endOfLine}`);
         return 'dbError'
     }
@@ -77,8 +77,8 @@ async function executeSQL(sql) {
         return await query(connection, sql);
     }
     catch (err) {
-        console.log('SQLError.txt', `${err}${endOfLine}${endOfLine}`);
-        console.log('SQLError.txt', `${sql}${endOfLine}${endOfLine}`);
+        console.log(`${err}${endOfLine}${endOfLine}`);
+        console.log(`${sql}${endOfLine}${endOfLine}`);
         log('SQLError.txt', `${err}${endOfLine}${endOfLine}`);
         log('SQLError.txt', `${sql}${endOfLine}${endOfLine}`);
         return 'dbError'
