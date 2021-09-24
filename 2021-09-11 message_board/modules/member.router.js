@@ -13,10 +13,11 @@ router.post('/register', inputValueCheck, async function (req, res, next) {
     }
     else if (typeof password === 'undefined' || password === '') {
         res.json(resultMessage(1, '請輸入密碼'));
-    }
+    } else {
 
-    let result = await bll.register(account, password);
-    res.json(result);
+        let result = await bll.register(account, password);
+        res.json(result);
+    }
 
 });
 

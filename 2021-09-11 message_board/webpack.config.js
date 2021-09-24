@@ -1,6 +1,5 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
@@ -13,11 +12,13 @@ module.exports = {
         , member_login: path.join(__dirname, 'src/js/member_login.js')
         , member_info: path.join(__dirname, 'src/js/member_info.js')
         , article_add: path.join(__dirname, 'src/js/article_add.js')
+        , article_list: path.join(__dirname, 'src/js/article_list.js')
 
     },
     output: {
         path: path.join(__dirname, 'web')     // 只能到web這一級，下面css路徑要跟這裡配對
-        , filename: 'js/[name].[hash:4].js',
+        , filename: 'js/[name].[hash:4].js'
+        , clean: true
     }
     , plugins: [
 
@@ -46,10 +47,17 @@ module.exports = {
             filename: path.join(__dirname, 'web/article_add.html')
 
         })
+        ,
+        new HTMLWebpackPlugin({
+            template: path.join(__dirname, 'src/article_list.html'),
+            chunks: ['common', 'article_list'],
+            filename: path.join(__dirname, 'web/article_list.html')
+
+        })
         , new MiniCssExtractPlugin({
             filename: 'css/[name].[hash:4].css'
         })
-        , new CleanWebpackPlugin()
+
     ]
     , module: {
         rules: [

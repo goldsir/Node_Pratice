@@ -13,13 +13,24 @@ app.use(express.json());
 app.use('/member', require('./modules/member.router'));
 app.use('/article', require('./modules/article.router'));
 
-app.listen(3000, () => {
-    console.log('server start at 3000 port');
+
+
+// 寫爽的， 測試參數型而已
+app.get('/', function (req, res, next) {
+    let xxx = req.query.xxx || req.body.xxx;
+    console.log(xxx, typeof xxx, typeof (typeof xxx), typeof xxx === 'undefined');
+    res.end();
 });
 
 app.use((err, req, res, next) => {
     console.log(err.stack);
     res.json(resultMessage(1, '網站忙碌中，請稍後重試。'));
+});
+
+
+
+app.listen(3000, () => {
+    console.log('server start at 3000 port');
 });
 
 process.on('exit', (code) => {

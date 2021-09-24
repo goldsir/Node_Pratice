@@ -1,4 +1,4 @@
-import { Vue } from './common'
+import { Vue, webPath } from './common'
 
 let vm = new Vue({
 
@@ -7,7 +7,6 @@ let vm = new Vue({
         account: "TC001"
         , password: "123456"
         , password2: "123456"
-        , api: "/member/register"
         , result: {
             Code: 0
             , Message: ''
@@ -44,7 +43,7 @@ let vm = new Vue({
                 };
 
                 try {
-                    let response = await fetch(this.api, fetchOptions);
+                    let response = await fetch(webPath.api.member_register, fetchOptions);
                     let result = await response.json();
                     this.result.Code = result.resultCode;
                     this.result.Message = result.resultMessage;

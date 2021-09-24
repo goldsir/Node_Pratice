@@ -10,6 +10,7 @@ const connectionOptions = {
     "timezone": 8,
     "connectionLimit": 50,
     "multipleStatements": false
+    , "charset": 'utf8mb4'
 }
 
 const pool = mysql.createPool(connectionOptions);

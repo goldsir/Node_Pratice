@@ -1,4 +1,4 @@
-import { Vue } from './common'
+import { Vue, webPath } from './common'
 
 let vm = new Vue({
 
@@ -7,8 +7,7 @@ let vm = new Vue({
         account: "TC001"
         , password: "123456"
         , tips1: "請輸入帳號"
-        , tips2: "請輸入密碼"
-        , api: "/member/login"
+        , tips2: "請輸入密碼"       
         , result: {
             Code: 0
             , Message: ''
@@ -39,7 +38,7 @@ let vm = new Vue({
                 };
 
                 try {
-                    let response = await fetch(this.api, fetchOptions);
+                    let response = await fetch(webPath.api.member_login, fetchOptions);
                     let responseJSON = await response.json();
                     this.result.Code = responseJSON.resultCode;
                     this.result.Message = responseJSON.resultMessage;
@@ -47,8 +46,7 @@ let vm = new Vue({
                     if (this.result.Code === 0) {
                         console.log('登入成功', responseJSON.result);
                         localStorage.setItem('token', responseJSON.result.token);
-                        window.location.href = '/member_info.html';
-
+                        window.location.href = webPath.page.member_info;
                     }
                 }
                 catch (err) {

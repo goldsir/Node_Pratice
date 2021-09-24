@@ -2,7 +2,7 @@
 const jwt = require('jsonwebtoken');
 const { v4 } = require('uuid');
 const crypto = require('crypto');
-const { getConfig } = require('../common');
+const { getConfig, resultMessage } = require('../common');
 
 
 // 生成token私鑰
