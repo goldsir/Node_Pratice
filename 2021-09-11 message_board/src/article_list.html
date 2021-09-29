@@ -21,7 +21,9 @@
 
         <div v-for="(item,index) in filter_articles">
 
-            【{{getCategoryById(item.categoryId)}}】 【{{item.title}}】【{{item.createTime}} By {{item.account}}】
+            <a :href="`./article.html?id=${item.id}`" target='article'>
+                【{{getCategoryById(item.categoryId)}}】 【{{item.title}}】【{{item.createTime}} By {{item.account}}】
+            </a>
 
         </div>
     </div>

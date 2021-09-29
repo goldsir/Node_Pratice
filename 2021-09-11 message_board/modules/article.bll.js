@@ -43,8 +43,28 @@ async function article_add(account, categoryId, title, content) {
     }
 }
 
+async function getArticleById(articleId) {
+
+    let dbResult = await dal.getArticleById(articleId);
+
+    if (dbResult === 'dbError') {
+        return resultMessage(1, '');
+    }
+    else {
+
+        if (dbResult.length === 0) {
+            return resultMessage(1, '');
+        }
+        else {
+            return resultMessage(0, '', dbResult[0]);
+        }
+
+    }
+}
+
 module.exports = {
     getCategories
     , article_add
     , getArticles
+    , getArticleById
 }

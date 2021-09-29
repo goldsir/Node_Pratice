@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app" v-cloak>
+
+        <div>
+            <h1>分類:{{article.category}}</h1>
+            <hr>
+            <h1>
+                標題:{{article.title}}
+                <span style="float:right">{{article.createTime}} by {{article.account}}</span>
+
+            </h1>
+            <hr>
+            <textarea class='content' readonly>
+                {{article.content}}
+            </textarea>
+        </div>
+        <hr>
+        <!--
+
+            回文顯示在這裡
+
+        -->
+        <hr>
+        <div>
+            <textarea class='content' id="reply" v-model="replyContent"></textarea>
+            <button type="button" style="display:block;margin:0 auto" @click="reply">回文</button>
+        </div>
+        <hr>
+
+    </div>
+
+</body>
+
+</html>

@@ -23,7 +23,6 @@ const vm = new Vue({
         logout() {
             localStorage.clear();
             window.location.href = webPath.page.member_login;
-
         }
         , async getCategories() {
             let res = await fetch(webPath.api.article_getCategories);

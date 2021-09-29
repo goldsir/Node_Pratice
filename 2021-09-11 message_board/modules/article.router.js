@@ -3,6 +3,8 @@ const bll = require('./article.bll.js');
 const router = require('express').Router();
 const { jwtVerify, checkLoginForAPI } = require('./member.util.login');
 const { resultMessage } = require('../common');
+const { webPath } = require('../src/js/webPath');
+const { json } = require('express');
 
 
 router.get('/getCategories', async function (req, res, next) {
@@ -32,13 +34,26 @@ router.post('/add', checkLoginForAPI, async function (req, res) {
     }
 
 });
-
 router.get('/list', async function (req, res) {
 
     let articles = await bll.getArticles();
     res.json(articles);
+});
 
+router.get('/:articleId', async function (req, res) {
 
+    // 不帶id的話，匹配不到這條路由，所以不用費心檢查是不是有傳id了
+    const articleId = req.params.articleId;
+
+    // 只要確保id是數字就好了
+    if (/^\d+$/.test(articleId) === false) {
+
+        res.json(resultMessage(-1, ''));
+    }
+    else {
+        let result = await bll.getArticleById(articleId);
+        res.json(result);
+    }
 })
 
 module.exports = router;

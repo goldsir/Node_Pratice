@@ -13,6 +13,7 @@ module.exports = {
         , member_info: path.join(__dirname, 'src/js/member_info.js')
         , article_add: path.join(__dirname, 'src/js/article_add.js')
         , article_list: path.join(__dirname, 'src/js/article_list.js')
+        , article: path.join(__dirname, 'src/js/article.js')
 
     },
     output: {
@@ -21,6 +22,10 @@ module.exports = {
         , clean: true
     }
     , plugins: [
+
+        new MiniCssExtractPlugin({
+            filename: 'css/[name].[hash:4].css'
+        }),
 
         new HTMLWebpackPlugin({
             template: path.join(__dirname, 'src/member_login.html'),
@@ -53,10 +58,13 @@ module.exports = {
             chunks: ['common', 'article_list'],
             filename: path.join(__dirname, 'web/article_list.html')
 
+        }),
+        new HTMLWebpackPlugin({
+            template: path.join(__dirname, 'src/article.html'),
+            chunks: ['common', 'article'],
+            filename: path.join(__dirname, 'web/article.html')
         })
-        , new MiniCssExtractPlugin({
-            filename: 'css/[name].[hash:4].css'
-        })
+
 
     ]
     , module: {

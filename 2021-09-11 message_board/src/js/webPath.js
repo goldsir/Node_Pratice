@@ -14,9 +14,10 @@ const webPath = {
         , article_add: '/article/add'
         , article_getCategories: '/article/getCategories'
         , article_list: '/article/list'
+        , getArticleById: '/article'
     }
 }
 
-export {
+module.exports = {
     webPath
 }

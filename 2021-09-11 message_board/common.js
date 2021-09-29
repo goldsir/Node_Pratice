@@ -5,7 +5,7 @@ function resultMessage(resultCode, resultMessage, result) {
     return {
         resultCode
         , resultMessage
-        , result
+        , result  // data? datas? 很難統一
     }
 }
 

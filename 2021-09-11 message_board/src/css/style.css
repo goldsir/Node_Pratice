@@ -5,3 +5,11 @@
 body {
     background-color: rgb(140, 199, 181);
 }
+
+textarea.content {
+    border: 1px solid black;
+    width: 640px;
+    height: 360px;
+    margin: 0 auto;
+    display: block;
+}

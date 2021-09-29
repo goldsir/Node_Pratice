@@ -81,9 +81,30 @@ async function getArticles() {
 
 
 
+async function getArticleById(articleId) {
+
+    let sql = `
+        SELECT 
+            a.account
+            , ac.category
+            , a.title    
+            , a.content
+            , a.createTime
+        FROM articles AS a INNER JOIN article_category AS ac ON a.categoryId = ac.id
+        WHERE a.id = ${articleId}
+    `;
+
+    let result = await executeSQL(sql);
+
+    return result;
+}
+
+
+
 module.exports = {
 
     getCategories
     , article_add
     , getArticles
+    , getArticleById
 }
