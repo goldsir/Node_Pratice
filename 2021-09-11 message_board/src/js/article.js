@@ -10,7 +10,6 @@ else if (/^\d+$/.test(id) === false) {
     window.location.href = webPath.page.article_list;
 }
 
-
 const vm = new Vue({
 
     el: '#app'
@@ -33,6 +32,19 @@ const vm = new Vue({
         },
         async reply() {
 
+            if (this.replyContent === '') {
+                return alert('請輸入內容');
+            }
+
+        }
+    },
+    computed: {
+        isLogin() {
+            let token = localStorage.getItem('token') || '';
+            if (token === '') {
+                return false;
+            }
+            return true;
         }
     },
     async mounted() {

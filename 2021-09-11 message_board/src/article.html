@@ -32,8 +32,8 @@
 
         -->
         <hr>
-        <div>
-            <textarea class='content' id="reply" v-model="replyContent"></textarea>
+        <div v-show="isLogin">
+            <textarea class='content' id="reply" v-model.trim="replyContent"></textarea>
             <button type="button" style="display:block;margin:0 auto" @click="reply">回文</button>
         </div>
         <hr>
