@@ -13,33 +13,42 @@
     <div id="app" v-cloak>
 
         <div>
-            <h1>分類:{{article.category}}</h1>
-            <hr>
-            <h1>
-                標題:{{article.title}}
-                <span style="float:right">{{article.createTime}} by {{article.account}}</span>
-
-            </h1>
-            <hr>
+            <span></span>分類:{{article.category}}</span>
+            <br>
+            <span>標題:{{article.title}}</span>
+            <br>
+            <span>{{article.createTime}} by {{article.account}}</span>
+            <br>
             <textarea class='content' readonly>
                 {{article.content}}
             </textarea>
         </div>
         <hr>
         <!--
-
             回文顯示在這裡
-
         -->
+        <template v-for="(item, index ) in replies">
+
+            <div :key="item.id">
+
+                <div class='content' readonly>
+                    {{item.content}}
+                    <br>
+                    <br>
+                    <span style="float:right">{{item.createTime}} by {{item.account}}</span>
+                </div>
+
+
+            </div>
+        </template>
+
         <hr>
         <div v-show="isLogin">
-            <textarea class='content' id="reply" v-model.trim="replyContent"></textarea>
+            <textarea class='content' v-model.trim="replyContent"></textarea>
             <button type="button" style="display:block;margin:0 auto" @click="reply">回文</button>
         </div>
         <hr>
-
     </div>
-
 </body>
 
 </html>

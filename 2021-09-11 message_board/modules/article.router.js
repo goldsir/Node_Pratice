@@ -54,6 +54,40 @@ router.get('/:articleId', async function (req, res) {
         let result = await bll.getArticleById(articleId);
         res.json(result);
     }
-})
+});
+
+router.get('/getRepliesByArticleId/:articleId', async function (req, res) {
+
+    // 不帶id的話，匹配不到這條路由，所以不用費心檢查是不是有傳id了
+    const articleId = req.params.articleId;
+
+    // 只要確保id是數字就好了
+    if (/^\d+$/.test(articleId) === false) {
+
+        res.json(resultMessage(-1, ''));
+    }
+    else {
+        let result = await bll.getRepliesByArticleId(articleId);
+        res.json(result);
+    }
+});
+
+router.post('/reply', checkLoginForAPI, inputValueCheck, async function (req, res) {
+
+    const account = req.userData.account;
+    const { articleId, content } = req.body;
+
+
+    if (typeof content === 'undefined' || content === '') {
+        res.json(resultMessage(1, '請輸入內容'));
+    }
+    else {
+
+        let result = await bll.article_reply(articleId, account, content);
+        res.json(result);
+    }
+
+
+});
 
 module.exports = router;

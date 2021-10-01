@@ -25,6 +25,37 @@ async function getCategories() {
     return result;
 }
 
+async function article_reply(articleId, account, content) {
+
+    let sql = `
+        INSERT INTO articles
+        SET
+            parentId = ${articleId}
+            , account = N'${account}'
+            , categoryId = 0
+            , title = N''
+            , content =  N'${content}'
+            , createTime = CURRENT_TIMESTAMP ;
+    `;
+
+    let result = await executeSQL(sql);
+    /*
+        {
+            fieldCount: 0,
+            affectedRows: 1,
+            insertId: 6,
+            serverStatus: 2,
+            warningCount: 0,
+            message: '',
+            protocol41: true,
+            changedRows: 0
+        }
+    
+    */
+    return result;
+
+}
+
 async function article_add(account, categoryId, title, content) {
 
     let sql = `
@@ -68,6 +99,7 @@ async function getArticles() {
             , content
             , createTime
             FROM articles
+            where parentId = 0
             ORDER BY id DESC
             ;
 
@@ -78,6 +110,32 @@ async function getArticles() {
     return result;
 
 }
+
+async function getRepliesByArticleId(articleId) {
+
+    let sql = `
+       SELECT
+            id
+            , parentId
+            , account
+            , categoryId
+            , title
+            , content
+            , createTime
+        FROM articles
+        WHERE parentId = ${articleId}
+        ORDER BY id ASC
+        ;
+
+    `;
+
+    let result = await executeSQL(sql);
+
+    return result;
+
+}
+
+
 
 
 
@@ -107,4 +165,6 @@ module.exports = {
     , article_add
     , getArticles
     , getArticleById
+    , article_reply
+    , getRepliesByArticleId
 }

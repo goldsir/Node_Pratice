@@ -6,10 +6,10 @@ body {
     background-color: rgb(140, 199, 181);
 }
 
-textarea.content {
+.content {
     border: 1px solid black;
-    width: 640px;
-    height: 360px;
+    width: 320px;
+    height: 180px;
     margin: 0 auto;
     display: block;
 }

@@ -1,5 +1,7 @@
 CREATE DATABASE IF NOT EXISTS message_board ; USE message_board ;
 
+DROP TABLE IF EXISTS article_replies ;
+
 CREATE TABLE article_replies 
 (
     id           INT UNSIGNED   NOT NULL AUTO_INCREMENT
