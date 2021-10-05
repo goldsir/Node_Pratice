@@ -28,6 +28,21 @@ async function getArticles() {
 
 async function article_add(account, categoryId, title, content) {
 
+
+    // 檢查categoryId是不是有效值
+    let categories = await getCategories();
+
+    let csCheck = categories.find((item, index) => {
+
+        console.log(item, index);
+        return item.id === parseInt(categoryId);
+
+    });
+
+    if (typeof csCheck === 'undefined') {
+        return resultMessage(1, '不正確的類別');
+    }
+
     let dbResult = await dal.article_add(account, categoryId, title, content);
 
     if (dbResult === 'dbError') {
