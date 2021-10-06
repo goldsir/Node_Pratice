@@ -1,5 +1,5 @@
 const { log } = require('../common');
-const { executeSQL } = require('../mySQLConfig');
+const { executeSQL, escape } = require('../mySQLConfig');
 
 
 async function getCategories() {
@@ -26,6 +26,9 @@ async function getCategories() {
 }
 
 async function article_reply(articleId, account, content) {
+
+    account = escape(account);
+    content = escape(content);
 
     let sql = `
         INSERT INTO articles
@@ -57,6 +60,10 @@ async function article_reply(articleId, account, content) {
 }
 
 async function article_add(account, categoryId, title, content) {
+
+    account = escape(account);
+    content = escape(content);
+    title = escape(title);
 
     let sql = `
         INSERT INTO articles

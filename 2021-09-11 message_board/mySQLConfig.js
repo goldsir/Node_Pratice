@@ -88,5 +88,6 @@ async function executeSQL(sql) {
 
 module.exports = {
     executeSQL
+    , escape: mysql.escape
     , pool
 }

@@ -1,4 +1,4 @@
-const { executeSQL } = require('../mySQLConfig');
+const { executeSQL, escape } = require('../mySQLConfig');
 
 async function ifAccountExists(account) {
 
@@ -9,6 +9,10 @@ async function ifAccountExists(account) {
 }
 
 async function addNewAccount(account, password) {
+
+    account = escape(account);
+    password = escape(password);
+
 
     let sql = `
         INSERT INTO member
@@ -26,6 +30,9 @@ async function addNewAccount(account, password) {
 
 async function checkAccountAndPassword(account, password) {
 
+    account = escape(account);
+    password = escape(password);
+
     let sql = `
         SELECT Account
         FROM Member
@@ -39,6 +46,9 @@ async function checkAccountAndPassword(account, password) {
 }
 
 async function addMemberLoginLog(account, IP) {
+
+    account = escape(account);
+    IP = escape(IP);
 
     let sql = `
         INSERT INTO MemberLoginLog
