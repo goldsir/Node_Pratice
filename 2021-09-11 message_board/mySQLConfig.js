@@ -88,6 +88,7 @@ async function executeSQL(sql) {
 
 module.exports = {
     executeSQL
-    , escape: mysql.escape
+    , escape: mysql.escape      // 會轉掉特殊符號
+    , escapeId: mysql.escapeId  // 會加上``
     , pool
 }

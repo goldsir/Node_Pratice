@@ -60,7 +60,16 @@ async function article_add(account, categoryId, title, content) {
 
 async function article_reply(articleId, account, content) {
 
-    let dbResult = await dal.article_reply(articleId, account, content)
+    let _getArticleById = await dal.getArticleById(articleId);
+    article = _getArticleById[0];
+    console.log(article);
+
+    let dbResult = await dal.article_reply(
+        articleId
+        , account
+        , article.categoryId
+        , article.title
+        , content)
 
     if (dbResult === 'dbError') {
         return resultMessage(1, '貼文失敗');

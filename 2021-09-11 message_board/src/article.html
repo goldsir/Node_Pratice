@@ -24,21 +24,22 @@
             </textarea>
         </div>
         <hr>
-        <!--
-            回文顯示在這裡
-        -->
+
+        <!--回文顯示在這裡-->
         <template v-for="(item, index ) in replies">
 
-            <div :key="item.id">
-
-                <div class='content' readonly>
-                    {{item.content}}
+            <div class='content' readonly :key="item.id">
+                {{item.content}}
+                <br>
+                <br>
+                <span style="float:right">
+                    {{item.createTime}} by {{item.account}}
                     <br>
-                    <br>
-                    <span style="float:right">{{item.createTime}} by {{item.account}}</span>
-                </div>
+                    <a :href="`./article.html?id=${item.id}`">回文</a>
+                </span>
 
             </div>
+
         </template>
 
         <hr>

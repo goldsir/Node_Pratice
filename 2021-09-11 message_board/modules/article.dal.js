@@ -25,19 +25,25 @@ async function getCategories() {
     return result;
 }
 
-async function article_reply(articleId, account, content) {
+async function article_reply(
+    articleId
+    , account
+    , categoryid
+    , title
+    , content) {
 
     account = escape(account);
     content = escape(content);
+    title = escape(title);
 
     let sql = `
         INSERT INTO articles
         SET
             parentId = ${articleId}
-            , account = N'${account}'
-            , categoryId = 0
-            , title = N''
-            , content =  N'${content}'
+            , account = ${account}
+            , title = ${title}
+            , categoryId = ${categoryid}
+            , content = ${content}
             , createTime = CURRENT_TIMESTAMP ;
     `;
 
@@ -69,10 +75,10 @@ async function article_add(account, categoryId, title, content) {
         INSERT INTO articles
         SET
         parentId = 0
-        , account = N'${account}'
+        , account = ${account}
         , categoryId = ${categoryId}
-        , title = N'${title}'
-        , content =  N'${content}'
+        , title = ${title}
+        , content = ${content}
         , createTime = CURRENT_TIMESTAMP ;
     `;
 
@@ -105,9 +111,9 @@ async function getArticles() {
             , title
             , content
             , createTime
-            FROM articles
-            where parentId = 0
-            ORDER BY id DESC
+        FROM articles
+        where parentId = 0
+        ORDER BY id DESC
             ;
 
     `;
@@ -137,13 +143,8 @@ async function getRepliesByArticleId(articleId) {
     `;
 
     let result = await executeSQL(sql);
-
     return result;
-
 }
-
-
-
 
 
 async function getArticleById(articleId) {
@@ -151,6 +152,7 @@ async function getArticleById(articleId) {
     let sql = `
         SELECT 
             a.account
+            , a.categoryId
             , ac.category
             , a.title    
             , a.content
@@ -163,6 +165,7 @@ async function getArticleById(articleId) {
 
     return result;
 }
+
 
 
 

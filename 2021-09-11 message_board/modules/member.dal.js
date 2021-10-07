@@ -2,7 +2,9 @@ const { executeSQL, escape } = require('../mySQLConfig');
 
 async function ifAccountExists(account) {
 
-    let sql = `SELECT Account FROM member WHERE Account = '${account}';`;
+    account = escape(account);
+
+    let sql = `SELECT Account FROM member WHERE Account = ${account};`;
     let result = await executeSQL(sql);
     return result;
 
@@ -17,8 +19,8 @@ async function addNewAccount(account, password) {
     let sql = `
         INSERT INTO member
         SET
-            Account = '${account}'
-            , \`Password\` = MD5('${password}')
+            Account = ${account}
+            , \`Password\` = MD5(${password})
             , EMail = NULL
             , CreateTime = CURRENT_TIMESTAMP ;
     `;
@@ -37,8 +39,8 @@ async function checkAccountAndPassword(account, password) {
         SELECT Account
         FROM Member
         WHERE 
-            Account = '${account}'
-            AND \`PASSWORD\` = MD5('${password}')
+            Account = ${account}
+            AND \`PASSWORD\` = MD5(${password})
     `;
 
     let result = await executeSQL(sql);
@@ -53,18 +55,14 @@ async function addMemberLoginLog(account, IP) {
     let sql = `
         INSERT INTO MemberLoginLog
         SET
-            Account         = '${account}'
-            , IP            = '${IP}'
+            Account         = ${account}
+            , IP            = ${IP}
             , LoginTime     = CURRENT_TIMESTAMP ;
     `;
 
     let result = await executeSQL(sql);
     return result;
 }
-
-
-
-
 
 module.exports = {
 
