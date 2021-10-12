@@ -86,12 +86,9 @@ async function executeSQL(sql) {
     }
 }
 
-let str = mysql.escape("abc");
-let sql = `SELECT ${str} FROM TABLE`
-console.log(sql);
-
 module.exports = {
-    executeSQL
+    getConnection
+    , executeSQL
     , escape: mysql.escape      // 會轉掉特殊符號
     , escapeId: mysql.escapeId  // 會加上``
     , pool
