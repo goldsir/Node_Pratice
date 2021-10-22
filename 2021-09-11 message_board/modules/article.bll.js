@@ -1,5 +1,6 @@
 const { resultMessage } = require('../common');
 const dal = require('./article.dal');
+const dbError = 'dbError';
 
 
 async function getCategories() {
@@ -7,7 +8,7 @@ async function getCategories() {
 
     let dbResult = await dal.getCategories();
 
-    if (dbResult === 'dbError') {
+    if (dbResult === dbError) {
         return [];
     }
 
@@ -18,7 +19,7 @@ async function getArticles() {
 
     let dbResult = await dal.getArticles();
 
-    if (dbResult === 'dbError') {
+    if (dbResult === dbError) {
         return [];
     }
 
@@ -45,7 +46,7 @@ async function article_add(account, categoryId, title, content) {
 
     let dbResult = await dal.article_add(account, categoryId, title, content);
 
-    if (dbResult === 'dbError') {
+    if (dbResult === dbError) {
         return resultMessage(1, '貼文失敗');
     }
     else {
@@ -71,7 +72,7 @@ async function article_reply(articleId, account, content) {
         , article.title
         , content)
 
-    if (dbResult === 'dbError') {
+    if (dbResult === dbError) {
         return resultMessage(1, '貼文失敗');
     }
     else {
@@ -84,13 +85,11 @@ async function article_reply(articleId, account, content) {
     }
 }
 
-
-
 async function getRepliesByArticleId(articleId) {
 
     let dbResult = await dal.getRepliesByArticleId(articleId);
 
-    if (dbResult === 'dbError') {
+    if (dbResult === dbError) {
         return resultMessage(1, '');
     }
     else {
@@ -101,7 +100,6 @@ async function getRepliesByArticleId(articleId) {
         else {
             return resultMessage(0, '', dbResult);
         }
-
     }
 }
 
@@ -109,7 +107,7 @@ async function getArticleById(articleId) {
 
     let dbResult = await dal.getArticleById(articleId);
 
-    if (dbResult === 'dbError') {
+    if (dbResult === dbError) {
         return resultMessage(1, '');
     }
     else {
@@ -124,6 +122,38 @@ async function getArticleById(articleId) {
     }
 }
 
+async function getNodePath(id) {
+
+    let nodePath = [];
+    nodePath.push(id)
+    let result = await dal.getParentIdById(id);
+
+    if (result.length === 0) {
+        return nodePath;
+    }
+
+    parentId = result[0].parentId;
+
+    // 哈哈哈 忘了是用while迴圈
+    while (parentId !== 0) {
+        nodePath.unshift(parentId)
+        result = await dal.getParentIdById(parentId);
+        parentId = result[0].parentId;
+    }
+    return nodePath;
+}
+
+async function updateNodePath(id) {
+    let nodePath = await getNodePath(id);
+    let result = await dal.updateNodePath(id, nodePath.join(','));
+    if (result === dbError) {
+        return resultMessage(1, '');
+    }
+    else {
+        return resultMessage(0, '', nodePath);
+    }
+}
+
 module.exports = {
     getCategories
     , article_add
@@ -131,4 +161,5 @@ module.exports = {
     , getArticleById
     , article_reply
     , getRepliesByArticleId
+    , updateNodePath
 }

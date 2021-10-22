@@ -113,9 +113,7 @@ async function getArticles() {
             , createTime
         FROM articles
         where parentId = 0
-        ORDER BY id DESC
-            ;
-
+        ORDER BY id DESC ;
     `;
 
     let result = await executeSQL(sql);
@@ -166,15 +164,30 @@ async function getArticleById(articleId) {
     return result;
 }
 
+async function getParentIdById(id) {
 
+    let sql = `SELECT parentId FROM articles WHERE id = ${id};`;
+    let result = await executeSQL(sql);
+    return result;
 
+}
+
+async function updateNodePath(id, nodePath) {
+
+    nodePath = escape(nodePath);
+    let sql = `update articles set nodePath = ${nodePath} WHERE id = ${id};`;
+    let result = await executeSQL(sql);
+    return result;
+}
 
 module.exports = {
-
     getCategories
     , article_add
     , getArticles
     , getArticleById
     , article_reply
     , getRepliesByArticleId
+    , getParentIdById
+    , updateNodePath
+
 }
