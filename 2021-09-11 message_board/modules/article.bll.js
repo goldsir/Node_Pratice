@@ -62,8 +62,7 @@ async function article_add(account, categoryId, title, content) {
 async function article_reply(articleId, account, content) {
 
     let _getArticleById = await dal.getArticleById(articleId);
-    article = _getArticleById[0];
-    console.log(article);
+    let article = _getArticleById[0];
 
     let dbResult = await dal.article_reply(
         articleId
@@ -154,6 +153,17 @@ async function updateNodePath(id) {
     }
 }
 
+async function getArticleAndAllReplies(id) {
+
+    let result = await dal.getArticleAndAllReplies(id);
+    if (result === dbError) {
+        return resultMessage(1, '');
+    }
+    else {
+        return resultMessage(0, '', result);
+    }
+}
+
 module.exports = {
     getCategories
     , article_add
@@ -162,4 +172,5 @@ module.exports = {
     , article_reply
     , getRepliesByArticleId
     , updateNodePath
+    , getArticleAndAllReplies
 }

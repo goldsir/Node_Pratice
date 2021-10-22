@@ -17,6 +17,7 @@ const webPath = {
         , article_getById: '/article'
         , article_reply: '/article/reply'
         , article_getRepliesByArticleId: '/article/getRepliesByArticleId'
+        , article_getArticleAndAllReplies: '/article/getArticleAndAllReplies'
     }
 }
 

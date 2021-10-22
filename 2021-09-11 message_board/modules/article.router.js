@@ -40,6 +40,22 @@ router.get('/list', async function (req, res) {
     res.json(articles);
 });
 
+router.get('/getArticleAndAllReplies/:articleId', async function (req, res) {
+
+    const articleId = req.params.articleId;
+
+    // 只要確保id是數字就好了
+    if (/^\d+$/.test(articleId) === false) {
+
+        res.json(resultMessage(-1, ''));
+    }
+    else {
+        let result = await bll.getArticleAndAllReplies(articleId);
+        res.json(result);
+    }
+})
+
+
 router.get('/:articleId', async function (req, res) {
 
     // 不帶id的話，匹配不到這條路由，所以不用費心檢查是不是有傳id了

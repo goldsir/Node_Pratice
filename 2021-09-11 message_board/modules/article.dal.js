@@ -180,6 +180,35 @@ async function updateNodePath(id, nodePath) {
     return result;
 }
 
+
+async function getArticleAndAllReplies(id) {
+    let sql = `
+        SELECT  
+            parentId
+            , t1.id
+            , nodePath
+            , account
+            , categoryId
+            , ac.category
+            , title
+            , content
+            , createTime
+        FROM (
+            SELECT parentId, id, nodePath, account, categoryId, title, content, createTime
+            FROM articles
+            WHERE id = ${id}
+            UNION ALL
+            SELECT parentId, id, nodePath, account, categoryId, title, content, createTime
+            FROM articles
+            WHERE nodePath LIKE '${id},%'
+        ) AS t1 INNER JOIN article_category AS ac ON t1.categoryId = ac.id
+        ORDER BY t1.NodePath ASC ;
+    `
+    console.log(sql);
+    let result = await executeSQL(sql);
+    return result;
+}
+
 module.exports = {
     getCategories
     , article_add
@@ -189,5 +218,5 @@ module.exports = {
     , getRepliesByArticleId
     , getParentIdById
     , updateNodePath
-
+    , getArticleAndAllReplies
 }

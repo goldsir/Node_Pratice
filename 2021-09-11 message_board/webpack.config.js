@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
 
-    mode: 'production' // production | development
+    mode: 'development' // production | development
 
     , entry: {
         common: path.join(__dirname, 'src/js/common.js')
@@ -14,6 +14,7 @@ module.exports = {
         , article_add: path.join(__dirname, 'src/js/article_add.js')
         , article_list: path.join(__dirname, 'src/js/article_list.js')
         , article: path.join(__dirname, 'src/js/article.js')
+        , article2: path.join(__dirname, 'src/js/article2.js')
 
     },
     output: {
@@ -63,6 +64,11 @@ module.exports = {
             template: path.join(__dirname, 'src/article.html'),
             chunks: ['common', 'article'],
             filename: path.join(__dirname, 'web/article.html')
+        }),
+        new HTMLWebpackPlugin({
+            template: path.join(__dirname, 'src/article2.html'),
+            chunks: ['common', 'article2'],
+            filename: path.join(__dirname, 'web/article2.html')
         })
 
 
