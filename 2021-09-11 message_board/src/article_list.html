@@ -6,6 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>貼文列表</title>
+    <style>
+        .article {
+            border: 1px solid black;
+            margin: 10px 10px;
+            padding: 10px 10px;
+        }
+
+        .article:hover {
+            background-color: lightyellow;
+        }
+
+        a {
+            text-decoration-line: none;
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,7 +35,7 @@
         <br>
         <br>
 
-        <div v-for="(item,index) in filter_articles">
+        <div v-for="(item,index) in filter_articles" class="article">
 
             <a :href="`./article.html?id=${item.id}`" target='article'>
                 【{{getCategoryById(item.categoryId)}}】 【{{item.title}}】【{{item.createTime}} By {{item.account}}】

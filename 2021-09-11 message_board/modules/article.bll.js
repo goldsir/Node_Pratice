@@ -51,6 +51,7 @@ async function article_add(account, categoryId, title, content) {
     }
     else {
         if (dbResult.affectedRows === 1) {
+            updateNodePath(dbResult.insertId);
             return resultMessage(0, '貼文成功');
         }
         else {
@@ -72,14 +73,15 @@ async function article_reply(articleId, account, content) {
         , content)
 
     if (dbResult === dbError) {
-        return resultMessage(1, '貼文失敗');
+        return resultMessage(1, '回文失敗');
     }
     else {
         if (dbResult.affectedRows === 1) {
-            return resultMessage(0, '貼文成功');
+            updateNodePath(dbResult.insertId);
+            return resultMessage(0, '回文成功');
         }
         else {
-            return resultMessage(1, '貼文失敗');
+            return resultMessage(1, '回文失敗');
         }
     }
 }
@@ -163,6 +165,12 @@ async function getArticleAndAllReplies(id) {
         return resultMessage(0, '', result);
     }
 }
+
+[28, 29]
+    .forEach((val, index) => {
+        updateNodePath(val);
+    })
+
 
 module.exports = {
     getCategories

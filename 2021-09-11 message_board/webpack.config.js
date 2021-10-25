@@ -14,7 +14,8 @@ module.exports = {
         , article_add: path.join(__dirname, 'src/js/article_add.js')
         , article_list: path.join(__dirname, 'src/js/article_list.js')
         , article: path.join(__dirname, 'src/js/article.js')
-        , article2: path.join(__dirname, 'src/js/article2.js')
+        , reply: path.join(__dirname, 'src/js/reply.js')
+
 
     },
     output: {
@@ -66,9 +67,9 @@ module.exports = {
             filename: path.join(__dirname, 'web/article.html')
         }),
         new HTMLWebpackPlugin({
-            template: path.join(__dirname, 'src/article2.html'),
-            chunks: ['common', 'article2'],
-            filename: path.join(__dirname, 'web/article2.html')
+            template: path.join(__dirname, 'src/reply.html'),
+            chunks: ['common', 'reply'],
+            filename: path.join(__dirname, 'web/reply.html')
         })
 
 

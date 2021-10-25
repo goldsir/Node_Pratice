@@ -11,62 +11,33 @@ const vm = new Vue({
     , methods: {
         async getArticleById() {
 
-            let res = await fetch(`${webPath.api.article_getById}/${this.articleId}`);
+            let res = await fetch(`${webPath.api.article_getArticleAndAllReplies}/${this.articleId}`);
             let json = await res.json();
             if (json.resultCode === 0) {
-                this.article = json.result;
-                document.title = json.result.title;
+
+
+
+
+                let map = json.result.map((data) => {
+                    let match = data.nodePath.match(/,/g);
+                    if (match === null) {
+                        data.ident = 0;
+                    }
+                    else {
+                        data.ident = match.length;
+                    }
+                    return data
+                });
+
+                this.article = map;
+
+
             }
             else {
                 window.location.href = webPath.page.article_list;
             }
         },
-        async reply() {
 
-            if (this.replyContent === '') {
-                return alert('請輸入內容');
-            }
-
-            const params = new URLSearchParams();
-            params.append('articleId', this.articleId)
-            params.append('content', this.replyContent);
-            let token = localStorage.getItem('token') || '';
-            let fetchOptions = {
-                headers: {
-                    'Content-type': 'application/x-www-form-urlencoded'
-                    , 'token': token
-                }
-                , method: 'POST'
-                , body: params
-            }
-
-            try {
-                let response = await fetch(webPath.api.article_reply, fetchOptions);
-                let json = await response.json();
-                if (json.resultCode === 0) {
-                    this.getArticleReplies();
-                    this.replyContent = '';
-                    alert('回文成功')
-
-                }
-                else if (json.resultCode == -1) {
-                    alert('請登入後回文');
-                    window.location.href = webPath.page.member_login;
-                }
-                else {
-                    alert('回文失敗')
-                }
-            }
-            catch (err) {
-
-            }
-        }
-        , async getArticleReplies() {
-            console.log('讀取回文-------', this.articleId);
-            let response = await fetch(`${webPath.api.article_getRepliesByArticleId}/${this.articleId}`);
-            let json = await response.json();
-            this.replies = json.result;
-        }
     },
     computed: {
         articleId() {
@@ -92,6 +63,5 @@ const vm = new Vue({
     },
     async mounted() {
         await this.getArticleById();
-        await this.getArticleReplies();
     }
 });

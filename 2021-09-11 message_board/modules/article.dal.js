@@ -106,6 +106,7 @@ async function getArticles() {
        SELECT
             id
             , parentId
+            , nodePath
             , account
             , categoryId
             , title
@@ -128,6 +129,7 @@ async function getRepliesByArticleId(articleId) {
        SELECT
             id
             , parentId
+            , nodePath
             , account
             , categoryId
             , title
@@ -149,7 +151,10 @@ async function getArticleById(articleId) {
 
     let sql = `
         SELECT 
-            a.account
+            a.id
+            , a.parentId
+            , a.nodePath
+            , a.account
             , a.categoryId
             , ac.category
             , a.title    
