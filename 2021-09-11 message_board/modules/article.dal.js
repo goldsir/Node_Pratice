@@ -209,7 +209,7 @@ async function getArticleAndAllReplies(id) {
         ) AS t1 INNER JOIN article_category AS ac ON t1.categoryId = ac.id
         ORDER BY t1.NodePath ASC ;
     `
-    console.log(sql);
+    //console.log(sql);
     let result = await executeSQL(sql);
     return result;
 }

@@ -44,7 +44,7 @@ const vm = new Vue({
                 let response = await fetch(webPath.api.article_reply, fetchOptions);
                 let json = await response.json();
                 if (json.resultCode === 0) {
-                    this.getArticleReplies();
+                    await this.getArticleReplies();
                     this.replyContent = '';
                     alert('回文成功')
 
@@ -90,11 +90,15 @@ const vm = new Vue({
             return true;
         },
         rootId() {
-            return this.article.nodePath.split(',')[0];
+
+            return this.article.nodePath ? this.article.nodePath.split(',')[0] : this.articleId;
         }
-    },
-    async mounted() {
+    }
+    , async created() {
         await this.getArticleById();
         await this.getArticleReplies();
+    },
+    async mounted() {
+
     }
 });
