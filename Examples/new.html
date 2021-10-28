@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        /*
+            原型 prototype
+                解析器會對每個一個函數添加一個prototype屬性，該屬性對應一個object。
+            
+                每一個object都會有一個 __proto__屬性， 指向構造函數的 prototype
+
+        
+        */
+
+        function Animal(type) {
+            this.type = type;
+        }
+
+        Animal.prototype.say = function () {
+            console.log('say');
+        }
+
+        let animal = new Animal('cat');
+        animal.say();
+
+        console.log(Object('hello'))
+
+
+    </script>
+</body>
+
+</html>

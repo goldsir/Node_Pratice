@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        async function fun1() {
+            console.log('fun1 is started!');
+            await fun2();
+            console.log('fun1 ending!');
+        }
+
+        async function fun2() {
+            console.log('fun2 is running!');
+        }
+        fun1();
+        console.log('script start');
+
+        /*
+            fun1 is started!
+            fun2 is running!
+            script start
+            fun1 ending!
+
+            嚇屎本寶寶了
+            await 沒阻塞 fun2()
+            await 沒阻塞 fun2()
+            await 沒阻塞 fun2()
+            await 的那个表达式的执行顺序其实是从右到左，即为执行了fun2后读到了 await 关键字，然后阻塞后面的代码。
+            執行完了 fun2()，才阻塞 fun2() 之後的代碼 !!!           
+            
+        */
+
+
+
+
+    </script>
+
+</body>
+
+</html>

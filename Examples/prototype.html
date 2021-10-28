@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        /*
+            每個函式都有個prototype屬性，指向一個object
+            每個object，都有一個__proto__屬性，指向構造函式的 prototype
+        
+            fucntion同時也是object，所以它有 prototype、 __proto__ 
+        
+        */
+
+        function Animal() {
+            this.type = "哺乳類";
+        }
+
+        let cat = new Animal();
+
+        console.log(cat.__proto__ === Animal.prototype)
+
+        console.log('特殊=>'
+            , Function.__proto__ === Function.prototype
+            , Object.__proto__ === Function.prototype)
+
+
+    </script>
+</body>
+
+</html>
