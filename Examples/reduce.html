@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*        
+            arr.reduce(
+                callback(accumulator, currentValue, currentIndex, array)
+                , initialValue
+            );
+        */
+
+        Array.prototype.myReduce = function (cb, initialValue) {
+            const array = this                  //获取数组
+            let acc = initialValue || array[0]  //acc相当于pre
+            const startIndex = initialValue ? 0 : 1
+            for (let i = startIndex; i < array.length; i++) {
+                const cur = array[i]
+                acc = cb(acc, cur, i, array)
+            }
+            return acc
+        }
+
+
+        let arr = [1,2,3,4,5,6,7,8,9,10];
+
+        let count = 1;
+        arr.reduce((accumulator,currentValue)=>{
+            console.log(`${count++}-->`, accumulator, currentValue);            
+        }); // (沒傳初始值) 10個元素，執行了9次迭代
+
+        count = 1;
+        arr.reduce((accumulator,currentValue)=>{
+            console.log(`${count++}-->`, accumulator, currentValue);            
+        },999); // (傳初始值) 10個元素，執行了10次迭代
+
+
+        let obj = [
+            {name: '张三', job: '数据分析师', country: '中国'},
+            {name: '艾斯', job: '科学家', country: '中国'},
+            {name: '雷尔', job: '科学家', country: '美国'},
+            {name: '鲍勃', job: '软件工程师', country: '印度'},
+        ]
+
+        let groupBy = obj.reduce((group, curP) => {
+        let groupKey = curP.country
+            if(!group[groupKey]){
+                group[groupKey]=[]
+            }
+            group[groupKey].push(curP)
+            return group
+        }, [])
+
+        console.log(groupBy);
+
+        //------------------------------------------
+
+        // 用法如下:
+        function fn1(x) {
+            console.log('fn1');
+            return x + 1;
+        }
+        function fn2(x) {
+            console.log('fn2');
+            return x + 2;
+        }
+        function fn3(x) {
+            console.log('fn3');
+            return x + 3;
+        }
+        function fn4(x) {
+            console.log('fn4');
+            return x + 4;
+        }
+
+        function compose(...fn) {
+            
+            if (!fn.length) return (v) => v;
+            if (fn.length === 1) return fn[0];
+
+            return fn.myReduce(
+                (pre, cur) =>
+                (...args) =>
+                    pre(cur(...args))
+            );
+        }
+        
+        const a = compose(fn1, fn2, fn3, fn4);
+        console.log(a.toString())
+
+
+    </script>
+</body>
+</html>
