@@ -30,14 +30,14 @@
 
         let arr = [1,2,3,4,5,6,7,8,9,10];
 
-        let count = 1;
-        arr.reduce((accumulator,currentValue)=>{
-            console.log(`${count++}-->`, accumulator, currentValue);            
+        
+        arr.reduce((accumulator, currentValue, index)=>{
+            console.log(`${index}-->`, accumulator, currentValue);            
         }); // (沒傳初始值) 10個元素，執行了9次迭代
 
-        count = 1;
-        arr.reduce((accumulator,currentValue)=>{
-            console.log(`${count++}-->`, accumulator, currentValue);            
+        
+        arr.reduce((accumulator, currentValue, index)=>{
+            console.log(`${index}-->`, accumulator, currentValue);            
         },999); // (傳初始值) 10個元素，執行了10次迭代
 
 
@@ -55,7 +55,7 @@
             }
             group[groupKey].push(curP)
             return group
-        }, [])
+        }, {})
 
         console.log(groupBy);
 
