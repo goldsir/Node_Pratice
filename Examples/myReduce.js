@@ -12,18 +12,8 @@ Array.prototype.myReduce = function (cb, initialValue) {
     return acc;
 }
 
-function compose(f, g) {
-    return function (x) {
-        return f(g(x));
-    };
-};
+let sum = [1, 2, 3].myReduce(function (acc, cur) {
+    return acc + cur
+}, 10);
 
-var toUpperCase = function (x) {
-    return x.toUpperCase();
-};
-var exclaim = function (x) {
-    return x + '!';
-};
-
-var shout = compose(exclaim, toUpperCase);
-console.log(shout('rrrrrrrrrrr'));
+console.log(sum);

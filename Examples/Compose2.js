@@ -1,22 +1,31 @@
 // 太神了，這個代碼真的強
 
-function compose(middlewares) {
-    return function (ctx) {
-        return dispatch(0)
+function compose(middleware) {
+    // 省略部分代码
+    return function (context, next) {
+        // last called middleware #
+        let index = -1;
+        return dispatch(0);
         function dispatch(i) {
-            let fn = middlewares[i] // 注：application.js 裡面用來存放中介軟體的陣列
-            if (!fn) {
-                return Promise.resolve()
+            if (i <= index)
+                return Promise.reject(new Error("next() called multiple times"));
+            index = i;
+            let fn = middleware[i];
+            if (i === middleware.length) fn = next;
+            if (!fn) return Promise.resolve();
+            try {
+                return Promise.resolve(fn(context, dispatch.bind(null, i + 1)));
+            } catch (err) {
+                return Promise.reject(err);
             }
-            return Promise.resolve(fn(ctx, function next() {
-                return dispatch(i + 1)
-            }))
-        } x
-    }
+        }
+    };
 }
+
 
 async function fn1(ctx, next) {
     let fn1S = 'fn1 Start';
+    await next();
     await next();
     let fn1E = 'fn1 End';
 }
