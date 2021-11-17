@@ -134,8 +134,7 @@ async function getNodePath(id) {
     }
 
     parentId = result[0].parentId;
-
-    // 哈哈哈 忘了是用while迴圈
+    
     while (parentId !== 0) {
         nodePath.unshift(parentId)
         result = await dal.getParentIdById(parentId);
