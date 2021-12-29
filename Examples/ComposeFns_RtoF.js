@@ -16,13 +16,14 @@ function compose(...fns) {
 
     return fns.reduce((acc, cur) => {
 
-        console.log(acc.toString())
-
         return function (x) {
             return acc(cur(x));
         }
+
     });
 }
 
 let com = compose(fn1, fn2, fn3);
-com(1)
+let end = com(1);
+
+console.log(end);
