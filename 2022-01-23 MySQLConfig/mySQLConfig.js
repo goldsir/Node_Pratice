@@ -82,7 +82,7 @@ async function executeSQL(sql) {
             return { error, data: null }
         }
     }
-    catch (err) {
+    catch (error) {
         console.log(`${err}${endOfLine}${endOfLine}`);
         return { error, data: null }
     }
