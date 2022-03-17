@@ -1,0 +1,54 @@
+
+全局事件總線: https://www.bilibili.com/video/BV1Zy4y1K7SH?p=99
+
+    【Main.js】
+
+        beforeCreaete(){
+            Vue.prototype.$bus = this
+        }
+
+    【Search.vue】 提供數據
+        
+        methods: {
+
+            searchUsers(){
+                // after ajax called
+                let users = fetch(....)
+                this.$bus.$emit('getUsers', users)
+            }        
+        }
+
+    【lList.vue】  接收數據
+        
+        mounted() {
+            this.$bus.$on('getUsers', (users)=>{})
+        }
+
+    ----------------------------------------------------------
+    data(){
+        return {
+        }
+    }
+
+    this.data 是拿不到的 !!!
+    this._data = newData ; 也行不通， 會丟失響應式的 getter/setter
+
+    
+    data(){
+        return {
+            info:{}
+        }
+    }
+
+    this.info = newInfo ;
+
+
+組件間資料傳遞: 父->子
+
+    父.template
+        <子組件 title='' :listData=''/>
+
+    子.script
+        props: ['title', 'listData']
+
+    
