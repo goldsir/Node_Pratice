@@ -1,6 +1,18 @@
 const mysql = require('mysql');
 const endOfLine = require('os').EOL;
 
+/*
+    
+    字符集 
+        utf8mb4
+        utf8mb4_general_ci
+    CREATE DATABASE emoj DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci
+
+    show variables like '%character%'
+        
+
+*/
+
 const connectionOptions = {
     "host": "127.0.0.1",
     "user": "root",
@@ -8,7 +20,7 @@ const connectionOptions = {
     "database": "test",
     "timezone": 8,
     "connectionLimit": 50,
-    "multipleStatements": false
+    "multipleStatements": false   
 }
 
 const pool = mysql.createPool(connectionOptions);
