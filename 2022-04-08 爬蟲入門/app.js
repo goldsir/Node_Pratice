@@ -41,4 +41,7 @@ req.end()
 /*
     let allA = [...document.querySelectorAll('a')]
     allA.forEach((item)=> console.log(item.textContent,item.href))
+
+
+    [...document.querySelectorAll('a[href^=http]')].map(item => `${item.textContent}=${item.href}`).join('\n\n')
 */
