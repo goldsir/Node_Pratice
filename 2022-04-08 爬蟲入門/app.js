@@ -24,7 +24,7 @@ function crawler(htmlStr = "") {
 
     //console.log(htmlStr);
 
-    let reg = /<a[\s\S]*?href="(?=[/|http])([^"]*)"[^>]*?>([^<]+?)<\/a>/g;
+    let reg = /<a[\s\S]*?href="([^"]*?)"[^>]*>(?:<[^>]+?>)*([^<]+)(?:<\/[^>]+?>)*<\/a>/g;
 
     let matches = htmlStr.matchAll(reg);
 
@@ -38,3 +38,7 @@ function crawler(htmlStr = "") {
 req.end()
 
 
+/*
+    let allA = [...document.querySelectorAll('a')]
+    allA.forEach((item)=> console.log(item.textContent,item.href))
+*/
