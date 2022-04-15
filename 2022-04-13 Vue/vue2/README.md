@@ -1,4 +1,4 @@
-# learing
+# vue2
 
 ## Project setup
 ```

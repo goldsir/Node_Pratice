@@ -1,16 +1,18 @@
 <template>
-  <parent></parent>
+  <div id="app">
+    <Parent></Parent>
+  </div>
 </template>
 
 <script>
-import parent from './components/Parent.vue'
+import Parent from "./components/Parent.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    parent
-  }
-}
+    Parent,
+  },
+};
 </script>
 
 <style>
