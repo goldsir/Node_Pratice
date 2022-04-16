@@ -1,0 +1,17 @@
+{
+  "name": "2022-04-15-egg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "egg-bin dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "egg": "^2.35.0"
+  },
+  "devDependencies": {
+    "egg-bin": "^4.19.0"
+  }
+}

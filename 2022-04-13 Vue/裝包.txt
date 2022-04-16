@@ -1,5 +1,0 @@
-npm uninstall @vue/cli -g
-npm install @vue/cli -g
-
-npm uninstall @vue/cli-service-global -g
-npm install @vue/cli-service-global -g
