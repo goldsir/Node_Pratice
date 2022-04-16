@@ -1,7 +1,5 @@
-npm uninstall vue-cli -g
+npm uninstall @vue/cli -g
+npm install @vue/cli -g
 
-npm install -g @vue/cli
-
-npm install -g @vue/cli-service-global
-
-vue create hello-world
+npm uninstall @vue/cli-service-global -g
+npm install @vue/cli-service-global -g
