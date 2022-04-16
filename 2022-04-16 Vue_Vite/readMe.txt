@@ -10,5 +10,4 @@
 
     建創新項目 
 
-        npm create vite@latest
         npm create vite@latest app -- --template vue
