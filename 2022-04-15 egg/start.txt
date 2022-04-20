@@ -1,5 +1,0 @@
-npm init 
-npm install egg --save
-npm install egg-bin --save-dev
-
-package.json.scripts.dev = "egg-bin dev"

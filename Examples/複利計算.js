@@ -1,18 +1,15 @@
-let init = 0;
-let into = 12000;
-let sum = 0;
-let years = 20;
-let months = years * 12;
-let profitRate = 5;
-
-
-for (let i = 1; i <= months; i++) {
-    sum += into;
-    if (i % 12 === 0) {
-
-        let profit = sum * profitRate / 100;
-        sum += profit;
-
-        console.log(i, sum);
-    }
+let start = 2500000;
+let add = 144000;   // input per years
+let sumArray = [];
+let rate = 1.08;
+let years = 10;
+for (let i = 0; i < years; i++) {
+    sumArray[i] = add * Math.pow(rate, i + 1)
 }
+
+let sum = sumArray.reduce((pre, cur) => {
+    return pre + cur
+});
+
+
+console.log(start * Math.pow(rate, years) + sum);

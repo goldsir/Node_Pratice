@@ -1,3 +1,15 @@
+<<<<<<< HEAD
 升級npm管理器
 
     npm update -g npm
+=======
+#更新包管理器    
+    npm update -g npm
+
+    npm install webpack --save-dev
+    npm install vue --save
+
+    npm info jquery
+
+
+>>>>>>> 0204ea4bace7cfe122a71d97cde3fdbfd8fad7e8
