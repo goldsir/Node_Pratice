@@ -1,9 +1,11 @@
-const { isObject } = require('./utils');
+import { isObject } from './utils.js';
 
-const { reactive
+import {
+    reactive
     , shallowReactive
     , readonly
-    , shallowReadonly } = require('./reactive')
+    , shallowReadonly
+} from './reactive.js'
 
 const get = createGetter(false, false);
 const shallowGet = createGetter(false, true);
@@ -74,7 +76,7 @@ const shallowReadonlyHandler = {
 }
 
 
-module.exports = {
+export {
     mutableHandler
     , shallowReactiveHandler
     , readonlyHanlder

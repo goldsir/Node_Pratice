@@ -5,6 +5,6 @@ function isObject(value) {
 
 
 
-module.exports = {
+export {
     isObject
 }

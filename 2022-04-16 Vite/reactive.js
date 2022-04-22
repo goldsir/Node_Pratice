@@ -1,11 +1,11 @@
-const { isObject } = require('./utils');
-const {
+import { isObject } from './utils.js';
+import {
     mutableHandler
     , shallowReactiveHandler
     , readonlyHanlder
     , shallowReadonlyHandler
 
-} = require('./baseHandlers')
+} from './baseHandlers.js'
 
 
 function reactive(target) {
@@ -51,7 +51,11 @@ function createReactiveObject(target, isReadonly = false, baseHandlers) {
 }
 
 
-module.exports = {
+for (let i = 1; i <= 3; i++) {
+    console.log('imported file can run code', i);
+}
+
+export {
     reactive
     , shallowReactive
     , readonly
