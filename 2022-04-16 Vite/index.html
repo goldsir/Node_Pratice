@@ -19,10 +19,17 @@
             , shallowReadonly
         } from './reactive.js'
 
-        let state = reactive({ a: 10, b: { n: 100 } })
-        console.log(state);
+        let arr = [1, 2, 3];
+        let arrProxy = new Proxy(arr, {
 
+            set(target, property, value, receiver) {
 
+                let res = Reflect.set(target, property, value, receiver)
+                console.log(property, value, res);
+            }
+        })
+
+        arrProxy.push({ a: 100 })
     </script>
 
 </body>
