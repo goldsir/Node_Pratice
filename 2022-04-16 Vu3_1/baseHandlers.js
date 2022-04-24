@@ -8,7 +8,7 @@ const shallowGet = createGetter(false, true);
 const readonlyGet = createGetter(true, false);
 const shallowReadonlyGet = createGetter(true, true);
 
-const set = createSetter();
+const set = createSetter(false);
 const shallowSet = createSetter(true);
 
 function createGetter(isReadonly = false, isShallow = false) {
