@@ -5,11 +5,15 @@ import { shallowReadonly } from './reactive.js'
 import { effect } from './effect.js'
 //-----------------------------------------------------------------
 
-//debugger
+debugger
 let state = reactive({ name: 'BABABA', age: 8 });
 
 effect(() => {
     app.innerHTML = `name: ${state.name} - age: ${state.age}`
+});
+
+effect(() => {
+    app.innerHTML = `name: ${state.name} - age: ${state.age} ****`
 });
 
 setTimeout(() => {

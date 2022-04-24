@@ -42,7 +42,12 @@ function createSetter(shallowFlag = false) { // 攔截設置功能
 
     return function set(target, key, value, receiver) {
 
-        return Reflect.set(target, key, value, receiver)  // receiver 讓this正確指向
+        let result = Reflect.set(target, key, value, receiver)  // receiver 讓this正確指向
+
+        // 數據修改了， 通知對應的effect執行
+
+
+        return result;
     }
 
 }
