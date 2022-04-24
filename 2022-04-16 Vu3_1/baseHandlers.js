@@ -18,9 +18,8 @@ function createGetter(isReadonly = false, isShallow = false) {
         let res = Reflect.get(target, key, receiver);  // 等價 target[key]        
 
         if (!isReadonly) {// 非唯讀， 值可能被改， 所以要收集依賴
-            // 等數據變化更新對應的視圖 => effect函式收集
-            console.log(`(非唯讀取值) read key ${key} 收集 effect`);
 
+            // 等數據變化更新對應的視圖 => effect函式收集
             track(target, operatorType.GET, key)
 
         }

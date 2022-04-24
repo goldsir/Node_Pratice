@@ -9,13 +9,14 @@ import { effect } from './effect.js'
 let state = reactive({ name: 'BABABA', scores: [1, 2, 3] });
 
 effect(() => {
-    app.innerHTML = `name: ${state.name} - scores: ${state.scores.join('')}`
+    //app.innerHTML = `name: ${state.name} - scores: ${state.scores.join('')}`
+    app.innerHTML = state.scores;
 });
 
 setTimeout(() => {
 
 
-    state.scores[2] = '100'
-    state.scores[3] = '999'
+    //state.scores[2] = '100'
+    //state.scores[3] = '999'
 
 }, 1000);
