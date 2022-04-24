@@ -1,11 +1,7 @@
 import { isObject } from './utils.js';
-
-import {
-    reactive
-    , shallowReactive
-    , readonly
-    , shallowReadonly
-} from './reactive.js'
+import { reactive, shallowReactive, readonly, shallowReadonly } from './reactive.js'
+import { track } from './effect.js'
+import { operatorType } from './operatorType.js'
 
 const get = createGetter(false, false);
 const shallowGet = createGetter(false, true);
@@ -22,8 +18,10 @@ function createGetter(isReadonly = false, isShallow = false) {
         let res = Reflect.get(target, key, receiver);  // 等價 target[key]        
 
         if (!isReadonly) {// 非唯讀， 值可能被改， 所以要收集依賴
+            // 等數據變化更新對應的視圖 => effect函式收集
+            console.log(`(非唯讀取值) read key ${key} 收集 effect`);
 
-            // 等數據變化更新對應的視圖
+            track(target, operatorType.GET, key)
 
         }
 
@@ -34,7 +32,7 @@ function createGetter(isReadonly = false, isShallow = false) {
             return isReadonly ? readonly(res) : reactive(res);  // 取值時候才做代理 (響應式)
         }
 
-        console.log('PROXY~~~~~');
+
         return res;
     }
 
@@ -44,7 +42,7 @@ function createSetter(shallowFlag = false) { // 攔截設置功能
 
     return function set(target, key, value, receiver) {
 
-        return Reflect.set(target, key, value, receiver)  // receiver 在繼承關係中有用
+        return Reflect.set(target, key, value, receiver)  // receiver 讓this正確指向
     }
 
 }
@@ -74,7 +72,6 @@ const shallowReadonlyHandler = {
         console.warn(`set on key ${key} failed`)
     }
 }
-
 
 export {
     mutableHandler

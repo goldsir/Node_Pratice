@@ -1,3 +1,9 @@
+console.log('reactive 被引入');
+/*
+for (let i = 1; i <= 3; i++) {
+    console.log('imported file can run code', i);
+}*/
+
 import { isObject } from './utils.js';
 import {
     mutableHandler
@@ -48,11 +54,6 @@ function createReactiveObject(target, isReadonly = false, baseHandlers) {
     const proxy = new Proxy(target, baseHandlers);
     proxyMap.set(target, proxy);  // 將代理緩存， 用來判斷 不可重複代理
     return proxy;
-}
-
-
-for (let i = 1; i <= 3; i++) {
-    console.log('imported file can run code', i);
 }
 
 export {
