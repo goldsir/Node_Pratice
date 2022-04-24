@@ -1,3 +1,5 @@
+import { operatorType, TriggerType } from './typesEnum.js'
+
 export function effect(fn, options = {}) {
 
     // 要讓effect變成響應式的 => 數據變化 重新執行一次自己
@@ -55,9 +57,9 @@ export function track(target, operatorType, key) { // 暴露給 baseHandlers.cre
             |-> age [effect, effect ...]
 
         結構 weakMap
-            Key: target (Object)
+            key: target (Object)
             value: new Map
-                        |-> key, new Set()
+                        |-> key/set
 
     */
 
@@ -82,3 +84,11 @@ export function track(target, operatorType, key) { // 暴露給 baseHandlers.cre
 
     console.log(targetMap);
 }
+
+export function trigger(target, triggerType, key, value, oldValue) {
+
+    console.log('trigger', target, triggerType, key, `${oldValue}->${value}`,);
+
+}
+
+export const fn = () => 1

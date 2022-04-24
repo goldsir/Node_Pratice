@@ -1,7 +1,7 @@
-import { isObject } from './utils.js';
+import { isObject, isInteger, isArrary, hasOwnProperty } from './utils.js';
 import { reactive, shallowReactive, readonly, shallowReadonly } from './reactive.js'
-import { track } from './effect.js'
-import { operatorType } from './operatorType.js'
+import { track, trigger } from './effect.js'
+import { operatorType, TriggerType } from './typesEnum.js'
 
 const get = createGetter(false, false);
 const shallowGet = createGetter(false, true);
@@ -41,6 +41,26 @@ function createGetter(isReadonly = false, isShallow = false) {
 function createSetter(shallowFlag = false) { // 攔截設置功能
 
     return function set(target, key, value, receiver) {
+
+        let oldValue = target[key];  // 舊值
+
+        let isAddOperation;
+        if (isArrary(target) && isInteger(key)) {// 陣列: 被改修改的KEY是索引值
+
+            // key代表索引值， 小於length的話， 改的是陣列已有的元素
+            isAddOperation = Number(key) < target.length ? false : true
+        }
+        else {//物件
+
+            // 已經有這個key，表示為修改
+            isAddOperation = hasOwnProperty(target, key) ? false : true;
+        }
+
+        if (isAddOperation) {// 新增屬性操作
+            trigger(target, TriggerType.ADD, key, value)
+        } else if (oldValue !== value) { // 修改屬性操作且新/舊值不相等
+            trigger(target, TriggerType.UPDATE, key, value, oldValue);
+        }
 
         let result = Reflect.set(target, key, value, receiver)  // receiver 讓this正確指向
 
