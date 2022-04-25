@@ -34,6 +34,9 @@ export default function initMixin(Vue) {
                 console.log(template);
             }
         }
+        else {
+            // 直接render  todo....
+        }
     }
 }
 
