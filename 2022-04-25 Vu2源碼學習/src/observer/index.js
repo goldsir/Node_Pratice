@@ -45,7 +45,7 @@ function defineReactive(data, key, value) {// value會一直活在閉包中
 
     Object.defineProperty(data, key, {
         configurable: true,
-        enumerable: false,
+        enumerable: true,
         get() {
             return value  // 不可以return data[key]
         }
