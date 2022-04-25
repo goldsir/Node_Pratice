@@ -1,0 +1,6 @@
+npm install rollup -g
+npm install rollup-plugin-babel @babel/core @babel/preset-env rollup-plugin-serve -D
+
+建立 rollup.config.js
+
+建立 .babelrc
