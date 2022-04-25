@@ -31,16 +31,9 @@ function initData(vm) {
     let data = vm.$options.data;
     vm._data = data = typeof data === 'function' ? data.call(vm) : data;
     vmDataProxy(vm, data);
-
-    /*
-        數據劫持方案 
-            |- object -> Object.defineProperty
-            |- array
-    */
-
-    observe(data)
-
+    observe(data);
 }
+
 function initComputed(vm) { }
 function initWatch(vm) { }
 
