@@ -1,6 +1,7 @@
 import { compileToFunction } from './compiler.js'
 
 export function init_mount(Vue) {
+
     Vue.prototype.$mount = function (el) {
 
         const vm = this;
@@ -18,11 +19,12 @@ export function init_mount(Vue) {
             }
 
             const render = compileToFunction(template);
-            options.render = render;
+            options.render = render; // render函式 用模版編譯出來的
         }
-        else {
-            // 直接render  todo....
-        }
-    }
 
+        // render函式 是使用者自己傳入的
+
+
+
+    }
 }

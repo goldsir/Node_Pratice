@@ -11,7 +11,8 @@ export default function initMixin(Vue) {
         vm.$options = options;
 
         initState(vm);
-        //  如果有傳入el屬性，就要渲染頁面
+
+        //  如果有傳入el屬性，就要渲染模版
         if (vm.$options.el) {
             vm.$mount(vm.$options.el)
         }
