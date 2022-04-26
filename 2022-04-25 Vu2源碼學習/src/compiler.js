@@ -73,7 +73,7 @@ function parseHTML(html) {
 
     while (html) // 不停解析html字符串, 匹配一點，刪除一點, 慢慢把html吃光, 直到html為''
     {
-        let textEnd = html.indexOf('<');
+        let textEnd = html.indexOf('<');  // textEnd: 文本結束位置， 遇到角括號就是文本最後的位置
 
         if (textEnd == 0) {// < 在0的位置，就是一個標籤，但可能是開始標籤，也可能是結束標籤
 
