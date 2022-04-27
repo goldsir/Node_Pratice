@@ -1,4 +1,5 @@
-import { compileToFunction } from './compiler.js'
+import { compileToFunction } from './compiler.js';
+import { mountComponent } from './lifecycle.js'
 
 export function init_mount(Vue) {
 
@@ -22,9 +23,7 @@ export function init_mount(Vue) {
             options.render = render; // render函式 用模版編譯出來的
         }
 
-        // render函式 是使用者自己傳入的
-
-
+        mountComponent(vm, el);
 
     }
 }

@@ -1,9 +1,12 @@
 import initState from './state'
 import { init_mount } from './init_mount.js'
+import { lifecycleMixin } from './lifecycle'
+
 
 export default function initMixin(Vue) {
 
     init_mount(Vue);
+    lifecycleMixin(Vue);
 
     Vue.prototype._init = function (options) {
 
