@@ -1,6 +1,6 @@
 import initState from './state'
 
-export default function initMixin(Vue) {
+export function initMixin(Vue) {
 
     Vue.prototype._init = function (options) {
 

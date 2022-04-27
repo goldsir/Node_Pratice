@@ -1,4 +1,3 @@
-import { createElement } from ".";
 
 export function patch(oldVnode, vnode) {
 
@@ -6,10 +5,11 @@ export function patch(oldVnode, vnode) {
 
     if (isRealElement) {
         //要獲取父節點，將當前節點的下一個元素做為參照物，插入後，刪除老節點
+        debugger
         let oldElm = oldVnode;
         const parentNode = oldElm.parentNode;
         let el = createElm(vnode);
-        parentNode.insertBrfore(el, oldElm.nextSibling);
+        parentNode.insertBefore(el, oldElm.nextSibling);
         parentNode.removeChild(oldElm);
     }
 
