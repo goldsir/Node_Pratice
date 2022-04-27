@@ -1,20 +1,21 @@
-Promise.resolve().then(() => {
-    console.log(0);
-    return Promise.resolve(4);
-}).then((res) => {
-    console.log(res)
-})
+function anonymous() {
 
-Promise.resolve().then(() => {
-    console.log(1);
-}).then(() => {
-    console.log(2);
-}).then(() => {
-    console.log(3);
-}).then(() => {
-    console.log(5);
-}).then(() => {
-    console.log(6);
-})
-
-// 大家先思考一下
+    with (this) {
+        return
+        _c(
+            'div'
+            , { id: "app", data: "HAHA", style: { "color": "red", "background": "blue" } }
+            , _v("你好好笑"),
+            _c(
+                'span'
+                , undefined
+                , _v(_s(name), "-", _s(age))
+            ),
+            _c(
+                'span'
+                , undefined
+                , _v("你真的好好笑")
+            )
+        )
+    }
+}

@@ -1,3 +1,5 @@
+import { arrayMethods } from "./observer/array";
+
 const unicodeRegExp = /a-zA-Z\u00B7\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u037D\u037F-\u1FFF\u200C-\u200D\u203F-\u2040\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD/;
 const ncname = "[a-zA-Z_][\\-\\.0-9_a-zA-Z" + (unicodeRegExp.source) + "]*";
 const qnameCapture = "((?:" + ncname + "\\:)?" + ncname + ")";
@@ -20,7 +22,8 @@ function parseHTML(html) {
 
     let root;
     let currentParent;
-    let stack = []
+    let stack = [];
+
     function createASTElement(tagName, attrs) {
 
         return {
@@ -30,7 +33,6 @@ function parseHTML(html) {
             , parent: null
             , children: []
         }
-
     }
 
     /* 
@@ -42,30 +44,28 @@ function parseHTML(html) {
         if (!root) {
             root = element;  // 第一個被解析出來的標籤就是根
         }
-        currentParent = element;
+
+        let currentParent = stack[stack.length - 1]; //取最後一個做為父元素    
+
+        if (currentParent) {// 棧中已有元素
+
+            element.parent = currentParent;         // 互相連結
+            currentParent.children.push(element);   // 產生父子關係
+        }
+
         stack.push(element);
     }
+
     function chars(text) {
         text = text.replace(/\s/g, ''); // 刪空白
         if (text) {
-            currentParent.children.push({ type: 3, text })
+            let currentParent = stack[stack.length - 1]; //取最後一個做為父元素      
+            currentParent.children.push({ type: 3, text, parent: currentParent })
         }
-
     }
+
     function end(tagName) { // 結束標籤不會有attrs
-        let element = stack.pop(); // 取出最後一個
-
-        if (tagName == element.tag) {
-            currentParent = stack[stack.length - 1];
-
-            if (currentParent) {
-                element.parent = currentParent  // 在標籤閉合時可以知道父親是誰
-                currentParent.children.push(element)
-            }
-        }
-        else {
-            throw new Error('HTML不正確')  // 標籤閉合不正確
-        }
+        let element = stack.pop(); // 出棧
     }
     function advance(n) {
         html = html.substring(n);
@@ -135,17 +135,112 @@ function parseHTML(html) {
     return root;
 }
 
+function genAttrs(attrs) {
+
+    // style="color:red;background:blue"
+
+    let str = '';
+
+    for (let i = 0; i < attrs.length; i++) {
+
+        let attr = attrs[i];
+        if ('style' === attr.name) {
+
+            let obj = {}
+            attr.value.split(';').reduce((acc, cur) => {
+                let [key, value] = cur.split(':');
+                acc[key] = value;
+                return acc
+            }, obj);
+
+            attr.value = obj
+        }
+
+        str += `${attr.name}:${JSON.stringify(attr.value)},`
+
+    }
+
+    return str.replace(/,$/, '');
+}
+
+function genChildren(children) {
+
+    return children.map((child) => {
+
+        return gen(child)
+
+    }).join(',')
+}
+
+function gen(node) {
+
+    if (node.type === 1) {
+
+        return genCode(node)
+
+    } else if (node.type === 3) {
+
+        if (defaultTagRE.test(node.text)) { // 文本是帶變量的
+
+            let tokens = [];
+            let startIndex = defaultTagRE.lastIndex = 0;
+            let match;
+            while ((match = defaultTagRE.exec(node.text)) !== null) {
+                let endIndex = match.index;
+                if (endIndex > startIndex) {//截到文本
+                    let text = node.text.slice(startIndex, endIndex);
+                    text = JSON.stringify(text);
+                    tokens.push(text);
+                }
+
+                let textVariable = `_s(${match[1].trim()})`;  // 花括號中的變量
+                tokens.push(textVariable);
+                startIndex = endIndex + match[0].length;
+            }
+            if (startIndex < node.text.length) {
+                let text = node.text.slice(startIndex);
+                text = JSON.stringify(text);
+                tokens.push(text);
+            }
+
+            return `_v(${tokens.join()})`
+
+        } else {
+
+            return `_v(${JSON.stringify(node.text)})`
+        }
+    }
+
+}
+
+function genCode(ast)  // 把ast語法樹轉一個字符串
+{
+    let code;
+
+    /*
+        _c  createElement
+        _v  建立節點   
+        _s  JSON.stringify 
+    */
+
+    // 開始很噁心的拼接
+    code = `
+        _c('${ast.tag}', ${ast.attrs.length ? '{' + genAttrs(ast.attrs) + '}' : 'undefined'}, ${ast.children ? genChildren(ast.children) : undefined})`;
+    return code;
+}
+
 export function compileToFunction(template) {
 
     let astTree = parseHTML(template);
 
-    console.log(astTree);
+    let code = genCode(astTree);
 
-    return function render(h) {   // h是什麼呢??
+    const render = new Function(`
+        with(this){
+            return ${code}
+        }`);
+    return render;
 
-
-
-    }
 }
 
 /*
