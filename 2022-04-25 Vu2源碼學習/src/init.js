@@ -1,12 +1,6 @@
 import initState from './state'
-import { init_mount } from './init_mount.js'
-import { lifecycleMixin } from './lifecycle'
-
 
 export default function initMixin(Vue) {
-
-    init_mount(Vue);
-    lifecycleMixin(Vue);
 
     Vue.prototype._init = function (options) {
 
@@ -21,10 +15,3 @@ export default function initMixin(Vue) {
         }
     }
 }
-
-
-/*
-    這裡很好玩， export一個函式， 接受Vue做為參數
-    並在函式中去擴充Vue的原型
-    可以讓不同功能拆分在獨立的檔案中來完成
-*/
