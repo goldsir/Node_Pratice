@@ -1,7 +1,7 @@
 import { compileToFunction } from './compiler.js';
 import { mountComponent } from './lifecycle.js'
 
-export function init_mount(Vue) {
+export function initMount(Vue) {
 
     Vue.prototype.$mount = function (el) {
 
