@@ -2,7 +2,6 @@ import { patch } from './patch.js'
 
 export function renderMixin(Vue) {
 
-
     Vue.prototype._render = function () {
         const vm = this;
         const render = vm.$options.render;
@@ -26,7 +25,6 @@ export function renderMixin(Vue) {
     }
 }
 
-
 function vnode(tag, data, key, children, text) {
     return {
         tag, data, key, children, text
@@ -35,7 +33,10 @@ function vnode(tag, data, key, children, text) {
 
 export function createElement(tag, data = {}, ...children) {
 
-    return vnode(tag, data, data.key, children);
+    let key = data.key;
+    if (key) delete data.key;
+
+    return vnode(tag, data, key, children, undefined);
 }
 
 export function createTextVNode(text) {
