@@ -181,11 +181,13 @@ function gen(node) {
         if (defaultTagRE.test(node.text)) { // 文本是帶變量的
 
             let tokens = [];
+
+            //正則如果是全局模式/g， 使用前要把lastIndex置0
             let startIndex = defaultTagRE.lastIndex = 0;
-            let match;
+            let match; // 每次匹配的結果
             while ((match = defaultTagRE.exec(node.text)) !== null) {
                 let endIndex = match.index;
-                if (endIndex > startIndex) {//截到文本
+                if (endIndex > startIndex) {//由右往左看， 有文本
                     let text = node.text.slice(startIndex, endIndex);
                     text = JSON.stringify(text);
                     tokens.push(text);
@@ -195,20 +197,20 @@ function gen(node) {
                 tokens.push(textVariable);
                 startIndex = endIndex + match[0].length;
             }
-            if (startIndex < node.text.length) {
+
+            if (startIndex < node.text.length) { // 看一下有沒有剩下的文本尾巴
                 let text = node.text.slice(startIndex);
                 text = JSON.stringify(text);
                 tokens.push(text);
             }
 
-            return `_v(${tokens.join()})`
+            return `_v(${tokens.join('+')})`
 
         } else {
 
             return `_v(${JSON.stringify(node.text)})`
         }
     }
-
 }
 
 function genCode(ast)  // 把ast語法樹轉一個字符串
@@ -233,6 +235,8 @@ export function compileToFunction(template) {
     let code = genCode(astTree);
 
     const render = new Function(`with(this){ return ${code}}`);
+
+    console.log(render.toString());
 
     return render;
 

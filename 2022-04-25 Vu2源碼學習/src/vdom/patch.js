@@ -1,23 +1,52 @@
 
-export function patch(oldVnode, vnode) {
+export function patch(oldVnode, vnode) { // 真的操作到dom的地方
 
-    const isRealElement = oldVnode.nodeType;  // 1=html節點 3=文字節點
-
-    if (isRealElement) {
-        //要獲取父節點，將當前節點的下一個元素做為參照物，插入後，刪除老節點
-        debugger
-        let oldElm = oldVnode;
-        const parentNode = oldElm.parentNode;
-        let el = createElm(vnode);
-        parentNode.insertBefore(el, oldElm.nextSibling);
-        parentNode.removeChild(oldElm);
-    }
-
-    // diff算法
+    let el = createElm(vnode);
+    let parentElm = oldVnode.parentNode;
+    parentElm.insertBefore(el, oldVnode.nextSibling)
+    parentElm.removeChild(oldVnode)
 }
 
 function createElm(vnode) {
 
+
+    let { tag, data, key, children, text } = vnode;
+    if (typeof tag == 'string') {
+
+        vnode.el = document.createElement(tag);
+
+        //元素上有屬性
+        updateAttrs(vnode);
+
+        children.forEach((child) => {
+            vnode.el.appendChild(createElm(child));
+        })
+    }
+    else {
+        vnode.el = document.createTextNode(text);
+    }
+
+    return vnode.el
+}
+
+function updateAttrs(vnode) {
+
+    let el = vnode.el
+    let attrs = vnode.data || {}
+
+    Object.keys(attrs).forEach((key) => {
+
+        if ('style' == key) {
+            Object.keys(attrs.style).forEach((style) => {
+                el.style[style] = attrs.style[style]
+            });
+        }
+        else if ('class' == key) {
+            el.className = el.class
+        } else {
+            el.setAttribute(key, attrs[key]);
+        }
+    });
 }
 
 // dom結構是不會變的

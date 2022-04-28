@@ -1,49 +1,44 @@
 import { patch } from './patch.js'
 
-export function renderMinin(Vue) {
-    Vue.prototype._c = function () {
+export function renderMixin(Vue) {
 
-        return createElement(this, ...arguments);
-    }
-
-    Vue.prototype._v = function () {
-        return createTextNode(this, ...arguments);
-    }
-
-    Vue.prototype._s = function (value) {
-        return JSON.stringify(value)
-    }
 
     Vue.prototype._render = function () {
         const vm = this;
         const render = vm.$options.render;
+        // render函式使用了 with(this){return...} 所以要用 render.call(vm) 確保this的正確指向
         let vnode = render.call(vm);
         return vnode;
     }
 
-    Vue.prototype._update = function (vnode) {
+    Vue.prototype._c = function () {// 創建虛擬dom
+        return createElement(...arguments);
+    }
 
-        let vm = this;
-        let el = vm.$el;
-        vm.$el = patch(el, vnode);
+    Vue.prototype._s = function (value) {  // JSON.stringify
+        return value == null ? '' : (typeof value == 'object') ? JSON.stringify(value) : value;
+    }
+
+    Vue.prototype._v = function (text) { //創建虛擬dom文本元素
+
+        let textNode = createTextVNode(text);
+        return textNode;
     }
 }
 
 
-function vnode(vm, tag, data, children, text, key) {
+function vnode(tag, data, key, children, text) {
     return {
-        vm, tag, data, children, text, key
+        tag, data, key, children, text
     }
 }
 
-export function createElement(vm, tag, data = {}, ...children) {
+export function createElement(tag, data = {}, ...children) {
 
-    return vnode(vm, tag, data, children, data.key, null);
+    return vnode(tag, data, data.key, children);
 }
 
-export function createTextNode(vm, text) {
+export function createTextVNode(text) {
 
-    return vnode(vm, null, null, null, null, text);
+    return vnode(undefined, undefined, undefined, undefined, text);
 }
-
-

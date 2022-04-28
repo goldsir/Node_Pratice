@@ -8,6 +8,7 @@ export function initMount(Vue) {
         const vm = this;
         const options = vm.$options;
         el = document.querySelector(el);
+        vm.$el = el;
 
         // 模版順序: render()-> template -> el
 
