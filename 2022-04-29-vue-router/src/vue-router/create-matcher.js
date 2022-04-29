@@ -1,3 +1,5 @@
+import createRouteMap from './create-route-map';
+
 export default function createMatcher(routes) {  // routes: 用戶傳入的配置
 
     // 扁平化用戶傳入的數據，創建路由映射表
@@ -8,7 +10,7 @@ export default function createMatcher(routes) {  // routes: 用戶傳入的配�
 
 
     function addRoutes(routes) {
-        createMatcher(routes, pathList, pathMap) // 添加新的路由
+        createRouteMap(routes, pathList, pathMap) // 添加新的路由
     }
 
     function match() {
@@ -19,5 +21,3 @@ export default function createMatcher(routes) {  // routes: 用戶傳入的配�
         addRoutes
     }
 }
-
-function createRouteMap(routes) { }
