@@ -5,6 +5,7 @@ export function renderMixin(Vue) {
     Vue.prototype._render = function () {
         const vm = this;
         const render = vm.$options.render;
+
         // render函式使用了 with(this){return...} 所以要用 render.call(vm) 確保this的正確指向
         let vnode = render.call(vm);
         return vnode;
@@ -34,7 +35,7 @@ function vnode(tag, data, key, children, text) {
 export function createElement(tag, data = {}, ...children) {
 
     let key = data.key;
-    if (key) delete data.key;
+    if (key) delete data.key;  // key不用放到html上
 
     return vnode(tag, data, key, children, undefined);
 }

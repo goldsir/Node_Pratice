@@ -1,14 +1,20 @@
 
 export function patch(oldVnode, vnode) { // 真的操作到dom的地方
 
-    let el = createElm(vnode);
-    let parentElm = oldVnode.parentNode;
-    parentElm.insertBefore(el, oldVnode.nextSibling)
-    parentElm.removeChild(oldVnode)
+    const isRealElement = oldVnode.nodeType; // 真實元素才會有nodeType
+
+    if (isRealElement) {//真實元素替換
+        const oldElm = oldVnode;       // div id='app'  
+
+        let el = createElm(vnode);
+        let parentElm = oldVnode.parentNode;
+        parentElm.insertBefore(el, oldVnode.nextSibling)
+        parentElm.removeChild(oldVnode)
+    }
+
 }
 
 function createElm(vnode) {
-
 
     let { tag, data, key, children, text } = vnode;
     if (typeof tag == 'string') {
@@ -23,6 +29,8 @@ function createElm(vnode) {
         })
     }
     else {
+
+        // 虛擬節點上對映真實節點， 方便後續操作
         vnode.el = document.createTextNode(text);
     }
 

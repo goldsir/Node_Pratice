@@ -1,3 +1,4 @@
+import Watcher from './observer/watcher.js';
 import { patch } from './vdom/patch.js'
 
 export function lifecycleMixin(Vue) {
@@ -19,5 +20,7 @@ export function mountComponent(vm, el) {
         vm._update(vnode);
     }
 
-    updateComponent()
+
+    // 還不知道能幹啥吃
+    new Watcher(vm, updateComponent, () => { }, true); // true 代表是渲染watcher
 }
