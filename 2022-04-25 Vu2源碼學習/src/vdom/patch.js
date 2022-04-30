@@ -10,8 +10,8 @@ export function patch(oldVnode, vnode) { // 真的操作到dom的地方
         let parentElm = oldVnode.parentNode;
         parentElm.insertBefore(el, oldVnode.nextSibling)
         parentElm.removeChild(oldVnode)
+		return el
     }
-
 }
 
 function createElm(vnode) {
