@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-let _path = 'G:\\我的雲端硬碟\\教學視頻\\尚硅谷 - 商品匯'
+let _path = 'G:\\我的雲端硬碟\\教學視頻\\尚硅谷 - 尚品匯'
 let fileNameReg = /^尚硅谷VUE项目实战，前端项目\-尚品汇\(大型_重磅\)\-第\d{1,3}集\-/;
 let extensionReg = /\.mp4$/;
 
