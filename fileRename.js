@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-let _path = 'G:\\我的雲端硬碟\\教學視頻\\尚硅谷Vue2.0+Vue3.0全套教程'
-let reg = /尚硅谷Vue2.0\+Vue3.0全套教程丨vuejs从入门到精通-第\d{1,3}集-/;
+let _path = 'G:\\我的雲端硬碟\\教學視頻\\尚硅谷 - 商品匯'
+let fileNameReg = /^尚硅谷VUE项目实战，前端项目\-尚品汇\(大型_重磅\)\-第\d{1,3}集\-/;
+let extensionReg = /\.mp4$/;
 
 fs.readdir(_path, (err, filesName) => {
 
@@ -10,18 +11,15 @@ fs.readdir(_path, (err, filesName) => {
 
     filesName.forEach(fileName => {
 
-        if (reg.test(fileName)) {
-
-            let newFileName = fileName.replace(reg, '')
-            newFileName = newFileName.replace(/\-1080P /, '');
+        if (extensionReg.test(fileName) && fileNameReg.test(fileName)) {
 
             let oldPath = path.resolve(_path, fileName);
+            let newFileName = fileName.replace(fileNameReg, '');
             let newPath = path.resolve(_path, newFileName);
             console.log(newPath);
             fs.rename(oldPath, newPath, () => {
-                console.log("\nFile Renamed!\n");
+                console.log("File Renamed!");
             });
         }
-
     })
 })
