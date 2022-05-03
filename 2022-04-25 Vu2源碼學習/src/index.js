@@ -2,6 +2,7 @@ import { initMixin } from './init';
 import { initMount } from './init_mount.js'
 import { lifecycleMixin } from './lifecycle.js';
 import { renderMixin } from './vdom/index.js';
+import { initGlobalAPI } from './initGlobalAPI.js'
 
 function Vue(options) {
     this._init(options);
@@ -17,5 +18,5 @@ initMixin(Vue);
 initMount(Vue);
 lifecycleMixin(Vue)  // 混合生命週期， 渲染
 renderMixin(Vue);
-
+initGlobalAPI(Vue);
 export default Vue;

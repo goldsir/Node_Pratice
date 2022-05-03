@@ -1,11 +1,14 @@
 import initState from './state'
+import { mergeOptions } from './util';
 
 export function initMixin(Vue) {
 
     Vue.prototype._init = function (options) {
 
         const vm = this;
-        vm.$options = options;
+
+        // 將全局的options跟用戶的options合併
+        vm.$options = mergeOptions(vm.constructor.options, options);
 
         initState(vm);
 

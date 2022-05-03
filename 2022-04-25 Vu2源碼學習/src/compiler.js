@@ -234,12 +234,9 @@ export function compileToFunction(template) {
 
     let code = genCode(astTree);
 
-    const render = new Function(`with(this){ return ${code}}`);
-
-    console.log(render.toString());
+    const render = new Function(`with(this){ return ${code}}`);  // 不要亂斷行， return會錯掉    
 
     return render;
-
 }
 
 /*

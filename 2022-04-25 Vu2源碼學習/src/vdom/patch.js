@@ -4,13 +4,12 @@ export function patch(oldVnode, vnode) { // 真的操作到dom的地方
     const isRealElement = oldVnode.nodeType; // 真實元素才會有nodeType
 
     if (isRealElement) {//真實元素替換
-        const oldElm = oldVnode;       // div id='app'  
 
         let el = createElm(vnode);
         let parentElm = oldVnode.parentNode;
         parentElm.insertBefore(el, oldVnode.nextSibling)
         parentElm.removeChild(oldVnode)
-		return el
+        return el
     }
 }
 
