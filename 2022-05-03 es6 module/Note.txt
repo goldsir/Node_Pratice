@@ -1,0 +1,23 @@
+export default表示一個模塊默認的對外接口，一個模塊只能有一個export default。
+
+    const obj = {
+        name: "hello world"
+    };
+
+    export default obj;
+    // 等價於
+    export { obj as default }; // as表示導出別名為default的接口
+
+
+
+在ES6中，一個文件表示一個模塊，模塊通過export向外暴露接口
+
+ES6 模塊是編譯時輸出接口
+ES6 模塊是動態關聯模塊中的值，輸出的是值得引用。原始值變了，import 加載的值也會跟著變。
+
+ES6 模塊是編譯時輸出接口，因此有如下2個特點 
+    |- import 命令會被 JS 引擎靜態分析，優先於模塊內的其他內容執行
+    |- export 命令會有變量聲明提升的效果
+
+
+模塊不會重複執行, 重複引入某個相同的模塊時，模塊只會執行一次。    
