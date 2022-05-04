@@ -7,9 +7,9 @@ export function patch(oldVnode, vnode) { // 真的操作到dom的地方
 
         let el = createElm(vnode);
         let parentElm = oldVnode.parentNode;
-        parentElm.insertBefore(el, oldVnode.nextSibling)
-        parentElm.removeChild(oldVnode)
-        return el
+        parentElm.insertBefore(el, oldVnode.nextSibling);
+        parentElm.removeChild(oldVnode);
+        return el;
     }
 }
 

@@ -16,7 +16,12 @@ const LIFE_CYCLE_HOOKS = [
     , 'destroyed'
 ]
 
-let strategies = {}
+let strategies = {} // 合併策略
+strategies.data = function (parentVal, childVal) { // 還沒處理完善
+    return childVal;
+}
+strategies.computed = function (parentVal, childVal) { }
+strategies.watch = function (parentVal, childVal) { }
 
 function mergeHook(parentVal, childVal) {
 
@@ -26,13 +31,12 @@ function mergeHook(parentVal, childVal) {
             if (typeof parentVal === 'function') {
                 parentVal = [parentVal];
             }
-
             return parentVal.concat(childVal);
         } else {// 有新沒有舊
             return [childVal];
         }
     } else {
-        return parentVal
+        return parentVal;
     }
 }
 
@@ -72,8 +76,6 @@ export function mergeOptions(parent, child) {  // 簡單合併，沒考慮多層
         else { // 爸爸有，兒子也有， 以兒子為主
             options[key] = child[key];
         }
-
-
     }
 
     return options;

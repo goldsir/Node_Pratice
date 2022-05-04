@@ -1,5 +1,6 @@
 import { arrayMethods } from './array.js'
 import { isObject } from '../util.js'
+import Dep from './dep.js';
 
 class Observer {
 
@@ -41,18 +42,27 @@ class Observer {
 
 function defineReactive(data, key, value) {// value會一直活在閉包中
 
-    observe(value) // 層層劫持
+
+    observe(value) // 遞迴層層劫持
+    let dep = new Dep; // 每個屬性都有一個dep
 
     Object.defineProperty(data, key, {
         configurable: true,
         enumerable: true,
         get() {
+
+            // 每個屬性都對應著自己的watcher => 取值表示頁面用這個值來渲染
+            if (Dep.target) {
+                dep.depend();
+            }
+
             return value  // 不可以return data[key]
         }
         , set(newValue) {
             if (newValue === value) return;
             observe(newValue) // 改變屬性值為一個新對象，就再劫持
             value = newValue; // 不可以 data[key] = newValue
+            dep.notify(); // 通知依賴的watcher來進行更新操作
         }
     });
 

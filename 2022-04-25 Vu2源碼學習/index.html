@@ -24,10 +24,21 @@
                     name: 'abc'
                     , age: 100
                 }
-            }
+            },
+            beforeCreate() {
+                console.log('index.html beforeCreate');
+            },
+            created() {
+                console.log('index.html created');
+            },
         });
 
-        //console.log(Object.keys(vm)); 
+        setTimeout(() => {
+            vm.age = 1000; // 依賴收集
+            // 希望數據變化 可以自動執行渲染watcher
+            vm._update(vm._render())
+        }, 1000)
+
     </script>
 </body>
 
