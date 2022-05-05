@@ -3,6 +3,11 @@ const md5 = require('md5');
 const moment = require('moment');
 const crypto = require('crypto'); // 加密包
 const http = require('http');
+
+// xml-> json
+const { XMLParser } = require("fast-xml-parser"); // npm i fast-xml-parser --save
+
+
 //-------------------------------------------------------------------------------
 let secretKey = '7B6042D89AE84A4185CCEA928F3BCE71';
 let md5Key = 'PyUVZbeChU3';
@@ -64,7 +69,6 @@ function httpPost(q, s) {
         request.on('error', function (err) {
             reject(err)
         });
-
     })
 
     return promise;
@@ -95,6 +99,9 @@ async function callAPI_GetAllBetDetailsDV(date) {
 
 //5.3.2
 async function callAPI_GetAllBetDetailsForTimeIntervalDV(fromTime, toTime) {
+
+    // fromTime、toTime -1h
+
     let method = 'GetAllBetDetailsForTimeIntervalDV';
     let time = moment().format(timeFormat); // 當前時間
     let userName = '';
@@ -103,14 +110,22 @@ async function callAPI_GetAllBetDetailsForTimeIntervalDV(fromTime, toTime) {
     let q = desEncrypt(QS);  // 加密
     let s = md5(`${QS}${md5Key}${time}${secretKey}`); // 防偽簽章
 
-    console.log(q);
-    console.log('\n');
-    console.log(s);
-    console.log('\n');
+    // console.log(q);
+    // console.log('\n');
+    // console.log(s);
+    // console.log('\n');
 
     try {
         let xml = await httpPost(q, s);
-        console.log(xml)
+        xml = xml.replace('<?xml version="1.0" encoding="utf-8"?>', '')  // 覺得小礙眼， 消掉它
+        //console.log(xml);
+
+        const parser = new XMLParser();
+        let jObj = parser.parse(xml);
+
+        // 抓的資料:  BetTime+ 1h
+        console.log(JSON.stringify(jObj));
+
     } catch (err) {
         // 錯誤日誌可以在這裡記錄，別說找不到
         console.log(`偶臭了: ` + err);
@@ -118,7 +133,7 @@ async function callAPI_GetAllBetDetailsForTimeIntervalDV(fromTime, toTime) {
 }
 
 // callAPI_GetAllBetDetailsDV('2022-05-03');
-callAPI_GetAllBetDetailsForTimeIntervalDV('2022-05-04 12:00:00', '2022-05-04 12:59:59')
+callAPI_GetAllBetDetailsForTimeIntervalDV('2022-05-05 00:00:00', '2022-05-05 23:59:59')
 
 /*
     用node-fetch竟然失敗 => 改用回原生的http模組
