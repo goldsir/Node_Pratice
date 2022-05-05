@@ -42,7 +42,6 @@ class Observer {
 
 function defineReactive(data, key, value) {// value會一直活在閉包中
 
-
     observe(value) // 遞迴層層劫持
     let dep = new Dep; // 每個屬性都有一個dep
 
@@ -53,7 +52,7 @@ function defineReactive(data, key, value) {// value會一直活在閉包中
 
             // 每個屬性都對應著自己的watcher => 取值表示頁面用這個值來渲染
             if (Dep.target) {
-                dep.depend();
+                dep.depend();  // 把 `當前watcher`
             }
 
             return value  // 不可以return data[key]
