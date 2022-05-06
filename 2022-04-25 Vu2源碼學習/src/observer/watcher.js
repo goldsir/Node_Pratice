@@ -14,7 +14,9 @@ export default class Watcher {  // lifecycle.js_mountComponent 渲染時會有�
             this.getter = exprOrFn;
         }
 
-        this.get();
+        this.depsId = new Set(); // Set不能放重複項
+        this.deps = [];
+        this.get();  // 這行位置別放到上面, this.depsId 會是undefined 順序不對 造成程式錯誤
     }
 
     get() {
@@ -25,6 +27,16 @@ export default class Watcher {  // lifecycle.js_mountComponent 渲染時會有�
 
     update() {
         this.get();
+    }
+
+    addDep(dep) {  // watcher裡不能存放重複的dep, dep裡不能存放重複的watcher
+        console.log('--------', this);
+        let id = dep.id;  // id是唯一的        
+        if (this.depsId.has(id) == false) {
+            this.depsId.add(id);
+            this.deps.push(dep);
+            dep.addSub(this);   // 繞到爆炸 -> 兩兩互記
+        }
     }
 }
 

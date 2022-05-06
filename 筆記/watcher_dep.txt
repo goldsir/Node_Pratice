@@ -1,0 +1,36 @@
+    屬性變了，模版要`自動`重新渲染 (執行渲染watcher) 
+
+    {{name}}、{{name}}、{{name}}、{{name}}、{{name}}、{{name}}
+
+    在模版上一直取同一個值， 很白爛, 必須把渲染成本降到最低
+
+
+    執行 watcher -> 
+        watcher.constructor   【lifecycle.js-> mountComponent -> new Watcher(vm, updateComponent, ()=>{}, true)】
+            -> this.get() 
+                -> this.getter() -> exprOrFn() -> vm._update( vm._render() );
+
+    Watcher -> get() {
+        
+           pushTarget(this) ; // import from 'dep.js'
+           this.getter();
+           popTarget()        // import from 'dep.js'
+    }
+
+
+    ----------------------------------------
+    data() {
+
+        return {
+            name: 'xxxx'
+            , age: 88     // 沒被模版取值
+        }
+    }
+
+    vm.age = 888 ; // age沒被模版使用， 改值就不需要重新渲染模版    
+    
+    一個component 有一個watcher， 渲染頁面時候 new Watcher
+    一個屬性，可以對應多個watcher
+
+    1個 watcher 對應 n個 dep
+    1個 dep     對應 n個 watcher  【多對多，且不重複】
