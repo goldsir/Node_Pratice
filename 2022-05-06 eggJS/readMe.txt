@@ -6,6 +6,8 @@
         npm update
         npm run dev
 
+    整個資料夾的名稱不能有空白， 所以抱歉了， 這個目錄不行用了, 拿寫寫筆記。 
+
     
     資料庫編碼
         
@@ -37,3 +39,10 @@
                 }
             }
         };
+
+
+        #搞死人，只要有指定環境變量， 開發模式的自動更新就失效， 害我搞很久        
+        SET EGG_SERVER_ENV=aaa && egg-bin dev 
+        
+        #會讀config.prod.js
+        egg-scripts start --daemon --title=egg-server-app --port=80
