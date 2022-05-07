@@ -1,0 +1,18 @@
+https://gist.github.com/doggy8088/15e434b43992cf25a78700438743774a
+
+完整移除 Node.js 的方法請參考以下步驟說明：
+先到控制台手動移除 Node.js 應用程式
+開啟命令提示字元視窗 (Command Prompt) (請以系統管理員身分開啟)
+執行 del "%USERPROFILE%\.npmrc" 命令 (此檔案不一定存在，如發生錯誤訊息請自動忽略)
+執行 rmdir /s/q "C:\Program Files\nodejs" 命令
+執行 rmdir /s/q "%APPDATA%\npm-cache" 命令
+執行 rmdir /s/q "%APPDATA%\npm"
+請注意： 最後這個步驟會移除您先前曾經安裝過的所有 npm 全域套件(global packages)
+
+
+del "%USERPROFILE%\.npmrc"
+rmdir /s/q "C:\Program Files\nodejs"
+rmdir /s/q "%APPDATA%\npm-cache"
+rmdir /s/q "%APPDATA%\npm"
+
+check: where node
