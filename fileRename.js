@@ -2,11 +2,11 @@ const fs = require('fs');
 const path = require('path');
 
 let base = 'G:\\我的雲端硬碟\\教學視頻';
-let dir = '手寫vue2.x源碼_3_小項目';
+let dir = 'Node.JS高級';
 let _path = path.join(base, dir);
 
 //22年最强手写Vue3源码【从零实现】-第1集-1_vue3的基本概念和设计理念
-let removePartReg = /【珠峰T0级别讲师】Vue2源码手写\+小项目-第\d{1,2}集-/;
+let removePartReg = /Nodejs全栈开发之nodejs 高级编程-第\d{1,2}集-/;
 let extensionReg = /\.mp4$/;
 
 fs.readdir(_path, (err, filesName) => {
@@ -17,7 +17,8 @@ fs.readdir(_path, (err, filesName) => {
 
         let test1 = removePartReg.test(fileName);
         let test2 = extensionReg.test(fileName);
-        console.log(test1);
+        //console.log(test1);
+        //console.log(test2);
 
         if (test1 && test2) {
 
