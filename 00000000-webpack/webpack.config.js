@@ -43,7 +43,7 @@ module.exports = {
             , watch: false
         }
         , compress: true
-        , port: 3000
+        , port: 7000
         , open: true
         , hot: true
         , watchFiles: ['src/**/*.html'] // 笑死 一開始寫成dist搞很久
