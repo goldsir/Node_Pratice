@@ -3,6 +3,7 @@ const htmlWebpackPluginItems = require('./webpackHtmlWebpackPluginItems')
 const entry = require('./webpackEntry');
 const CopyPlugin = require("copy-webpack-plugin");
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // __dirname 是指當前文件(webpack.config.js)所在目錄
 const srcPath = join(__dirname, 'src');
@@ -18,15 +19,19 @@ module.exports = {
     , module: { // 放loader的
         rules: [
             { test: /\.txt$/, use: 'raw-loader' }
+            , { test: /\.css$/i, use: [MiniCssExtractPlugin.loader, 'css-loader'] }
         ]
     },
     plugins: [
+        new MiniCssExtractPlugin({
+            filename: join('css', '[name].[hash:4].css')
+        }),
         new CopyPlugin({ // 很雷 10版本以上會報錯， 要降回9
             patterns: [
-                {
-                    from: join(srcPath, 'css')
-                    , to: 'css'
-                },
+                /* {
+                     from: join(srcPath, 'css')
+                     , to: 'css'
+                 },*/
                 {
                     from: join(srcPath, 'images')
                     , to: 'images'

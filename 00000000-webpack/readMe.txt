@@ -3,6 +3,8 @@ npm install html-webpack-plugin --save-dev
 npm install copy-webpack-plugin@9.* --save-dev
 npm install mini-css-extract-plugin --save-dev
 npm install webpack-dev-server --save-dev
+npm install mini-css-extract-plugin --save-dev
+npm install css-loader --save-dev
 
 
 webpack中，一個檔案就是一個模塊
