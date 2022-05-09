@@ -2,13 +2,13 @@ const { join } = require('path');
 const htmlWebpackPluginItems = require('./webpackHtmlWebpackPluginItems')
 const entry = require('./webpackEntry');
 const CopyPlugin = require("copy-webpack-plugin");
+const webpack = require('webpack');
 
 // __dirname 是指當前文件(webpack.config.js)所在目錄
 const srcPath = join(__dirname, 'src');
 const distPath = join(__dirname, 'dist');
 
 module.exports = {
-
     entry: entry
     , output: {
         path: distPath                                 // 一定要絕對路徑, 輸出的js怎麼再分目錄
@@ -31,9 +31,23 @@ module.exports = {
                     from: join(srcPath, 'images')
                     , to: 'images'
                 }
-            ],
+            ]
         })
+        //  [webpack-dev-server] "hot: true" automatically applies HMR plugin
+        //  you don't have to add it manually to your webpack configuration.
+        //, new webpack.HotModuleReplacementPlugin()
     ].concat(htmlWebpackPluginItems)
+    , devServer: {
+        static: {
+            directory: distPath
+            , watch: false
+        }
+        , compress: true
+        , port: 3000
+        , open: true
+        , hot: true
+        , watchFiles: ['src/**/*.html'] // 笑死 一開始寫成dist搞很久
+    }
 }
 
 
