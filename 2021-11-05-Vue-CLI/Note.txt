@@ -18,7 +18,7 @@
             }        
         }
 
-    【lList.vue】  接收數據
+    【List.vue】  接收數據
         
         mounted() {
             this.$bus.$on('getUsers', (users)=>{})

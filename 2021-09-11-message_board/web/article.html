@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .article:hover {
+            background-color: lightyellow;
+        }
+
+        a {
+            text-decoration-line: none;
+            color: black;
+        }
+    </style>
+<script defer src="js/common.5c6a.js"></script><script defer src="js/article.5c6a.js"></script><link href="css/common.5c6a.css" rel="stylesheet"><link href="css/article.5c6a.css" rel="stylesheet"></head>
+
+<body>
+
+
+    <div id="app" v-cloak>
+        <a href='./article_list.html'>瀏覽</a>
+        <template v-for="(data, index ) in article">
+
+            <div v-if="index===0">
+                <h1 style="font-size:32px; text-align: center;">
+                    分類:{{data.category}}
+                </h1>
+                <br>
+                <h1 style="font-size:32px; text-align: center;">
+                    標題:{{data.title}}
+                </h1>
+            </div>
+            <a :href="`/reply.html?id=${data.id}`">
+                <div v-bind:style="{
+                    border: '1px solid blue',
+                    padding:'10px 10px',
+                    marginTop:'10px',
+                    marginBottom: '10px',
+                    marginLeft: data.ident * 50 + 'px'}">
+                    <br>
+                    <span>【{{data.account}}@{{data.createTime}}】</span>
+                    <br>
+                    {{data.content}}
+
+                </div>
+            </a>
+        </template>
+
+    </div>
+</body>
+
+</html>

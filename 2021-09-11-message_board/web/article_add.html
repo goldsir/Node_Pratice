@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>發文</title>
+<script defer src="js/common.5c6a.js"></script><script defer src="js/article_add.5c6a.js"></script><link href="css/common.5c6a.css" rel="stylesheet"><link href="css/article_add.5c6a.css" rel="stylesheet"></head>
+
+<body>
+
+    <div id="app" v-cloak>
+        <a href='./article_list.html'>瀏覽</a>
+        <form>
+            <label>分類</label>
+            <select v-model="categoryId">
+                <option v-for="option in categoryOptions" :value="option.id">
+                    {{ option.category }}
+                </option>
+            </select>
+            <br>
+            <label>標題</label><input type="text" v-model="title">
+            <br>
+            <label>內容</label>
+            <textarea v-model="content" rows="20" cols="100"></textarea>
+            <br>
+            <button type="button" @click="article_add($event)">發文</button>
+            <br>
+            <label v-show="postCheckResult.Code > 0"
+                style="color: red; display:none">{{postCheckResult.Message}}</label>
+        </form>
+    </div>
+</body>
+
+</html>

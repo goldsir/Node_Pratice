@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script defer src="js/common.5c6a.js"></script><script defer src="js/reply.5c6a.js"></script><link href="css/common.5c6a.css" rel="stylesheet"><link href="css/reply.5c6a.css" rel="stylesheet"></head>
+
+<body>
+
+    <div id="app" v-cloak>
+
+        <div>
+            <span></span>分類:{{article.category}}</span>
+            <br>
+            <span>標題:{{article.title}}</span>
+            <br>
+            <span>{{article.createTime}} by {{article.account}}</span>
+            <br>
+            <div class='content' readonly>
+                {{article.content}}
+            </div>
+        </div>
+        <hr>
+
+        <!--回文顯示在這裡-->
+        <template v-for="(item, index ) in replies">
+
+            <div class='content' readonly :key="item.id">
+                {{item.content}}
+                <br>
+                <br>
+                <span style="float:right">
+                    {{item.createTime}} by {{item.account}}
+                    <br>
+                    <a :href="`./reply.html?id=${item.id}`">回文</a>
+                </span>
+            </div>
+
+        </template>
+
+        <hr>
+        <div v-show="isLogin">
+            <textarea class='content' v-model.trim="replyContent"></textarea>
+
+            <div style="margin:10px auto;height:100%;width:200px">
+                <button type="button" @click="reply">回文</button>
+                <a :href="`./article.html?id=${rootId}`">返回</a>
+            </div>
+        </div>
+        <hr>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>註冊</title>
+<script defer src="js/common.5c6a.js"></script><script defer src="js/member_register.5c6a.js"></script><link href="css/common.5c6a.css" rel="stylesheet"><link href="css/member_register.5c6a.css" rel="stylesheet"></head>
+
+<body>
+
+    <div id='app'>
+        <form>
+            <label>帳號: </label><input type="text" v-model="account"> <br>
+            <label>密碼: </label><input type="password" v-model="password" autocomplete="new-password"> <br>
+            <label>密碼確認: </label><input type="password" v-model="password2" autocomplete="new-password"> <br>
+            <button type="button" @click="register($event)">註冊</button><br>
+            <label v-show="result.Code>0" style="color: red; display:none">{{result.Message}}</label>
+        </form>
+    </div>
+</body>
+
+</html>
