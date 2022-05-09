@@ -28,10 +28,10 @@ module.exports = {
         }),
         new CopyPlugin({ // 很雷 10版本以上會報錯， 要降回9
             patterns: [
-                /* {
-                     from: join(srcPath, 'css')
-                     , to: 'css'
-                 },*/
+                 {
+                     from: join(srcPath, 'font')
+                     , to: 'font'
+                 },
                 {
                     from: join(srcPath, 'images')
                     , to: 'images'
