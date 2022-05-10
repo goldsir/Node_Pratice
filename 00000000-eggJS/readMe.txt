@@ -1,3 +1,6 @@
+
+    官方文檔: https://www.eggjs.org/zh-CN/core
+    
     建立專案方式
         npm i -g egg-init
         egg-init baoWang --type=simple
@@ -6,7 +9,7 @@
         npm update
         npm run dev
 
-    整個資料夾的名稱不能有空白， 所以抱歉了， 這個目錄不行用了, 拿寫寫筆記。 
+    ******整個資料夾的名稱不能有空白******
 
     
     資料庫編碼
@@ -41,8 +44,9 @@
         };
 
 
-        #搞死人，只要有指定環境變量， 開發模式的自動更新就失效， 害我搞很久        
-        SET EGG_SERVER_ENV=aaa && egg-bin dev 
+        #搞死人，只要有指定環境變量， 開發模式的自動更新就失效， 害我搞很久  
+        install cross-env --save-dev
+        cross-env EGG_SERVER_ENV=prod && egg-bin dev 
         
-        #會讀config.prod.js
+        #start會讀取config.prod.js
         egg-scripts start --daemon --title=egg-server-app --port=80
