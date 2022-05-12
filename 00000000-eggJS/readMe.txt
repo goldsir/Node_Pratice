@@ -2,24 +2,21 @@
     官方文檔: https://www.eggjs.org/zh-CN/core
     
     建立專案方式
+
         npm i -g egg-init
+        #整個資料夾的名稱不能有空白
         egg-init baoWang --type=simple
+        cd baoWang
         npm i
         npm i egg-mysql --save
+        npm i cross-env --save
         npm update
-        npm run dev
-
-    ******整個資料夾的名稱不能有空白******
-
+        npm run dev   
     
-    資料庫編碼
-        
-        utf8mb4
-        utf8mb4_bin
-        
+    資料庫編碼: utf8mb4/utf8mb4_bin
+    
         -- SHOW COLLATION LIKE '%utf8mb4%';
         CREATE DATABASE cms CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-
 
     配置 config/plugin.js
         
