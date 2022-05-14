@@ -1,3 +1,6 @@
+    私有git: 
+        https://bitbucket.org
+        https://www.sourcetreeapp.com
 
     官方文檔: https://www.eggjs.org/zh-CN/core
     
